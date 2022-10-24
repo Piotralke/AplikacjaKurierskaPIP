@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AplikacjaKurieraPIP", "AplikacjaKurieraPIP\AplikacjaKurieraPIP.csproj", "{A54AF408-3544-4CF0-B742-F57300AF5E55}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "Server\Server.csproj", "{FD3E8FF3-9935-46C9-846E-A3F770492B4C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A54AF408-3544-4CF0-B742-F57300AF5E55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54AF408-3544-4CF0-B742-F57300AF5E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54AF408-3544-4CF0-B742-F57300AF5E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54AF408-3544-4CF0-B742-F57300AF5E55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD3E8FF3-9935-46C9-846E-A3F770492B4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD3E8FF3-9935-46C9-846E-A3F770492B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD3E8FF3-9935-46C9-846E-A3F770492B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD3E8FF3-9935-46C9-846E-A3F770492B4C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1573B42-C968-4E32-890E-BCC1500E73C5}
+	EndGlobalSection
+EndGlobal
