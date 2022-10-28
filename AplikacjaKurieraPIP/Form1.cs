@@ -80,7 +80,7 @@ namespace AplikacjaKurieraPIP
         {
             String text = textBox1.Text;
             gMapControl1.SetPositionByKeywords(text);
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@"http://localhost:5001/WeatherForecast");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@"http://localhost:5225/WeatherForecast");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             string content = new StreamReader(response.GetResponseStream()).ReadToEnd();
             Console.WriteLine(content);
