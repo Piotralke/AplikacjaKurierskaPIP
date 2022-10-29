@@ -40,5 +40,12 @@ namespace WindowsFormsApp1
                 textUserName.Focus();
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
+        }
     }
 }

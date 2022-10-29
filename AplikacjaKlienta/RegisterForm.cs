@@ -10,22 +10,13 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class HomeForm : Form
+    public partial class RegisterForm : Form
     {
-        public HomeForm()
+        public RegisterForm()
         {
             InitializeComponent();
         }
+        
 
-        private void LoginButton_Click(object sender, EventArgs e)
-        {
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
