@@ -23,9 +23,5 @@ namespace WindowsFormsApp1
             loginForm.Show();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

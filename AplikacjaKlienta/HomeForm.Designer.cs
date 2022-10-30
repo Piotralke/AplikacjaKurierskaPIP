@@ -60,10 +60,10 @@
             this.panel1.BackColor = System.Drawing.Color.Teal;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(-8, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.panel1.Location = new System.Drawing.Point(-5, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1802, 663);
+            this.panel1.Size = new System.Drawing.Size(1201, 431);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -71,19 +71,19 @@
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.button1);
-            this.panel3.Location = new System.Drawing.Point(207, 189);
-            this.panel3.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.panel3.Location = new System.Drawing.Point(138, 123);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(672, 231);
+            this.panel3.Size = new System.Drawing.Size(448, 150);
             this.panel3.TabIndex = 3;
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(6, 141);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.textBox1.Location = new System.Drawing.Point(4, 92);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(406, 43);
+            this.textBox1.Size = new System.Drawing.Size(272, 31);
             this.textBox1.TabIndex = 1;
             // 
             // label1
@@ -92,10 +92,10 @@
             this.label1.BackColor = System.Drawing.Color.DimGray;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(6, 78);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(4, 51);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 57);
+            this.label1.Size = new System.Drawing.Size(151, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Śledź paczkę";
             // 
@@ -105,10 +105,9 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(426, 124);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(284, 81);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 72);
+            this.button1.Size = new System.Drawing.Size(120, 47);
             this.button1.TabIndex = 2;
             this.button1.Text = "Znajdź";
             this.button1.UseVisualStyleBackColor = false;
@@ -116,10 +115,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(990, 96);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(660, 62);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(775, 458);
+            this.pictureBox1.Size = new System.Drawing.Size(517, 298);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -129,20 +128,19 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Location = new System.Drawing.Point(27, 676);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.panel2.Location = new System.Drawing.Point(18, 439);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(468, 334);
+            this.panel2.Size = new System.Drawing.Size(312, 217);
             this.panel2.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(129, 18);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(86, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(189, 72);
+            this.label5.Size = new System.Drawing.Size(125, 47);
             this.label5.TabIndex = 2;
             this.label5.Text = "Wysyłaj";
             // 
@@ -151,10 +149,10 @@
             this.label2.AutoEllipsis = true;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(57, 111);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Location = new System.Drawing.Point(38, 72);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(382, 84);
+            this.label2.Size = new System.Drawing.Size(248, 56);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nadaj paczke w paczkomacie \r\nlub zamów kuriera";
             // 
@@ -163,10 +161,10 @@
             this.button2.BackColor = System.Drawing.Color.DarkCyan;
             this.button2.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(94, 246);
-            this.button2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.button2.Location = new System.Drawing.Point(63, 160);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(258, 81);
+            this.button2.Size = new System.Drawing.Size(172, 53);
             this.button2.TabIndex = 0;
             this.button2.Text = "Wysyłam";
             this.button2.UseVisualStyleBackColor = false;
@@ -176,20 +174,19 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.LoginButton);
-            this.panel4.Location = new System.Drawing.Point(675, 676);
-            this.panel4.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.panel4.Location = new System.Drawing.Point(450, 439);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(468, 334);
+            this.panel4.Size = new System.Drawing.Size(312, 217);
             this.panel4.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(54, 111);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(36, 72);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(391, 126);
+            this.label6.Size = new System.Drawing.Size(256, 84);
             this.label6.TabIndex = 2;
             this.label6.Text = "Zaloguj się do swojego konta\r\nlub utwórz konto aby uzyskać \r\ndostęp do  nowych op" +
     "cji";
@@ -198,10 +195,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(106, 18);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Location = new System.Drawing.Point(71, 12);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(248, 72);
+            this.label3.Size = new System.Drawing.Size(164, 47);
             this.label3.TabIndex = 1;
             this.label3.Text = "Zaloguj się";
             // 
@@ -210,10 +207,10 @@
             this.LoginButton.BackColor = System.Drawing.Color.DarkCyan;
             this.LoginButton.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LoginButton.ForeColor = System.Drawing.Color.White;
-            this.LoginButton.Location = new System.Drawing.Point(104, 246);
-            this.LoginButton.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.LoginButton.Location = new System.Drawing.Point(69, 160);
+            this.LoginButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(258, 81);
+            this.LoginButton.Size = new System.Drawing.Size(172, 53);
             this.LoginButton.TabIndex = 0;
             this.LoginButton.Text = "Zaloguj";
             this.LoginButton.UseVisualStyleBackColor = false;
@@ -224,20 +221,19 @@
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.button4);
-            this.panel5.Location = new System.Drawing.Point(1306, 676);
-            this.panel5.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.panel5.Location = new System.Drawing.Point(871, 439);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(468, 334);
+            this.panel5.Size = new System.Drawing.Size(312, 217);
             this.panel5.TabIndex = 0;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(76, 18);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(51, 12);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(325, 72);
+            this.label7.Size = new System.Drawing.Size(214, 47);
             this.label7.TabIndex = 2;
             this.label7.Text = "Zgłoś problem";
             // 
@@ -245,10 +241,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(57, 111);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Location = new System.Drawing.Point(38, 72);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(365, 84);
+            this.label4.Size = new System.Drawing.Size(238, 56);
             this.label4.TabIndex = 1;
             this.label4.Text = "Jeżli masz problem z paczką\r\nnapisz do nas";
             // 
@@ -257,33 +253,32 @@
             this.button4.BackColor = System.Drawing.Color.DarkCyan;
             this.button4.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(110, 246);
-            this.button4.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.button4.Location = new System.Drawing.Point(73, 160);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(258, 81);
+            this.button4.Size = new System.Drawing.Size(172, 53);
             this.button4.TabIndex = 0;
             this.button4.Text = "Zgłaszam";
             this.button4.UseVisualStyleBackColor = false;
             // 
             // HomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1809, 1046);
+            this.ClientSize = new System.Drawing.Size(1141, 680);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeForm";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

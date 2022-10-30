@@ -121,13 +121,16 @@
   <data name="wyslijPaczke" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wyslijPaczke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="sledzPaczke" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sledzPaczke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="zglosProblem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zglosProblem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edytujProfil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edytujProfil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sledzPaczke" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sledzPaczke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
