@@ -12,15 +12,17 @@ namespace WindowsFormsApp1
 {
     public partial class RegisterForm : Form
     {
-        public RegisterForm()
+        private HomeForm homeForm;
+        public RegisterForm(HomeForm homeForm)
         {
             InitializeComponent();
+            this.homeForm = homeForm;  
         }
 
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            LoginForm loginForm = new LoginForm();
+            LoginForm loginForm = new LoginForm(homeForm);
             loginForm.Show();
         }
 

@@ -116,6 +116,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -135,6 +144,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -149,6 +159,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AplikacjaKordynatora\AplikacjaKordynatora.csproj">
+      <Project>{d5842974-d43c-4e75-837a-a023e44ef8bd}</Project>
+      <Name>AplikacjaKordynatora</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\StartWork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\EndWork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\TakePackages.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\handOverPackage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\handOverPackageDisabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\statistics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
