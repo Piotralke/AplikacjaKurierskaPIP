@@ -17,5 +17,19 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+        }
+
+        private void registerButton_Click(object sender, EventArgs e)
+        {
+            if (textName.Text == "" || textPassword.Text == "")
+            {
+                MessageBox.Show("Nalezy podac wszystkie dane");
+            }
+        }
     }
 }
