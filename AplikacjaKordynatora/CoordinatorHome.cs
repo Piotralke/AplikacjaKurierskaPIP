@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AplikacjaKordynatora
 {
-    public partial class Form1 : Form
+    public partial class CoordinatorHome : Form
     {
-        public Form1()
+        public CoordinatorHome()
         {
             InitializeComponent();
         }
@@ -21,5 +21,7 @@ namespace AplikacjaKordynatora
         {
 
         }
+
+ 
     }
 }
