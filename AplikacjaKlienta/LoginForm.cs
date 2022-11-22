@@ -16,6 +16,12 @@ namespace WindowsFormsApp1
 {
     public partial class LoginForm : Form
     {
+        private HomeForm homeForm;
+        public LoginForm(HomeForm homeForm)
+        {
+            InitializeComponent();
+            this.homeForm = homeForm;
+        }
         public LoginForm()
         {
             InitializeComponent();
@@ -23,7 +29,7 @@ namespace WindowsFormsApp1
         private void registerButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            RegisterForm registerForm = new RegisterForm();
+            RegisterForm registerForm = new RegisterForm(homeForm);
             registerForm.Show();
         }
 
@@ -41,10 +47,11 @@ namespace WindowsFormsApp1
                 if (user.password == textPassword.Text && user.role == 2)
                 {
                     this.Close();
-                    ClientHomeForm clientHomeForm = new ClientHomeForm();
+                    
+                    ClientHomeForm clientHomeForm = new ClientHomeForm(user.login);
                     clientHomeForm.Show();
+                    homeForm.Hide();
                 }
-            
             }
             catch
             {

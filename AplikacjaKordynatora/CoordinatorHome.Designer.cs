@@ -47,6 +47,7 @@
             // 
             // AdminPanel
             // 
+            this.AdminPanel.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.AdminPanel.Controls.Add(this.HomePage);
             this.AdminPanel.Controls.Add(this.Jobs);
             this.AdminPanel.Controls.Add(this.Statistics);
@@ -61,29 +62,30 @@
             this.AdminPanel.Location = new System.Drawing.Point(-4, -2);
             this.AdminPanel.Name = "AdminPanel";
             this.AdminPanel.Padding = new System.Drawing.Point(10, 8);
+            this.AdminPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.AdminPanel.SelectedIndex = 0;
             this.AdminPanel.Size = new System.Drawing.Size(1151, 688);
-            this.AdminPanel.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.AdminPanel.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.AdminPanel.TabIndex = 3;
             // 
             // HomePage
             // 
             this.HomePage.BackColor = System.Drawing.Color.Silver;
             this.HomePage.ImageIndex = 0;
-            this.HomePage.Location = new System.Drawing.Point(4, 33);
+            this.HomePage.Location = new System.Drawing.Point(4, 36);
             this.HomePage.Name = "HomePage";
             this.HomePage.Padding = new System.Windows.Forms.Padding(1);
-            this.HomePage.Size = new System.Drawing.Size(1143, 651);
+            this.HomePage.Size = new System.Drawing.Size(1143, 648);
             this.HomePage.TabIndex = 1;
             this.HomePage.Text = "Strona Główna";
             // 
             // Jobs
             // 
             this.Jobs.BackColor = System.Drawing.Color.Transparent;
-            this.Jobs.Location = new System.Drawing.Point(4, 33);
+            this.Jobs.Location = new System.Drawing.Point(4, 36);
             this.Jobs.Name = "Jobs";
             this.Jobs.Padding = new System.Windows.Forms.Padding(3);
-            this.Jobs.Size = new System.Drawing.Size(1143, 651);
+            this.Jobs.Size = new System.Drawing.Size(1143, 648);
             this.Jobs.TabIndex = 0;
             this.Jobs.Text = "Zlecenia";
             // 
@@ -91,9 +93,9 @@
             // 
             this.Statistics.BackColor = System.Drawing.Color.Transparent;
             this.Statistics.ImageIndex = 1;
-            this.Statistics.Location = new System.Drawing.Point(4, 33);
+            this.Statistics.Location = new System.Drawing.Point(4, 36);
             this.Statistics.Name = "Statistics";
-            this.Statistics.Size = new System.Drawing.Size(1143, 651);
+            this.Statistics.Size = new System.Drawing.Size(1143, 648);
             this.Statistics.TabIndex = 2;
             this.Statistics.Text = "Statystyki";
             // 
@@ -101,63 +103,63 @@
             // 
             this.Reports.BackColor = System.Drawing.Color.Transparent;
             this.Reports.ImageIndex = 2;
-            this.Reports.Location = new System.Drawing.Point(4, 33);
+            this.Reports.Location = new System.Drawing.Point(4, 36);
             this.Reports.Name = "Reports";
-            this.Reports.Size = new System.Drawing.Size(1143, 651);
+            this.Reports.Size = new System.Drawing.Size(1143, 648);
             this.Reports.TabIndex = 3;
             this.Reports.Text = "Raporty";
             // 
             // Notify
             // 
             this.Notify.BackColor = System.Drawing.Color.Transparent;
-            this.Notify.Location = new System.Drawing.Point(4, 33);
+            this.Notify.Location = new System.Drawing.Point(4, 36);
             this.Notify.Name = "Notify";
-            this.Notify.Size = new System.Drawing.Size(1143, 651);
+            this.Notify.Size = new System.Drawing.Size(1143, 648);
             this.Notify.TabIndex = 4;
             this.Notify.Text = "Zgłoszenia";
             // 
             // Payoff
             // 
             this.Payoff.BackColor = System.Drawing.Color.Transparent;
-            this.Payoff.Location = new System.Drawing.Point(4, 33);
+            this.Payoff.Location = new System.Drawing.Point(4, 36);
             this.Payoff.Name = "Payoff";
-            this.Payoff.Size = new System.Drawing.Size(1143, 651);
+            this.Payoff.Size = new System.Drawing.Size(1143, 648);
             this.Payoff.TabIndex = 5;
             this.Payoff.Text = "Rozliczenia";
             // 
             // Packages
             // 
             this.Packages.BackColor = System.Drawing.Color.Transparent;
-            this.Packages.Location = new System.Drawing.Point(4, 33);
+            this.Packages.Location = new System.Drawing.Point(4, 36);
             this.Packages.Name = "Packages";
-            this.Packages.Size = new System.Drawing.Size(1143, 651);
+            this.Packages.Size = new System.Drawing.Size(1143, 648);
             this.Packages.TabIndex = 6;
             this.Packages.Text = "Paczki";
             // 
             // Email
             // 
             this.Email.BackColor = System.Drawing.Color.Transparent;
-            this.Email.Location = new System.Drawing.Point(4, 33);
+            this.Email.Location = new System.Drawing.Point(4, 36);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(1143, 651);
+            this.Email.Size = new System.Drawing.Size(1143, 648);
             this.Email.TabIndex = 7;
             this.Email.Text = "Poczta";
             // 
             // Register
             // 
             this.Register.BackColor = System.Drawing.Color.Transparent;
-            this.Register.Location = new System.Drawing.Point(4, 33);
+            this.Register.Location = new System.Drawing.Point(4, 36);
             this.Register.Name = "Register";
-            this.Register.Size = new System.Drawing.Size(1143, 651);
+            this.Register.Size = new System.Drawing.Size(1143, 648);
             this.Register.TabIndex = 8;
             this.Register.Text = "Rejestracja Praconików";
             // 
             // Scheme
             // 
             this.Scheme.BackColor = System.Drawing.Color.Transparent;
-            this.Scheme.Location = new System.Drawing.Point(4, 33);
+            this.Scheme.Location = new System.Drawing.Point(4, 36);
             this.Scheme.Name = "Scheme";
-            this.Scheme.Size = new System.Drawing.Size(1143, 651);
+            this.Scheme.Size = new System.Drawing.Size(1143, 648);
             this.Scheme.TabIndex = 9;
             this.Scheme.Text = "Harmongram Pracy";
             // 
@@ -173,10 +175,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SeaGreen;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1141, 681);
             this.Controls.Add(this.AdminPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "CoordinatorHome";
             this.Text = "Koordynator";
             this.Load += new System.EventHandler(this.Form1_Load);

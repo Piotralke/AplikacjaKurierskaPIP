@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.registerButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.backButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.backButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -108,6 +108,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(504, 401);
             this.panel1.TabIndex = 0;
+            // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.DarkCyan;
+            this.backButton.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButton.ForeColor = System.Drawing.Color.White;
+            this.backButton.Location = new System.Drawing.Point(2, 2);
+            this.backButton.Margin = new System.Windows.Forms.Padding(2);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(66, 35);
+            this.backButton.TabIndex = 1;
+            this.backButton.Text = "Wróć";
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // pictureBox1
             // 
@@ -364,24 +378,11 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Telefon";
             // 
-            // backButton
-            // 
-            this.backButton.BackColor = System.Drawing.Color.DarkCyan;
-            this.backButton.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backButton.ForeColor = System.Drawing.Color.White;
-            this.backButton.Location = new System.Drawing.Point(2, 2);
-            this.backButton.Margin = new System.Windows.Forms.Padding(2);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(66, 35);
-            this.backButton.TabIndex = 1;
-            this.backButton.Text = "Wróć";
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(504, 461);
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.panel1);
