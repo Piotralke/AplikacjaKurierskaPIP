@@ -1,11 +1,14 @@
-﻿using System;
+﻿using AplikacjaKordynatora.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Runtime.Remoting.Services;
+using System.Net;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -26,26 +29,39 @@ namespace WindowsFormsApp1
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (textUserName.Text == "spychu" && textPassword.Text == "123")
+            String login = textUserName.Text;
+            String requestString = "http://localhost:5225/api/GetUserByLogin/" + login;
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@requestString);
+            try
             {
-                this.Hide();
-                ClientHomeForm clientHomeForm = new ClientHomeForm();
-                clientHomeForm.Show();
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                string content = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                Console.WriteLine(content);
+                User user = JsonSerializer.Deserialize<User>(content);
+                if (user.password == textPassword.Text && user.role == 2)
+                {
+                    this.Close();
+                    ClientHomeForm clientHomeForm = new ClientHomeForm();
+                    clientHomeForm.Show();
+                }
+            
             }
-            else
-            if (textUserName.Text == "" || textPassword.Text == "")
+            catch
             {
-                MessageBox.Show("Nalezy podac wszystkie dane");
-                textUserName.Clear();
-                textPassword.Clear();
-                textUserName.Focus();
-            }
-            else
-            {
-                MessageBox.Show("Niepoprawna nazwa uzytkownika lub haslo, sprobuj ponownie");
-                textUserName.Clear();
-                textPassword.Clear();
-                textUserName.Focus();
+                if (textUserName.Text == "" || textPassword.Text == "")
+                {
+                    MessageBox.Show("Nalezy podac wszystkie dane");
+                    textUserName.Clear();
+                    textPassword.Clear();
+                    textUserName.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Niepoprawna nazwa uzytkownika lub haslo, sprobuj ponownie");
+                    textUserName.Clear();
+                    textPassword.Clear();
+                    textUserName.Focus();
+                } 
             }
         }
     }
