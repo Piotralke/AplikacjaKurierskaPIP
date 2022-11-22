@@ -8,19 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace AplikacjaKurieraPIP
 {
-    public partial class HomeForm : Form
+    public partial class Login : Form
     {
-        public HomeForm()
+        public Login()
         {
             InitializeComponent();
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

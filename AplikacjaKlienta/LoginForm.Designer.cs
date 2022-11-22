@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.button1 = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textUserName = new System.Windows.Forms.TextBox();
             this.textPassword = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.registerButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -43,18 +43,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // loginButton
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkCyan;
-            this.button1.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(89, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 36);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Zaloguj";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.loginButton.BackColor = System.Drawing.Color.DarkCyan;
+            this.loginButton.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.loginButton.ForeColor = System.Drawing.Color.White;
+            this.loginButton.Location = new System.Drawing.Point(89, 145);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(96, 36);
+            this.loginButton.TabIndex = 0;
+            this.loginButton.Text = "Zaloguj";
+            this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // label1
             // 
@@ -93,18 +93,18 @@
             this.textPassword.TabIndex = 4;
             this.textPassword.UseSystemPasswordChar = true;
             // 
-            // button2
+            // registerButton
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkCyan;
-            this.button2.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(89, 222);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 36);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Zarejestruj";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.registerButton.BackColor = System.Drawing.Color.DarkCyan;
+            this.registerButton.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.registerButton.ForeColor = System.Drawing.Color.White;
+            this.registerButton.Location = new System.Drawing.Point(89, 222);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(96, 36);
+            this.registerButton.TabIndex = 5;
+            this.registerButton.Text = "Zarejestruj";
+            this.registerButton.UseVisualStyleBackColor = false;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // label3
             // 
@@ -137,7 +137,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.loginButton);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(286, 193);
@@ -147,7 +147,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(204, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(82, 46);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -163,7 +163,7 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.registerButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "LoginForm";
@@ -179,12 +179,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textUserName;
         private System.Windows.Forms.TextBox textPassword;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;

@@ -16,16 +16,23 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void registerButton_Click(object sender, EventArgs e)
         {
-            if(textUserName.Text == "spychu" && textPassword.Text == "123")
+            this.Close();
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            if (textUserName.Text == "spychu" && textPassword.Text == "123")
             {
                 this.Hide();
                 ClientHomeForm clientHomeForm = new ClientHomeForm();
                 clientHomeForm.Show();
             }
             else
-            if(textUserName.Text == "" || textPassword.Text == "")
+            if (textUserName.Text == "" || textPassword.Text == "")
             {
                 MessageBox.Show("Nalezy podac wszystkie dane");
                 textUserName.Clear();
@@ -39,13 +46,6 @@ namespace WindowsFormsApp1
                 textPassword.Clear();
                 textUserName.Focus();
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            RegisterForm registerForm = new RegisterForm();
-            registerForm.Show();
         }
     }
 }
