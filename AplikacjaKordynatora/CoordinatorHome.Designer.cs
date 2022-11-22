@@ -128,6 +128,7 @@
             // Packages
             // 
             this.Packages.BackColor = System.Drawing.Color.Transparent;
+            this.Packages.ImageIndex = 3;
             this.Packages.Location = new System.Drawing.Point(4, 33);
             this.Packages.Name = "Packages";
             this.Packages.Size = new System.Drawing.Size(1143, 651);
@@ -168,6 +169,7 @@
             this.imageList1.Images.SetKeyName(0, "home.png");
             this.imageList1.Images.SetKeyName(1, "statistics.png");
             this.imageList1.Images.SetKeyName(2, "reports.png");
+            this.imageList1.Images.SetKeyName(3, "package.png");
             // 
             // CoordinatorHome
             // 
