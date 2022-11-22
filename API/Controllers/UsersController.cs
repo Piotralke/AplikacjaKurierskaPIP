@@ -10,7 +10,7 @@ using API.Models;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/")]
     [ApiController]
     public class UsersController : ControllerBase
     {
@@ -29,7 +29,7 @@ namespace API.Controllers
         }
 
         // GET: api/Users/5
-        [HttpGet("{id}")]
+        [HttpGet("GetUserByID/{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
             var user = await _context.AppUsers.FindAsync(id);
@@ -41,10 +41,22 @@ namespace API.Controllers
 
             return user;
         }
+        [HttpGet("GetUserByLogin/{login}")]
+        public async Task<ActionResult<User>> GetUserByLogin(string login)
+        {
+            var user = await _context.AppUsers.Where(user=>login.Equals(user.login)).FirstOrDefaultAsync();
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return user;
+        }
 
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        [HttpPut("PutUser/{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
             if (id != user.id)
@@ -85,7 +97,7 @@ namespace API.Controllers
         }
 
         // DELETE: api/Users/5
-        [HttpDelete("{id}")]
+        [HttpDelete("DeleteUserById/{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
             var user = await _context.AppUsers.FindAsync(id);
