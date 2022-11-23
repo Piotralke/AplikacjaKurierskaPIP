@@ -26,13 +26,14 @@ namespace AplikacjaKordynatora
             String login = loginbox.Text;
             String requestString = "http://localhost:5225/api/GetUserByLogin/" + login;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@requestString);
+         
             try
             {
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 string content = new StreamReader(response.GetResponseStream()).ReadToEnd();
                 Console.WriteLine(content);
                 User user = JsonSerializer.Deserialize<User>(content);
-                if (passbox.Text == user.password && user.role == 0)
+                if (passbox.Text == user.password && user.role == 2)
                 {
                     this.Hide();
 
