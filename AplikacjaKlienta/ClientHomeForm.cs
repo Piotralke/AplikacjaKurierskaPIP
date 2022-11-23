@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             panelList[0].BringToFront();
-            button1.BackColor = Color.Gray;
+            button1.BackColor = Color.Teal;
             button2.BackColor = Color.DarkCyan;
         }
         private void ClientHomeForm_Load(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace WindowsFormsApp1
         {
             panelList[1].BringToFront();
             button1.BackColor = Color.DarkCyan;
-            button2.BackColor = Color.Gray;
+            button2.BackColor = Color.Teal;
         }
 
         private void buttonAddData_Click(object sender, EventArgs e)
