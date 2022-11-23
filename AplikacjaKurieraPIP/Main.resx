@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label2.Text" xml:space="preserve">
+    <value>-Aby zamelodwać się w pracy przejdz do sekcji "Rozpocznij pracę" 
+  i potwierdź rozpoczęcie pracy.
+-Po skończeniu pracy zamelduj się w sekcji "Zakończ pracę".
+-Aby rozpocząć wydawanie paczek musisz pobrać je z magazynu. 
+  Paczki przydzielone do Ciebie znajdziesz w sekcji "Pobierz packzi"
+-W sekcji "Paczki do wydania" masz podgląd do wszystkich paczek na dziś. 
+  Możesz odpowiednio posortować przesyłki oraz wyznaczyć trasę.
+-W sekcji "Statystyki" możesz podejżeć swoje aktualne statyski
+</value>
+  </data>
 </root>

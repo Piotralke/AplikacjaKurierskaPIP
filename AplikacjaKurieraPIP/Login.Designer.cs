@@ -91,6 +91,7 @@
             this.passBox.Name = "passBox";
             this.passBox.Size = new System.Drawing.Size(100, 20);
             this.passBox.TabIndex = 1;
+            this.passBox.UseSystemPasswordChar = true;
             // 
             // loginBox
             // 
@@ -109,6 +110,7 @@
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -19,6 +19,7 @@ namespace AplikacjaKurieraPIP
         public Login()
         {
             InitializeComponent();
+            loginBox.Focus();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -36,18 +37,25 @@ namespace AplikacjaKurieraPIP
             String login = loginBox.Text;
             String requestString = "http://localhost:5225/api/GetUserByLogin/" + login;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@requestString);
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            string content = new StreamReader(response.GetResponseStream()).ReadToEnd();
-            Console.WriteLine(content);
-            User user = JsonSerializer.Deserialize<User>(content);
-            if(user.password == passBox.Text && user.role==0)
+            try 
             {
-                Console.WriteLine("GIT");
-                //przejdz dalej
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                string content = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                Console.WriteLine(content);
+                User user = JsonSerializer.Deserialize<User>(content);
+                if (user.password == passBox.Text && user.role == 1)
+                {
+                    this.Hide();
+                    Main main = new Main(user);
+                    main.Show();
+                }
             }
-            else
+            catch
             {
-                Console.WriteLine("chuj Ci w dupe");
+                MessageBox.Show("Niepoprawna nazwa uzytkownika lub haslo, sprobuj ponownie");
+                loginBox.Clear();
+                passBox.Clear();
+                loginBox.Focus();
             }
         }
     }
