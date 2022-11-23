@@ -46,13 +46,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.panelSend = new System.Windows.Forms.Panel();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
             this.buttonAddData = new System.Windows.Forms.Button();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBoxPhoneNum = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -64,7 +65,7 @@
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBoxWeight = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBoxZip = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -75,6 +76,7 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -84,6 +86,9 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -102,16 +107,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -342,14 +338,12 @@
             this.panelSend.Controls.Add(this.checkBox4);
             this.panelSend.Controls.Add(this.checkBox3);
             this.panelSend.Controls.Add(this.checkBox2);
-            this.panelSend.Controls.Add(this.checkBox1);
             this.panelSend.Controls.Add(this.textBox16);
             this.panelSend.Controls.Add(this.radioButton2);
             this.panelSend.Controls.Add(this.radioButton1);
             this.panelSend.Controls.Add(this.label12);
+            this.panelSend.Controls.Add(this.button6);
             this.panelSend.Controls.Add(this.buttonAddData);
-            this.panelSend.Controls.Add(this.textBox11);
-            this.panelSend.Controls.Add(this.textBox10);
             this.panelSend.Controls.Add(this.textBox9);
             this.panelSend.Controls.Add(this.textBoxPhoneNum);
             this.panelSend.Controls.Add(this.textBox8);
@@ -361,7 +355,7 @@
             this.panelSend.Controls.Add(this.textBox15);
             this.panelSend.Controls.Add(this.textBox14);
             this.panelSend.Controls.Add(this.textBox13);
-            this.panelSend.Controls.Add(this.textBox12);
+            this.panelSend.Controls.Add(this.textBoxWeight);
             this.panelSend.Controls.Add(this.textBox5);
             this.panelSend.Controls.Add(this.textBoxZip);
             this.panelSend.Controls.Add(this.textBox4);
@@ -372,8 +366,6 @@
             this.panelSend.Controls.Add(this.textBoxName);
             this.panelSend.Controls.Add(this.label32);
             this.panelSend.Controls.Add(this.label29);
-            this.panelSend.Controls.Add(this.label39);
-            this.panelSend.Controls.Add(this.label38);
             this.panelSend.Controls.Add(this.label34);
             this.panelSend.Controls.Add(this.label22);
             this.panelSend.Controls.Add(this.label20);
@@ -410,6 +402,42 @@
             this.panelSend.Name = "panelSend";
             this.panelSend.Size = new System.Drawing.Size(853, 681);
             this.panelSend.TabIndex = 4;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.checkBox4.ForeColor = System.Drawing.Color.White;
+            this.checkBox4.Location = new System.Drawing.Point(11, 1722);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(233, 41);
+            this.checkBox4.TabIndex = 17;
+            this.checkBox4.Text = "Przesyłka zwrotna";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.checkBox3.ForeColor = System.Drawing.Color.White;
+            this.checkBox3.Location = new System.Drawing.Point(11, 1647);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(348, 41);
+            this.checkBox3.TabIndex = 17;
+            this.checkBox3.Text = "Doręczenie do godziny 12:00";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.checkBox2.ForeColor = System.Drawing.Color.White;
+            this.checkBox2.Location = new System.Drawing.Point(11, 1573);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(348, 41);
+            this.checkBox2.TabIndex = 17;
+            this.checkBox2.Text = "Doręczenie do godziny 10:30";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // textBox16
             // 
@@ -470,22 +498,6 @@
             this.buttonAddData.Text = "Dodaj";
             this.buttonAddData.UseVisualStyleBackColor = false;
             this.buttonAddData.Click += new System.EventHandler(this.buttonAddData_Click);
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox11.Location = new System.Drawing.Point(178, 2075);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(284, 116);
-            this.textBox11.TabIndex = 11;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.textBox10.Location = new System.Drawing.Point(172, 640);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(284, 31);
-            this.textBox10.TabIndex = 11;
             // 
             // textBox9
             // 
@@ -575,13 +587,13 @@
             this.textBox13.Size = new System.Drawing.Size(112, 31);
             this.textBox13.TabIndex = 11;
             // 
-            // textBox12
+            // textBoxWeight
             // 
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.textBox12.Location = new System.Drawing.Point(172, 767);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(112, 31);
-            this.textBox12.TabIndex = 11;
+            this.textBoxWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.textBoxWeight.Location = new System.Drawing.Point(172, 767);
+            this.textBoxWeight.Name = "textBoxWeight";
+            this.textBoxWeight.Size = new System.Drawing.Size(112, 31);
+            this.textBoxWeight.TabIndex = 11;
             // 
             // textBox5
             // 
@@ -670,6 +682,18 @@
             this.label29.Size = new System.Drawing.Size(190, 74);
             this.label29.TabIndex = 10;
             this.label29.Text = "Kształt i rodzaj \r\nopakowania";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.Color.DimGray;
+            this.label34.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label34.ForeColor = System.Drawing.Color.White;
+            this.label34.Location = new System.Drawing.Point(3, 1516);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(235, 43);
+            this.label34.TabIndex = 10;
+            this.label34.Text = "Usługi dodatkowe";
             // 
             // label22
             // 
@@ -772,6 +796,42 @@
             this.label33.TabIndex = 9;
             this.label33.Text = "Upewnij się, czy zawartość Twojej przesyłki \r\nnie znajduje się na listach towarów" +
     " \r\nzakazanych do przewozu";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label37.ForeColor = System.Drawing.Color.White;
+            this.label37.Location = new System.Drawing.Point(22, 1766);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(499, 46);
+            this.label37.TabIndex = 9;
+            this.label37.Text = "Usługa polegająca na przejęciu od Odbiorcy, przy wydaniu mu Przesyłki, \r\ninnej pr" +
+    "zesyłki adresowanej od Nadawcy Przesyłki pierwotnej.";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label36.ForeColor = System.Drawing.Color.White;
+            this.label36.Location = new System.Drawing.Point(22, 1691);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(562, 23);
+            this.label36.TabIndex = 9;
+            this.label36.Text = "Przesyłki z tą usługą doręczane są następnego dnia dnia roboczego po ich nadaniu." +
+    "";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label35.ForeColor = System.Drawing.Color.White;
+            this.label35.Location = new System.Drawing.Point(22, 1617);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(562, 23);
+            this.label35.TabIndex = 9;
+            this.label35.Text = "Przesyłki z tą usługą doręczane są następnego dnia dnia roboczego po ich nadaniu." +
+    "";
             // 
             // label30
             // 
@@ -973,125 +1033,18 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Imie";
             // 
-            // label34
+            // button6
             // 
-            this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.Color.DimGray;
-            this.label34.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label34.ForeColor = System.Drawing.Color.White;
-            this.label34.Location = new System.Drawing.Point(3, 1516);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(235, 43);
-            this.label34.TabIndex = 10;
-            this.label34.Text = "Usługi dodatkowe";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(11, 1581);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(307, 41);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "Pobranie przy doręczeniu";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
-            this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(11, 1628);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(348, 41);
-            this.checkBox2.TabIndex = 17;
-            this.checkBox2.Text = "Doręczenie do godziny 10:30";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
-            this.checkBox3.ForeColor = System.Drawing.Color.White;
-            this.checkBox3.Location = new System.Drawing.Point(11, 1702);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(348, 41);
-            this.checkBox3.TabIndex = 17;
-            this.checkBox3.Text = "Doręczenie do godziny 12:00";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
-            this.checkBox4.ForeColor = System.Drawing.Color.White;
-            this.checkBox4.Location = new System.Drawing.Point(11, 1777);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(233, 41);
-            this.checkBox4.TabIndex = 17;
-            this.checkBox4.Text = "Przesyłka zwrotna";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label35.ForeColor = System.Drawing.Color.White;
-            this.label35.Location = new System.Drawing.Point(22, 1672);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(562, 23);
-            this.label35.TabIndex = 9;
-            this.label35.Text = "Przesyłki z tą usługą doręczane są następnego dnia dnia roboczego po ich nadaniu." +
-    "";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label36.ForeColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(22, 1746);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(562, 23);
-            this.label36.TabIndex = 9;
-            this.label36.Text = "Przesyłki z tą usługą doręczane są następnego dnia dnia roboczego po ich nadaniu." +
-    "";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label37.ForeColor = System.Drawing.Color.White;
-            this.label37.Location = new System.Drawing.Point(22, 1821);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(499, 46);
-            this.label37.TabIndex = 9;
-            this.label37.Text = "Usługa polegająca na przejęciu od Odbiorcy, przy wydaniu mu Przesyłki, \r\ninnej pr" +
-    "zesyłki adresowanej od Nadawcy Przesyłki pierwotnej.";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.BackColor = System.Drawing.Color.DimGray;
-            this.label38.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label38.ForeColor = System.Drawing.Color.White;
-            this.label38.Location = new System.Drawing.Point(3, 1910);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(78, 43);
-            this.label38.TabIndex = 10;
-            this.label38.Text = "Cena";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.BackColor = System.Drawing.Color.DimGray;
-            this.label39.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label39.ForeColor = System.Drawing.Color.White;
-            this.label39.Location = new System.Drawing.Point(3, 1972);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(116, 43);
-            this.label39.TabIndex = 10;
-            this.label39.Text = "14,99zł";
+            this.button6.BackColor = System.Drawing.Color.DarkCyan;
+            this.button6.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(11, 1859);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(237, 40);
+            this.button6.TabIndex = 12;
+            this.button6.Text = "Podsumowanie i płatność";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.buttonAddData_Click);
             // 
             // ClientHomeForm
             // 
@@ -1178,8 +1131,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -1187,7 +1138,7 @@
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBoxWeight;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label22;
@@ -1203,12 +1154,10 @@
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Button button6;
     }
 }
