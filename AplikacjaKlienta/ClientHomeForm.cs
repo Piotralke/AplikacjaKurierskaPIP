@@ -59,10 +59,5 @@ namespace WindowsFormsApp1
             textBoxEmail.Text = "dawid.spychalski00@gamil.com";
             textBoxPhoneNum.Text = "731007454";
         }
-
-        private void ClientHomeForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
