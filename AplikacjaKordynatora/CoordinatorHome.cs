@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AplikacjaKordynatora.Models;
 
 namespace AplikacjaKordynatora
 {
     public partial class CoordinatorHome : Form
     {
-        public CoordinatorHome()
+        public CoordinatorHome(User user)
         {
             InitializeComponent();
+            loggedlabel.Text = user.login;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -32,6 +34,14 @@ namespace AplikacjaKordynatora
 
         }
 
-      
+        private void courierslist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CoordinatorHome_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

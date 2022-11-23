@@ -33,17 +33,28 @@
             this.AdminPanel = new System.Windows.Forms.TabControl();
             this.HomePage = new System.Windows.Forms.TabPage();
             this.Jobs = new System.Windows.Forms.TabPage();
+            this.jobsrefresh = new System.Windows.Forms.Button();
+            this.jobssubmit = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.courierslist = new System.Windows.Forms.ComboBox();
+            this.jobsview = new System.Windows.Forms.ListView();
             this.Statistics = new System.Windows.Forms.TabPage();
             this.Reports = new System.Windows.Forms.TabPage();
             this.Notify = new System.Windows.Forms.TabPage();
             this.Payoff = new System.Windows.Forms.TabPage();
             this.Packages = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label22 = new System.Windows.Forms.Label();
+            this.packagesrefreshbutton = new System.Windows.Forms.Button();
+            this.packagesedit = new System.Windows.Forms.Button();
+            this.packagesrefresh = new System.Windows.Forms.Button();
+            this.packageschoice = new System.Windows.Forms.ComboBox();
+            this.packageschoicesearch = new System.Windows.Forms.Button();
+            this.packageschoicetext = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.packagesidtext = new System.Windows.Forms.TextBox();
             this.packagesidsearch = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.packageslist = new System.Windows.Forms.ListView();
             this.listView1 = new System.Windows.Forms.ListView();
             this.Email = new System.Windows.Forms.TabPage();
             this.Register = new System.Windows.Forms.TabPage();
@@ -77,17 +88,18 @@
             this.surname = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.TextBox();
             this.Scheme = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.schemeworkerslist = new System.Windows.Forms.ListView();
             this.submithours = new System.Windows.Forms.Button();
             this.workhours = new System.Windows.Forms.ComboBox();
             this.couriers = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
             this.datework = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.calendar = new System.Windows.Forms.MonthCalendar();
             this.Workers = new System.Windows.Forms.TabPage();
+            this.workersrefreshbutton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -100,18 +112,45 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.workersdelbutton = new System.Windows.Forms.Button();
             this.workerseditbutton = new System.Windows.Forms.Button();
-            this.listView3 = new System.Windows.Forms.ListView();
+            this.workerslist = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.packageschoicetext = new System.Windows.Forms.TextBox();
-            this.packageschoicesearch = new System.Windows.Forms.Button();
-            this.packageschoice = new System.Windows.Forms.ComboBox();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.notifysearch = new System.Windows.Forms.Button();
+            this.jobsdelete = new System.Windows.Forms.Button();
+            this.notifyopen = new System.Windows.Forms.Button();
+            this.notifyanswer = new System.Windows.Forms.Button();
+            this.notifydelete = new System.Windows.Forms.Button();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.label17 = new System.Windows.Forms.Label();
+            this.payoffnameandsurname = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.payoffworkhours = new System.Windows.Forms.Label();
+            this.settlebutton = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.payoffrefresh = new System.Windows.Forms.Button();
+            this.payoffcalendar = new System.Windows.Forms.MonthCalendar();
+            this.label28 = new System.Windows.Forms.Label();
+            this.payoffpackagesdelivery = new System.Windows.Forms.Label();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.label30 = new System.Windows.Forms.Label();
+            this.loggedlabel = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.datetimenow = new System.Windows.Forms.Label();
+            this.gblogo = new System.Windows.Forms.PictureBox();
             this.AdminPanel.SuspendLayout();
+            this.HomePage.SuspendLayout();
+            this.Jobs.SuspendLayout();
+            this.Notify.SuspendLayout();
+            this.Payoff.SuspendLayout();
             this.Packages.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Register.SuspendLayout();
             this.Scheme.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.Workers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gblogo)).BeginInit();
             this.SuspendLayout();
             // 
             // AdminPanel
@@ -144,6 +183,12 @@
             // HomePage
             // 
             this.HomePage.BackColor = System.Drawing.Color.LightSlateGray;
+            this.HomePage.Controls.Add(this.gblogo);
+            this.HomePage.Controls.Add(this.datetimenow);
+            this.HomePage.Controls.Add(this.label31);
+            this.HomePage.Controls.Add(this.loggedlabel);
+            this.HomePage.Controls.Add(this.label30);
+            this.HomePage.Controls.Add(this.webBrowser1);
             this.HomePage.ImageIndex = 0;
             this.HomePage.Location = new System.Drawing.Point(4, 32);
             this.HomePage.Name = "HomePage";
@@ -156,6 +201,12 @@
             // Jobs
             // 
             this.Jobs.BackColor = System.Drawing.Color.LightSlateGray;
+            this.Jobs.Controls.Add(this.jobsdelete);
+            this.Jobs.Controls.Add(this.jobsrefresh);
+            this.Jobs.Controls.Add(this.jobssubmit);
+            this.Jobs.Controls.Add(this.label26);
+            this.Jobs.Controls.Add(this.courierslist);
+            this.Jobs.Controls.Add(this.jobsview);
             this.Jobs.ImageIndex = 9;
             this.Jobs.Location = new System.Drawing.Point(4, 32);
             this.Jobs.Name = "Jobs";
@@ -163,6 +214,53 @@
             this.Jobs.Size = new System.Drawing.Size(1170, 525);
             this.Jobs.TabIndex = 0;
             this.Jobs.Text = "Zlecenia";
+            // 
+            // jobsrefresh
+            // 
+            this.jobsrefresh.Location = new System.Drawing.Point(36, 145);
+            this.jobsrefresh.Name = "jobsrefresh";
+            this.jobsrefresh.Size = new System.Drawing.Size(110, 38);
+            this.jobsrefresh.TabIndex = 4;
+            this.jobsrefresh.Text = "Odśwież";
+            this.jobsrefresh.UseVisualStyleBackColor = true;
+            // 
+            // jobssubmit
+            // 
+            this.jobssubmit.Location = new System.Drawing.Point(36, 96);
+            this.jobssubmit.Name = "jobssubmit";
+            this.jobssubmit.Size = new System.Drawing.Size(99, 23);
+            this.jobssubmit.TabIndex = 3;
+            this.jobssubmit.Text = "Zatwierdź";
+            this.jobssubmit.UseVisualStyleBackColor = true;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label26.Location = new System.Drawing.Point(24, 15);
+            this.label26.MaximumSize = new System.Drawing.Size(150, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(145, 39);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "Wybierz pracownika któremu chcesz przypisać nowe zlecenie";
+            // 
+            // courierslist
+            // 
+            this.courierslist.FormattingEnabled = true;
+            this.courierslist.Location = new System.Drawing.Point(8, 69);
+            this.courierslist.Name = "courierslist";
+            this.courierslist.Size = new System.Drawing.Size(161, 21);
+            this.courierslist.TabIndex = 1;
+            this.courierslist.SelectedIndexChanged += new System.EventHandler(this.courierslist_SelectedIndexChanged);
+            // 
+            // jobsview
+            // 
+            this.jobsview.HideSelection = false;
+            this.jobsview.Location = new System.Drawing.Point(177, 0);
+            this.jobsview.Name = "jobsview";
+            this.jobsview.Size = new System.Drawing.Size(993, 525);
+            this.jobsview.TabIndex = 0;
+            this.jobsview.UseCompatibleStateImageBehavior = false;
             // 
             // Statistics
             // 
@@ -187,6 +285,13 @@
             // Notify
             // 
             this.Notify.BackColor = System.Drawing.Color.LightSlateGray;
+            this.Notify.Controls.Add(this.notifydelete);
+            this.Notify.Controls.Add(this.notifyanswer);
+            this.Notify.Controls.Add(this.notifyopen);
+            this.Notify.Controls.Add(this.notifysearch);
+            this.Notify.Controls.Add(this.label24);
+            this.Notify.Controls.Add(this.comboBox1);
+            this.Notify.Controls.Add(this.listView2);
             this.Notify.ImageIndex = 8;
             this.Notify.Location = new System.Drawing.Point(4, 32);
             this.Notify.Name = "Notify";
@@ -197,6 +302,18 @@
             // Payoff
             // 
             this.Payoff.BackColor = System.Drawing.Color.LightSlateGray;
+            this.Payoff.Controls.Add(this.payoffpackagesdelivery);
+            this.Payoff.Controls.Add(this.label28);
+            this.Payoff.Controls.Add(this.payoffcalendar);
+            this.Payoff.Controls.Add(this.payoffrefresh);
+            this.Payoff.Controls.Add(this.label29);
+            this.Payoff.Controls.Add(this.textBox3);
+            this.Payoff.Controls.Add(this.settlebutton);
+            this.Payoff.Controls.Add(this.payoffworkhours);
+            this.Payoff.Controls.Add(this.label27);
+            this.Payoff.Controls.Add(this.payoffnameandsurname);
+            this.Payoff.Controls.Add(this.label17);
+            this.Payoff.Controls.Add(this.listView3);
             this.Payoff.ImageIndex = 4;
             this.Payoff.Location = new System.Drawing.Point(4, 32);
             this.Payoff.Name = "Payoff";
@@ -208,7 +325,7 @@
             // 
             this.Packages.BackColor = System.Drawing.Color.LightSlateGray;
             this.Packages.Controls.Add(this.panel2);
-            this.Packages.Controls.Add(this.listView2);
+            this.Packages.Controls.Add(this.packageslist);
             this.Packages.Controls.Add(this.listView1);
             this.Packages.ImageIndex = 3;
             this.Packages.Location = new System.Drawing.Point(4, 32);
@@ -220,6 +337,9 @@
             // panel2
             // 
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel2.Controls.Add(this.packagesrefreshbutton);
+            this.panel2.Controls.Add(this.packagesedit);
+            this.panel2.Controls.Add(this.packagesrefresh);
             this.panel2.Controls.Add(this.packageschoice);
             this.panel2.Controls.Add(this.packageschoicesearch);
             this.panel2.Controls.Add(this.packageschoicetext);
@@ -232,6 +352,73 @@
             this.panel2.Size = new System.Drawing.Size(166, 525);
             this.panel2.TabIndex = 8;
             // 
+            // packagesrefreshbutton
+            // 
+            this.packagesrefreshbutton.Location = new System.Drawing.Point(25, 278);
+            this.packagesrefreshbutton.Name = "packagesrefreshbutton";
+            this.packagesrefreshbutton.Size = new System.Drawing.Size(110, 38);
+            this.packagesrefreshbutton.TabIndex = 14;
+            this.packagesrefreshbutton.Text = "Usuń";
+            this.packagesrefreshbutton.UseVisualStyleBackColor = true;
+            // 
+            // packagesedit
+            // 
+            this.packagesedit.Location = new System.Drawing.Point(25, 216);
+            this.packagesedit.Name = "packagesedit";
+            this.packagesedit.Size = new System.Drawing.Size(110, 38);
+            this.packagesedit.TabIndex = 13;
+            this.packagesedit.Text = "Edytuj";
+            this.packagesedit.UseVisualStyleBackColor = true;
+            // 
+            // packagesrefresh
+            // 
+            this.packagesrefresh.Location = new System.Drawing.Point(25, 341);
+            this.packagesrefresh.Name = "packagesrefresh";
+            this.packagesrefresh.Size = new System.Drawing.Size(110, 38);
+            this.packagesrefresh.TabIndex = 12;
+            this.packagesrefresh.Text = "Odśwież";
+            this.packagesrefresh.UseVisualStyleBackColor = true;
+            // 
+            // packageschoice
+            // 
+            this.packageschoice.FormattingEnabled = true;
+            this.packageschoice.Items.AddRange(new object[] {
+            "Po imieniu nadawcy",
+            "Po nazwisku nadawcy",
+            "Po imieniu odbiorcy",
+            "Po nazwisku odbiorcy",
+            "Po numerze telefonu nadawcy",
+            "Po numerze telefonu odbiorcy"});
+            this.packageschoice.Location = new System.Drawing.Point(3, 116);
+            this.packageschoice.Name = "packageschoice";
+            this.packageschoice.Size = new System.Drawing.Size(160, 21);
+            this.packageschoice.TabIndex = 11;
+            // 
+            // packageschoicesearch
+            // 
+            this.packageschoicesearch.Location = new System.Drawing.Point(46, 169);
+            this.packageschoicesearch.Name = "packageschoicesearch";
+            this.packageschoicesearch.Size = new System.Drawing.Size(69, 22);
+            this.packageschoicesearch.TabIndex = 10;
+            this.packageschoicesearch.Text = "Szukaj";
+            this.packageschoicesearch.UseVisualStyleBackColor = true;
+            // 
+            // packageschoicetext
+            // 
+            this.packageschoicetext.Location = new System.Drawing.Point(3, 143);
+            this.packageschoicetext.Name = "packageschoicetext";
+            this.packageschoicetext.Size = new System.Drawing.Size(160, 20);
+            this.packageschoicetext.TabIndex = 9;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(28, 38);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(100, 13);
+            this.label25.TabIndex = 7;
+            this.label25.Text = "Po Numerze Paczki";
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -242,15 +429,6 @@
             this.label22.Size = new System.Drawing.Size(107, 13);
             this.label22.TabIndex = 3;
             this.label22.Text = "Wyszukaj Paczke";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(28, 38);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(100, 13);
-            this.label25.TabIndex = 7;
-            this.label25.Text = "Po Numerze Paczki";
             // 
             // packagesidtext
             // 
@@ -268,14 +446,14 @@
             this.packagesidsearch.Text = "Szukaj";
             this.packagesidsearch.UseVisualStyleBackColor = true;
             // 
-            // listView2
+            // packageslist
             // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(111, 0);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(1063, 529);
-            this.listView2.TabIndex = 1;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.packageslist.HideSelection = false;
+            this.packageslist.Location = new System.Drawing.Point(169, 0);
+            this.packageslist.Name = "packageslist";
+            this.packageslist.Size = new System.Drawing.Size(1005, 529);
+            this.packageslist.TabIndex = 1;
+            this.packageslist.UseCompatibleStateImageBehavior = false;
             // 
             // listView1
             // 
@@ -663,12 +841,13 @@
             // Scheme
             // 
             this.Scheme.BackColor = System.Drawing.Color.LightSlateGray;
+            this.Scheme.Controls.Add(this.button1);
+            this.Scheme.Controls.Add(this.schemeworkerslist);
             this.Scheme.Controls.Add(this.submithours);
             this.Scheme.Controls.Add(this.workhours);
             this.Scheme.Controls.Add(this.couriers);
             this.Scheme.Controls.Add(this.label19);
             this.Scheme.Controls.Add(this.label18);
-            this.Scheme.Controls.Add(this.panel1);
             this.Scheme.Controls.Add(this.datework);
             this.Scheme.Controls.Add(this.label15);
             this.Scheme.Controls.Add(this.calendar);
@@ -679,12 +858,32 @@
             this.Scheme.TabIndex = 9;
             this.Scheme.Text = "Harmongram Pracy";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(439, 317);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 27);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Odśwież";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // schemeworkerslist
+            // 
+            this.schemeworkerslist.HideSelection = false;
+            this.schemeworkerslist.Location = new System.Drawing.Point(692, 0);
+            this.schemeworkerslist.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.schemeworkerslist.Name = "schemeworkerslist";
+            this.schemeworkerslist.Size = new System.Drawing.Size(478, 522);
+            this.schemeworkerslist.TabIndex = 10;
+            this.schemeworkerslist.UseCompatibleStateImageBehavior = false;
+            // 
             // submithours
             // 
             this.submithours.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.submithours.Location = new System.Drawing.Point(602, 310);
+            this.submithours.Location = new System.Drawing.Point(439, 265);
             this.submithours.Name = "submithours";
-            this.submithours.Size = new System.Drawing.Size(86, 27);
+            this.submithours.Size = new System.Drawing.Size(136, 27);
             this.submithours.TabIndex = 9;
             this.submithours.Text = "Zatwierdź";
             this.submithours.UseVisualStyleBackColor = true;
@@ -701,7 +900,7 @@
             "10:00-18:00",
             "11:00-19:00",
             "12:00-20:00"});
-            this.workhours.Location = new System.Drawing.Point(498, 250);
+            this.workhours.Location = new System.Drawing.Point(371, 194);
             this.workhours.Name = "workhours";
             this.workhours.Size = new System.Drawing.Size(288, 24);
             this.workhours.TabIndex = 8;
@@ -712,21 +911,21 @@
             this.couriers.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.couriers.FormattingEnabled = true;
             this.couriers.Items.AddRange(new object[] {
-            "Maciek",
-            "Bartek",
-            "Damian",
-            "Stefan"});
-            this.couriers.Location = new System.Drawing.Point(498, 194);
+            "Maciek Damian Baran\t",
+            "Bartek Kamil Maciejski\t",
+            "Damian Bartek Wojnowski",
+            "Stefan Daniel Kornacki"});
+            this.couriers.Location = new System.Drawing.Point(371, 116);
             this.couriers.Name = "couriers";
             this.couriers.Size = new System.Drawing.Size(288, 24);
             this.couriers.TabIndex = 7;
-            this.couriers.Text = "Stefan";
+            this.couriers.Text = "Maciek Damian Baran";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label19.Location = new System.Drawing.Point(495, 230);
+            this.label19.Location = new System.Drawing.Point(368, 174);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(103, 17);
             this.label19.TabIndex = 6;
@@ -736,38 +935,17 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label18.Location = new System.Drawing.Point(495, 174);
+            this.label18.Location = new System.Drawing.Point(368, 96);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(47, 17);
             this.label18.TabIndex = 5;
             this.label18.Text = "Kurier";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.SlateGray;
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1170, 52);
-            this.panel1.TabIndex = 4;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label17.Font = new System.Drawing.Font("Arial Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label17.Location = new System.Drawing.Point(396, 0);
-            this.label17.Name = "label17";
-            this.label17.Padding = new System.Windows.Forms.Padding(2);
-            this.label17.Size = new System.Drawing.Size(414, 42);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "Przypisz godziny kurierowi";
-            // 
             // datework
             // 
             this.datework.AutoSize = true;
             this.datework.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.datework.Location = new System.Drawing.Point(675, 129);
+            this.datework.Location = new System.Drawing.Point(560, 46);
             this.datework.Name = "datework";
             this.datework.Size = new System.Drawing.Size(30, 18);
             this.datework.TabIndex = 2;
@@ -777,7 +955,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.Location = new System.Drawing.Point(561, 129);
+            this.label15.Location = new System.Drawing.Point(436, 46);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(118, 18);
             this.label15.TabIndex = 1;
@@ -786,13 +964,14 @@
             // calendar
             // 
             this.calendar.CalendarDimensions = new System.Drawing.Size(1, 3);
-            this.calendar.Location = new System.Drawing.Point(36, 56);
+            this.calendar.Location = new System.Drawing.Point(14, 34);
             this.calendar.Name = "calendar";
             this.calendar.TabIndex = 0;
             // 
             // Workers
             // 
             this.Workers.BackColor = System.Drawing.Color.LightSlateGray;
+            this.Workers.Controls.Add(this.workersrefreshbutton);
             this.Workers.Controls.Add(this.button4);
             this.Workers.Controls.Add(this.button3);
             this.Workers.Controls.Add(this.button2);
@@ -805,13 +984,22 @@
             this.Workers.Controls.Add(this.textBox1);
             this.Workers.Controls.Add(this.workersdelbutton);
             this.Workers.Controls.Add(this.workerseditbutton);
-            this.Workers.Controls.Add(this.listView3);
+            this.Workers.Controls.Add(this.workerslist);
             this.Workers.ImageIndex = 10;
             this.Workers.Location = new System.Drawing.Point(4, 32);
             this.Workers.Name = "Workers";
             this.Workers.Size = new System.Drawing.Size(1170, 525);
             this.Workers.TabIndex = 10;
             this.Workers.Text = "Pracownicy";
+            // 
+            // workersrefreshbutton
+            // 
+            this.workersrefreshbutton.Location = new System.Drawing.Point(8, 356);
+            this.workersrefreshbutton.Name = "workersrefreshbutton";
+            this.workersrefreshbutton.Size = new System.Drawing.Size(110, 38);
+            this.workersrefreshbutton.TabIndex = 12;
+            this.workersrefreshbutton.Text = "Odśwież";
+            this.workersrefreshbutton.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -844,6 +1032,7 @@
             // 
             this.workersprovince.FormattingEnabled = true;
             this.workersprovince.Items.AddRange(new object[] {
+            "",
             "Dolnośląskie",
             "Kujawsko-Pomorskie",
             "Lubelskie",
@@ -933,14 +1122,14 @@
             this.workerseditbutton.Text = "Edytuj";
             this.workerseditbutton.UseVisualStyleBackColor = true;
             // 
-            // listView3
+            // workerslist
             // 
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(124, 0);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(1046, 529);
-            this.listView3.TabIndex = 0;
-            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.workerslist.HideSelection = false;
+            this.workerslist.Location = new System.Drawing.Point(124, 0);
+            this.workerslist.Name = "workerslist";
+            this.workerslist.Size = new System.Drawing.Size(1046, 529);
+            this.workerslist.TabIndex = 0;
+            this.workerslist.UseCompatibleStateImageBehavior = false;
             // 
             // imageList1
             // 
@@ -958,36 +1147,246 @@
             this.imageList1.Images.SetKeyName(9, "jobs.png");
             this.imageList1.Images.SetKeyName(10, "workers.png");
             // 
-            // packageschoicetext
+            // listView2
             // 
-            this.packageschoicetext.Location = new System.Drawing.Point(3, 143);
-            this.packageschoicetext.Name = "packageschoicetext";
-            this.packageschoicetext.Size = new System.Drawing.Size(160, 20);
-            this.packageschoicetext.TabIndex = 9;
+            this.listView2.HideSelection = false;
+            this.listView2.Location = new System.Drawing.Point(162, 0);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(1012, 529);
+            this.listView2.TabIndex = 0;
+            this.listView2.UseCompatibleStateImageBehavior = false;
             // 
-            // packageschoicesearch
+            // comboBox1
             // 
-            this.packageschoicesearch.Location = new System.Drawing.Point(46, 169);
-            this.packageschoicesearch.Name = "packageschoicesearch";
-            this.packageschoicesearch.Size = new System.Drawing.Size(69, 22);
-            this.packageschoicesearch.TabIndex = 10;
-            this.packageschoicesearch.Text = "Szukaj";
-            this.packageschoicesearch.UseVisualStyleBackColor = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Po numerze zgłoszenia",
+            "Po imieniu",
+            "Po nazwisku",
+            "Po adresie e-mail"});
+            this.comboBox1.Location = new System.Drawing.Point(20, 36);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 1;
             // 
-            // packageschoice
+            // label24
             // 
-            this.packageschoice.FormattingEnabled = true;
-            this.packageschoice.Items.AddRange(new object[] {
-            "Po imieniu nadawcy",
-            "Po nazwisku nadawcy",
-            "Po imieniu odbiorcy",
-            "Po nazwisku odbiorcy",
-            "Po numerze telefonu nadawcy",
-            "Po numerze telefonu odbiorcy"});
-            this.packageschoice.Location = new System.Drawing.Point(3, 116);
-            this.packageschoice.Name = "packageschoice";
-            this.packageschoice.Size = new System.Drawing.Size(160, 21);
-            this.packageschoice.TabIndex = 11;
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(31, 11);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(95, 13);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Szukaj Zgłoszenia";
+            // 
+            // notifysearch
+            // 
+            this.notifysearch.Location = new System.Drawing.Point(34, 63);
+            this.notifysearch.Name = "notifysearch";
+            this.notifysearch.Size = new System.Drawing.Size(92, 23);
+            this.notifysearch.TabIndex = 3;
+            this.notifysearch.Text = "Szukaj";
+            this.notifysearch.UseVisualStyleBackColor = true;
+            // 
+            // jobsdelete
+            // 
+            this.jobsdelete.Location = new System.Drawing.Point(36, 200);
+            this.jobsdelete.Name = "jobsdelete";
+            this.jobsdelete.Size = new System.Drawing.Size(110, 38);
+            this.jobsdelete.TabIndex = 5;
+            this.jobsdelete.Text = "Usuń";
+            this.jobsdelete.UseVisualStyleBackColor = true;
+            // 
+            // notifyopen
+            // 
+            this.notifyopen.Location = new System.Drawing.Point(20, 109);
+            this.notifyopen.Name = "notifyopen";
+            this.notifyopen.Size = new System.Drawing.Size(121, 38);
+            this.notifyopen.TabIndex = 14;
+            this.notifyopen.Text = "Otwórz";
+            this.notifyopen.UseVisualStyleBackColor = true;
+            // 
+            // notifyanswer
+            // 
+            this.notifyanswer.Location = new System.Drawing.Point(20, 168);
+            this.notifyanswer.Name = "notifyanswer";
+            this.notifyanswer.Size = new System.Drawing.Size(121, 38);
+            this.notifyanswer.TabIndex = 15;
+            this.notifyanswer.Text = "Odpowiedz";
+            this.notifyanswer.UseVisualStyleBackColor = true;
+            // 
+            // notifydelete
+            // 
+            this.notifydelete.Location = new System.Drawing.Point(20, 227);
+            this.notifydelete.Name = "notifydelete";
+            this.notifydelete.Size = new System.Drawing.Size(121, 38);
+            this.notifydelete.TabIndex = 16;
+            this.notifydelete.Text = "Usuń";
+            this.notifydelete.UseVisualStyleBackColor = true;
+            // 
+            // listView3
+            // 
+            this.listView3.HideSelection = false;
+            this.listView3.Location = new System.Drawing.Point(295, 0);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(879, 525);
+            this.listView3.TabIndex = 0;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(32, 191);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(60, 13);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Pracownik:";
+            // 
+            // payoffnameandsurname
+            // 
+            this.payoffnameandsurname.AutoSize = true;
+            this.payoffnameandsurname.Location = new System.Drawing.Point(98, 191);
+            this.payoffnameandsurname.Name = "payoffnameandsurname";
+            this.payoffnameandsurname.Size = new System.Drawing.Size(139, 13);
+            this.payoffnameandsurname.TabIndex = 2;
+            this.payoffnameandsurname.Text = "Imie i Nazwisko Pracownika";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(32, 216);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(162, 13);
+            this.label27.TabIndex = 3;
+            this.label27.Text = "Liczba przepracowanych godzin:";
+            // 
+            // payoffworkhours
+            // 
+            this.payoffworkhours.AutoSize = true;
+            this.payoffworkhours.Location = new System.Drawing.Point(200, 216);
+            this.payoffworkhours.Name = "payoffworkhours";
+            this.payoffworkhours.Size = new System.Drawing.Size(13, 13);
+            this.payoffworkhours.TabIndex = 4;
+            this.payoffworkhours.Text = "9";
+            // 
+            // settlebutton
+            // 
+            this.settlebutton.Location = new System.Drawing.Point(77, 318);
+            this.settlebutton.Name = "settlebutton";
+            this.settlebutton.Size = new System.Drawing.Size(102, 42);
+            this.settlebutton.TabIndex = 7;
+            this.settlebutton.Text = "Rozlicz";
+            this.settlebutton.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(77, 269);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(77, 20);
+            this.textBox3.TabIndex = 8;
+            this.textBox3.Text = "0";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(32, 272);
+            this.label29.Margin = new System.Windows.Forms.Padding(0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(42, 13);
+            this.label29.TabIndex = 9;
+            this.label29.Text = "Premia:";
+            // 
+            // payoffrefresh
+            // 
+            this.payoffrefresh.Location = new System.Drawing.Point(77, 383);
+            this.payoffrefresh.Name = "payoffrefresh";
+            this.payoffrefresh.Size = new System.Drawing.Size(102, 42);
+            this.payoffrefresh.TabIndex = 10;
+            this.payoffrefresh.Text = "Odśwież";
+            this.payoffrefresh.UseVisualStyleBackColor = true;
+            // 
+            // payoffcalendar
+            // 
+            this.payoffcalendar.Location = new System.Drawing.Point(14, 9);
+            this.payoffcalendar.Name = "payoffcalendar";
+            this.payoffcalendar.TabIndex = 11;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(32, 243);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(134, 13);
+            this.label28.TabIndex = 12;
+            this.label28.Text = "Ilośc doręczonych paczek:";
+            // 
+            // payoffpackagesdelivery
+            // 
+            this.payoffpackagesdelivery.AutoSize = true;
+            this.payoffpackagesdelivery.Location = new System.Drawing.Point(165, 243);
+            this.payoffpackagesdelivery.Name = "payoffpackagesdelivery";
+            this.payoffpackagesdelivery.Size = new System.Drawing.Size(13, 13);
+            this.payoffpackagesdelivery.TabIndex = 13;
+            this.payoffpackagesdelivery.Text = "9";
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(-4, 239);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.ScriptErrorsSuppressed = true;
+            this.webBrowser1.Size = new System.Drawing.Size(1178, 290);
+            this.webBrowser1.TabIndex = 0;
+            this.webBrowser1.Url = new System.Uri("https://www.globkurier.pl/blog/aktualnosci", System.UriKind.Absolute);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label30.Location = new System.Drawing.Point(3, 17);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(113, 16);
+            this.label30.TabIndex = 1;
+            this.label30.Text = "Zalogowany jako:";
+            // 
+            // loggedlabel
+            // 
+            this.loggedlabel.AutoSize = true;
+            this.loggedlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.loggedlabel.Location = new System.Drawing.Point(122, 17);
+            this.loggedlabel.Name = "loggedlabel";
+            this.loggedlabel.Size = new System.Drawing.Size(40, 16);
+            this.loggedlabel.TabIndex = 2;
+            this.loggedlabel.Text = "Login";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label31.Location = new System.Drawing.Point(3, 1);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(101, 16);
+            this.label31.TabIndex = 3;
+            this.label31.Text = "Dzisiejsza data:";
+            // 
+            // datetimenow
+            // 
+            this.datetimenow.AutoSize = true;
+            this.datetimenow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.datetimenow.Location = new System.Drawing.Point(110, 1);
+            this.datetimenow.Name = "datetimenow";
+            this.datetimenow.Size = new System.Drawing.Size(34, 16);
+            this.datetimenow.TabIndex = 4;
+            this.datetimenow.Text = "data";
+            // 
+            // gblogo
+            // 
+            this.gblogo.Image = ((System.Drawing.Image)(resources.GetObject("gblogo.Image")));
+            this.gblogo.Location = new System.Drawing.Point(293, 3);
+            this.gblogo.Name = "gblogo";
+            this.gblogo.Size = new System.Drawing.Size(586, 237);
+            this.gblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gblogo.TabIndex = 5;
+            this.gblogo.TabStop = false;
             // 
             // CoordinatorHome
             // 
@@ -1001,7 +1400,16 @@
             this.MaximizeBox = false;
             this.Name = "CoordinatorHome";
             this.Text = "Koordynator";
+            this.Load += new System.EventHandler(this.CoordinatorHome_Load);
             this.AdminPanel.ResumeLayout(false);
+            this.HomePage.ResumeLayout(false);
+            this.HomePage.PerformLayout();
+            this.Jobs.ResumeLayout(false);
+            this.Jobs.PerformLayout();
+            this.Notify.ResumeLayout(false);
+            this.Notify.PerformLayout();
+            this.Payoff.ResumeLayout(false);
+            this.Payoff.PerformLayout();
             this.Packages.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -1009,10 +1417,9 @@
             this.Register.PerformLayout();
             this.Scheme.ResumeLayout(false);
             this.Scheme.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.Workers.ResumeLayout(false);
             this.Workers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gblogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1063,8 +1470,6 @@
         private System.Windows.Forms.Button registersubmit;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TabPage Workers;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label datework;
         private System.Windows.Forms.ComboBox couriers;
         private System.Windows.Forms.Label label19;
@@ -1073,12 +1478,12 @@
         private System.Windows.Forms.Button submithours;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button packagesidsearch;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView packageslist;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button workersdelbutton;
         private System.Windows.Forms.Button workerseditbutton;
-        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ListView workerslist;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label25;
@@ -1094,6 +1499,43 @@
         private System.Windows.Forms.ComboBox packageschoice;
         private System.Windows.Forms.Button packageschoicesearch;
         private System.Windows.Forms.TextBox packageschoicetext;
+        private System.Windows.Forms.Button packagesrefreshbutton;
+        private System.Windows.Forms.Button packagesedit;
+        private System.Windows.Forms.Button packagesrefresh;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListView schemeworkerslist;
+        private System.Windows.Forms.Button workersrefreshbutton;
+        private System.Windows.Forms.Button jobssubmit;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ComboBox courierslist;
+        private System.Windows.Forms.ListView jobsview;
+        private System.Windows.Forms.Button jobsrefresh;
+        private System.Windows.Forms.Button jobsdelete;
+        private System.Windows.Forms.Button notifydelete;
+        private System.Windows.Forms.Button notifyanswer;
+        private System.Windows.Forms.Button notifyopen;
+        private System.Windows.Forms.Button notifysearch;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.Label payoffpackagesdelivery;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.MonthCalendar payoffcalendar;
+        private System.Windows.Forms.Button payoffrefresh;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button settlebutton;
+        private System.Windows.Forms.Label payoffworkhours;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label payoffnameandsurname;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.PictureBox gblogo;
+        private System.Windows.Forms.Label datetimenow;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label loggedlabel;
+        private System.Windows.Forms.Label label30;
     }
 }
 
