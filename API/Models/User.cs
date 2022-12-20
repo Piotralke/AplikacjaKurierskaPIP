@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Models
 {
@@ -10,13 +11,14 @@ namespace API.Models
         public string name { get; set; }
         [Required]
         public string surname { get; set; }
-        [Required]
-        public string email { get; set; }
-        [Required]
-        public string login { get; set; }
-        [Required]
-        public string password { get; set; }
+        public int? loginCredentialsId { get; set; }
+        public loginCredentials? loginCredentials { get; set; }
         [Required]
         public int role { get; set; } //0-koordynator,1-kurier,2-klient
+        public int? defaultAddressId { get; set; }
+        public Address? defaultAddress { get; set; }
+        public ICollection<Package>? senderPackages {get; set;}
+        public ICollection<Package>? receiverPackages {get; set;}
+        public ICollection<Order>? orders { get; set;}
     }
 }

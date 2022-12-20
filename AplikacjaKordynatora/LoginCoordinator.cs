@@ -24,24 +24,33 @@ namespace AplikacjaKordynatora
         private void loginbutton_Click(object sender, EventArgs e)
         {
             String login = loginbox.Text;
-            String requestString = "http://localhost:5225/api/GetUserByLogin/" + login;
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@requestString);
+            String requestCredentials = "http://localhost:5225/loginCredentials/GetLoginCredentialsByLogin/" + login;
+            HttpWebRequest credentialsRequest = (HttpWebRequest)WebRequest.Create(@requestCredentials);
             try
             {
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                string content = new StreamReader(response.GetResponseStream()).ReadToEnd();
-                Console.WriteLine(content);
-                User user = JsonSerializer.Deserialize<User>(content);
-                if (passbox.Text == user.password && user.role == 0)
+                HttpWebResponse credentialsResponse = (HttpWebResponse)credentialsRequest.GetResponse();
+                string credentialsContent = new StreamReader(credentialsResponse.GetResponseStream()).ReadToEnd();
+                loginCredentials credentials = JsonSerializer.Deserialize<loginCredentials>(credentialsContent);
+                Console.WriteLine(credentialsContent);
+                if (passbox.Text == credentials.password)
                 {
-                    this.Hide();
+                    String requestUser = "http://localhost:5225/Users/GetUserByLogin/" + login;
+                    HttpWebRequest userRequest = (HttpWebRequest)WebRequest.Create(@requestUser);
+                    HttpWebResponse userResponse = (HttpWebResponse)userRequest.GetResponse();
+                    string userContent = new StreamReader(userResponse.GetResponseStream()).ReadToEnd();
+                    Console.WriteLine(userContent);
+                    User user = JsonSerializer.Deserialize<User>(userContent);
 
-                    CoordinatorHome coordinatorhome = new CoordinatorHome(user);
-                    coordinatorhome.Show();
-                    
+                    if (user.role==0)
+                    {
+                        this.Hide();
+
+                        CoordinatorHome coordinatorhome = new CoordinatorHome(user);
+                        coordinatorhome.Show();
+                    }
                 }
             }
-            catch
+            catch(Exception ex) 
             {
                 if (loginbox.Text == "" || passbox.Text == "")
                 {
@@ -57,6 +66,7 @@ namespace AplikacjaKordynatora
                     passbox.Clear();
                     loginbox.Focus();
                 }
+                Console.WriteLine(ex.ToString());
             }
 
         }
