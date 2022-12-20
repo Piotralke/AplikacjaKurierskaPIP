@@ -4,6 +4,7 @@ using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(CourierDbContext))]
-    partial class CourierDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221220165204_daneLogowania1")]
+    partial class daneLogowania1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -211,6 +213,7 @@ namespace API.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<int?>("defaultAddressId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("loginCredentialsId")
@@ -230,8 +233,7 @@ namespace API.Migrations
                     b.HasKey("id");
 
                     b.HasIndex("defaultAddressId")
-                        .IsUnique()
-                        .HasFilter("[defaultAddressId] IS NOT NULL");
+                        .IsUnique();
 
                     b.HasIndex("loginCredentialsId")
                         .IsUnique()
@@ -317,7 +319,9 @@ namespace API.Migrations
                 {
                     b.HasOne("API.Models.Address", "defaultAddress")
                         .WithOne("user")
-                        .HasForeignKey("API.Models.User", "defaultAddressId");
+                        .HasForeignKey("API.Models.User", "defaultAddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("API.Models.loginCredentials", "loginCredentials")
                         .WithOne("user")

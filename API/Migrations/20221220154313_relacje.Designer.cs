@@ -4,6 +4,7 @@ using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(CourierDbContext))]
-    partial class CourierDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221220154313_relacje")]
+    partial class relacje
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,31 +51,6 @@ namespace API.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Addresses");
-                });
-
-            modelBuilder.Entity("API.Models.loginCredentials", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
-
-                    b.Property<string>("email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("login")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("LoginCredentials");
                 });
 
             modelBuilder.Entity("API.Models.Order", b =>
@@ -210,13 +187,22 @@ namespace API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
-                    b.Property<int?>("defaultAddressId")
+                    b.Property<int>("defaultAddressId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("loginCredentialsId")
-                        .HasColumnType("int");
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("login")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -230,12 +216,7 @@ namespace API.Migrations
                     b.HasKey("id");
 
                     b.HasIndex("defaultAddressId")
-                        .IsUnique()
-                        .HasFilter("[defaultAddressId] IS NOT NULL");
-
-                    b.HasIndex("loginCredentialsId")
-                        .IsUnique()
-                        .HasFilter("[loginCredentialsId] IS NOT NULL");
+                        .IsUnique();
 
                     b.ToTable("AppUsers");
                 });
@@ -317,15 +298,11 @@ namespace API.Migrations
                 {
                     b.HasOne("API.Models.Address", "defaultAddress")
                         .WithOne("user")
-                        .HasForeignKey("API.Models.User", "defaultAddressId");
-
-                    b.HasOne("API.Models.loginCredentials", "loginCredentials")
-                        .WithOne("user")
-                        .HasForeignKey("API.Models.User", "loginCredentialsId");
+                        .HasForeignKey("API.Models.User", "defaultAddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("defaultAddress");
-
-                    b.Navigation("loginCredentials");
                 });
 
             modelBuilder.Entity("API.Models.Address", b =>
@@ -335,12 +312,6 @@ namespace API.Migrations
                     b.Navigation("senderPackages");
 
                     b.Navigation("user");
-                });
-
-            modelBuilder.Entity("API.Models.loginCredentials", b =>
-                {
-                    b.Navigation("user")
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("API.Models.Package", b =>

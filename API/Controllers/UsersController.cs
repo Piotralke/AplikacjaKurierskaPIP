@@ -10,7 +10,7 @@ using API.Models;
 
 namespace API.Controllers
 {
-    [Route("api/")]
+    [Route("[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
@@ -44,7 +44,22 @@ namespace API.Controllers
         [HttpGet("GetUserByLogin/{login}")]
         public async Task<ActionResult<User>> GetUserByLogin(string login)
         {
-            var user = await _context.AppUsers.Where(user=>login.Equals(user.login)).FirstOrDefaultAsync();
+            var user = await _context.AppUsers.Where(u => u.loginCredentials.login == login).
+                Select(u=>new User
+                {
+                    id=u.id,
+                    name=u.name,
+                    surname=u.surname,
+                    loginCredentialsId=u.loginCredentialsId,
+                    loginCredentials=u.loginCredentials,
+                    role=u.role,
+                    defaultAddressId=u.defaultAddressId,
+                    defaultAddress=u.defaultAddress,
+                    senderPackages=u.senderPackages,
+                    receiverPackages=u.receiverPackages,
+                    orders=u.orders
+
+                }).FirstOrDefaultAsync();
 
             if (user == null)
             {
