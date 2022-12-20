@@ -16,7 +16,8 @@ namespace AplikacjaKordynatora
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginCoordinator());
+            // Application.Run(new LoginCoordinator());
+            Application.Run(new CoordinatorHome());
 
         }
     }

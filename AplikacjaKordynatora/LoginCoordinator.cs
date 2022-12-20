@@ -26,6 +26,7 @@ namespace AplikacjaKordynatora
             String login = loginbox.Text;
             String requestString = "http://localhost:5225/api/GetUserByLogin/" + login;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@requestString);
+            
          
             try
             {
@@ -37,8 +38,8 @@ namespace AplikacjaKordynatora
                 {
                     this.Hide();
 
-                    CoordinatorHome coordinatorhome = new CoordinatorHome(user);
-                    coordinatorhome.Show();
+                    //CoordinatorHome coordinatorhome = new CoordinatorHome(user);
+                    //coordinatorhome.Show();
                     
                 }
             }
