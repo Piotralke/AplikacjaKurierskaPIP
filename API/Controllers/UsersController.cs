@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API.Data;
 using API.Models;
+using System.Reflection.Metadata;
+using System.Text.Json;
 
 namespace API.Controllers
 {
@@ -103,8 +105,9 @@ namespace API.Controllers
         // POST: api/Users
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
+        public async Task<ActionResult<User>> PostUser(string userJson)
         {
+			User user = JsonSerializer.Deserialize<User>(userJson);
             _context.AppUsers.Add(user);
             await _context.SaveChangesAsync();
 

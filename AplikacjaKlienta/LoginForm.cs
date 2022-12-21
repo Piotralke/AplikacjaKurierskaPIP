@@ -44,11 +44,11 @@ namespace WindowsFormsApp1
                 string content = new StreamReader(response.GetResponseStream()).ReadToEnd();
                 Console.WriteLine(content);
                 User user = JsonSerializer.Deserialize<User>(content);
-                if (user.password == textPassword.Text && user.role == 2)
+                if (user.loginCredentials.password == textPassword.Text && user.role == 2)
                 {
                     this.Close();
                     
-                    ClientHomeForm clientHomeForm = new ClientHomeForm(user.login);
+                    ClientHomeForm clientHomeForm = new ClientHomeForm(user.loginCredentials.login);
                     clientHomeForm.Show();
                     homeForm.Hide();
                 }

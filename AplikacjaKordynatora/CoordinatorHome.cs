@@ -13,13 +13,11 @@ namespace AplikacjaKordynatora
 {
     public partial class CoordinatorHome : Form
     {
-        /*
         public CoordinatorHome(User user)
         {
             InitializeComponent();
             loggedlabel.Text = user.loginCredentials.login;
         }
-        */
         public CoordinatorHome()
         {
             InitializeComponent();

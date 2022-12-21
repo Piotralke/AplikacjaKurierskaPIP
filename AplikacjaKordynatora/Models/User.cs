@@ -16,5 +16,6 @@ namespace AplikacjaKordynatora.Models
         public List<Package> senderPackages { get; set; }
         public List<Package> receiverPackages { get; set; }
         public List<Order> orders { get; set; }
+        public string phoneNumber { get; set; }
     }
 }
