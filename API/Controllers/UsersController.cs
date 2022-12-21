@@ -104,9 +104,10 @@ namespace API.Controllers
         // POST: api/Users
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(string userJson)
+        public async Task<ActionResult<User>> PostUser(object userJson)
         {
-			User user = JsonSerializer.Deserialize<User>(userJson);
+            string json = JsonSerializer.Serialize(userJson);
+			User user = JsonSerializer.Deserialize<User>(json);
             _context.AppUsers.Add(user);
             await _context.SaveChangesAsync();
 
