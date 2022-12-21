@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Drawing;
 
 namespace AplikacjaKordynatora.Models
 {
@@ -21,5 +22,6 @@ namespace AplikacjaKordynatora.Models
         public List<Order> orders { get; set; }
 		[Required]
 		public string phoneNumber { get; set; }
+        public Region region { get; set; }
     }
 }

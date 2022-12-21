@@ -64,6 +64,15 @@ namespace API.Data
                 .HasOne(u => u.loginCredentials)
                 .WithOne(l => l.user)
                 .HasForeignKey<User>(u => u.loginCredentialsId);
+
+            modelBuilder.Entity<Region>()
+                .HasOne(r => r.courier)
+                .WithOne(c => c.region)
+                .HasForeignKey<Region>(r => r.courierId);
+            modelBuilder.Entity<RegionPins>()
+                .HasOne(p => p.region)
+                .WithMany(r => r.regionPins)
+                .HasForeignKey(p => p.regionId);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
@@ -77,8 +86,8 @@ namespace API.Data
         public DbSet<Status> Statuses { get; set; }
         public DbSet<Package> Packages { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<Region> regions { get; set; }
+        public DbSet<RegionPins> RegionPins { get; set; }
 
     }
-
-    
 }
