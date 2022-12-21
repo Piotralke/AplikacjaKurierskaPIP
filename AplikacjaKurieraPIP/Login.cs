@@ -35,19 +35,30 @@ namespace AplikacjaKurieraPIP
         private void button1_Click(object sender, EventArgs e)
         {
             String login = loginBox.Text;
-            String requestString = "http://localhost:5225/api/GetUserByLogin/" + login;
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@requestString);
-            try 
-            {
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                string content = new StreamReader(response.GetResponseStream()).ReadToEnd();
-                Console.WriteLine(content);
-                User user = JsonSerializer.Deserialize<User>(content);
-                if (user.password == passBox.Text && user.role == 1)
-                {
-                    this.Hide();
-                    Main main = new Main(user);
-                    main.Show();
+			String requestCredentials = "http://localhost:5225/loginCredentials/GetLoginCredentialsByLogin/" + login;
+			HttpWebRequest credentialsRequest = (HttpWebRequest)WebRequest.Create(@requestCredentials);
+			try
+			{
+				HttpWebResponse credentialsResponse = (HttpWebResponse)credentialsRequest.GetResponse();
+				string credentialsContent = new StreamReader(credentialsResponse.GetResponseStream()).ReadToEnd();
+				loginCredentials credentials = JsonSerializer.Deserialize<loginCredentials>(credentialsContent);
+				Console.WriteLine(credentialsContent);
+				if (passBox.Text == credentials.password)
+				{
+					String requestUser = "http://localhost:5225/Users/GetUserByLogin/" + login;
+					HttpWebRequest userRequest = (HttpWebRequest)WebRequest.Create(@requestUser);
+					HttpWebResponse userResponse = (HttpWebResponse)userRequest.GetResponse();
+					string userContent = new StreamReader(userResponse.GetResponseStream()).ReadToEnd();
+					Console.WriteLine(userContent);
+					User user = JsonSerializer.Deserialize<User>(userContent);
+
+					if (user.role == 1)
+                    {
+						this.Hide();
+						Main main = new Main(user);
+						main.Show();
+					}
+						
                 }
             }
             catch

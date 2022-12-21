@@ -16,7 +16,7 @@ namespace AplikacjaKordynatora
         public CoordinatorHome(User user)
         {
             InitializeComponent();
-            loggedlabel.Text = user.login;
+            loggedlabel.Text = user.loginCredentials.login;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
