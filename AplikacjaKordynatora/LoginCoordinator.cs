@@ -45,7 +45,7 @@ namespace AplikacjaKordynatora
                     {
                         this.Hide();
 
-                        CoordinatorHome coordinatorhome = new CoordinatorHome(user);
+                        CoordinatorHome coordinatorhome = new CoordinatorHome(credentials);
                         coordinatorhome.Show();
                     }
                 }
