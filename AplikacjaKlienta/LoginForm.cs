@@ -1,4 +1,5 @@
-﻿using AplikacjaKordynatora.Models;
+﻿using AplikacjaKordynatora;
+using AplikacjaKordynatora.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,24 +37,33 @@ namespace WindowsFormsApp1
         private void loginButton_Click(object sender, EventArgs e)
         {
             String login = textUserName.Text;
-            String requestString = "http://localhost:5225/api/GetUserByLogin/" + login;
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@requestString);
+            String requestCredentials = "http://localhost:5225/loginCredentials/GetLoginCredentialsByLogin/" + login;
+            HttpWebRequest credentialsRequest = (HttpWebRequest)WebRequest.Create(@requestCredentials);
             try
             {
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                string content = new StreamReader(response.GetResponseStream()).ReadToEnd();
-                Console.WriteLine(content);
-                User user = JsonSerializer.Deserialize<User>(content);
-                if (user.loginCredentials.password == textPassword.Text && user.role == 2)
+                HttpWebResponse credentialsResponse = (HttpWebResponse)credentialsRequest.GetResponse();
+                string credentialsContent = new StreamReader(credentialsResponse.GetResponseStream()).ReadToEnd();
+                loginCredentials credentials = JsonSerializer.Deserialize<loginCredentials>(credentialsContent);
+                Console.WriteLine(credentialsContent);
+                if (credentials.password == textPassword.Text)
                 {
-                    this.Close();
-                    
-                    ClientHomeForm clientHomeForm = new ClientHomeForm(user.loginCredentials.login);
-                    clientHomeForm.Show();
-                    homeForm.Hide();
+                    String requestUser = "http://localhost:5225/Users/GetUserByLogin/" + login;
+                    HttpWebRequest userRequest = (HttpWebRequest)WebRequest.Create(@requestUser);
+                    HttpWebResponse userResponse = (HttpWebResponse)userRequest.GetResponse();
+                    string userContent = new StreamReader(userResponse.GetResponseStream()).ReadToEnd();
+                    Console.WriteLine(userContent);
+                    User user = JsonSerializer.Deserialize<User>(userContent);
+                    if(user.role == 2)
+                    {
+                        this.Close();
+
+                        ClientHomeForm clientHomeForm = new ClientHomeForm(user.loginCredentials.login);
+                        clientHomeForm.Show();
+                        homeForm.Hide();
+                    }
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 if (textUserName.Text == "" || textPassword.Text == "")
                 {
@@ -68,7 +78,8 @@ namespace WindowsFormsApp1
                     textUserName.Clear();
                     textPassword.Clear();
                     textUserName.Focus();
-                } 
+                }
+                Console.WriteLine(ex.ToString());
             }
         }
     }
