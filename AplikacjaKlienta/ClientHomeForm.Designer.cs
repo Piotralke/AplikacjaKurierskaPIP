@@ -54,23 +54,23 @@
             this.buttonAddData = new System.Windows.Forms.Button();
             this.textReceiverPhone = new System.Windows.Forms.TextBox();
             this.textBoxPhoneNum = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textReceiverEmail = new System.Windows.Forms.TextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textReceiverCity = new System.Windows.Forms.TextBox();
             this.textBoxCity = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textReceiverStreet = new System.Windows.Forms.TextBox();
             this.textBoxStreet = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBoxWeight = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textReceiverZip = new System.Windows.Forms.TextBox();
             this.textBoxZip = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textReceiverHomeNumber = new System.Windows.Forms.TextBox();
             this.textBoxNumber = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textReceiverSurname = new System.Windows.Forms.TextBox();
             this.textBoxSurname = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textReceiverName = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -336,23 +336,23 @@
             this.panelSend.Controls.Add(this.buttonAddData);
             this.panelSend.Controls.Add(this.textReceiverPhone);
             this.panelSend.Controls.Add(this.textBoxPhoneNum);
-            this.panelSend.Controls.Add(this.textBox8);
+            this.panelSend.Controls.Add(this.textReceiverEmail);
             this.panelSend.Controls.Add(this.textBoxEmail);
-            this.panelSend.Controls.Add(this.textBox7);
+            this.panelSend.Controls.Add(this.textReceiverCity);
             this.panelSend.Controls.Add(this.textBoxCity);
-            this.panelSend.Controls.Add(this.textBox6);
+            this.panelSend.Controls.Add(this.textReceiverStreet);
             this.panelSend.Controls.Add(this.textBoxStreet);
             this.panelSend.Controls.Add(this.textBox15);
             this.panelSend.Controls.Add(this.textBox14);
             this.panelSend.Controls.Add(this.textBox13);
             this.panelSend.Controls.Add(this.textBoxWeight);
-            this.panelSend.Controls.Add(this.textBox5);
+            this.panelSend.Controls.Add(this.textReceiverZip);
             this.panelSend.Controls.Add(this.textBoxZip);
-            this.panelSend.Controls.Add(this.textBox4);
+            this.panelSend.Controls.Add(this.textReceiverHomeNumber);
             this.panelSend.Controls.Add(this.textBoxNumber);
-            this.panelSend.Controls.Add(this.textBox3);
+            this.panelSend.Controls.Add(this.textReceiverSurname);
             this.panelSend.Controls.Add(this.textBoxSurname);
-            this.panelSend.Controls.Add(this.textBox2);
+            this.panelSend.Controls.Add(this.textReceiverName);
             this.panelSend.Controls.Add(this.textBoxName);
             this.panelSend.Controls.Add(this.label32);
             this.panelSend.Controls.Add(this.label29);
@@ -478,13 +478,13 @@
             this.textBoxPhoneNum.Size = new System.Drawing.Size(284, 31);
             this.textBoxPhoneNum.TabIndex = 11;
             // 
-            // textBox8
+            // textReceiverEmail
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.textBox8.Location = new System.Drawing.Point(172, 565);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(284, 31);
-            this.textBox8.TabIndex = 11;
+            this.textReceiverEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.textReceiverEmail.Location = new System.Drawing.Point(172, 565);
+            this.textReceiverEmail.Name = "textReceiverEmail";
+            this.textReceiverEmail.Size = new System.Drawing.Size(284, 31);
+            this.textReceiverEmail.TabIndex = 11;
             // 
             // textBoxEmail
             // 
@@ -494,13 +494,13 @@
             this.textBoxEmail.Size = new System.Drawing.Size(284, 31);
             this.textBoxEmail.TabIndex = 11;
             // 
-            // textBox7
+            // textReceiverCity
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.textBox7.Location = new System.Drawing.Point(172, 491);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(284, 31);
-            this.textBox7.TabIndex = 11;
+            this.textReceiverCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.textReceiverCity.Location = new System.Drawing.Point(172, 491);
+            this.textReceiverCity.Name = "textReceiverCity";
+            this.textReceiverCity.Size = new System.Drawing.Size(284, 31);
+            this.textReceiverCity.TabIndex = 11;
             // 
             // textBoxCity
             // 
@@ -510,13 +510,13 @@
             this.textBoxCity.Size = new System.Drawing.Size(284, 31);
             this.textBoxCity.TabIndex = 11;
             // 
-            // textBox6
+            // textReceiverStreet
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.textBox6.Location = new System.Drawing.Point(172, 528);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(166, 31);
-            this.textBox6.TabIndex = 11;
+            this.textReceiverStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.textReceiverStreet.Location = new System.Drawing.Point(172, 528);
+            this.textReceiverStreet.Name = "textReceiverStreet";
+            this.textReceiverStreet.Size = new System.Drawing.Size(166, 31);
+            this.textReceiverStreet.TabIndex = 11;
             // 
             // textBoxStreet
             // 
@@ -558,13 +558,13 @@
             this.textBoxWeight.Size = new System.Drawing.Size(112, 31);
             this.textBoxWeight.TabIndex = 11;
             // 
-            // textBox5
+            // textReceiverZip
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.textBox5.Location = new System.Drawing.Point(172, 454);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(112, 31);
-            this.textBox5.TabIndex = 11;
+            this.textReceiverZip.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.textReceiverZip.Location = new System.Drawing.Point(172, 454);
+            this.textReceiverZip.Name = "textReceiverZip";
+            this.textReceiverZip.Size = new System.Drawing.Size(112, 31);
+            this.textReceiverZip.TabIndex = 11;
             // 
             // textBoxZip
             // 
@@ -574,13 +574,13 @@
             this.textBoxZip.Size = new System.Drawing.Size(112, 31);
             this.textBoxZip.TabIndex = 11;
             // 
-            // textBox4
+            // textReceiverHomeNumber
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.textBox4.Location = new System.Drawing.Point(344, 528);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(112, 31);
-            this.textBox4.TabIndex = 11;
+            this.textReceiverHomeNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.textReceiverHomeNumber.Location = new System.Drawing.Point(344, 528);
+            this.textReceiverHomeNumber.Name = "textReceiverHomeNumber";
+            this.textReceiverHomeNumber.Size = new System.Drawing.Size(112, 31);
+            this.textReceiverHomeNumber.TabIndex = 11;
             // 
             // textBoxNumber
             // 
@@ -590,13 +590,13 @@
             this.textBoxNumber.Size = new System.Drawing.Size(112, 31);
             this.textBoxNumber.TabIndex = 11;
             // 
-            // textBox3
+            // textReceiverSurname
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.textBox3.Location = new System.Drawing.Point(172, 417);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(284, 31);
-            this.textBox3.TabIndex = 11;
+            this.textReceiverSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.textReceiverSurname.Location = new System.Drawing.Point(172, 417);
+            this.textReceiverSurname.Name = "textReceiverSurname";
+            this.textReceiverSurname.Size = new System.Drawing.Size(284, 31);
+            this.textReceiverSurname.TabIndex = 11;
             // 
             // textBoxSurname
             // 
@@ -606,13 +606,13 @@
             this.textBoxSurname.Size = new System.Drawing.Size(284, 31);
             this.textBoxSurname.TabIndex = 11;
             // 
-            // textBox2
+            // textReceiverName
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.textBox2.Location = new System.Drawing.Point(172, 380);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(284, 31);
-            this.textBox2.TabIndex = 11;
+            this.textReceiverName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.textReceiverName.Location = new System.Drawing.Point(172, 380);
+            this.textReceiverName.Name = "textReceiverName";
+            this.textReceiverName.Size = new System.Drawing.Size(284, 31);
+            this.textReceiverName.TabIndex = 11;
             // 
             // textBoxName
             // 
@@ -1018,13 +1018,13 @@
         private System.Windows.Forms.Button buttonAddData;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textReceiverPhone;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textReceiverEmail;
+        private System.Windows.Forms.TextBox textReceiverCity;
+        private System.Windows.Forms.TextBox textReceiverStreet;
+        private System.Windows.Forms.TextBox textReceiverZip;
+        private System.Windows.Forms.TextBox textReceiverHomeNumber;
+        private System.Windows.Forms.TextBox textReceiverSurname;
+        private System.Windows.Forms.TextBox textReceiverName;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;

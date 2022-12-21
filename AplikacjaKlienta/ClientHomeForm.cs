@@ -64,18 +64,59 @@ namespace WindowsFormsApp1
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
             String phoneNumber = textReceiverPhone.Text;
-            String requestCredentials = "http://localhost:5225/";
-            HttpWebRequest userRequest = (HttpWebRequest)WebRequest.Create(@requestCredentials);
+            String requestUser = "http://localhost:5225/GetUserByPhoneNumber/" + phoneNumber;
+            HttpWebRequest userRequest = (HttpWebRequest)WebRequest.Create(@requestUser);
             HttpWebResponse userResponse = (HttpWebResponse)userRequest.GetResponse();
             string userContent = new StreamReader(userResponse.GetResponseStream()).ReadToEnd();
-            List<loginCredentials> user = JsonSerializer.Deserialize<List<loginCredentials>>(userContent);
-            loginCredentials checkAccount = user.Find(x => x.phoneNumber == phoneNumber);
+            List<User> user = JsonSerializer.Deserialize<List<User>>(userContent);
+            User checkAccount = user.Find(x => x.phoneNumber == phoneNumber);
+            int receiverId;
+            int receiverAddressId;
+            User user1;
+            Address address1;
+            if(checkAccount==null)
+            {
+                receiverId = 0;
+                receiverAddressId = 0;
+                User newUser = new User()
+                {
+                    id = 0,
+                    name = textReceiverName.Text,
+                    surname = textReceiverSurname.Text,
+                    loginCredentials = null,
+                    role = 2,
+                    defaultAddress = null,
+                    phoneNumber = textReceiverPhone.Text
+                };
+                user1 = newUser;
+                Address address = new Address()
+                {
+                    id = 0,
+                    street = textReceiverStreet.Text,
+                    city = textReceiverCity.Text,
+                    houseNumber = textReceiverHomeNumber.Text,
+                    zipCode = textReceiverZip.Text,
+                };
+                address1 = address;
+            }
+            else
+            {
+                receiverId = checkAccount.id;
+                user1 = checkAccount;
+                address1 = checkAccount.defaultAddress;
+                receiverAddressId = checkAccount.defaultAddressId;
+            }
+
             Package package = new Package()
             {
                 id = 0,
                 number = generateNumber(),
-                ReceiverId = 0,
-                Receiver
+                ReceiverId = receiverId,
+                Receiver = user1,
+                receiverAddressId = receiverAddressId,
+                receiverAddress = address1,
+                SenderId = loggedUser.id,
+                Sender = loggedUser,
             }
         }
     }
