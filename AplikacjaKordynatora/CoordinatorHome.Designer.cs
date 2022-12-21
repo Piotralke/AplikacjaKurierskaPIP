@@ -71,6 +71,7 @@
             this.listView3 = new System.Windows.Forms.ListView();
             this.Packages = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.packagesshowall = new System.Windows.Forms.Button();
             this.packagesrefreshbutton = new System.Windows.Forms.Button();
             this.packagesedit = new System.Windows.Forms.Button();
             this.packagesrefresh = new System.Windows.Forms.Button();
@@ -80,11 +81,26 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.packagesidtext = new System.Windows.Forms.TextBox();
-            this.packagesidsearch = new System.Windows.Forms.Button();
+            this.packagesnumbersearch = new System.Windows.Forms.Button();
             this.packageslist = new System.Windows.Forms.ListView();
+            this.klistID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.klistnumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.klistReceiverId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.klistreceiverAddressId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.klistSenderId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.klistsenderAddressId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.klistweight = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.klistwidth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.klistdepth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.klistheigth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.klistdescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.klistisStandardShape = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.klistCODcost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView1 = new System.Windows.Forms.ListView();
             this.Email = new System.Windows.Forms.TabPage();
             this.Register = new System.Windows.Forms.TabPage();
+            this.registerphone = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.registeremailbox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.registerloginbox = new System.Windows.Forms.TextBox();
@@ -98,8 +114,15 @@
             this.registernamebox = new System.Windows.Forms.TextBox();
             this.Scheme = new System.Windows.Forms.TabPage();
             this.schemeworkername = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.schemerefreshbutton = new System.Windows.Forms.Button();
             this.schemeworkerslist = new System.Windows.Forms.ListView();
+            this.sID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ssurname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.srole = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sIDAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sidCredentials = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sphoneNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.submithours = new System.Windows.Forms.Button();
             this.workhours = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -108,6 +131,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.calendar = new System.Windows.Forms.MonthCalendar();
             this.Workers = new System.Windows.Forms.TabPage();
+            this.workersshowall = new System.Windows.Forms.Button();
             this.workerssearchoption = new System.Windows.Forms.TextBox();
             this.workersrefreshbutton = new System.Windows.Forms.Button();
             this.workersbuttonoption = new System.Windows.Forms.Button();
@@ -123,10 +147,15 @@
             this.workersdelbutton = new System.Windows.Forms.Button();
             this.workerseditbutton = new System.Windows.Forms.Button();
             this.workerslist = new System.Windows.Forms.ListView();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.surname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.role = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.defaultAdressId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.loginCredentialsId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.phoneNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label4 = new System.Windows.Forms.Label();
-            this.registerphone = new System.Windows.Forms.TextBox();
             this.AdminPanel.SuspendLayout();
             this.HomePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gblogo)).BeginInit();
@@ -308,7 +337,6 @@
             this.courierslist.Name = "courierslist";
             this.courierslist.Size = new System.Drawing.Size(161, 21);
             this.courierslist.TabIndex = 1;
-            this.courierslist.SelectedIndexChanged += new System.EventHandler(this.courierslist_SelectedIndexChanged);
             // 
             // jobsview
             // 
@@ -575,6 +603,7 @@
             // panel2
             // 
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel2.Controls.Add(this.packagesshowall);
             this.panel2.Controls.Add(this.packagesrefreshbutton);
             this.panel2.Controls.Add(this.packagesedit);
             this.panel2.Controls.Add(this.packagesrefresh);
@@ -584,15 +613,25 @@
             this.panel2.Controls.Add(this.label25);
             this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.packagesidtext);
-            this.panel2.Controls.Add(this.packagesidsearch);
+            this.panel2.Controls.Add(this.packagesnumbersearch);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(166, 525);
             this.panel2.TabIndex = 8;
             // 
+            // packagesshowall
+            // 
+            this.packagesshowall.Location = new System.Drawing.Point(25, 228);
+            this.packagesshowall.Name = "packagesshowall";
+            this.packagesshowall.Size = new System.Drawing.Size(110, 38);
+            this.packagesshowall.TabIndex = 15;
+            this.packagesshowall.Text = "Pokaż Wszystkie";
+            this.packagesshowall.UseVisualStyleBackColor = true;
+            this.packagesshowall.Click += new System.EventHandler(this.packagesshowall_Click);
+            // 
             // packagesrefreshbutton
             // 
-            this.packagesrefreshbutton.Location = new System.Drawing.Point(25, 278);
+            this.packagesrefreshbutton.Location = new System.Drawing.Point(25, 351);
             this.packagesrefreshbutton.Name = "packagesrefreshbutton";
             this.packagesrefreshbutton.Size = new System.Drawing.Size(110, 38);
             this.packagesrefreshbutton.TabIndex = 14;
@@ -601,7 +640,7 @@
             // 
             // packagesedit
             // 
-            this.packagesedit.Location = new System.Drawing.Point(25, 216);
+            this.packagesedit.Location = new System.Drawing.Point(25, 290);
             this.packagesedit.Name = "packagesedit";
             this.packagesedit.Size = new System.Drawing.Size(110, 38);
             this.packagesedit.TabIndex = 13;
@@ -610,18 +649,20 @@
             // 
             // packagesrefresh
             // 
-            this.packagesrefresh.Location = new System.Drawing.Point(25, 341);
+            this.packagesrefresh.Location = new System.Drawing.Point(25, 413);
             this.packagesrefresh.Name = "packagesrefresh";
             this.packagesrefresh.Size = new System.Drawing.Size(110, 38);
             this.packagesrefresh.TabIndex = 12;
             this.packagesrefresh.Text = "Odśwież";
             this.packagesrefresh.UseVisualStyleBackColor = true;
+            this.packagesrefresh.Click += new System.EventHandler(this.packagesrefresh_Click);
             // 
             // packageschoice
             // 
             this.packageschoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.packageschoice.FormattingEnabled = true;
             this.packageschoice.Items.AddRange(new object[] {
+            "Po numerze zlecenia",
             "Po imieniu nadawcy",
             "Po nazwisku nadawcy",
             "Po imieniu odbiorcy",
@@ -676,23 +717,102 @@
             this.packagesidtext.Size = new System.Drawing.Size(160, 20);
             this.packagesidtext.TabIndex = 4;
             // 
-            // packagesidsearch
+            // packagesnumbersearch
             // 
-            this.packagesidsearch.Location = new System.Drawing.Point(46, 80);
-            this.packagesidsearch.Name = "packagesidsearch";
-            this.packagesidsearch.Size = new System.Drawing.Size(69, 22);
-            this.packagesidsearch.TabIndex = 2;
-            this.packagesidsearch.Text = "Szukaj";
-            this.packagesidsearch.UseVisualStyleBackColor = true;
+            this.packagesnumbersearch.Location = new System.Drawing.Point(46, 80);
+            this.packagesnumbersearch.Name = "packagesnumbersearch";
+            this.packagesnumbersearch.Size = new System.Drawing.Size(69, 22);
+            this.packagesnumbersearch.TabIndex = 2;
+            this.packagesnumbersearch.Text = "Szukaj";
+            this.packagesnumbersearch.UseVisualStyleBackColor = true;
+            this.packagesnumbersearch.Click += new System.EventHandler(this.packagesnumbersearch_Click);
             // 
             // packageslist
             // 
+            this.packageslist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.klistID,
+            this.klistnumber,
+            this.klistReceiverId,
+            this.klistreceiverAddressId,
+            this.klistSenderId,
+            this.klistsenderAddressId,
+            this.klistweight,
+            this.klistwidth,
+            this.klistdepth,
+            this.klistheigth,
+            this.klistdescription,
+            this.klistisStandardShape,
+            this.klistCODcost});
             this.packageslist.HideSelection = false;
             this.packageslist.Location = new System.Drawing.Point(169, 0);
+            this.packageslist.MultiSelect = false;
             this.packageslist.Name = "packageslist";
             this.packageslist.Size = new System.Drawing.Size(1005, 529);
             this.packageslist.TabIndex = 1;
             this.packageslist.UseCompatibleStateImageBehavior = false;
+            this.packageslist.View = System.Windows.Forms.View.Details;
+            // 
+            // klistID
+            // 
+            this.klistID.Text = "ID Paczki";
+            this.klistID.Width = 63;
+            // 
+            // klistnumber
+            // 
+            this.klistnumber.Text = "Numer Paczki";
+            this.klistnumber.Width = 81;
+            // 
+            // klistReceiverId
+            // 
+            this.klistReceiverId.Text = "ID Odbiorcy";
+            this.klistReceiverId.Width = 70;
+            // 
+            // klistreceiverAddressId
+            // 
+            this.klistreceiverAddressId.Text = "ID Adresu Odbiorcy";
+            this.klistreceiverAddressId.Width = 108;
+            // 
+            // klistSenderId
+            // 
+            this.klistSenderId.Text = "ID Nadawcy";
+            this.klistSenderId.Width = 73;
+            // 
+            // klistsenderAddressId
+            // 
+            this.klistsenderAddressId.Text = "ID Adresu Nadawcy";
+            this.klistsenderAddressId.Width = 111;
+            // 
+            // klistweight
+            // 
+            this.klistweight.Text = "Waga";
+            // 
+            // klistwidth
+            // 
+            this.klistwidth.Text = "Szerokość ";
+            this.klistwidth.Width = 72;
+            // 
+            // klistdepth
+            // 
+            this.klistdepth.Text = "Głębokość";
+            this.klistdepth.Width = 73;
+            // 
+            // klistheigth
+            // 
+            this.klistheigth.Text = "Wysokość";
+            this.klistheigth.Width = 67;
+            // 
+            // klistdescription
+            // 
+            this.klistdescription.Text = "Opis";
+            // 
+            // klistisStandardShape
+            // 
+            this.klistisStandardShape.Text = "Czy Normalny Kształt";
+            this.klistisStandardShape.Width = 114;
+            // 
+            // klistCODcost
+            // 
+            this.klistCODcost.Text = "COD";
             // 
             // listView1
             // 
@@ -741,6 +861,25 @@
             this.Register.TabIndex = 8;
             this.Register.Text = "Rejestracja Praconików";
             // 
+            // registerphone
+            // 
+            this.registerphone.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.registerphone.Location = new System.Drawing.Point(481, 200);
+            this.registerphone.Name = "registerphone";
+            this.registerphone.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.registerphone.Size = new System.Drawing.Size(230, 25);
+            this.registerphone.TabIndex = 37;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(481, 179);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(139, 18);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Numer Telefonu";
+            // 
             // registeremailbox
             // 
             this.registeremailbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -788,7 +927,6 @@
             this.label14.Size = new System.Drawing.Size(101, 18);
             this.label14.TabIndex = 31;
             this.label14.Text = "Stanowisko";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // registerseat
             // 
@@ -863,13 +1001,12 @@
             this.registernamebox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.registernamebox.Size = new System.Drawing.Size(230, 25);
             this.registernamebox.TabIndex = 0;
-            this.registernamebox.TextChanged += new System.EventHandler(this.name_TextChanged);
             // 
             // Scheme
             // 
             this.Scheme.BackColor = System.Drawing.Color.LightSlateGray;
             this.Scheme.Controls.Add(this.schemeworkername);
-            this.Scheme.Controls.Add(this.button1);
+            this.Scheme.Controls.Add(this.schemerefreshbutton);
             this.Scheme.Controls.Add(this.schemeworkerslist);
             this.Scheme.Controls.Add(this.submithours);
             this.Scheme.Controls.Add(this.workhours);
@@ -889,36 +1026,78 @@
             // 
             this.schemeworkername.AutoSize = true;
             this.schemeworkername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.schemeworkername.Location = new System.Drawing.Point(369, 124);
+            this.schemeworkername.Location = new System.Drawing.Point(336, 149);
             this.schemeworkername.Name = "schemeworkername";
             this.schemeworkername.Size = new System.Drawing.Size(91, 18);
             this.schemeworkername.TabIndex = 12;
             this.schemeworkername.Text = "workername";
             // 
-            // button1
+            // schemerefreshbutton
             // 
-            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(439, 317);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 27);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Odśwież";
-            this.button1.UseVisualStyleBackColor = true;
+            this.schemerefreshbutton.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.schemerefreshbutton.Location = new System.Drawing.Point(361, 344);
+            this.schemerefreshbutton.Name = "schemerefreshbutton";
+            this.schemerefreshbutton.Size = new System.Drawing.Size(136, 27);
+            this.schemerefreshbutton.TabIndex = 11;
+            this.schemerefreshbutton.Text = "Odśwież";
+            this.schemerefreshbutton.UseVisualStyleBackColor = true;
+            this.schemerefreshbutton.Click += new System.EventHandler(this.schemerefreshbutton_Click);
             // 
             // schemeworkerslist
             // 
+            this.schemeworkerslist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.sID,
+            this.sname,
+            this.ssurname,
+            this.srole,
+            this.sIDAddress,
+            this.sidCredentials,
+            this.sphoneNumber});
             this.schemeworkerslist.HideSelection = false;
-            this.schemeworkerslist.Location = new System.Drawing.Point(692, 0);
+            this.schemeworkerslist.Location = new System.Drawing.Point(575, 0);
             this.schemeworkerslist.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.schemeworkerslist.Name = "schemeworkerslist";
-            this.schemeworkerslist.Size = new System.Drawing.Size(478, 522);
+            this.schemeworkerslist.Size = new System.Drawing.Size(595, 522);
             this.schemeworkerslist.TabIndex = 10;
             this.schemeworkerslist.UseCompatibleStateImageBehavior = false;
+            this.schemeworkerslist.View = System.Windows.Forms.View.Details;
+            // 
+            // sID
+            // 
+            this.sID.Text = "ID Kuriera";
+            // 
+            // sname
+            // 
+            this.sname.Text = "Imię";
+            // 
+            // ssurname
+            // 
+            this.ssurname.Text = "Nazwisko";
+            // 
+            // srole
+            // 
+            this.srole.Text = "Stanowisko";
+            this.srole.Width = 72;
+            // 
+            // sIDAddress
+            // 
+            this.sIDAddress.Text = "ID Adresu Kuriera";
+            this.sIDAddress.Width = 101;
+            // 
+            // sidCredentials
+            // 
+            this.sidCredentials.Text = "ID Danych Logowania";
+            this.sidCredentials.Width = 125;
+            // 
+            // sphoneNumber
+            // 
+            this.sphoneNumber.Text = "Numer Telefonu";
+            this.sphoneNumber.Width = 115;
             // 
             // submithours
             // 
             this.submithours.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.submithours.Location = new System.Drawing.Point(439, 265);
+            this.submithours.Location = new System.Drawing.Point(361, 287);
             this.submithours.Name = "submithours";
             this.submithours.Size = new System.Drawing.Size(136, 27);
             this.submithours.TabIndex = 9;
@@ -927,8 +1106,8 @@
             // 
             // workhours
             // 
+            this.workhours.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.workhours.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.workhours.FormattingEnabled = true;
             this.workhours.Items.AddRange(new object[] {
             "6:00-14:00",
             "7:00-15:00",
@@ -937,17 +1116,16 @@
             "10:00-18:00",
             "11:00-19:00",
             "12:00-20:00"});
-            this.workhours.Location = new System.Drawing.Point(371, 194);
+            this.workhours.Location = new System.Drawing.Point(339, 221);
             this.workhours.Name = "workhours";
-            this.workhours.Size = new System.Drawing.Size(288, 24);
+            this.workhours.Size = new System.Drawing.Size(183, 24);
             this.workhours.TabIndex = 8;
-            this.workhours.Text = "6:00-14:00";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label19.Location = new System.Drawing.Point(368, 174);
+            this.label19.Location = new System.Drawing.Point(336, 201);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(110, 17);
             this.label19.TabIndex = 6;
@@ -957,7 +1135,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label18.Location = new System.Drawing.Point(368, 96);
+            this.label18.Location = new System.Drawing.Point(336, 123);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(52, 17);
             this.label18.TabIndex = 5;
@@ -966,10 +1144,10 @@
             // datework
             // 
             this.datework.AutoSize = true;
-            this.datework.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.datework.Location = new System.Drawing.Point(560, 46);
+            this.datework.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.datework.Location = new System.Drawing.Point(451, 73);
             this.datework.Name = "datework";
-            this.datework.Size = new System.Drawing.Size(30, 18);
+            this.datework.Size = new System.Drawing.Size(32, 19);
             this.datework.TabIndex = 2;
             this.datework.Text = "NA";
             // 
@@ -977,7 +1155,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.Location = new System.Drawing.Point(436, 46);
+            this.label15.Location = new System.Drawing.Point(336, 73);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(118, 18);
             this.label15.TabIndex = 1;
@@ -989,10 +1167,12 @@
             this.calendar.Location = new System.Drawing.Point(14, 18);
             this.calendar.Name = "calendar";
             this.calendar.TabIndex = 0;
+            this.calendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.calendar_DateSelected);
             // 
             // Workers
             // 
             this.Workers.BackColor = System.Drawing.Color.LightSlateGray;
+            this.Workers.Controls.Add(this.workersshowall);
             this.Workers.Controls.Add(this.workerssearchoption);
             this.Workers.Controls.Add(this.workersrefreshbutton);
             this.Workers.Controls.Add(this.workersbuttonoption);
@@ -1015,6 +1195,16 @@
             this.Workers.TabIndex = 10;
             this.Workers.Text = "Pracownicy";
             // 
+            // workersshowall
+            // 
+            this.workersshowall.Location = new System.Drawing.Point(8, 280);
+            this.workersshowall.Name = "workersshowall";
+            this.workersshowall.Size = new System.Drawing.Size(110, 38);
+            this.workersshowall.TabIndex = 14;
+            this.workersshowall.Text = "Pokaż Wszystkich";
+            this.workersshowall.UseVisualStyleBackColor = true;
+            this.workersshowall.Click += new System.EventHandler(this.workersshowall_Click);
+            // 
             // workerssearchoption
             // 
             this.workerssearchoption.Location = new System.Drawing.Point(13, 202);
@@ -1024,7 +1214,7 @@
             // 
             // workersrefreshbutton
             // 
-            this.workersrefreshbutton.Location = new System.Drawing.Point(8, 396);
+            this.workersrefreshbutton.Location = new System.Drawing.Point(8, 450);
             this.workersrefreshbutton.Name = "workersrefreshbutton";
             this.workersrefreshbutton.Size = new System.Drawing.Size(110, 38);
             this.workersrefreshbutton.TabIndex = 12;
@@ -1127,7 +1317,7 @@
             // 
             // workersdelbutton
             // 
-            this.workersdelbutton.Location = new System.Drawing.Point(8, 339);
+            this.workersdelbutton.Location = new System.Drawing.Point(8, 393);
             this.workersdelbutton.Name = "workersdelbutton";
             this.workersdelbutton.Size = new System.Drawing.Size(110, 38);
             this.workersdelbutton.TabIndex = 2;
@@ -1136,16 +1326,23 @@
             // 
             // workerseditbutton
             // 
-            this.workerseditbutton.Location = new System.Drawing.Point(8, 279);
+            this.workerseditbutton.Location = new System.Drawing.Point(8, 339);
             this.workerseditbutton.Name = "workerseditbutton";
             this.workerseditbutton.Size = new System.Drawing.Size(110, 38);
             this.workerseditbutton.TabIndex = 1;
             this.workerseditbutton.Text = "Edytuj";
             this.workerseditbutton.UseVisualStyleBackColor = true;
-            this.workerseditbutton.Click += new System.EventHandler(this.workerseditbutton_Click);
             // 
             // workerslist
             // 
+            this.workerslist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.name,
+            this.surname,
+            this.role,
+            this.defaultAdressId,
+            this.loginCredentialsId,
+            this.phoneNumber});
             this.workerslist.HideSelection = false;
             this.workerslist.Location = new System.Drawing.Point(124, 0);
             this.workerslist.Name = "workerslist";
@@ -1153,6 +1350,41 @@
             this.workerslist.TabIndex = 0;
             this.workerslist.UseCompatibleStateImageBehavior = false;
             this.workerslist.View = System.Windows.Forms.View.Details;
+            // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            this.ID.Width = 124;
+            // 
+            // name
+            // 
+            this.name.Text = "Imię";
+            this.name.Width = 117;
+            // 
+            // surname
+            // 
+            this.surname.Text = "Nazwisko";
+            this.surname.Width = 129;
+            // 
+            // role
+            // 
+            this.role.Text = "Stanowisko";
+            this.role.Width = 156;
+            // 
+            // defaultAdressId
+            // 
+            this.defaultAdressId.Text = "ID Adresu";
+            this.defaultAdressId.Width = 155;
+            // 
+            // loginCredentialsId
+            // 
+            this.loginCredentialsId.Text = "ID Danych Logowania";
+            this.loginCredentialsId.Width = 220;
+            // 
+            // phoneNumber
+            // 
+            this.phoneNumber.Text = "Numer Telefonu";
+            this.phoneNumber.Width = 140;
             // 
             // imageList1
             // 
@@ -1174,25 +1406,6 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(481, 179);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 18);
-            this.label4.TabIndex = 36;
-            this.label4.Text = "Numer Telefonu";
-            // 
-            // registerphone
-            // 
-            this.registerphone.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.registerphone.Location = new System.Drawing.Point(481, 200);
-            this.registerphone.Name = "registerphone";
-            this.registerphone.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.registerphone.Size = new System.Drawing.Size(230, 25);
-            this.registerphone.TabIndex = 37;
             // 
             // CoordinatorHome
             // 
@@ -1260,7 +1473,7 @@
         private System.Windows.Forms.ComboBox workhours;
         private System.Windows.Forms.Button submithours;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button packagesidsearch;
+        private System.Windows.Forms.Button packagesnumbersearch;
         private System.Windows.Forms.ListView packageslist;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox workerssearchid;
@@ -1285,7 +1498,7 @@
         private System.Windows.Forms.Button packagesrefreshbutton;
         private System.Windows.Forms.Button packagesedit;
         private System.Windows.Forms.Button packagesrefresh;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button schemerefreshbutton;
         private System.Windows.Forms.ListView schemeworkerslist;
         private System.Windows.Forms.Button workersrefreshbutton;
         private System.Windows.Forms.Button jobssubmit;
@@ -1329,6 +1542,35 @@
         private System.Windows.Forms.Label schemeworkername;
         private System.Windows.Forms.TextBox registerphone;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ColumnHeader klistID;
+        private System.Windows.Forms.ColumnHeader klistnumber;
+        private System.Windows.Forms.ColumnHeader klistReceiverId;
+        private System.Windows.Forms.ColumnHeader klistreceiverAddressId;
+        private System.Windows.Forms.ColumnHeader klistSenderId;
+        private System.Windows.Forms.ColumnHeader klistsenderAddressId;
+        private System.Windows.Forms.ColumnHeader klistweight;
+        private System.Windows.Forms.ColumnHeader klistwidth;
+        private System.Windows.Forms.ColumnHeader klistdepth;
+        private System.Windows.Forms.ColumnHeader klistheigth;
+        private System.Windows.Forms.ColumnHeader klistdescription;
+        private System.Windows.Forms.ColumnHeader klistisStandardShape;
+        private System.Windows.Forms.ColumnHeader klistCODcost;
+        private System.Windows.Forms.Button packagesshowall;
+        private System.Windows.Forms.Button workersshowall;
+        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader name;
+        private System.Windows.Forms.ColumnHeader surname;
+        private System.Windows.Forms.ColumnHeader role;
+        private System.Windows.Forms.ColumnHeader defaultAdressId;
+        private System.Windows.Forms.ColumnHeader loginCredentialsId;
+        private System.Windows.Forms.ColumnHeader phoneNumber;
+        private System.Windows.Forms.ColumnHeader sID;
+        private System.Windows.Forms.ColumnHeader sname;
+        private System.Windows.Forms.ColumnHeader ssurname;
+        private System.Windows.Forms.ColumnHeader srole;
+        private System.Windows.Forms.ColumnHeader sIDAddress;
+        private System.Windows.Forms.ColumnHeader sidCredentials;
+        private System.Windows.Forms.ColumnHeader sphoneNumber;
     }
 }
 

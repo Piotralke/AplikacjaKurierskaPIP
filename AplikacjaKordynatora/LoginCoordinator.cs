@@ -31,14 +31,12 @@ namespace AplikacjaKordynatora
                 HttpWebResponse credentialsResponse = (HttpWebResponse)credentialsRequest.GetResponse();
                 string credentialsContent = new StreamReader(credentialsResponse.GetResponseStream()).ReadToEnd();
                 loginCredentials credentials = JsonSerializer.Deserialize<loginCredentials>(credentialsContent);
-                Console.WriteLine(credentialsContent);
                 if (passbox.Text == credentials.password)
                 {
                     String requestUser = "http://localhost:5225/Users/GetUserByLogin/" + login;
                     HttpWebRequest userRequest = (HttpWebRequest)WebRequest.Create(@requestUser);
                     HttpWebResponse userResponse = (HttpWebResponse)userRequest.GetResponse();
                     string userContent = new StreamReader(userResponse.GetResponseStream()).ReadToEnd();
-                    Console.WriteLine(userContent);
                     User user = JsonSerializer.Deserialize<User>(userContent);
 
                     if (user.role==0)

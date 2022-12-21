@@ -71,8 +71,19 @@ namespace API.Controllers
 
             return user;
         }
+        [HttpGet("GetAllWorkers")]
+        public async Task<ActionResult<IEnumerable<User>>> GetAllWorkers()
+        {
+            return  await _context.AppUsers.Where(u => u.role == 0 || u.role ==1).ToListAsync();
+             
+        }
+        [HttpGet("GetAllCouriers")]
+        public async Task<ActionResult<IEnumerable<User>>> GetAllCouriers()
+        {
+            return await _context.AppUsers.Where(u => u.role == 1).ToListAsync();
 
-		[HttpGet("GetUserByPhoneNumber/{phone}")]
+        }
+        [HttpGet("GetUserByPhoneNumber/{phone}")]
 		public async Task<ActionResult<User>> GetUserByPhoneNumber(string phone)
 		{
 			var user = await _context.AppUsers.Where(u => u.phoneNumber == phone).
