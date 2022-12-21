@@ -114,7 +114,7 @@ namespace WindowsFormsApp1
                     String json = JsonSerializer.Serialize(user);
                     using (var streamWriter = new HttpClient())
                     {
-                        var response = await streamWriter.PostAsJsonAsync(request, new StringContent(json, Encoding.UTF8, "application/json"));
+                        var response = await streamWriter.PostAsync(request, new StringContent(json, Encoding.UTF8, "application/json"));
 
                     }
                 }
