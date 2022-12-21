@@ -70,6 +70,25 @@ namespace WindowsFormsApp1
             string userContent = new StreamReader(userResponse.GetResponseStream()).ReadToEnd();
             List<User> user = JsonSerializer.Deserialize<List<User>>(userContent);
             User checkAccount = user.Find(x => x.phoneNumber == phoneNumber);
+
+            String streetReceiver = textReceiverStreet.Text;
+            String cityReceiver = textReceiverCity.Text;
+            String homeNumberReceiver = textReceiverHomeNumber.Text;
+            String zipReceiver = textReceiverZip.Text;
+
+            String streetSender = textBoxStreet.Text;
+            String citySender = textBoxCity.Text;
+            String homeNumberSender = textBoxNumber.Text;
+            String zipSender = textBoxZip.Text;
+
+            String request = "http://localhost:5225/Address/";
+            HttpWebRequest addressRequest = (HttpWebRequest)WebRequest.Create(@request);
+            HttpWebResponse addressResponse = (HttpWebResponse)addressRequest.GetResponse();
+            string addressContent = new StreamReader(addressResponse.GetResponseStream()).ReadToEnd();
+            List<Address> addressList = JsonSerializer.Deserialize<List<Address>>(addressContent);
+            Address senderAddress = addressList.Find(x => x.street == streetSender && x.city== citySender && x.houseNumber == homeNumberSender && x.zipCode == zipSender);
+            Address receiverAddress = addressList.Find(x => x.street == streetReceiver && x.city == cityReceiver && x.houseNumber == homeNumberReceiver && x.zipCode == zipReceiver);
+
             int receiverId;
             int receiverAddressId;
             User user1;
