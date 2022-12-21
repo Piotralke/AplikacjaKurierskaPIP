@@ -62,7 +62,6 @@ namespace API.Controllers
                     orders=u.orders
 
                 }).FirstOrDefaultAsync();
-
             if (user == null)
             {
                 return NotFound();
