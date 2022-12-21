@@ -117,6 +117,8 @@ namespace WindowsFormsApp1
                         var response = await streamWriter.PostAsync(request, new StringContent(json, Encoding.UTF8, "application/json"));
 
                     }
+                    MessageBox.Show("Rejestracja przebiegła pomyślnie");
+                    this.Close();  
                 }
             }
 		}

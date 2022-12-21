@@ -57,10 +57,17 @@ namespace WindowsFormsApp1
                     {
                         this.Close();
 
-                        ClientHomeForm clientHomeForm = new ClientHomeForm(user.loginCredentials.login);
+                        ClientHomeForm clientHomeForm = new ClientHomeForm(user);
                         clientHomeForm.Show();
                         homeForm.Hide();
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Niepoprawna nazwa uzytkownika lub haslo, sprobuj ponownie");
+                    textUserName.Clear();
+                    textPassword.Clear();
+                    textUserName.Focus();
                 }
             }
             catch (Exception ex)
@@ -72,13 +79,7 @@ namespace WindowsFormsApp1
                     textPassword.Clear();
                     textUserName.Focus();
                 }
-                else
-                {
-                    MessageBox.Show("Niepoprawna nazwa uzytkownika lub haslo, sprobuj ponownie");
-                    textUserName.Clear();
-                    textPassword.Clear();
-                    textUserName.Focus();
-                }
+                
                 Console.WriteLine(ex.ToString());
             }
         }

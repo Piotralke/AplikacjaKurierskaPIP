@@ -46,15 +46,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.panelSend = new System.Windows.Forms.Panel();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
+            this.buttonSubmit = new System.Windows.Forms.Button();
             this.buttonAddData = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textReceiverPhone = new System.Windows.Forms.TextBox();
             this.textBoxPhoneNum = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
@@ -76,7 +74,6 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -86,9 +83,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -107,7 +101,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -335,16 +328,13 @@
             // 
             this.panelSend.AutoScroll = true;
             this.panelSend.BackColor = System.Drawing.Color.Transparent;
-            this.panelSend.Controls.Add(this.checkBox4);
-            this.panelSend.Controls.Add(this.checkBox3);
-            this.panelSend.Controls.Add(this.checkBox2);
             this.panelSend.Controls.Add(this.textBox16);
             this.panelSend.Controls.Add(this.radioButton2);
             this.panelSend.Controls.Add(this.radioButton1);
             this.panelSend.Controls.Add(this.label12);
-            this.panelSend.Controls.Add(this.button6);
+            this.panelSend.Controls.Add(this.buttonSubmit);
             this.panelSend.Controls.Add(this.buttonAddData);
-            this.panelSend.Controls.Add(this.textBox9);
+            this.panelSend.Controls.Add(this.textReceiverPhone);
             this.panelSend.Controls.Add(this.textBoxPhoneNum);
             this.panelSend.Controls.Add(this.textBox8);
             this.panelSend.Controls.Add(this.textBoxEmail);
@@ -366,7 +356,6 @@
             this.panelSend.Controls.Add(this.textBoxName);
             this.panelSend.Controls.Add(this.label32);
             this.panelSend.Controls.Add(this.label29);
-            this.panelSend.Controls.Add(this.label34);
             this.panelSend.Controls.Add(this.label22);
             this.panelSend.Controls.Add(this.label20);
             this.panelSend.Controls.Add(this.label26);
@@ -376,9 +365,6 @@
             this.panelSend.Controls.Add(this.label24);
             this.panelSend.Controls.Add(this.label31);
             this.panelSend.Controls.Add(this.label33);
-            this.panelSend.Controls.Add(this.label37);
-            this.panelSend.Controls.Add(this.label36);
-            this.panelSend.Controls.Add(this.label35);
             this.panelSend.Controls.Add(this.label30);
             this.panelSend.Controls.Add(this.label23);
             this.panelSend.Controls.Add(this.label21);
@@ -402,42 +388,6 @@
             this.panelSend.Name = "panelSend";
             this.panelSend.Size = new System.Drawing.Size(853, 681);
             this.panelSend.TabIndex = 4;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
-            this.checkBox4.ForeColor = System.Drawing.Color.White;
-            this.checkBox4.Location = new System.Drawing.Point(11, 1722);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(233, 41);
-            this.checkBox4.TabIndex = 17;
-            this.checkBox4.Text = "Przesyłka zwrotna";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
-            this.checkBox3.ForeColor = System.Drawing.Color.White;
-            this.checkBox3.Location = new System.Drawing.Point(11, 1647);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(348, 41);
-            this.checkBox3.TabIndex = 17;
-            this.checkBox3.Text = "Doręczenie do godziny 12:00";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
-            this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(11, 1573);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(348, 41);
-            this.checkBox2.TabIndex = 17;
-            this.checkBox2.Text = "Doręczenie do godziny 10:30";
-            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // textBox16
             // 
@@ -486,6 +436,19 @@
             this.label12.TabIndex = 13;
             this.label12.Text = "Naciśnij przycisk \"Dodaj\" \r\naby wpisać dane \r\nprzypisane do konta";
             // 
+            // buttonSubmit
+            // 
+            this.buttonSubmit.BackColor = System.Drawing.Color.DarkCyan;
+            this.buttonSubmit.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSubmit.ForeColor = System.Drawing.Color.White;
+            this.buttonSubmit.Location = new System.Drawing.Point(26, 1513);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Size = new System.Drawing.Size(237, 40);
+            this.buttonSubmit.TabIndex = 12;
+            this.buttonSubmit.Text = "Podsumowanie i płatność";
+            this.buttonSubmit.UseVisualStyleBackColor = false;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
+            // 
             // buttonAddData
             // 
             this.buttonAddData.BackColor = System.Drawing.Color.DarkCyan;
@@ -499,13 +462,13 @@
             this.buttonAddData.UseVisualStyleBackColor = false;
             this.buttonAddData.Click += new System.EventHandler(this.buttonAddData_Click);
             // 
-            // textBox9
+            // textReceiverPhone
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.textBox9.Location = new System.Drawing.Point(172, 603);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(284, 31);
-            this.textBox9.TabIndex = 11;
+            this.textReceiverPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.textReceiverPhone.Location = new System.Drawing.Point(172, 603);
+            this.textReceiverPhone.Name = "textReceiverPhone";
+            this.textReceiverPhone.Size = new System.Drawing.Size(284, 31);
+            this.textReceiverPhone.TabIndex = 11;
             // 
             // textBoxPhoneNum
             // 
@@ -683,18 +646,6 @@
             this.label29.TabIndex = 10;
             this.label29.Text = "Kształt i rodzaj \r\nopakowania";
             // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.Color.DimGray;
-            this.label34.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label34.ForeColor = System.Drawing.Color.White;
-            this.label34.Location = new System.Drawing.Point(3, 1516);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(235, 43);
-            this.label34.TabIndex = 10;
-            this.label34.Text = "Usługi dodatkowe";
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -796,42 +747,6 @@
             this.label33.TabIndex = 9;
             this.label33.Text = "Upewnij się, czy zawartość Twojej przesyłki \r\nnie znajduje się na listach towarów" +
     " \r\nzakazanych do przewozu";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label37.ForeColor = System.Drawing.Color.White;
-            this.label37.Location = new System.Drawing.Point(22, 1766);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(499, 46);
-            this.label37.TabIndex = 9;
-            this.label37.Text = "Usługa polegająca na przejęciu od Odbiorcy, przy wydaniu mu Przesyłki, \r\ninnej pr" +
-    "zesyłki adresowanej od Nadawcy Przesyłki pierwotnej.";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label36.ForeColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(22, 1691);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(562, 23);
-            this.label36.TabIndex = 9;
-            this.label36.Text = "Przesyłki z tą usługą doręczane są następnego dnia dnia roboczego po ich nadaniu." +
-    "";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label35.ForeColor = System.Drawing.Color.White;
-            this.label35.Location = new System.Drawing.Point(22, 1617);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(562, 23);
-            this.label35.TabIndex = 9;
-            this.label35.Text = "Przesyłki z tą usługą doręczane są następnego dnia dnia roboczego po ich nadaniu." +
-    "";
             // 
             // label30
             // 
@@ -1033,19 +948,6 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Imie";
             // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.DarkCyan;
-            this.button6.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(11, 1859);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(237, 40);
-            this.button6.TabIndex = 12;
-            this.button6.Text = "Podsumowanie i płatność";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.buttonAddData_Click);
-            // 
             // ClientHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1115,7 +1017,7 @@
         private System.Windows.Forms.TextBox textBoxSurname;
         private System.Windows.Forms.Button buttonAddData;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textReceiverPhone;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
@@ -1151,13 +1053,6 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonSubmit;
     }
 }

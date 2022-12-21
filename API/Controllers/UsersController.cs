@@ -59,7 +59,8 @@ namespace API.Controllers
                     defaultAddress=u.defaultAddress,
                     senderPackages=u.senderPackages,
                     receiverPackages=u.receiverPackages,
-                    orders=u.orders
+                    orders=u.orders,
+                    phoneNumber=u.phoneNumber
 
                 }).FirstOrDefaultAsync();
             if (user == null)
