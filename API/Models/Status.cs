@@ -13,6 +13,6 @@ namespace API.Models
         public int idPackage { get; set; }
         public Package package { get; set; }
         [Required]
-        DateTime date { get; set; }
+        public DateTime date { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace AplikacjaKordynatora.Models
         public int? loginCredentialsId { get; set; }
         public loginCredentials loginCredentials { get; set; }
         public int role { get; set; } //0-koordynator,1-kurier,2-klient
-        public int? defaultAddressId { get; set; }
+        public int defaultAddressId { get; set; }
         public Address defaultAddress { get; set; }
         public List<Package> senderPackages { get; set; }
         public List<Package> receiverPackages { get; set; }

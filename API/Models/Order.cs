@@ -12,7 +12,7 @@ namespace API.Models
         public Package package { get; set; }
         [Required]
         public float price { get; set; }
-        public int courierId { get; set; }
-        public User courier { get; set; }  
+        public int? courierId { get; set; }
+        public User? courier { get; set; }  
     }
 }

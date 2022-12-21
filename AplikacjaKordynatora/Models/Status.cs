@@ -9,6 +9,6 @@ namespace AplikacjaKordynatora.Models
         public statusNames StatusName { get; set; }
         public int idPackage { get; set; }
         public Package package { get; set; }
-        DateTime date { get; set; }
+        public DateTime date { get; set; }
     }
 }

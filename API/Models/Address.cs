@@ -5,7 +5,7 @@ namespace API.Models
 {
     public class Address
     {
-        [Key]
+		[Key]
         public int id { get; set; }
         [Required]
         public string street { get; set; }
@@ -15,8 +15,8 @@ namespace API.Models
         public string houseNumber { get; set; }
         [Required]
         public string zipCode { get; set; }
-        public ICollection<Package> senderPackages { get; set; }
-        public ICollection<Package> receiverPackages { get; set; }
+        public ICollection<Package>? senderPackages { get; set; }
+        public ICollection<Package>? receiverPackages { get; set; }
         public User? user { get; set; }
     }
 }
