@@ -28,10 +28,14 @@ namespace WindowsFormsApp1
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-            if (textName.Text == "" || textPassword.Text == "")
+            if (textName.Text == "" || textSurname.Text == "" || textBuildingNumber.Text == "" || textApartamentNumber.Text == "" 
+                || textCity.Text == "" || textZipCode.Text == "" || textLogin.Text == "" || textPassword.Text == "" 
+                || textRepeatPassword.Text == "" || textEmail.Text == "" || textPhone.Text == "")
             {
                 MessageBox.Show("Nalezy podac wszystkie dane");
             }
         }
+
+
     }
 }
