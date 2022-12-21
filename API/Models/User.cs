@@ -21,5 +21,6 @@ namespace API.Models
         public ICollection<Package>? receiverPackages {get; set;}
         public ICollection<Order>? orders { get; set;}
         public string phoneNumber { get; set; }
-    }
+		public Region? region { get; set; }
+	}
 }
