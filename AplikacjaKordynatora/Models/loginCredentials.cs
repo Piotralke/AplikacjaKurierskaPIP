@@ -10,8 +10,10 @@ namespace AplikacjaKordynatora.Models
         public int id { get; set; }
         [Required,EmailAddress]
         public string email { get; set; }
-        public string login { get; set; }
-        public string password { get; set; }
+		[Required]
+		public string login { get; set; }
+		[Required]
+		public string password { get; set; }
         public User user { get; set; }
     }
 }

@@ -1,12 +1,15 @@
 ﻿
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace AplikacjaKordynatora.Models
 {
     public class User
     {
         public int id { get; set; }
+        [Required]
         public string name { get; set; }
+        [Required]
         public string surname { get; set; }
         public int? loginCredentialsId { get; set; }
         public loginCredentials loginCredentials { get; set; }
@@ -16,6 +19,7 @@ namespace AplikacjaKordynatora.Models
         public List<Package> senderPackages { get; set; }
         public List<Package> receiverPackages { get; set; }
         public List<Order> orders { get; set; }
-        public string phoneNumber { get; set; }
+		[Required]
+		public string phoneNumber { get; set; }
     }
 }
