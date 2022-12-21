@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace AplikacjaKordynatora
             InitializeComponent();
             loggedlabel.Text = credentials.login;
             datetimenow.Text = DateTime.Now.ToShortDateString();
+            registerseat.Text = "Kurier";
         }
         public CoordinatorHome()
         {
@@ -97,44 +99,56 @@ namespace AplikacjaKordynatora
 
         private void registerbutton_Click(object sender, EventArgs e)
         {
-            string email = registeremailbox.Text;
-            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-            Match match = regex.Match(email);
-            if (registernamebox.Text=="" || registersurnamebox.Text == "" || registerloginbox.Text == "" || registeremailbox.Text == "" || registerseat.Text == "")
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var stringChars = new char[5];
+            var random = new Random();
+            for (int i = 0; i < stringChars.Length; i++)
             {
-                MessageBox.Show("Nalezy podac wszystkie dane");
-                registernamebox.Clear();
-                registersurnamebox.Clear();
-                registerloginbox.Clear();
-                registeremailbox.Clear();
-                
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+            var randompassword = new String(stringChars);
+            bool isOkay = true;
+            loginCredentials credentials = new loginCredentials()
+            {
+                id = 0,
+                email = registeremailbox.Text,
+                login = registerloginbox.Text,
+                password = randompassword
+            };
+            User user = new User()
+            {
+                id = 0,
+                name = registernamebox.Text,
+                surname = registersurnamebox.Text,
+                loginCredentials = credentials,
+                role = registerseat.Text=="Kurier"?1:0,
+                defaultAddress = null,
+                phoneNumber = registerphone.Text
+            };
+            ValidationContext UserValidation = new ValidationContext(user, null, null);
+            ValidationContext credentialsValidation = new ValidationContext(credentials, null, null);
+            IList<ValidationResult> errors = new List<ValidationResult>();
+            if (!Validator.TryValidateObject(credentials, credentialsValidation, errors, true))
+            {
+                isOkay = false;
+            }
+            if (!Validator.TryValidateObject(user, UserValidation, errors, true))
+            {
+                isOkay = false;
+            }
+            if (!isOkay)
+            {
+                foreach (ValidationResult result in errors)
+                {
+                    MessageBox.Show(result.ErrorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                if(registerseat.Text == "Kurier")
-                {
-                    registernamebox.Clear();
-                    registersurnamebox.Clear();
-                    registerloginbox.Clear();
-                    registeremailbox.Clear();
-                   
+              
 
-                    string message = "Dodano nowego kuriera!";
-                    string caption = "Sukces!";
-                    MessageBox.Show(message,caption);
-                }
-                else if(registerseat.Text == "Koordynator")
-                {
-                    registernamebox.Clear();
-                    registersurnamebox.Clear();
-                    registerloginbox.Clear();
-                    registeremailbox.Clear();
 
-                    string message = "Dodano nowego koordynatora!";
-                    string caption = "Sukces!";
-                    MessageBox.Show(message, caption);
-                    
-                }
+
             }
         }
     }

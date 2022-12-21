@@ -85,6 +85,10 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.Email = new System.Windows.Forms.TabPage();
             this.Register = new System.Windows.Forms.TabPage();
+            this.registeremailbox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.registerloginbox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.registerseat = new System.Windows.Forms.ComboBox();
             this.registerbutton = new System.Windows.Forms.Button();
@@ -93,6 +97,7 @@
             this.registersurnamebox = new System.Windows.Forms.TextBox();
             this.registernamebox = new System.Windows.Forms.TextBox();
             this.Scheme = new System.Windows.Forms.TabPage();
+            this.schemeworkername = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.schemeworkerslist = new System.Windows.Forms.ListView();
             this.submithours = new System.Windows.Forms.Button();
@@ -119,12 +124,9 @@
             this.workerseditbutton = new System.Windows.Forms.Button();
             this.workerslist = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.registerloginbox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.registeremailbox = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.schemeworkername = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.registerphone = new System.Windows.Forms.TextBox();
             this.AdminPanel.SuspendLayout();
             this.HomePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gblogo)).BeginInit();
@@ -716,6 +718,8 @@
             // 
             this.Register.BackColor = System.Drawing.Color.LightSlateGray;
             this.Register.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Register.Controls.Add(this.registerphone);
+            this.Register.Controls.Add(this.label4);
             this.Register.Controls.Add(this.registeremailbox);
             this.Register.Controls.Add(this.label3);
             this.Register.Controls.Add(this.registerloginbox);
@@ -737,11 +741,49 @@
             this.Register.TabIndex = 8;
             this.Register.Text = "Rejestracja Praconików";
             // 
+            // registeremailbox
+            // 
+            this.registeremailbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.registeremailbox.Location = new System.Drawing.Point(136, 200);
+            this.registeremailbox.Name = "registeremailbox";
+            this.registeremailbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.registeremailbox.Size = new System.Drawing.Size(230, 25);
+            this.registeremailbox.TabIndex = 35;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(136, 179);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 18);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "E-mail";
+            // 
+            // registerloginbox
+            // 
+            this.registerloginbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.registerloginbox.Location = new System.Drawing.Point(825, 93);
+            this.registerloginbox.Name = "registerloginbox";
+            this.registerloginbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.registerloginbox.Size = new System.Drawing.Size(230, 25);
+            this.registerloginbox.TabIndex = 33;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(825, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 18);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Login";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.Location = new System.Drawing.Point(481, 179);
+            this.label14.Location = new System.Drawing.Point(825, 179);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(101, 18);
             this.label14.TabIndex = 31;
@@ -750,13 +792,15 @@
             // 
             // registerseat
             // 
+            this.registerseat.AccessibleDescription = "";
+            this.registerseat.AccessibleName = "";
             this.registerseat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.registerseat.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.registerseat.FormattingEnabled = true;
+            this.registerseat.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.registerseat.Items.AddRange(new object[] {
             "Kurier",
             "Koordynator"});
-            this.registerseat.Location = new System.Drawing.Point(481, 200);
+            this.registerseat.Location = new System.Drawing.Point(825, 200);
             this.registerseat.Name = "registerseat";
             this.registerseat.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.registerseat.Size = new System.Drawing.Size(230, 25);
@@ -765,7 +809,7 @@
             // registerbutton
             // 
             this.registerbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.registerbutton.Location = new System.Drawing.Point(503, 324);
+            this.registerbutton.Location = new System.Drawing.Point(518, 295);
             this.registerbutton.Name = "registerbutton";
             this.registerbutton.Size = new System.Drawing.Size(128, 32);
             this.registerbutton.TabIndex = 22;
@@ -840,6 +884,16 @@
             this.Scheme.Size = new System.Drawing.Size(1170, 525);
             this.Scheme.TabIndex = 9;
             this.Scheme.Text = "Harmongram Pracy";
+            // 
+            // schemeworkername
+            // 
+            this.schemeworkername.AutoSize = true;
+            this.schemeworkername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.schemeworkername.Location = new System.Drawing.Point(369, 124);
+            this.schemeworkername.Name = "schemeworkername";
+            this.schemeworkername.Size = new System.Drawing.Size(91, 18);
+            this.schemeworkername.TabIndex = 12;
+            this.schemeworkername.Text = "workername";
             // 
             // button1
             // 
@@ -1116,58 +1170,29 @@
             this.imageList1.Images.SetKeyName(9, "jobs.png");
             this.imageList1.Images.SetKeyName(10, "workers.png");
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(825, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 18);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Login";
-            // 
-            // registerloginbox
-            // 
-            this.registerloginbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.registerloginbox.Location = new System.Drawing.Point(825, 93);
-            this.registerloginbox.Name = "registerloginbox";
-            this.registerloginbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.registerloginbox.Size = new System.Drawing.Size(230, 25);
-            this.registerloginbox.TabIndex = 33;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(136, 179);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 18);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "E-mail";
-            // 
-            // registeremailbox
-            // 
-            this.registeremailbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.registeremailbox.Location = new System.Drawing.Point(136, 200);
-            this.registeremailbox.Name = "registeremailbox";
-            this.registeremailbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.registeremailbox.Size = new System.Drawing.Size(230, 25);
-            this.registeremailbox.TabIndex = 35;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // schemeworkername
+            // label4
             // 
-            this.schemeworkername.AutoSize = true;
-            this.schemeworkername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.schemeworkername.Location = new System.Drawing.Point(369, 124);
-            this.schemeworkername.Name = "schemeworkername";
-            this.schemeworkername.Size = new System.Drawing.Size(91, 18);
-            this.schemeworkername.TabIndex = 12;
-            this.schemeworkername.Text = "workername";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(481, 179);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(139, 18);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Numer Telefonu";
+            // 
+            // registerphone
+            // 
+            this.registerphone.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.registerphone.Location = new System.Drawing.Point(481, 200);
+            this.registerphone.Name = "registerphone";
+            this.registerphone.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.registerphone.Size = new System.Drawing.Size(230, 25);
+            this.registerphone.TabIndex = 37;
             // 
             // CoordinatorHome
             // 
@@ -1302,6 +1327,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label schemeworkername;
+        private System.Windows.Forms.TextBox registerphone;
+        private System.Windows.Forms.Label label4;
     }
 }
 
