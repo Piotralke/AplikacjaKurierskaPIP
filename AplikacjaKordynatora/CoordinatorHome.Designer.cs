@@ -32,7 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CoordinatorHome));
             this.AdminPanel = new System.Windows.Forms.TabControl();
             this.HomePage = new System.Windows.Forms.TabPage();
+            this.gblogo = new System.Windows.Forms.PictureBox();
+            this.datetimenow = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.loggedlabel = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.Jobs = new System.Windows.Forms.TabPage();
+            this.jobsdelete = new System.Windows.Forms.Button();
             this.jobsrefresh = new System.Windows.Forms.Button();
             this.jobssubmit = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
@@ -41,7 +48,27 @@
             this.Statistics = new System.Windows.Forms.TabPage();
             this.Reports = new System.Windows.Forms.TabPage();
             this.Notify = new System.Windows.Forms.TabPage();
+            this.notifyoptionsearch = new System.Windows.Forms.TextBox();
+            this.notifydelete = new System.Windows.Forms.Button();
+            this.notifyanswer = new System.Windows.Forms.Button();
+            this.notifyopen = new System.Windows.Forms.Button();
+            this.notifybuttonsearch = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.notifyoption = new System.Windows.Forms.ComboBox();
+            this.listView2 = new System.Windows.Forms.ListView();
             this.Payoff = new System.Windows.Forms.TabPage();
+            this.payoffpackagesdelivery = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.payoffcalendar = new System.Windows.Forms.MonthCalendar();
+            this.payoffrefresh = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.settlebutton = new System.Windows.Forms.Button();
+            this.payoffworkhours = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.payoffnameandsurname = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.listView3 = new System.Windows.Forms.ListView();
             this.Packages = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.packagesrefreshbutton = new System.Windows.Forms.Button();
@@ -99,49 +126,25 @@
             this.label15 = new System.Windows.Forms.Label();
             this.calendar = new System.Windows.Forms.MonthCalendar();
             this.Workers = new System.Windows.Forms.TabPage();
+            this.workerssearchoption = new System.Windows.Forms.TextBox();
             this.workersrefreshbutton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.workersprovince = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.workersbuttonoption = new System.Windows.Forms.Button();
+            this.workersbuttonsurname = new System.Windows.Forms.Button();
+            this.workersbuttonid = new System.Windows.Forms.Button();
+            this.workersoption = new System.Windows.Forms.ComboBox();
+            this.workerssearchsurname = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.workerssearchid = new System.Windows.Forms.TextBox();
             this.workersdelbutton = new System.Windows.Forms.Button();
             this.workerseditbutton = new System.Windows.Forms.Button();
             this.workerslist = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.notifysearch = new System.Windows.Forms.Button();
-            this.jobsdelete = new System.Windows.Forms.Button();
-            this.notifyopen = new System.Windows.Forms.Button();
-            this.notifyanswer = new System.Windows.Forms.Button();
-            this.notifydelete = new System.Windows.Forms.Button();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.label17 = new System.Windows.Forms.Label();
-            this.payoffnameandsurname = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.payoffworkhours = new System.Windows.Forms.Label();
-            this.settlebutton = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.payoffrefresh = new System.Windows.Forms.Button();
-            this.payoffcalendar = new System.Windows.Forms.MonthCalendar();
-            this.label28 = new System.Windows.Forms.Label();
-            this.payoffpackagesdelivery = new System.Windows.Forms.Label();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.label30 = new System.Windows.Forms.Label();
-            this.loggedlabel = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.datetimenow = new System.Windows.Forms.Label();
-            this.gblogo = new System.Windows.Forms.PictureBox();
             this.AdminPanel.SuspendLayout();
             this.HomePage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gblogo)).BeginInit();
             this.Jobs.SuspendLayout();
             this.Notify.SuspendLayout();
             this.Payoff.SuspendLayout();
@@ -150,7 +153,6 @@
             this.Register.SuspendLayout();
             this.Scheme.SuspendLayout();
             this.Workers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gblogo)).BeginInit();
             this.SuspendLayout();
             // 
             // AdminPanel
@@ -198,6 +200,66 @@
             this.HomePage.TabIndex = 1;
             this.HomePage.Text = "Strona Główna";
             // 
+            // gblogo
+            // 
+            this.gblogo.Image = ((System.Drawing.Image)(resources.GetObject("gblogo.Image")));
+            this.gblogo.Location = new System.Drawing.Point(293, 3);
+            this.gblogo.Name = "gblogo";
+            this.gblogo.Size = new System.Drawing.Size(586, 237);
+            this.gblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gblogo.TabIndex = 5;
+            this.gblogo.TabStop = false;
+            // 
+            // datetimenow
+            // 
+            this.datetimenow.AutoSize = true;
+            this.datetimenow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.datetimenow.Location = new System.Drawing.Point(110, 1);
+            this.datetimenow.Name = "datetimenow";
+            this.datetimenow.Size = new System.Drawing.Size(34, 16);
+            this.datetimenow.TabIndex = 4;
+            this.datetimenow.Text = "data";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label31.Location = new System.Drawing.Point(3, 1);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(101, 16);
+            this.label31.TabIndex = 3;
+            this.label31.Text = "Dzisiejsza data:";
+            // 
+            // loggedlabel
+            // 
+            this.loggedlabel.AutoSize = true;
+            this.loggedlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.loggedlabel.Location = new System.Drawing.Point(122, 17);
+            this.loggedlabel.Name = "loggedlabel";
+            this.loggedlabel.Size = new System.Drawing.Size(40, 16);
+            this.loggedlabel.TabIndex = 2;
+            this.loggedlabel.Text = "Login";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label30.Location = new System.Drawing.Point(3, 17);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(113, 16);
+            this.label30.TabIndex = 1;
+            this.label30.Text = "Zalogowany jako:";
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(-4, 239);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.ScriptErrorsSuppressed = true;
+            this.webBrowser1.Size = new System.Drawing.Size(1178, 290);
+            this.webBrowser1.TabIndex = 0;
+            this.webBrowser1.Url = new System.Uri("https://www.globkurier.pl/blog/aktualnosci", System.UriKind.Absolute);
+            // 
             // Jobs
             // 
             this.Jobs.BackColor = System.Drawing.Color.LightSlateGray;
@@ -214,6 +276,15 @@
             this.Jobs.Size = new System.Drawing.Size(1170, 525);
             this.Jobs.TabIndex = 0;
             this.Jobs.Text = "Zlecenia";
+            // 
+            // jobsdelete
+            // 
+            this.jobsdelete.Location = new System.Drawing.Point(36, 200);
+            this.jobsdelete.Name = "jobsdelete";
+            this.jobsdelete.Size = new System.Drawing.Size(110, 38);
+            this.jobsdelete.TabIndex = 5;
+            this.jobsdelete.Text = "Usuń";
+            this.jobsdelete.UseVisualStyleBackColor = true;
             // 
             // jobsrefresh
             // 
@@ -285,12 +356,13 @@
             // Notify
             // 
             this.Notify.BackColor = System.Drawing.Color.LightSlateGray;
+            this.Notify.Controls.Add(this.notifyoptionsearch);
             this.Notify.Controls.Add(this.notifydelete);
             this.Notify.Controls.Add(this.notifyanswer);
             this.Notify.Controls.Add(this.notifyopen);
-            this.Notify.Controls.Add(this.notifysearch);
+            this.Notify.Controls.Add(this.notifybuttonsearch);
             this.Notify.Controls.Add(this.label24);
-            this.Notify.Controls.Add(this.comboBox1);
+            this.Notify.Controls.Add(this.notifyoption);
             this.Notify.Controls.Add(this.listView2);
             this.Notify.ImageIndex = 8;
             this.Notify.Location = new System.Drawing.Point(4, 32);
@@ -298,6 +370,80 @@
             this.Notify.Size = new System.Drawing.Size(1170, 525);
             this.Notify.TabIndex = 4;
             this.Notify.Text = "Zgłoszenia";
+            // 
+            // notifyoptionsearch
+            // 
+            this.notifyoptionsearch.Location = new System.Drawing.Point(20, 63);
+            this.notifyoptionsearch.Name = "notifyoptionsearch";
+            this.notifyoptionsearch.Size = new System.Drawing.Size(121, 20);
+            this.notifyoptionsearch.TabIndex = 17;
+            // 
+            // notifydelete
+            // 
+            this.notifydelete.Location = new System.Drawing.Point(20, 255);
+            this.notifydelete.Name = "notifydelete";
+            this.notifydelete.Size = new System.Drawing.Size(121, 38);
+            this.notifydelete.TabIndex = 16;
+            this.notifydelete.Text = "Usuń";
+            this.notifydelete.UseVisualStyleBackColor = true;
+            // 
+            // notifyanswer
+            // 
+            this.notifyanswer.Location = new System.Drawing.Point(20, 196);
+            this.notifyanswer.Name = "notifyanswer";
+            this.notifyanswer.Size = new System.Drawing.Size(121, 38);
+            this.notifyanswer.TabIndex = 15;
+            this.notifyanswer.Text = "Odpowiedz";
+            this.notifyanswer.UseVisualStyleBackColor = true;
+            // 
+            // notifyopen
+            // 
+            this.notifyopen.Location = new System.Drawing.Point(20, 137);
+            this.notifyopen.Name = "notifyopen";
+            this.notifyopen.Size = new System.Drawing.Size(121, 38);
+            this.notifyopen.TabIndex = 14;
+            this.notifyopen.Text = "Otwórz";
+            this.notifyopen.UseVisualStyleBackColor = true;
+            // 
+            // notifybuttonsearch
+            // 
+            this.notifybuttonsearch.Location = new System.Drawing.Point(34, 89);
+            this.notifybuttonsearch.Name = "notifybuttonsearch";
+            this.notifybuttonsearch.Size = new System.Drawing.Size(92, 23);
+            this.notifybuttonsearch.TabIndex = 3;
+            this.notifybuttonsearch.Text = "Szukaj";
+            this.notifybuttonsearch.UseVisualStyleBackColor = true;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(31, 11);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(95, 13);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Szukaj Zgłoszenia";
+            // 
+            // notifyoption
+            // 
+            this.notifyoption.FormattingEnabled = true;
+            this.notifyoption.Items.AddRange(new object[] {
+            "Po numerze zgłoszenia",
+            "Po imieniu",
+            "Po nazwisku",
+            "Po adresie e-mail"});
+            this.notifyoption.Location = new System.Drawing.Point(20, 36);
+            this.notifyoption.Name = "notifyoption";
+            this.notifyoption.Size = new System.Drawing.Size(121, 21);
+            this.notifyoption.TabIndex = 1;
+            // 
+            // listView2
+            // 
+            this.listView2.HideSelection = false;
+            this.listView2.Location = new System.Drawing.Point(162, 0);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(1012, 529);
+            this.listView2.TabIndex = 0;
+            this.listView2.UseCompatibleStateImageBehavior = false;
             // 
             // Payoff
             // 
@@ -320,6 +466,111 @@
             this.Payoff.Size = new System.Drawing.Size(1170, 525);
             this.Payoff.TabIndex = 5;
             this.Payoff.Text = "Rozliczenia";
+            // 
+            // payoffpackagesdelivery
+            // 
+            this.payoffpackagesdelivery.AutoSize = true;
+            this.payoffpackagesdelivery.Location = new System.Drawing.Point(165, 243);
+            this.payoffpackagesdelivery.Name = "payoffpackagesdelivery";
+            this.payoffpackagesdelivery.Size = new System.Drawing.Size(13, 13);
+            this.payoffpackagesdelivery.TabIndex = 13;
+            this.payoffpackagesdelivery.Text = "9";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(32, 243);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(134, 13);
+            this.label28.TabIndex = 12;
+            this.label28.Text = "Ilośc doręczonych paczek:";
+            // 
+            // payoffcalendar
+            // 
+            this.payoffcalendar.Location = new System.Drawing.Point(14, 9);
+            this.payoffcalendar.Name = "payoffcalendar";
+            this.payoffcalendar.TabIndex = 11;
+            // 
+            // payoffrefresh
+            // 
+            this.payoffrefresh.Location = new System.Drawing.Point(77, 383);
+            this.payoffrefresh.Name = "payoffrefresh";
+            this.payoffrefresh.Size = new System.Drawing.Size(102, 42);
+            this.payoffrefresh.TabIndex = 10;
+            this.payoffrefresh.Text = "Odśwież";
+            this.payoffrefresh.UseVisualStyleBackColor = true;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(32, 272);
+            this.label29.Margin = new System.Windows.Forms.Padding(0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(42, 13);
+            this.label29.TabIndex = 9;
+            this.label29.Text = "Premia:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(77, 269);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(77, 20);
+            this.textBox3.TabIndex = 8;
+            this.textBox3.Text = "0";
+            // 
+            // settlebutton
+            // 
+            this.settlebutton.Location = new System.Drawing.Point(77, 318);
+            this.settlebutton.Name = "settlebutton";
+            this.settlebutton.Size = new System.Drawing.Size(102, 42);
+            this.settlebutton.TabIndex = 7;
+            this.settlebutton.Text = "Rozlicz";
+            this.settlebutton.UseVisualStyleBackColor = true;
+            // 
+            // payoffworkhours
+            // 
+            this.payoffworkhours.AutoSize = true;
+            this.payoffworkhours.Location = new System.Drawing.Point(200, 216);
+            this.payoffworkhours.Name = "payoffworkhours";
+            this.payoffworkhours.Size = new System.Drawing.Size(13, 13);
+            this.payoffworkhours.TabIndex = 4;
+            this.payoffworkhours.Text = "9";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(32, 216);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(162, 13);
+            this.label27.TabIndex = 3;
+            this.label27.Text = "Liczba przepracowanych godzin:";
+            // 
+            // payoffnameandsurname
+            // 
+            this.payoffnameandsurname.AutoSize = true;
+            this.payoffnameandsurname.Location = new System.Drawing.Point(98, 191);
+            this.payoffnameandsurname.Name = "payoffnameandsurname";
+            this.payoffnameandsurname.Size = new System.Drawing.Size(139, 13);
+            this.payoffnameandsurname.TabIndex = 2;
+            this.payoffnameandsurname.Text = "Imie i Nazwisko Pracownika";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(32, 191);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(60, 13);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Pracownik:";
+            // 
+            // listView3
+            // 
+            this.listView3.HideSelection = false;
+            this.listView3.Location = new System.Drawing.Point(295, 0);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(879, 525);
+            this.listView3.TabIndex = 0;
+            this.listView3.UseCompatibleStateImageBehavior = false;
             // 
             // Packages
             // 
@@ -789,11 +1040,11 @@
             this.birth.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.birth.Location = new System.Drawing.Point(452, 157);
             this.birth.MaxDate = new System.DateTime(2022, 11, 22, 0, 0, 0, 0);
-            this.birth.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.birth.MinDate = new System.DateTime(1922, 1, 1, 0, 0, 0, 0);
             this.birth.Name = "birth";
             this.birth.Size = new System.Drawing.Size(230, 21);
             this.birth.TabIndex = 5;
-            this.birth.Value = new System.DateTime(2022, 11, 22, 0, 0, 0, 0);
+            this.birth.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             // 
             // secondname
             // 
@@ -971,17 +1222,18 @@
             // Workers
             // 
             this.Workers.BackColor = System.Drawing.Color.LightSlateGray;
+            this.Workers.Controls.Add(this.workerssearchoption);
             this.Workers.Controls.Add(this.workersrefreshbutton);
-            this.Workers.Controls.Add(this.button4);
-            this.Workers.Controls.Add(this.button3);
-            this.Workers.Controls.Add(this.button2);
-            this.Workers.Controls.Add(this.workersprovince);
-            this.Workers.Controls.Add(this.textBox2);
+            this.Workers.Controls.Add(this.workersbuttonoption);
+            this.Workers.Controls.Add(this.workersbuttonsurname);
+            this.Workers.Controls.Add(this.workersbuttonid);
+            this.Workers.Controls.Add(this.workersoption);
+            this.Workers.Controls.Add(this.workerssearchsurname);
             this.Workers.Controls.Add(this.label23);
             this.Workers.Controls.Add(this.label21);
             this.Workers.Controls.Add(this.label20);
             this.Workers.Controls.Add(this.label16);
-            this.Workers.Controls.Add(this.textBox1);
+            this.Workers.Controls.Add(this.workerssearchid);
             this.Workers.Controls.Add(this.workersdelbutton);
             this.Workers.Controls.Add(this.workerseditbutton);
             this.Workers.Controls.Add(this.workerslist);
@@ -992,87 +1244,85 @@
             this.Workers.TabIndex = 10;
             this.Workers.Text = "Pracownicy";
             // 
+            // workerssearchoption
+            // 
+            this.workerssearchoption.Location = new System.Drawing.Point(13, 202);
+            this.workerssearchoption.Name = "workerssearchoption";
+            this.workerssearchoption.Size = new System.Drawing.Size(100, 20);
+            this.workerssearchoption.TabIndex = 13;
+            // 
             // workersrefreshbutton
             // 
-            this.workersrefreshbutton.Location = new System.Drawing.Point(8, 356);
+            this.workersrefreshbutton.Location = new System.Drawing.Point(8, 396);
             this.workersrefreshbutton.Name = "workersrefreshbutton";
             this.workersrefreshbutton.Size = new System.Drawing.Size(110, 38);
             this.workersrefreshbutton.TabIndex = 12;
             this.workersrefreshbutton.Text = "Odśwież";
             this.workersrefreshbutton.UseVisualStyleBackColor = true;
+            this.workersrefreshbutton.Click += new System.EventHandler(this.workersrefreshbutton_Click);
             // 
-            // button4
+            // workersbuttonoption
             // 
-            this.button4.Location = new System.Drawing.Point(13, 193);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 20);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Szukaj";
-            this.button4.UseVisualStyleBackColor = true;
+            this.workersbuttonoption.Location = new System.Drawing.Point(13, 228);
+            this.workersbuttonoption.Name = "workersbuttonoption";
+            this.workersbuttonoption.Size = new System.Drawing.Size(100, 20);
+            this.workersbuttonoption.TabIndex = 11;
+            this.workersbuttonoption.Text = "Szukaj";
+            this.workersbuttonoption.UseVisualStyleBackColor = true;
+            this.workersbuttonoption.Click += new System.EventHandler(this.Workersbuttonoption_Click);
             // 
-            // button3
+            // workersbuttonsurname
             // 
-            this.button3.Location = new System.Drawing.Point(13, 136);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 20);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Szukaj";
-            this.button3.UseVisualStyleBackColor = true;
+            this.workersbuttonsurname.Location = new System.Drawing.Point(13, 136);
+            this.workersbuttonsurname.Name = "workersbuttonsurname";
+            this.workersbuttonsurname.Size = new System.Drawing.Size(100, 20);
+            this.workersbuttonsurname.TabIndex = 10;
+            this.workersbuttonsurname.Text = "Szukaj";
+            this.workersbuttonsurname.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // workersbuttonid
             // 
-            this.button2.Location = new System.Drawing.Point(13, 78);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 20);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Szukaj";
-            this.button2.UseVisualStyleBackColor = true;
+            this.workersbuttonid.Location = new System.Drawing.Point(13, 78);
+            this.workersbuttonid.Name = "workersbuttonid";
+            this.workersbuttonid.Size = new System.Drawing.Size(100, 20);
+            this.workersbuttonid.TabIndex = 9;
+            this.workersbuttonid.Text = "Szukaj";
+            this.workersbuttonid.UseVisualStyleBackColor = true;
             // 
-            // workersprovince
+            // workersoption
             // 
-            this.workersprovince.FormattingEnabled = true;
-            this.workersprovince.Items.AddRange(new object[] {
-            "",
-            "Dolnośląskie",
-            "Kujawsko-Pomorskie",
-            "Lubelskie",
-            "Łódzkie",
-            "Małopolskie",
-            "Mazowieckie",
-            "Opolskie",
-            "Podkarpackie",
-            "Podlaskie",
-            "Pomorskie",
-            "Śląskie",
-            "Świętokrzyskie",
-            "Warmińsko-Mazurskie",
-            "Wielkopolskie",
-            "Zachodniopomorskie"});
-            this.workersprovince.Location = new System.Drawing.Point(13, 175);
-            this.workersprovince.Name = "workersprovince";
-            this.workersprovince.Size = new System.Drawing.Size(100, 21);
-            this.workersprovince.TabIndex = 8;
+            this.workersoption.FormattingEnabled = true;
+            this.workersoption.Items.AddRange(new object[] {
+            "Loginie",
+            "Imieniu",
+            "E-mailu",
+            "Numerze Telefonu"});
+            this.workersoption.Location = new System.Drawing.Point(13, 175);
+            this.workersoption.Name = "workersoption";
+            this.workersoption.Size = new System.Drawing.Size(100, 21);
+            this.workersoption.TabIndex = 8;
+            this.workersoption.Text = "Loginie";
             // 
-            // textBox2
+            // workerssearchsurname
             // 
-            this.textBox2.Location = new System.Drawing.Point(13, 117);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 7;
+            this.workerssearchsurname.Location = new System.Drawing.Point(13, 117);
+            this.workerssearchsurname.Name = "workerssearchsurname";
+            this.workerssearchsurname.Size = new System.Drawing.Size(100, 20);
+            this.workerssearchsurname.TabIndex = 7;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(21, 159);
+            this.label23.Location = new System.Drawing.Point(46, 159);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(92, 13);
+            this.label23.Size = new System.Drawing.Size(23, 13);
             this.label23.TabIndex = 6;
-            this.label23.Text = "Po Województwie";
+            this.label23.Text = "Po:";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(33, 101);
+            this.label21.Location = new System.Drawing.Point(30, 101);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(69, 13);
             this.label21.TabIndex = 6;
@@ -1081,11 +1331,11 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(33, 43);
+            this.label20.Location = new System.Drawing.Point(46, 43);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(56, 13);
+            this.label20.Size = new System.Drawing.Size(34, 13);
             this.label20.TabIndex = 5;
-            this.label20.Text = "Po Imieniu";
+            this.label20.Text = "Po ID";
             // 
             // label16
             // 
@@ -1097,16 +1347,16 @@
             this.label16.TabIndex = 4;
             this.label16.Text = "Wyszukaj pracownika";
             // 
-            // textBox1
+            // workerssearchid
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.workerssearchid.Location = new System.Drawing.Point(13, 59);
+            this.workerssearchid.Name = "workerssearchid";
+            this.workerssearchid.Size = new System.Drawing.Size(100, 20);
+            this.workerssearchid.TabIndex = 3;
             // 
             // workersdelbutton
             // 
-            this.workersdelbutton.Location = new System.Drawing.Point(8, 300);
+            this.workersdelbutton.Location = new System.Drawing.Point(8, 339);
             this.workersdelbutton.Name = "workersdelbutton";
             this.workersdelbutton.Size = new System.Drawing.Size(110, 38);
             this.workersdelbutton.TabIndex = 2;
@@ -1115,21 +1365,23 @@
             // 
             // workerseditbutton
             // 
-            this.workerseditbutton.Location = new System.Drawing.Point(8, 237);
+            this.workerseditbutton.Location = new System.Drawing.Point(8, 279);
             this.workerseditbutton.Name = "workerseditbutton";
             this.workerseditbutton.Size = new System.Drawing.Size(110, 38);
             this.workerseditbutton.TabIndex = 1;
             this.workerseditbutton.Text = "Edytuj";
             this.workerseditbutton.UseVisualStyleBackColor = true;
+            this.workerseditbutton.Click += new System.EventHandler(this.workerseditbutton_Click);
             // 
             // workerslist
             // 
             this.workerslist.HideSelection = false;
             this.workerslist.Location = new System.Drawing.Point(124, 0);
             this.workerslist.Name = "workerslist";
-            this.workerslist.Size = new System.Drawing.Size(1046, 529);
+            this.workerslist.Size = new System.Drawing.Size(1046, 525);
             this.workerslist.TabIndex = 0;
             this.workerslist.UseCompatibleStateImageBehavior = false;
+            this.workerslist.View = System.Windows.Forms.View.Details;
             // 
             // imageList1
             // 
@@ -1147,247 +1399,6 @@
             this.imageList1.Images.SetKeyName(9, "jobs.png");
             this.imageList1.Images.SetKeyName(10, "workers.png");
             // 
-            // listView2
-            // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(162, 0);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(1012, 529);
-            this.listView2.TabIndex = 0;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Po numerze zgłoszenia",
-            "Po imieniu",
-            "Po nazwisku",
-            "Po adresie e-mail"});
-            this.comboBox1.Location = new System.Drawing.Point(20, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(31, 11);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(95, 13);
-            this.label24.TabIndex = 2;
-            this.label24.Text = "Szukaj Zgłoszenia";
-            // 
-            // notifysearch
-            // 
-            this.notifysearch.Location = new System.Drawing.Point(34, 63);
-            this.notifysearch.Name = "notifysearch";
-            this.notifysearch.Size = new System.Drawing.Size(92, 23);
-            this.notifysearch.TabIndex = 3;
-            this.notifysearch.Text = "Szukaj";
-            this.notifysearch.UseVisualStyleBackColor = true;
-            // 
-            // jobsdelete
-            // 
-            this.jobsdelete.Location = new System.Drawing.Point(36, 200);
-            this.jobsdelete.Name = "jobsdelete";
-            this.jobsdelete.Size = new System.Drawing.Size(110, 38);
-            this.jobsdelete.TabIndex = 5;
-            this.jobsdelete.Text = "Usuń";
-            this.jobsdelete.UseVisualStyleBackColor = true;
-            // 
-            // notifyopen
-            // 
-            this.notifyopen.Location = new System.Drawing.Point(20, 109);
-            this.notifyopen.Name = "notifyopen";
-            this.notifyopen.Size = new System.Drawing.Size(121, 38);
-            this.notifyopen.TabIndex = 14;
-            this.notifyopen.Text = "Otwórz";
-            this.notifyopen.UseVisualStyleBackColor = true;
-            // 
-            // notifyanswer
-            // 
-            this.notifyanswer.Location = new System.Drawing.Point(20, 168);
-            this.notifyanswer.Name = "notifyanswer";
-            this.notifyanswer.Size = new System.Drawing.Size(121, 38);
-            this.notifyanswer.TabIndex = 15;
-            this.notifyanswer.Text = "Odpowiedz";
-            this.notifyanswer.UseVisualStyleBackColor = true;
-            // 
-            // notifydelete
-            // 
-            this.notifydelete.Location = new System.Drawing.Point(20, 227);
-            this.notifydelete.Name = "notifydelete";
-            this.notifydelete.Size = new System.Drawing.Size(121, 38);
-            this.notifydelete.TabIndex = 16;
-            this.notifydelete.Text = "Usuń";
-            this.notifydelete.UseVisualStyleBackColor = true;
-            // 
-            // listView3
-            // 
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(295, 0);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(879, 525);
-            this.listView3.TabIndex = 0;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(32, 191);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(60, 13);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "Pracownik:";
-            // 
-            // payoffnameandsurname
-            // 
-            this.payoffnameandsurname.AutoSize = true;
-            this.payoffnameandsurname.Location = new System.Drawing.Point(98, 191);
-            this.payoffnameandsurname.Name = "payoffnameandsurname";
-            this.payoffnameandsurname.Size = new System.Drawing.Size(139, 13);
-            this.payoffnameandsurname.TabIndex = 2;
-            this.payoffnameandsurname.Text = "Imie i Nazwisko Pracownika";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(32, 216);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(162, 13);
-            this.label27.TabIndex = 3;
-            this.label27.Text = "Liczba przepracowanych godzin:";
-            // 
-            // payoffworkhours
-            // 
-            this.payoffworkhours.AutoSize = true;
-            this.payoffworkhours.Location = new System.Drawing.Point(200, 216);
-            this.payoffworkhours.Name = "payoffworkhours";
-            this.payoffworkhours.Size = new System.Drawing.Size(13, 13);
-            this.payoffworkhours.TabIndex = 4;
-            this.payoffworkhours.Text = "9";
-            // 
-            // settlebutton
-            // 
-            this.settlebutton.Location = new System.Drawing.Point(77, 318);
-            this.settlebutton.Name = "settlebutton";
-            this.settlebutton.Size = new System.Drawing.Size(102, 42);
-            this.settlebutton.TabIndex = 7;
-            this.settlebutton.Text = "Rozlicz";
-            this.settlebutton.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(77, 269);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(77, 20);
-            this.textBox3.TabIndex = 8;
-            this.textBox3.Text = "0";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(32, 272);
-            this.label29.Margin = new System.Windows.Forms.Padding(0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(42, 13);
-            this.label29.TabIndex = 9;
-            this.label29.Text = "Premia:";
-            // 
-            // payoffrefresh
-            // 
-            this.payoffrefresh.Location = new System.Drawing.Point(77, 383);
-            this.payoffrefresh.Name = "payoffrefresh";
-            this.payoffrefresh.Size = new System.Drawing.Size(102, 42);
-            this.payoffrefresh.TabIndex = 10;
-            this.payoffrefresh.Text = "Odśwież";
-            this.payoffrefresh.UseVisualStyleBackColor = true;
-            // 
-            // payoffcalendar
-            // 
-            this.payoffcalendar.Location = new System.Drawing.Point(14, 9);
-            this.payoffcalendar.Name = "payoffcalendar";
-            this.payoffcalendar.TabIndex = 11;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(32, 243);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(134, 13);
-            this.label28.TabIndex = 12;
-            this.label28.Text = "Ilośc doręczonych paczek:";
-            // 
-            // payoffpackagesdelivery
-            // 
-            this.payoffpackagesdelivery.AutoSize = true;
-            this.payoffpackagesdelivery.Location = new System.Drawing.Point(165, 243);
-            this.payoffpackagesdelivery.Name = "payoffpackagesdelivery";
-            this.payoffpackagesdelivery.Size = new System.Drawing.Size(13, 13);
-            this.payoffpackagesdelivery.TabIndex = 13;
-            this.payoffpackagesdelivery.Text = "9";
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(-4, 239);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(1178, 290);
-            this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("https://www.globkurier.pl/blog/aktualnosci", System.UriKind.Absolute);
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label30.Location = new System.Drawing.Point(3, 17);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(113, 16);
-            this.label30.TabIndex = 1;
-            this.label30.Text = "Zalogowany jako:";
-            // 
-            // loggedlabel
-            // 
-            this.loggedlabel.AutoSize = true;
-            this.loggedlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.loggedlabel.Location = new System.Drawing.Point(122, 17);
-            this.loggedlabel.Name = "loggedlabel";
-            this.loggedlabel.Size = new System.Drawing.Size(40, 16);
-            this.loggedlabel.TabIndex = 2;
-            this.loggedlabel.Text = "Login";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label31.Location = new System.Drawing.Point(3, 1);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(101, 16);
-            this.label31.TabIndex = 3;
-            this.label31.Text = "Dzisiejsza data:";
-            // 
-            // datetimenow
-            // 
-            this.datetimenow.AutoSize = true;
-            this.datetimenow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.datetimenow.Location = new System.Drawing.Point(110, 1);
-            this.datetimenow.Name = "datetimenow";
-            this.datetimenow.Size = new System.Drawing.Size(34, 16);
-            this.datetimenow.TabIndex = 4;
-            this.datetimenow.Text = "data";
-            // 
-            // gblogo
-            // 
-            this.gblogo.Image = ((System.Drawing.Image)(resources.GetObject("gblogo.Image")));
-            this.gblogo.Location = new System.Drawing.Point(293, 3);
-            this.gblogo.Name = "gblogo";
-            this.gblogo.Size = new System.Drawing.Size(586, 237);
-            this.gblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gblogo.TabIndex = 5;
-            this.gblogo.TabStop = false;
-            // 
             // CoordinatorHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1404,6 +1415,7 @@
             this.AdminPanel.ResumeLayout(false);
             this.HomePage.ResumeLayout(false);
             this.HomePage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gblogo)).EndInit();
             this.Jobs.ResumeLayout(false);
             this.Jobs.PerformLayout();
             this.Notify.ResumeLayout(false);
@@ -1419,7 +1431,6 @@
             this.Scheme.PerformLayout();
             this.Workers.ResumeLayout(false);
             this.Workers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gblogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1480,7 +1491,7 @@
         private System.Windows.Forms.Button packagesidsearch;
         private System.Windows.Forms.ListView packageslist;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox workerssearchid;
         private System.Windows.Forms.Button workersdelbutton;
         private System.Windows.Forms.Button workerseditbutton;
         private System.Windows.Forms.ListView workerslist;
@@ -1488,11 +1499,11 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox packagesidtext;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox workersprovince;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button workersbuttonoption;
+        private System.Windows.Forms.Button workersbuttonsurname;
+        private System.Windows.Forms.Button workersbuttonid;
+        private System.Windows.Forms.ComboBox workersoption;
+        private System.Windows.Forms.TextBox workerssearchsurname;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
@@ -1514,9 +1525,9 @@
         private System.Windows.Forms.Button notifydelete;
         private System.Windows.Forms.Button notifyanswer;
         private System.Windows.Forms.Button notifyopen;
-        private System.Windows.Forms.Button notifysearch;
+        private System.Windows.Forms.Button notifybuttonsearch;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox notifyoption;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Label payoffpackagesdelivery;
@@ -1536,6 +1547,8 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label loggedlabel;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox workerssearchoption;
+        private System.Windows.Forms.TextBox notifyoptionsearch;
     }
 }
 
