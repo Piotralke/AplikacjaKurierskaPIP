@@ -1,6 +1,8 @@
-﻿using System;
+﻿using AplikacjaKordynatora.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -28,10 +30,57 @@ namespace WindowsFormsApp1
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-            if (textName.Text == "" || textPassword.Text == "")
+            bool isOkay = true;
+            Address address = new Address()
             {
-                MessageBox.Show("Nalezy podac wszystkie dane");
+                id = 0,
+                street = textStreet.Text,
+                city = textCity.Text,
+                houseNumber = textApartamentNumber.Text == "" ? textBuildingNumber.Text : textBuildingNumber.Text + "/" + textApartamentNumber.Text,
+                zipCode = textZipCode.Text,
+            };
+            loginCredentials credentials = new loginCredentials()
+            {
+                id = 0,
+                email = textEmail.Text,
+                login = textLogin.Text,
+                password = textPassword.Text
+            };
+			User user = new User()
+            {
+                id = 0,
+                name = textName.Text,
+                surname = textSurname.Text,
+                loginCredentials =credentials,
+                role = 2,
+                defaultAddress = address,
+                phoneNumber = textPhone.Text
+            };
+            ValidationContext UserValidation = new ValidationContext(user,null,null);
+            ValidationContext addressValidation = new ValidationContext(address, null, null);
+            ValidationContext credentialsValidation = new ValidationContext(credentials, null, null);
+            IList<ValidationResult> errors = new List<ValidationResult>();
+            if(!Validator.TryValidateObject(address,addressValidation,errors,true))
+            {
+                isOkay = false;
             }
-        }
+			if (!Validator.TryValidateObject(credentials, credentialsValidation, errors, true))
+			{
+				isOkay = false;
+			}
+			if (!Validator.TryValidateObject(user, UserValidation, errors, true))
+			{
+                isOkay = false;
+			}
+            if(!isOkay)
+            {
+				foreach (ValidationResult result in errors)
+				{
+					MessageBox.Show(result.ErrorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				}
+			}
+		}
+
+
     }
 }

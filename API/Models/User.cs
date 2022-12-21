@@ -20,5 +20,6 @@ namespace API.Models
         public ICollection<Package>? senderPackages {get; set;}
         public ICollection<Package>? receiverPackages {get; set;}
         public ICollection<Order>? orders { get; set;}
+        public string phoneNumber { get; set; }
     }
 }
