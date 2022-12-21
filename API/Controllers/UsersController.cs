@@ -60,7 +60,8 @@ namespace API.Controllers
                     senderPackages=u.senderPackages,
                     receiverPackages=u.receiverPackages,
                     orders=u.orders,
-                    phoneNumber=u.phoneNumber
+                    phoneNumber=u.phoneNumber,
+                    region=u.region
 
                 }).FirstOrDefaultAsync();
             if (user == null)
@@ -71,9 +72,38 @@ namespace API.Controllers
             return user;
         }
 
-        // PUT: api/Users/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("PutUser/{id}")]
+		[HttpGet("GetUserByPhoneNumber/{phone}")]
+		public async Task<ActionResult<User>> GetUserByPhoneNumber(string phone)
+		{
+			var user = await _context.AppUsers.Where(u => u.phoneNumber == phone).
+				Select(u => new User
+				{
+					id = u.id,
+					name = u.name,
+					surname = u.surname,
+					loginCredentialsId = u.loginCredentialsId,
+					loginCredentials = u.loginCredentials,
+					role = u.role,
+					defaultAddressId = u.defaultAddressId,
+					defaultAddress = u.defaultAddress,
+					senderPackages = u.senderPackages,
+					receiverPackages = u.receiverPackages,
+					orders = u.orders,
+                    phoneNumber=u.phoneNumber,
+                    region=u.region
+
+				}).FirstOrDefaultAsync();
+			if (user == null)
+			{
+				return NotFound();
+			}
+
+			return user;
+		}
+
+		// PUT: api/Users/5
+		// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+		[HttpPut("PutUser/{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
             if (id != user.id)
