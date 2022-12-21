@@ -19,7 +19,7 @@ namespace AplikacjaKurieraPIP
         public Main(User user)
         {
             InitializeComponent();
-            helloLabel.Text = "Witaj " + user.login;
+            helloLabel.Text = "Witaj " + user.loginCredentials.login;
         }
         private void button1_Click(object sender, EventArgs e)
         {
