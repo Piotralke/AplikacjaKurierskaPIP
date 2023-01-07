@@ -1,6 +1,7 @@
 ﻿using API.Data;
 using API.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 
@@ -29,10 +30,21 @@ namespace API.Controllers
 		{
 			string json = JsonSerializer.Serialize(statusJson);
 			Status status = JsonSerializer.Deserialize<Status>(json);
-			_context.Statuses.Add(status);
+
+			object[] paramItems = new object[]
+{           
+				new SqlParameter("@paramIdStatus", status.idStatusName),
+				new SqlParameter("@paramIdPackage", status.idPackage),
+				new SqlParameter("@paramDate", status.date),
+}; 
+            int items = _context.Database.ExecuteSqlRaw("INSERT INTO Statuses([idStatusName],[idPackage], [date]) " +
+				"VALUES(@paramIdStatus, @paramIdPackage," +
+				" @paramDate)", paramItems);
+			//_context.Database.ExecuteSqlRaw(ss);
+		//	_context.Statuses.Add(newStatus);
 			await _context.SaveChangesAsync();
 
-			return CreatedAtAction("GetUser", new { id = status.Id }, status);
+			return CreatedAtAction("GetStatuses", new { id = status.Id }, status);
 		}
 
 	}

@@ -107,8 +107,9 @@ namespace API.Controllers
 			Package package = JsonSerializer.Deserialize<Package>(json);
 			_context.Packages.Add(package);
 			await _context.SaveChangesAsync();
+		
 
-			return CreatedAtAction("GetUser", new { id = package.id }, package);
+            return CreatedAtAction("GetUser", new { id = package.id }, package);
 		}
 
 		[HttpDelete("DeletePackageById/{id}")]
@@ -130,5 +131,14 @@ namespace API.Controllers
 		{
 			return _context.Packages.Any(e => e.id == id);
 		}
-	}
+
+		private void SaveChangesWithIdentityInsert()
+		{
+			using var transaction = _context.Database.BeginTransaction();
+			_context.Database.ExecuteSqlRawAsync($"SET INDENTITY_INSERT Addresses ON");
+			_context.SaveChanges();
+            _context.Database.ExecuteSqlRawAsync($"SET INDENTITY_INSERT Addresses OFF");
+			transaction.Commit();
+        }
+    }
 }

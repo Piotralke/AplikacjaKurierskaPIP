@@ -48,8 +48,8 @@ namespace API.Data
 
             modelBuilder.Entity<Status>()
                 .HasOne(s => s.StatusName)
-                .WithOne(r => r.status)
-                .HasForeignKey<Status>(s => s.idStatusName);
+                .WithMany(r => r.status)
+                .HasForeignKey(s => s.idStatusName);
             modelBuilder.Entity<Status>()
                 .HasOne(s => s.package)
                 .WithMany(p => p.statuses)

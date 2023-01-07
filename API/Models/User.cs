@@ -15,8 +15,8 @@ namespace API.Models
         public loginCredentials? loginCredentials { get; set; }
         [Required]
         public int role { get; set; } //0-koordynator,1-kurier,2-klient
-        public int defaultAddressId { get; set; }
-        public Address defaultAddress { get; set; }
+        public int? defaultAddressId { get; set; }
+        public Address? defaultAddress { get; set; }
         public ICollection<Package>? senderPackages {get; set;}
         public ICollection<Package>? receiverPackages {get; set;}
         public ICollection<Order>? orders { get; set;}
