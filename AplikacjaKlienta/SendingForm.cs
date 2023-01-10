@@ -17,7 +17,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class ClientHomeForm : Form
+    public partial class SendingForm : Form
     {
         public string generateNumber()
         {
@@ -33,78 +33,27 @@ namespace WindowsFormsApp1
             randomCode += dateTime;
             return randomCode;
         }
-        List<Panel> panelList = new List<Panel>();
-        List<Panel> panelList2 = new List<Panel>();
-        User loggedUser;
-        public ClientHomeForm(User user)
+        public SendingForm()
         {
             InitializeComponent();
-            loggedUser = user;
-            label1.Text = user.loginCredentials.login;
             labelCostOfService.Text = "10.99";
             textBoxCOD.Text = "0.00";
         }
 
-        private void ClientHomeForm_Load(object sender, EventArgs e)
-        {
-            panelList.Add(panelTrack);
-            panelList.Add(panelSend);
-            panelList.Add(panelProblem);
-            panelList[0].BringToFront();
-
-            panelList2.Add(panelEmpty);
-            panelList2.Add(panelDamageDescription);
-            panelList2.Add(panelLost);
-            panelList2.Add(panelOther);
-            panelList[0].BringToFront();
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            panelList[0].BringToFront();
-            button1.BackColor = Color.Teal;
-            button2.BackColor = Color.DarkCyan;
-            button3.BackColor = Color.DarkCyan;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            panelList[1].BringToFront();
-            button1.BackColor = Color.DarkCyan;
-            button2.BackColor = Color.Teal;
-            button3.BackColor = Color.DarkCyan;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            panelList[2].BringToFront();
-            button1.BackColor = Color.DarkCyan;
-            button2.BackColor = Color.DarkCyan;
-            button3.BackColor = Color.Teal;
-        }
-
-        private void buttonAddData_Click(object sender, EventArgs e)
-        {
-            textBoxName.Text = loggedUser.name;
-            textBoxSurname.Text = loggedUser.surname;
-            textBoxZip.Text = loggedUser.defaultAddress.zipCode;
-            textBoxCity.Text = loggedUser.defaultAddress.city;
-            textBoxStreet.Text = loggedUser.defaultAddress.street;
-            textBoxNumber.Text = loggedUser.defaultAddress.houseNumber;
-            textBoxEmail.Text = loggedUser.loginCredentials.email;
-            textBoxPhoneNum.Text = loggedUser.phoneNumber;
-
-        }
+        
 
         private async void buttonSubmit_Click(object sender, EventArgs e)
         {
             
             String phoneNumber = textReceiverPhone.Text;
+            String phoneNumber2 = textBoxPhoneNum.Text;
             String requestUser = "http://localhost:5225/Users";
             HttpWebRequest userRequest = (HttpWebRequest)WebRequest.Create(@requestUser);
             HttpWebResponse userResponse = (HttpWebResponse)userRequest.GetResponse();
             string userContent = new StreamReader(userResponse.GetResponseStream()).ReadToEnd();
             List<User> user = JsonSerializer.Deserialize<List<User>>(userContent);
             User checkAccount = user.Find(x => x.phoneNumber == phoneNumber);
+            User checkAccount2 = user.Find(x => x.phoneNumber == phoneNumber2);
 
             String streetReceiver = textReceiverStreet.Text;
             String cityReceiver = textReceiverCity.Text;
@@ -125,9 +74,11 @@ namespace WindowsFormsApp1
             Address receiverAddress = addressList.Find(x => x.street == streetReceiver && x.city == cityReceiver && x.houseNumber == homeNumberReceiver && x.zipCode == zipReceiver);
 
             int receiverId;
+            int senderId;
             int receiverAddressId = 0;
             int senderAddressId = 0;
             User user1;
+            User user2;
             Address address1 = null;
             Address address2 = null;
             if (senderAddress == null)
@@ -179,13 +130,33 @@ namespace WindowsFormsApp1
                 user1 = newUser;
 
             }
-            else
-            {
-                receiverId = checkAccount.id;
-                user1 = null;
-            }
+			else
+			{
+				receiverId = checkAccount.id;
+				user1 = null;
+			}
+			if (checkAccount2 == null)
+			{
+				senderId = 0;
 
-            float weight = float.Parse(textBoxWeight.Text, CultureInfo.InvariantCulture.NumberFormat);
+				User newUser = new User()
+				{
+					id = 0,
+					name = textBoxName.Text,
+					surname = textBoxSurname.Text,
+					role = 2,
+					phoneNumber = textBoxPhoneNum.Text
+				};
+				user2 = newUser;
+
+			}
+			else
+			{
+				senderId = checkAccount2.id;
+				user2 = null;
+			}
+
+			float weight = float.Parse(textBoxWeight.Text, CultureInfo.InvariantCulture.NumberFormat);
             float width = float.Parse(textBoxWidth.Text, CultureInfo.InvariantCulture.NumberFormat);
             float depth = float.Parse(textBoxDepth.Text, CultureInfo.InvariantCulture.NumberFormat);
             float heigth = float.Parse(textBoxHeigth.Text, CultureInfo.InvariantCulture.NumberFormat);
@@ -199,7 +170,8 @@ namespace WindowsFormsApp1
                 Receiver = user1,
                 receiverAddressId = receiverAddressId,
                 receiverAddress=address2,
-                SenderId = loggedUser.id,
+                SenderId = senderId,
+                Sender = user2,
                 senderAddressId = senderAddressId,
                 senderAddress=address1,
                 weight = weight,
@@ -264,6 +236,7 @@ namespace WindowsFormsApp1
 
             MessageBox.Show("Dodano paczki");
 
+
         }
 
         private void checkBoxCOD_CheckedChanged(object sender, EventArgs e)
@@ -279,11 +252,6 @@ namespace WindowsFormsApp1
         }
 
         private void textBoxWeight_TextChanged(object sender, EventArgs e)
-        {
-            calculatePrice(labelCostOfService, textBoxWeight, radioButtonStandard, radioButtonCustom);
-        }
-
-        private void radioButtonCustom_CheckedChanged(object sender, EventArgs e)
         {
             calculatePrice(labelCostOfService, textBoxWeight, radioButtonStandard, radioButtonCustom);
         }
@@ -320,20 +288,9 @@ namespace WindowsFormsApp1
             labelCostOfService.Text = costOfServiceValue.ToString();
         }
 
-        private void comboBoxTopic_SelectedIndexChanged(object sender, EventArgs e)
+        private void radioButtonCustom_CheckedChanged(object sender, EventArgs e)
         {
-            if(comboBoxTopic.SelectedIndex == 0)
-            {
-                panelList2[1].BringToFront();
-            }
-            else if (comboBoxTopic.SelectedIndex == 1)
-            {
-                panelList2[2].BringToFront();
-            }
-            else if (comboBoxTopic.SelectedIndex == 2)
-            {
-                panelList2[3].BringToFront();
-            }
+            calculatePrice(labelCostOfService, textBoxWeight, radioButtonStandard, radioButtonCustom);
         }
     }
 }

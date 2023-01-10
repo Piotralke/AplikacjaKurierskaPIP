@@ -22,5 +22,11 @@ namespace WindowsFormsApp1
             LoginForm loginForm = new LoginForm(this);
             loginForm.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SendingForm sendingForm = new SendingForm();
+            sendingForm.Show();
+        }
     }
 }
