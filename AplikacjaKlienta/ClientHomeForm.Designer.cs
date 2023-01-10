@@ -108,6 +108,61 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.panelProblem = new System.Windows.Forms.Panel();
+            this.panelDamageDescription = new System.Windows.Forms.Panel();
+            this.label47 = new System.Windows.Forms.Label();
+            this.buttonSend = new System.Windows.Forms.Button();
+            this.checkBoxZabrudzenie = new System.Windows.Forms.CheckBox();
+            this.checkBoxZamoczenie = new System.Windows.Forms.CheckBox();
+            this.checkBoxBraki = new System.Windows.Forms.CheckBox();
+            this.checkBoxWgniecenie = new System.Windows.Forms.CheckBox();
+            this.checkBoxRozdarcie = new System.Windows.Forms.CheckBox();
+            this.checkBoxPrzedziurawienie = new System.Windows.Forms.CheckBox();
+            this.checkBoxInnerDamage = new System.Windows.Forms.CheckBox();
+            this.checkBoxOuterDamage = new System.Windows.Forms.CheckBox();
+            this.checkBoxStłuczenie = new System.Windows.Forms.CheckBox();
+            this.checkBoxPorysowanie = new System.Windows.Forms.CheckBox();
+            this.checkBoxPołamanie = new System.Windows.Forms.CheckBox();
+            this.labelJaki = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.comboBoxPacket = new System.Windows.Forms.ComboBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.textBoxDamageDescription = new System.Windows.Forms.TextBox();
+            this.textBoxPackageInfo = new System.Windows.Forms.TextBox();
+            this.textBoxJaki = new System.Windows.Forms.TextBox();
+            this.textBoxPackage = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.comboBoxTopic = new System.Windows.Forms.ComboBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panelEmpty = new System.Windows.Forms.Panel();
+            this.panelLost = new System.Windows.Forms.Panel();
+            this.label37 = new System.Windows.Forms.Label();
+            this.buttonSend1 = new System.Windows.Forms.Button();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.textBoxPkInfo = new System.Windows.Forms.TextBox();
+            this.textBoxPkNum = new System.Windows.Forms.TextBox();
+            this.textBoxDesc = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.comboBoxType = new System.Windows.Forms.ComboBox();
+            this.panelOther = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -115,6 +170,11 @@
             this.panelTrack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelSend.SuspendLayout();
+            this.panelProblem.SuspendLayout();
+            this.panelDamageDescription.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panelLost.SuspendLayout();
+            this.panelOther.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -199,6 +259,7 @@
             this.button3.Text = "ZGŁOŚ PROBLEM";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -1037,6 +1098,669 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Imie";
             // 
+            // panelProblem
+            // 
+            this.panelProblem.Controls.Add(this.panelEmpty);
+            this.panelProblem.Controls.Add(this.panelOther);
+            this.panelProblem.Controls.Add(this.panelLost);
+            this.panelProblem.Controls.Add(this.panelDamageDescription);
+            this.panelProblem.Controls.Add(this.label35);
+            this.panelProblem.Controls.Add(this.label34);
+            this.panelProblem.Controls.Add(this.comboBoxTopic);
+            this.panelProblem.Controls.Add(this.pictureBox4);
+            this.panelProblem.Location = new System.Drawing.Point(273, 0);
+            this.panelProblem.Name = "panelProblem";
+            this.panelProblem.Size = new System.Drawing.Size(868, 681);
+            this.panelProblem.TabIndex = 5;
+            // 
+            // panelDamageDescription
+            // 
+            this.panelDamageDescription.AutoScroll = true;
+            this.panelDamageDescription.BackColor = System.Drawing.Color.DarkCyan;
+            this.panelDamageDescription.Controls.Add(this.label47);
+            this.panelDamageDescription.Controls.Add(this.buttonSend);
+            this.panelDamageDescription.Controls.Add(this.checkBoxZabrudzenie);
+            this.panelDamageDescription.Controls.Add(this.checkBoxZamoczenie);
+            this.panelDamageDescription.Controls.Add(this.checkBoxBraki);
+            this.panelDamageDescription.Controls.Add(this.checkBoxWgniecenie);
+            this.panelDamageDescription.Controls.Add(this.checkBoxRozdarcie);
+            this.panelDamageDescription.Controls.Add(this.checkBoxPrzedziurawienie);
+            this.panelDamageDescription.Controls.Add(this.checkBoxInnerDamage);
+            this.panelDamageDescription.Controls.Add(this.checkBoxOuterDamage);
+            this.panelDamageDescription.Controls.Add(this.checkBoxStłuczenie);
+            this.panelDamageDescription.Controls.Add(this.checkBoxPorysowanie);
+            this.panelDamageDescription.Controls.Add(this.checkBoxPołamanie);
+            this.panelDamageDescription.Controls.Add(this.labelJaki);
+            this.panelDamageDescription.Controls.Add(this.label41);
+            this.panelDamageDescription.Controls.Add(this.label39);
+            this.panelDamageDescription.Controls.Add(this.label46);
+            this.panelDamageDescription.Controls.Add(this.label45);
+            this.panelDamageDescription.Controls.Add(this.label44);
+            this.panelDamageDescription.Controls.Add(this.label43);
+            this.panelDamageDescription.Controls.Add(this.label42);
+            this.panelDamageDescription.Controls.Add(this.label40);
+            this.panelDamageDescription.Controls.Add(this.comboBoxPacket);
+            this.panelDamageDescription.Controls.Add(this.label38);
+            this.panelDamageDescription.Controls.Add(this.label36);
+            this.panelDamageDescription.Controls.Add(this.textBoxDamageDescription);
+            this.panelDamageDescription.Controls.Add(this.textBoxPackageInfo);
+            this.panelDamageDescription.Controls.Add(this.textBoxJaki);
+            this.panelDamageDescription.Controls.Add(this.textBoxPackage);
+            this.panelDamageDescription.Location = new System.Drawing.Point(57, 200);
+            this.panelDamageDescription.Name = "panelDamageDescription";
+            this.panelDamageDescription.Size = new System.Drawing.Size(760, 455);
+            this.panelDamageDescription.TabIndex = 8;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(376, 1311);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(0, 13);
+            this.label47.TabIndex = 11;
+            // 
+            // buttonSend
+            // 
+            this.buttonSend.BackColor = System.Drawing.Color.DarkCyan;
+            this.buttonSend.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSend.ForeColor = System.Drawing.Color.White;
+            this.buttonSend.Location = new System.Drawing.Point(289, 1135);
+            this.buttonSend.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSend.Name = "buttonSend";
+            this.buttonSend.Size = new System.Drawing.Size(196, 57);
+            this.buttonSend.TabIndex = 10;
+            this.buttonSend.Text = "Wyślij";
+            this.buttonSend.UseVisualStyleBackColor = false;
+            // 
+            // checkBoxZabrudzenie
+            // 
+            this.checkBoxZabrudzenie.AutoSize = true;
+            this.checkBoxZabrudzenie.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxZabrudzenie.ForeColor = System.Drawing.Color.White;
+            this.checkBoxZabrudzenie.Location = new System.Drawing.Point(276, 673);
+            this.checkBoxZabrudzenie.Name = "checkBoxZabrudzenie";
+            this.checkBoxZabrudzenie.Size = new System.Drawing.Size(154, 37);
+            this.checkBoxZabrudzenie.TabIndex = 8;
+            this.checkBoxZabrudzenie.Text = "Zabrudzenie";
+            this.checkBoxZabrudzenie.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxZamoczenie
+            // 
+            this.checkBoxZamoczenie.AutoSize = true;
+            this.checkBoxZamoczenie.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxZamoczenie.ForeColor = System.Drawing.Color.White;
+            this.checkBoxZamoczenie.Location = new System.Drawing.Point(277, 630);
+            this.checkBoxZamoczenie.Name = "checkBoxZamoczenie";
+            this.checkBoxZamoczenie.Size = new System.Drawing.Size(148, 37);
+            this.checkBoxZamoczenie.TabIndex = 8;
+            this.checkBoxZamoczenie.Text = "Zamoczenie";
+            this.checkBoxZamoczenie.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxBraki
+            // 
+            this.checkBoxBraki.AutoSize = true;
+            this.checkBoxBraki.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxBraki.ForeColor = System.Drawing.Color.White;
+            this.checkBoxBraki.Location = new System.Drawing.Point(519, 673);
+            this.checkBoxBraki.Name = "checkBoxBraki";
+            this.checkBoxBraki.Size = new System.Drawing.Size(206, 37);
+            this.checkBoxBraki.TabIndex = 8;
+            this.checkBoxBraki.Text = "Braki w przesyłce";
+            this.checkBoxBraki.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxWgniecenie
+            // 
+            this.checkBoxWgniecenie.AutoSize = true;
+            this.checkBoxWgniecenie.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxWgniecenie.ForeColor = System.Drawing.Color.White;
+            this.checkBoxWgniecenie.Location = new System.Drawing.Point(519, 630);
+            this.checkBoxWgniecenie.Name = "checkBoxWgniecenie";
+            this.checkBoxWgniecenie.Size = new System.Drawing.Size(140, 37);
+            this.checkBoxWgniecenie.TabIndex = 8;
+            this.checkBoxWgniecenie.Text = "Wgniecenie";
+            this.checkBoxWgniecenie.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxRozdarcie
+            // 
+            this.checkBoxRozdarcie.AutoSize = true;
+            this.checkBoxRozdarcie.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxRozdarcie.ForeColor = System.Drawing.Color.White;
+            this.checkBoxRozdarcie.Location = new System.Drawing.Point(519, 583);
+            this.checkBoxRozdarcie.Name = "checkBoxRozdarcie";
+            this.checkBoxRozdarcie.Size = new System.Drawing.Size(128, 37);
+            this.checkBoxRozdarcie.TabIndex = 8;
+            this.checkBoxRozdarcie.Text = "Rozdarcie";
+            this.checkBoxRozdarcie.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxPrzedziurawienie
+            // 
+            this.checkBoxPrzedziurawienie.AutoSize = true;
+            this.checkBoxPrzedziurawienie.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxPrzedziurawienie.ForeColor = System.Drawing.Color.White;
+            this.checkBoxPrzedziurawienie.Location = new System.Drawing.Point(277, 587);
+            this.checkBoxPrzedziurawienie.Name = "checkBoxPrzedziurawienie";
+            this.checkBoxPrzedziurawienie.Size = new System.Drawing.Size(198, 37);
+            this.checkBoxPrzedziurawienie.TabIndex = 8;
+            this.checkBoxPrzedziurawienie.Text = "Przedziurawienie";
+            this.checkBoxPrzedziurawienie.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxInnerDamage
+            // 
+            this.checkBoxInnerDamage.AutoSize = true;
+            this.checkBoxInnerDamage.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxInnerDamage.ForeColor = System.Drawing.Color.White;
+            this.checkBoxInnerDamage.Location = new System.Drawing.Point(58, 893);
+            this.checkBoxInnerDamage.Name = "checkBoxInnerDamage";
+            this.checkBoxInnerDamage.Size = new System.Drawing.Size(64, 37);
+            this.checkBoxInnerDamage.TabIndex = 8;
+            this.checkBoxInnerDamage.Text = "Nie";
+            this.checkBoxInnerDamage.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxOuterDamage
+            // 
+            this.checkBoxOuterDamage.AutoSize = true;
+            this.checkBoxOuterDamage.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxOuterDamage.ForeColor = System.Drawing.Color.White;
+            this.checkBoxOuterDamage.Location = new System.Drawing.Point(58, 776);
+            this.checkBoxOuterDamage.Name = "checkBoxOuterDamage";
+            this.checkBoxOuterDamage.Size = new System.Drawing.Size(69, 37);
+            this.checkBoxOuterDamage.TabIndex = 8;
+            this.checkBoxOuterDamage.Text = "Tak";
+            this.checkBoxOuterDamage.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxStłuczenie
+            // 
+            this.checkBoxStłuczenie.AutoSize = true;
+            this.checkBoxStłuczenie.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxStłuczenie.ForeColor = System.Drawing.Color.White;
+            this.checkBoxStłuczenie.Location = new System.Drawing.Point(58, 673);
+            this.checkBoxStłuczenie.Name = "checkBoxStłuczenie";
+            this.checkBoxStłuczenie.Size = new System.Drawing.Size(132, 37);
+            this.checkBoxStłuczenie.TabIndex = 8;
+            this.checkBoxStłuczenie.Text = "Stłuczenie";
+            this.checkBoxStłuczenie.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxPorysowanie
+            // 
+            this.checkBoxPorysowanie.AutoSize = true;
+            this.checkBoxPorysowanie.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxPorysowanie.ForeColor = System.Drawing.Color.White;
+            this.checkBoxPorysowanie.Location = new System.Drawing.Point(58, 630);
+            this.checkBoxPorysowanie.Name = "checkBoxPorysowanie";
+            this.checkBoxPorysowanie.Size = new System.Drawing.Size(154, 37);
+            this.checkBoxPorysowanie.TabIndex = 8;
+            this.checkBoxPorysowanie.Text = "Porysowanie";
+            this.checkBoxPorysowanie.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxPołamanie
+            // 
+            this.checkBoxPołamanie.AutoSize = true;
+            this.checkBoxPołamanie.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxPołamanie.ForeColor = System.Drawing.Color.White;
+            this.checkBoxPołamanie.Location = new System.Drawing.Point(58, 587);
+            this.checkBoxPołamanie.Name = "checkBoxPołamanie";
+            this.checkBoxPołamanie.Size = new System.Drawing.Size(134, 37);
+            this.checkBoxPołamanie.TabIndex = 8;
+            this.checkBoxPołamanie.Text = "Połamanie";
+            this.checkBoxPołamanie.UseVisualStyleBackColor = true;
+            // 
+            // labelJaki
+            // 
+            this.labelJaki.AutoSize = true;
+            this.labelJaki.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelJaki.ForeColor = System.Drawing.Color.White;
+            this.labelJaki.Location = new System.Drawing.Point(272, 487);
+            this.labelJaki.Name = "labelJaki";
+            this.labelJaki.Size = new System.Drawing.Size(51, 26);
+            this.labelJaki.TabIndex = 7;
+            this.labelJaki.Text = "Jaki?";
+            this.labelJaki.Visible = false;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.label41.Font = new System.Drawing.Font("Segoe Print", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label41.ForeColor = System.Drawing.Color.White;
+            this.label41.Location = new System.Drawing.Point(36, 386);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(197, 51);
+            this.label41.TabIndex = 6;
+            this.label41.Text = "Uszkodzenia";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.label39.Font = new System.Drawing.Font("Segoe Print", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label39.ForeColor = System.Drawing.Color.White;
+            this.label39.Location = new System.Drawing.Point(36, 21);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(286, 51);
+            this.label39.TabIndex = 6;
+            this.label39.Text = "Ogólne informacje";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label46.ForeColor = System.Drawing.Color.White;
+            this.label46.Location = new System.Drawing.Point(31, 1209);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(694, 63);
+            this.label46.TabIndex = 1;
+            this.label46.Text = resources.GetString("label46.Text");
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label45.ForeColor = System.Drawing.Color.White;
+            this.label45.Location = new System.Drawing.Point(30, 974);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(349, 37);
+            this.label45.TabIndex = 1;
+            this.label45.Text = "Opis uszkodzeń / Uwagi klienta";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label44.ForeColor = System.Drawing.Color.White;
+            this.label44.Location = new System.Drawing.Point(30, 853);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(466, 37);
+            this.label44.TabIndex = 1;
+            this.label44.Text = "Uszkodzenie zabezpieczenia wewnętrznego";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label43.ForeColor = System.Drawing.Color.White;
+            this.label43.Location = new System.Drawing.Point(30, 736);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(430, 37);
+            this.label43.TabIndex = 1;
+            this.label43.Text = "Uszkodzenie opakowania zewnętrznego";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label42.ForeColor = System.Drawing.Color.White;
+            this.label42.Location = new System.Drawing.Point(29, 529);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(166, 37);
+            this.label42.TabIndex = 1;
+            this.label42.Text = "Rodzaj szkody";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label40.ForeColor = System.Drawing.Color.White;
+            this.label40.Location = new System.Drawing.Point(29, 442);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(275, 37);
+            this.label40.TabIndex = 1;
+            this.label40.Text = "Opakowanie zewnętrzne";
+            // 
+            // comboBoxPacket
+            // 
+            this.comboBoxPacket.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxPacket.FormattingEnabled = true;
+            this.comboBoxPacket.Items.AddRange(new object[] {
+            "Koperta",
+            "Folia bąbelkowa",
+            "Folia stretch",
+            "Karton",
+            "Pojemnik",
+            "Foliopak",
+            "Skrzynia",
+            "Taśma",
+            "Beczka",
+            "Inne"});
+            this.comboBoxPacket.Location = new System.Drawing.Point(36, 482);
+            this.comboBoxPacket.Name = "comboBoxPacket";
+            this.comboBoxPacket.Size = new System.Drawing.Size(194, 31);
+            this.comboBoxPacket.TabIndex = 3;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label38.ForeColor = System.Drawing.Color.White;
+            this.label38.Location = new System.Drawing.Point(27, 171);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(230, 37);
+            this.label38.TabIndex = 1;
+            this.label38.Text = "Zawartość przesyłki";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label36.ForeColor = System.Drawing.Color.White;
+            this.label36.Location = new System.Drawing.Point(29, 88);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(192, 37);
+            this.label36.TabIndex = 1;
+            this.label36.Text = "Numer przesyłki";
+            // 
+            // textBoxDamageDescription
+            // 
+            this.textBoxDamageDescription.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxDamageDescription.ForeColor = System.Drawing.Color.Black;
+            this.textBoxDamageDescription.Location = new System.Drawing.Point(37, 1024);
+            this.textBoxDamageDescription.Multiline = true;
+            this.textBoxDamageDescription.Name = "textBoxDamageDescription";
+            this.textBoxDamageDescription.Size = new System.Drawing.Size(688, 71);
+            this.textBoxDamageDescription.TabIndex = 0;
+            // 
+            // textBoxPackageInfo
+            // 
+            this.textBoxPackageInfo.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxPackageInfo.ForeColor = System.Drawing.Color.Black;
+            this.textBoxPackageInfo.Location = new System.Drawing.Point(36, 211);
+            this.textBoxPackageInfo.Multiline = true;
+            this.textBoxPackageInfo.Name = "textBoxPackageInfo";
+            this.textBoxPackageInfo.Size = new System.Drawing.Size(688, 130);
+            this.textBoxPackageInfo.TabIndex = 0;
+            // 
+            // textBoxJaki
+            // 
+            this.textBoxJaki.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxJaki.ForeColor = System.Drawing.Color.Black;
+            this.textBoxJaki.Location = new System.Drawing.Point(329, 483);
+            this.textBoxJaki.Name = "textBoxJaki";
+            this.textBoxJaki.Size = new System.Drawing.Size(152, 30);
+            this.textBoxJaki.TabIndex = 0;
+            this.textBoxJaki.Visible = false;
+            // 
+            // textBoxPackage
+            // 
+            this.textBoxPackage.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxPackage.ForeColor = System.Drawing.Color.Black;
+            this.textBoxPackage.Location = new System.Drawing.Point(34, 128);
+            this.textBoxPackage.Name = "textBoxPackage";
+            this.textBoxPackage.Size = new System.Drawing.Size(688, 30);
+            this.textBoxPackage.TabIndex = 0;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.DarkCyan;
+            this.label35.Font = new System.Drawing.Font("Segoe Print", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label35.ForeColor = System.Drawing.Color.White;
+            this.label35.Location = new System.Drawing.Point(60, 12);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(507, 85);
+            this.label35.TabIndex = 6;
+            this.label35.Text = "Zgłoś swój problem";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label34.ForeColor = System.Drawing.Color.White;
+            this.label34.Location = new System.Drawing.Point(50, 109);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(179, 37);
+            this.label34.TabIndex = 4;
+            this.label34.Text = "Wybierz temat:";
+            // 
+            // comboBoxTopic
+            // 
+            this.comboBoxTopic.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxTopic.FormattingEnabled = true;
+            this.comboBoxTopic.Items.AddRange(new object[] {
+            "Uszkodzona przesyłka",
+            "Zagubiona paczka",
+            "Inne"});
+            this.comboBoxTopic.Location = new System.Drawing.Point(57, 149);
+            this.comboBoxTopic.Name = "comboBoxTopic";
+            this.comboBoxTopic.Size = new System.Drawing.Size(221, 31);
+            this.comboBoxTopic.TabIndex = 3;
+            this.comboBoxTopic.SelectedIndexChanged += new System.EventHandler(this.comboBoxTopic_SelectedIndexChanged);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(656, 8);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(199, 112);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            // 
+            // panelEmpty
+            // 
+            this.panelEmpty.BackColor = System.Drawing.Color.Teal;
+            this.panelEmpty.Location = new System.Drawing.Point(23, 200);
+            this.panelEmpty.Name = "panelEmpty";
+            this.panelEmpty.Size = new System.Drawing.Size(807, 481);
+            this.panelEmpty.TabIndex = 9;
+            // 
+            // panelLost
+            // 
+            this.panelLost.AutoScroll = true;
+            this.panelLost.BackColor = System.Drawing.Color.DarkCyan;
+            this.panelLost.Controls.Add(this.comboBoxType);
+            this.panelLost.Controls.Add(this.label37);
+            this.panelLost.Controls.Add(this.buttonSend1);
+            this.panelLost.Controls.Add(this.label50);
+            this.panelLost.Controls.Add(this.label51);
+            this.panelLost.Controls.Add(this.label48);
+            this.panelLost.Controls.Add(this.label49);
+            this.panelLost.Controls.Add(this.label57);
+            this.panelLost.Controls.Add(this.label58);
+            this.panelLost.Controls.Add(this.textBoxDesc);
+            this.panelLost.Controls.Add(this.textBoxPkInfo);
+            this.panelLost.Controls.Add(this.textBoxPkNum);
+            this.panelLost.Location = new System.Drawing.Point(50, 200);
+            this.panelLost.Name = "panelLost";
+            this.panelLost.Size = new System.Drawing.Size(767, 473);
+            this.panelLost.TabIndex = 12;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(404, 855);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(0, 13);
+            this.label37.TabIndex = 11;
+            // 
+            // buttonSend1
+            // 
+            this.buttonSend1.BackColor = System.Drawing.Color.DarkCyan;
+            this.buttonSend1.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSend1.ForeColor = System.Drawing.Color.White;
+            this.buttonSend1.Location = new System.Drawing.Point(300, 682);
+            this.buttonSend1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSend1.Name = "buttonSend1";
+            this.buttonSend1.Size = new System.Drawing.Size(196, 57);
+            this.buttonSend1.TabIndex = 10;
+            this.buttonSend1.Text = "Wyślij";
+            this.buttonSend1.UseVisualStyleBackColor = false;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.label50.Font = new System.Drawing.Font("Segoe Print", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label50.ForeColor = System.Drawing.Color.White;
+            this.label50.Location = new System.Drawing.Point(36, 21);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(286, 51);
+            this.label50.TabIndex = 6;
+            this.label50.Text = "Ogólne informacje";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label51.ForeColor = System.Drawing.Color.White;
+            this.label51.Location = new System.Drawing.Point(42, 756);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(694, 63);
+            this.label51.TabIndex = 1;
+            this.label51.Text = resources.GetString("label51.Text");
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label57.ForeColor = System.Drawing.Color.White;
+            this.label57.Location = new System.Drawing.Point(27, 171);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(230, 37);
+            this.label57.TabIndex = 1;
+            this.label57.Text = "Zawartość przesyłki";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label58.ForeColor = System.Drawing.Color.White;
+            this.label58.Location = new System.Drawing.Point(29, 88);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(192, 37);
+            this.label58.TabIndex = 1;
+            this.label58.Text = "Numer przesyłki";
+            // 
+            // textBoxPkInfo
+            // 
+            this.textBoxPkInfo.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxPkInfo.ForeColor = System.Drawing.Color.Black;
+            this.textBoxPkInfo.Location = new System.Drawing.Point(36, 211);
+            this.textBoxPkInfo.Multiline = true;
+            this.textBoxPkInfo.Name = "textBoxPkInfo";
+            this.textBoxPkInfo.Size = new System.Drawing.Size(688, 130);
+            this.textBoxPkInfo.TabIndex = 0;
+            // 
+            // textBoxPkNum
+            // 
+            this.textBoxPkNum.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxPkNum.ForeColor = System.Drawing.Color.Black;
+            this.textBoxPkNum.Location = new System.Drawing.Point(34, 128);
+            this.textBoxPkNum.Name = "textBoxPkNum";
+            this.textBoxPkNum.Size = new System.Drawing.Size(688, 30);
+            this.textBoxPkNum.TabIndex = 0;
+            // 
+            // textBoxDesc
+            // 
+            this.textBoxDesc.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxDesc.ForeColor = System.Drawing.Color.Black;
+            this.textBoxDesc.Location = new System.Drawing.Point(36, 514);
+            this.textBoxDesc.Multiline = true;
+            this.textBoxDesc.Name = "textBoxDesc";
+            this.textBoxDesc.Size = new System.Drawing.Size(688, 130);
+            this.textBoxDesc.TabIndex = 0;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label48.ForeColor = System.Drawing.Color.White;
+            this.label48.Location = new System.Drawing.Point(27, 474);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(342, 37);
+            this.label48.TabIndex = 1;
+            this.label48.Text = "Opis problemu / Uwagi klienta";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label49.ForeColor = System.Drawing.Color.White;
+            this.label49.Location = new System.Drawing.Point(25, 356);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(178, 37);
+            this.label49.TabIndex = 1;
+            this.label49.Text = "Rodzaj zlecenia";
+            // 
+            // comboBoxType
+            // 
+            this.comboBoxType.Font = new System.Drawing.Font("Segoe Print", 9.75F);
+            this.comboBoxType.FormattingEnabled = true;
+            this.comboBoxType.Location = new System.Drawing.Point(36, 396);
+            this.comboBoxType.Name = "comboBoxType";
+            this.comboBoxType.Size = new System.Drawing.Size(183, 31);
+            this.comboBoxType.TabIndex = 12;
+            // 
+            // panelOther
+            // 
+            this.panelOther.AutoScroll = true;
+            this.panelOther.BackColor = System.Drawing.Color.DarkCyan;
+            this.panelOther.Controls.Add(this.button6);
+            this.panelOther.Controls.Add(this.label53);
+            this.panelOther.Controls.Add(this.label54);
+            this.panelOther.Controls.Add(this.label55);
+            this.panelOther.Controls.Add(this.textBox2);
+            this.panelOther.Location = new System.Drawing.Point(47, 200);
+            this.panelOther.Name = "panelOther";
+            this.panelOther.Size = new System.Drawing.Size(780, 473);
+            this.panelOther.TabIndex = 13;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.DarkCyan;
+            this.button6.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(300, 300);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(196, 57);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "Wyślij";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.label53.Font = new System.Drawing.Font("Segoe Print", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label53.ForeColor = System.Drawing.Color.White;
+            this.label53.Location = new System.Drawing.Point(36, 21);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(305, 51);
+            this.label53.TabIndex = 6;
+            this.label53.Text = "Opisz swój problem";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label54.ForeColor = System.Drawing.Color.White;
+            this.label54.Location = new System.Drawing.Point(42, 374);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(694, 63);
+            this.label54.TabIndex = 1;
+            this.label54.Text = resources.GetString("label54.Text");
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label55.ForeColor = System.Drawing.Color.White;
+            this.label55.Location = new System.Drawing.Point(27, 92);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(342, 37);
+            this.label55.TabIndex = 1;
+            this.label55.Text = "Opis problemu / Uwagi klienta";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox2.ForeColor = System.Drawing.Color.Black;
+            this.textBox2.Location = new System.Drawing.Point(36, 132);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(688, 130);
+            this.textBox2.TabIndex = 0;
+            // 
             // ClientHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1045,6 +1769,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1141, 681);
+            this.Controls.Add(this.panelProblem);
             this.Controls.Add(this.panelSend);
             this.Controls.Add(this.panelTrack);
             this.Controls.Add(this.panel2);
@@ -1065,6 +1790,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelSend.ResumeLayout(false);
             this.panelSend.PerformLayout();
+            this.panelProblem.ResumeLayout(false);
+            this.panelProblem.PerformLayout();
+            this.panelDamageDescription.ResumeLayout(false);
+            this.panelDamageDescription.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panelLost.ResumeLayout(false);
+            this.panelLost.PerformLayout();
+            this.panelOther.ResumeLayout(false);
+            this.panelOther.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1150,5 +1884,60 @@
         private System.Windows.Forms.Label textCost;
         private System.Windows.Forms.Label labelCost;
         private System.Windows.Forms.Label labelCostOfService;
+        private System.Windows.Forms.Panel panelProblem;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.ComboBox comboBoxTopic;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Panel panelDamageDescription;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox textBoxPackageInfo;
+        private System.Windows.Forms.TextBox textBoxPackage;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label labelJaki;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.ComboBox comboBoxPacket;
+        private System.Windows.Forms.TextBox textBoxJaki;
+        private System.Windows.Forms.CheckBox checkBoxZabrudzenie;
+        private System.Windows.Forms.CheckBox checkBoxZamoczenie;
+        private System.Windows.Forms.CheckBox checkBoxBraki;
+        private System.Windows.Forms.CheckBox checkBoxWgniecenie;
+        private System.Windows.Forms.CheckBox checkBoxRozdarcie;
+        private System.Windows.Forms.CheckBox checkBoxPrzedziurawienie;
+        private System.Windows.Forms.CheckBox checkBoxStłuczenie;
+        private System.Windows.Forms.CheckBox checkBoxPorysowanie;
+        private System.Windows.Forms.CheckBox checkBoxPołamanie;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox textBoxDamageDescription;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Button buttonSend;
+        private System.Windows.Forms.CheckBox checkBoxInnerDamage;
+        private System.Windows.Forms.CheckBox checkBoxOuterDamage;
+        private System.Windows.Forms.Panel panelEmpty;
+        private System.Windows.Forms.Panel panelLost;
+        private System.Windows.Forms.ComboBox comboBoxType;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Button buttonSend1;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.TextBox textBoxDesc;
+        private System.Windows.Forms.TextBox textBoxPkInfo;
+        private System.Windows.Forms.TextBox textBoxPkNum;
+        private System.Windows.Forms.Panel panelOther;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

@@ -21,10 +21,18 @@ namespace WindowsFormsApp1
     {
         public string generateNumber()
         {
-            return "placeholder";
+            string dateTime = DateTime.Now.ToString("dd-MM-yyyy");
+            Random random = new Random();
+            string randomCode = "";
+            int randomNumber = random.Next(0, 10);
+            for (int i = 0; i < 10; i++)
+            {
+                randomNumber = random.Next(0, 10);
+                randomCode += randomNumber.ToString();
+            }
+            randomCode += dateTime;
+            return randomCode;
         }
-        List<Panel> panelList = new List<Panel>();
-        User loggedUser;
         public SendingForm()
         {
             InitializeComponent();

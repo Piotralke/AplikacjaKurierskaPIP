@@ -21,9 +21,20 @@ namespace WindowsFormsApp1
     {
         public string generateNumber()
         {
-            return "placeholder";
+            string dateTime = DateTime.Now.ToString("dd-MM-yyyy");
+            Random random = new Random();
+            string randomCode = "";
+            int randomNumber = random.Next(0, 10);
+            for (int i = 0; i < 10; i++)
+            {
+                randomNumber = random.Next(0, 10);
+                randomCode += randomNumber.ToString();
+            }
+            randomCode += dateTime;
+            return randomCode;
         }
         List<Panel> panelList = new List<Panel>();
+        List<Panel> panelList2 = new List<Panel>();
         User loggedUser;
         public ClientHomeForm(User user)
         {
@@ -34,17 +45,25 @@ namespace WindowsFormsApp1
             textBoxCOD.Text = "0.00";
         }
 
+        private void ClientHomeForm_Load(object sender, EventArgs e)
+        {
+            panelList.Add(panelTrack);
+            panelList.Add(panelSend);
+            panelList.Add(panelProblem);
+            panelList[0].BringToFront();
+
+            panelList2.Add(panelEmpty);
+            panelList2.Add(panelDamageDescription);
+            panelList2.Add(panelLost);
+            panelList2.Add(panelOther);
+            panelList[0].BringToFront();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             panelList[0].BringToFront();
             button1.BackColor = Color.Teal;
             button2.BackColor = Color.DarkCyan;
-        }
-        private void ClientHomeForm_Load(object sender, EventArgs e)
-        {
-            panelList.Add(panelTrack);
-            panelList.Add(panelSend);
-            panelList[0].BringToFront();
+            button3.BackColor = Color.DarkCyan;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -52,6 +71,15 @@ namespace WindowsFormsApp1
             panelList[1].BringToFront();
             button1.BackColor = Color.DarkCyan;
             button2.BackColor = Color.Teal;
+            button3.BackColor = Color.DarkCyan;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panelList[2].BringToFront();
+            button1.BackColor = Color.DarkCyan;
+            button2.BackColor = Color.DarkCyan;
+            button3.BackColor = Color.Teal;
         }
 
         private void buttonAddData_Click(object sender, EventArgs e)
@@ -255,6 +283,11 @@ namespace WindowsFormsApp1
             calculatePrice(labelCostOfService, textBoxWeight, radioButtonStandard, radioButtonCustom);
         }
 
+        private void radioButtonCustom_CheckedChanged(object sender, EventArgs e)
+        {
+            calculatePrice(labelCostOfService, textBoxWeight, radioButtonStandard, radioButtonCustom);
+        }
+
         private void calculatePrice(Label labelCostOfService ,TextBox weight, RadioButton radioButtonStnadard, RadioButton radioButtonCustom)
         {
             double costOfServiceValue = 10.99;
@@ -287,9 +320,20 @@ namespace WindowsFormsApp1
             labelCostOfService.Text = costOfServiceValue.ToString();
         }
 
-        private void radioButtonCustom_CheckedChanged(object sender, EventArgs e)
+        private void comboBoxTopic_SelectedIndexChanged(object sender, EventArgs e)
         {
-            calculatePrice(labelCostOfService, textBoxWeight, radioButtonStandard, radioButtonCustom);
+            if(comboBoxTopic.SelectedIndex == 0)
+            {
+                panelList2[1].BringToFront();
+            }
+            else if (comboBoxTopic.SelectedIndex == 1)
+            {
+                panelList2[2].BringToFront();
+            }
+            else if (comboBoxTopic.SelectedIndex == 2)
+            {
+                panelList2[3].BringToFront();
+            }
         }
     }
 }
