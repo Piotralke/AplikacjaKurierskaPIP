@@ -123,6 +123,8 @@
             this.mmMiasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sidCredentials = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sphoneNumberr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.zipcodeee = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Regionssss = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.submithours = new System.Windows.Forms.Button();
             this.workhours = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -152,14 +154,19 @@
             this.surname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.role = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.loginCredentialsId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Regions = new System.Windows.Forms.TabPage();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.phoneNumbers = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.emails = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.zipcodeee = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Regionssss = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Regions = new System.Windows.Forms.TabPage();
+            this.addregion = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.regioncode = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.mousechoice = new System.Windows.Forms.CheckBox();
+            this.regionlist = new System.Windows.Forms.ListView();
+            this.gmap = new GMap.NET.WindowsForms.GMapControl();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.AdminPanel.SuspendLayout();
             this.HomePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gblogo)).BeginInit();
@@ -171,6 +178,7 @@
             this.Register.SuspendLayout();
             this.Scheme.SuspendLayout();
             this.Workers.SuspendLayout();
+            this.Regions.SuspendLayout();
             this.SuspendLayout();
             // 
             // AdminPanel
@@ -1106,6 +1114,15 @@
             this.sphoneNumberr.Text = "Numer Telefonu";
             this.sphoneNumberr.Width = 92;
             // 
+            // zipcodeee
+            // 
+            this.zipcodeee.Text = "Kod Pocztowy";
+            this.zipcodeee.Width = 88;
+            // 
+            // Regionssss
+            // 
+            this.Regionssss.Text = "Region";
+            // 
             // submithours
             // 
             this.submithours.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -1389,8 +1406,30 @@
             this.loginCredentialsId.Text = "Login";
             this.loginCredentialsId.Width = 123;
             // 
+            // Password
+            // 
+            this.Password.Text = "Hasło";
+            this.Password.Width = 130;
+            // 
+            // phoneNumbers
+            // 
+            this.phoneNumbers.Text = "Numer Telefonu";
+            this.phoneNumbers.Width = 137;
+            // 
+            // emails
+            // 
+            this.emails.Text = "E-mail";
+            this.emails.Width = 158;
+            // 
             // Regions
             // 
+            this.Regions.Controls.Add(this.addregion);
+            this.Regions.Controls.Add(this.label6);
+            this.Regions.Controls.Add(this.regioncode);
+            this.Regions.Controls.Add(this.button1);
+            this.Regions.Controls.Add(this.mousechoice);
+            this.Regions.Controls.Add(this.regionlist);
+            this.Regions.Controls.Add(this.gmap);
             this.Regions.ImageIndex = 11;
             this.Regions.Location = new System.Drawing.Point(4, 63);
             this.Regions.Name = "Regions";
@@ -1398,6 +1437,88 @@
             this.Regions.TabIndex = 11;
             this.Regions.Text = "Regiony";
             this.Regions.UseVisualStyleBackColor = true;
+            // 
+            // addregion
+            // 
+            this.addregion.Location = new System.Drawing.Point(18, 94);
+            this.addregion.Name = "addregion";
+            this.addregion.Size = new System.Drawing.Size(123, 23);
+            this.addregion.TabIndex = 6;
+            this.addregion.Text = "Dodaj Region";
+            this.addregion.UseVisualStyleBackColor = true;
+            this.addregion.Click += new System.EventHandler(this.addregion_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(47, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Kod Regionu";
+            // 
+            // regioncode
+            // 
+            this.regioncode.Location = new System.Drawing.Point(18, 63);
+            this.regioncode.Name = "regioncode";
+            this.regioncode.Size = new System.Drawing.Size(124, 20);
+            this.regioncode.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(41, 439);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Odśwież";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // mousechoice
+            // 
+            this.mousechoice.AutoSize = true;
+            this.mousechoice.Location = new System.Drawing.Point(18, 15);
+            this.mousechoice.Name = "mousechoice";
+            this.mousechoice.Size = new System.Drawing.Size(124, 17);
+            this.mousechoice.TabIndex = 2;
+            this.mousechoice.Text = "Dodawanie punktów";
+            this.mousechoice.UseVisualStyleBackColor = true;
+            this.mousechoice.CheckedChanged += new System.EventHandler(this.mousechoice_CheckedChanged);
+            // 
+            // regionlist
+            // 
+            this.regionlist.HideSelection = false;
+            this.regionlist.Location = new System.Drawing.Point(157, 0);
+            this.regionlist.Name = "regionlist";
+            this.regionlist.Size = new System.Drawing.Size(271, 494);
+            this.regionlist.TabIndex = 1;
+            this.regionlist.UseCompatibleStateImageBehavior = false;
+            // 
+            // gmap
+            // 
+            this.gmap.Bearing = 0F;
+            this.gmap.CanDragMap = true;
+            this.gmap.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gmap.GrayScaleMode = false;
+            this.gmap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gmap.LevelsKeepInMemory = 5;
+            this.gmap.Location = new System.Drawing.Point(425, 0);
+            this.gmap.MarkersEnabled = true;
+            this.gmap.MaxZoom = 2;
+            this.gmap.MinZoom = 2;
+            this.gmap.MouseWheelZoomEnabled = true;
+            this.gmap.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gmap.Name = "gmap";
+            this.gmap.NegativeMode = false;
+            this.gmap.PolygonsEnabled = true;
+            this.gmap.RetryLoadTile = 0;
+            this.gmap.RoutesEnabled = true;
+            this.gmap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gmap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gmap.ShowTileGridLines = false;
+            this.gmap.Size = new System.Drawing.Size(749, 498);
+            this.gmap.TabIndex = 0;
+            this.gmap.Zoom = 0D;
+            this.gmap.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gmap_MouseClick);
             // 
             // imageList1
             // 
@@ -1420,30 +1541,6 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // Password
-            // 
-            this.Password.Text = "Hasło";
-            this.Password.Width = 130;
-            // 
-            // phoneNumbers
-            // 
-            this.phoneNumbers.Text = "Numer Telefonu";
-            this.phoneNumbers.Width = 166;
-            // 
-            // emails
-            // 
-            this.emails.Text = "E-mail";
-            this.emails.Width = 158;
-            // 
-            // zipcodeee
-            // 
-            this.zipcodeee.Text = "Kod Pocztowy";
-            this.zipcodeee.Width = 88;
-            // 
-            // Regionssss
-            // 
-            this.Regionssss.Text = "Region";
             // 
             // CoordinatorHome
             // 
@@ -1477,6 +1574,8 @@
             this.Scheme.PerformLayout();
             this.Workers.ResumeLayout(false);
             this.Workers.PerformLayout();
+            this.Regions.ResumeLayout(false);
+            this.Regions.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1613,6 +1712,13 @@
         private System.Windows.Forms.ColumnHeader phoneNumbers;
         private System.Windows.Forms.ColumnHeader zipcodeee;
         private System.Windows.Forms.ColumnHeader Regionssss;
+        private System.Windows.Forms.ListView regionlist;
+        private GMap.NET.WindowsForms.GMapControl gmap;
+        private System.Windows.Forms.Button addregion;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox regioncode;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox mousechoice;
     }
 }
 

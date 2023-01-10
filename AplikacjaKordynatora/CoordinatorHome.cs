@@ -17,12 +17,21 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AplikacjaKordynatora.Models;
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
 
 namespace AplikacjaKordynatora
 {
+    struct Coordinates
+    {
+        public float lat;
+        public float lng;
+    }
     public partial class CoordinatorHome : Form
     {
-
+        List<Coordinates> coordinates = new List<Coordinates>();
         public CoordinatorHome(loginCredentials credentials)
         {
             InitializeComponent();
@@ -30,7 +39,7 @@ namespace AplikacjaKordynatora
             datetimenow.Text = DateTime.Now.ToShortDateString();
             registerseat.Text = "Kurier";
             datework.Text = calendar.TodayDate.ToShortDateString();
-            
+
         }
 
         private void CoordinatorHome_Load(object sender, EventArgs e)
@@ -38,6 +47,13 @@ namespace AplikacjaKordynatora
             packageslist.GridLines = true;
             workerslist.GridLines = true;
             schemeworkerslist.GridLines = true;
+            regioncode.Enabled = false;
+            addregion.Enabled = false;
+            gmap.MapProvider = GMapProviders.OpenStreetMap;
+            gmap.Position = new PointLatLng(50.866065, 20.628568);
+            gmap.MinZoom = 1;
+            gmap.MaxZoom = 17;
+            gmap.Zoom = 10;
         }
 
 
@@ -360,6 +376,52 @@ namespace AplikacjaKordynatora
         }
 
         private void schemeworkerslist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gmap_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (mousechoice.Checked)
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    var point = gmap.FromLocalToLatLng(e.X, e.Y);
+                    float lat = (float)point.Lat;
+                    float lng = (float)point.Lng;
+
+                    gmap.Position = point;
+
+                    var markers = new GMapOverlay("markers");
+                    var marker = new GMarkerGoogle(point, GMarkerGoogleType.arrow);
+                    markers.Markers.Add(marker);
+                    Coordinates coords = new Coordinates() { lat = lat, lng = lng};
+                    coordinates.Add(coords);
+                    gmap.Overlays.Add(markers);
+
+                }
+            }
+         
+        }
+
+        private void mousechoice_CheckedChanged(object sender, EventArgs e)
+        {
+            coordinates.Clear();
+            gmap.Overlays.Clear();
+            gmap.Refresh();
+            if (mousechoice.Checked)
+            {
+                regioncode.Enabled = true;
+                addregion.Enabled = true;
+            }
+            else
+            {
+                regioncode.Enabled = false;
+                addregion.Enabled = false;
+            }
+        }
+
+        private void addregion_Click(object sender, EventArgs e)
         {
 
         }
