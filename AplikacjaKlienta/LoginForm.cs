@@ -83,5 +83,10 @@ namespace WindowsFormsApp1
                 Console.WriteLine(ex.ToString());
             }
         }
+
+        private void textUserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

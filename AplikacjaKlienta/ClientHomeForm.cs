@@ -62,6 +62,7 @@ namespace WindowsFormsApp1
             textBoxNumber.Text = loggedUser.defaultAddress.houseNumber;
             textBoxEmail.Text = loggedUser.loginCredentials.email;
             textBoxPhoneNum.Text = loggedUser.phoneNumber;
+
         }
 
         private async void buttonSubmit_Click(object sender, EventArgs e)
@@ -217,7 +218,7 @@ namespace WindowsFormsApp1
             Status status = new Status()
             {
                 Id = 0,
-                idStatusName = 6,
+                idStatusName = 4,
                 idPackage = packageId,
                 date = DateTime.Now
             };
