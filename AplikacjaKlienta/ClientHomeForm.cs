@@ -61,6 +61,7 @@ namespace WindowsFormsApp1
             textBoxNumber.Text = loggedUser.defaultAddress.houseNumber;
             textBoxEmail.Text = loggedUser.loginCredentials.email;
             textBoxPhoneNum.Text = loggedUser.phoneNumber;
+
         }
 
         private async void buttonSubmit_Click(object sender, EventArgs e)
@@ -216,5 +217,5 @@ namespace WindowsFormsApp1
 				MessageBox.Show("Dodano paczki");
 
 		}
-    }
+	}
 }
