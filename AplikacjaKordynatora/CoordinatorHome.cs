@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Diagnostics.PerformanceData;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -17,12 +16,21 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AplikacjaKordynatora.Models;
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
 
 namespace AplikacjaKordynatora
 {
+    struct Coordinates
+    {
+        public float lat;
+        public float lng;
+    }
     public partial class CoordinatorHome : Form
     {
-
+        List<Coordinates> coordinates = new List<Coordinates>();
         public CoordinatorHome(loginCredentials credentials)
         {
             InitializeComponent();
@@ -30,7 +38,7 @@ namespace AplikacjaKordynatora
             datetimenow.Text = DateTime.Now.ToShortDateString();
             registerseat.Text = "Kurier";
             datework.Text = calendar.TodayDate.ToShortDateString();
-            
+
         }
 
         private void CoordinatorHome_Load(object sender, EventArgs e)
@@ -38,6 +46,13 @@ namespace AplikacjaKordynatora
             packageslist.GridLines = true;
             workerslist.GridLines = true;
             schemeworkerslist.GridLines = true;
+            regioncode.Enabled = false;
+            addregion.Enabled = false;
+            gmap.MapProvider = GMapProviders.OpenStreetMap;
+            gmap.Position = new PointLatLng(50.866065, 20.628568);
+            gmap.MinZoom = 1;
+            gmap.MaxZoom = 17;
+            gmap.Zoom = 10;
         }
 
 
@@ -219,7 +234,6 @@ namespace AplikacjaKordynatora
             packageslist.Items.Clear();
          
             
-            
         }
 
         private void packagesshowall_Click(object sender, EventArgs e)
@@ -362,6 +376,112 @@ namespace AplikacjaKordynatora
         private void schemeworkerslist_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void gmap_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (mousechoice.Checked)
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    var point = gmap.FromLocalToLatLng(e.X, e.Y);
+                    float lat = (float)point.Lat;
+                    float lng = (float)point.Lng;
+
+                    gmap.Position = point;
+
+                    var markers = new GMapOverlay("markers");
+                    var marker = new GMarkerGoogle(point, GMarkerGoogleType.arrow);
+                    markers.Markers.Add(marker);
+                    Coordinates coords = new Coordinates() { lat = lat, lng = lng};
+                    coordinates.Add(coords);
+                   
+                    gmap.Overlays.Add(markers);
+
+                }
+            }
+         
+        }
+
+        private void mousechoice_CheckedChanged(object sender, EventArgs e)
+        {
+            coordinates.Clear();
+            gmap.Overlays.Clear();
+            gmap.Refresh();
+            if (mousechoice.Checked)
+            {
+                regioncode.Enabled = true;
+                addregion.Enabled = true;
+            }
+            else
+            {
+                regioncode.Enabled = false;
+                addregion.Enabled = false;
+            }
+        }
+
+        private async void addregion_Click(object sender, EventArgs e)
+        {
+            String sregioncode = regioncode.Text;
+            String requestRegions = "http://localhost:5225/regions";
+            HttpWebRequest regionsRequest = (HttpWebRequest)WebRequest.Create(@requestRegions);
+            HttpWebResponse regionsResponse = (HttpWebResponse)regionsRequest.GetResponse();
+            string regionsContent = new StreamReader(regionsResponse.GetResponseStream()).ReadToEnd();
+            List<Region> listregion = JsonSerializer.Deserialize<List<Region>>(regionsContent);
+            Region checkRegion = listregion.Find(x => x.code == sregioncode);
+            if(checkRegion != null)
+            {
+                MessageBox.Show("Istnieje już region o podanym kodzie", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Region region = new Region()
+                {
+                    Id = 0,
+                    code = sregioncode,
+                    courier = null,
+                    regionPins = null
+
+                };
+
+                int regionId;
+                String requestRegions2 = "http://localhost:5225/regions";
+                String jsonRegions = JsonSerializer.Serialize(region);
+                using (var streamWriter = new HttpClient())
+                {
+                    var response = await streamWriter.PostAsync(requestRegions2, new StringContent(jsonRegions, Encoding.UTF8, "application/json"));
+                    var jString = response.Content.ReadAsStringAsync();
+                    Region resultRegion = JsonSerializer.Deserialize<Region>(jString.Result);
+                    Console.WriteLine(resultRegion.Id);
+                    regionId = resultRegion.Id;
+                }
+                
+
+
+                List<RegionPins> listRegionPins = new List<RegionPins>();
+                foreach (Coordinates c in coordinates)
+                {
+                    RegionPins regionPins = new RegionPins()
+                    {
+                        id = 0,
+                        x = c.lat,
+                        y = c.lng,
+                        regionId = regionId
+
+                    };
+                    listRegionPins.Add(regionPins);
+                }
+                String request = "http://localhost:5225/regionPins/PostList";
+                String json = JsonSerializer.Serialize(listRegionPins);
+                using (var streamWriter = new HttpClient())
+                {
+                    var response = await streamWriter.PostAsync(request, new StringContent(json, Encoding.UTF8, "application/json"));
+
+                }
+                MessageBox.Show("Pomyślnie dodano Region");
+
+
+            }
         }
     }
     
