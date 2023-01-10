@@ -32,7 +32,7 @@ namespace API.Controllers
 			_context.Orders.Add(order);
 			await _context.SaveChangesAsync();
 
-			return CreatedAtAction("GetOrder", new { id = order.id }, order);
+			return CreatedAtAction("GetOrders", new { id = order.id }, order);
 		}
 
 	}

@@ -4,6 +4,7 @@ using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(CourierDbContext))]
-    partial class CourierDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230102133755_defaultAddressNullable")]
+    partial class defaultAddressNullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -229,7 +231,8 @@ namespace API.Migrations
 
                     b.HasIndex("idPackage");
 
-                    b.HasIndex("idStatusName");
+                    b.HasIndex("idStatusName")
+                        .IsUnique();
 
                     b.ToTable("Statuses");
                 });
@@ -372,8 +375,8 @@ namespace API.Migrations
                         .IsRequired();
 
                     b.HasOne("API.Models.statusNames", "StatusName")
-                        .WithMany("status")
-                        .HasForeignKey("idStatusName")
+                        .WithOne("status")
+                        .HasForeignKey("API.Models.Status", "idStatusName")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -426,7 +429,8 @@ namespace API.Migrations
 
             modelBuilder.Entity("API.Models.statusNames", b =>
                 {
-                    b.Navigation("status");
+                    b.Navigation("status")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("API.Models.User", b =>

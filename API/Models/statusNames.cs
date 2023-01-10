@@ -8,6 +8,6 @@ namespace API.Models
         public int id { get; set; }
         [Required]
         public string name { get; set; }
-        public Status status { get; set; }
+        public ICollection<Status> status { get; set; }
     }
 }

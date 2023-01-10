@@ -27,7 +27,25 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetAppUsers()
         {
-            return await _context.AppUsers.ToListAsync();
+            return await _context.AppUsers.
+                 Select(u => new User
+                 {
+                     id = u.id,
+                     name = u.name,
+                     surname = u.surname,
+                     loginCredentialsId = u.loginCredentialsId,
+                     loginCredentials = u.loginCredentials,
+                     role = u.role,
+                     defaultAddressId = u.defaultAddressId,
+                     defaultAddress = u.defaultAddress,
+                     senderPackages = u.senderPackages,
+                     receiverPackages = u.receiverPackages,
+                     orders = u.orders,
+                     phoneNumber = u.phoneNumber,
+                     region = u.region
+
+                 }).ToListAsync();
+
         }
 
         // GET: api/Users/5

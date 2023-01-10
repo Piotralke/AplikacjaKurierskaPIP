@@ -6,6 +6,7 @@ namespace API.Models
     public class Address
     {
 		[Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
         [Required]
         public string street { get; set; }
