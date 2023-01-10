@@ -161,12 +161,16 @@
             this.addregion = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.regioncode = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.regionsrefreshbutton = new System.Windows.Forms.Button();
             this.mousechoice = new System.Windows.Forms.CheckBox();
             this.regionlist = new System.Windows.Forms.ListView();
+            this.columregioncode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.comboBoxWorkers = new System.Windows.Forms.ComboBox();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.gbgb2137 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AdminPanel.SuspendLayout();
             this.HomePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gblogo)).BeginInit();
@@ -1423,10 +1427,12 @@
             // 
             // Regions
             // 
+            this.Regions.Controls.Add(this.buttonUpdate);
+            this.Regions.Controls.Add(this.comboBoxWorkers);
             this.Regions.Controls.Add(this.addregion);
             this.Regions.Controls.Add(this.label6);
             this.Regions.Controls.Add(this.regioncode);
-            this.Regions.Controls.Add(this.button1);
+            this.Regions.Controls.Add(this.regionsrefreshbutton);
             this.Regions.Controls.Add(this.mousechoice);
             this.Regions.Controls.Add(this.regionlist);
             this.Regions.Controls.Add(this.gmap);
@@ -1464,14 +1470,15 @@
             this.regioncode.Size = new System.Drawing.Size(124, 20);
             this.regioncode.TabIndex = 4;
             // 
-            // button1
+            // regionsrefreshbutton
             // 
-            this.button1.Location = new System.Drawing.Point(41, 439);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Odśwież";
-            this.button1.UseVisualStyleBackColor = true;
+            this.regionsrefreshbutton.Location = new System.Drawing.Point(41, 439);
+            this.regionsrefreshbutton.Name = "regionsrefreshbutton";
+            this.regionsrefreshbutton.Size = new System.Drawing.Size(75, 23);
+            this.regionsrefreshbutton.TabIndex = 3;
+            this.regionsrefreshbutton.Text = "Odśwież";
+            this.regionsrefreshbutton.UseVisualStyleBackColor = true;
+            this.regionsrefreshbutton.Click += new System.EventHandler(this.regionsrefreshbutton_Click);
             // 
             // mousechoice
             // 
@@ -1486,12 +1493,23 @@
             // 
             // regionlist
             // 
+            this.regionlist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columregioncode,
+            this.gbgb2137});
+            this.regionlist.GridLines = true;
             this.regionlist.HideSelection = false;
             this.regionlist.Location = new System.Drawing.Point(157, 0);
             this.regionlist.Name = "regionlist";
             this.regionlist.Size = new System.Drawing.Size(271, 494);
             this.regionlist.TabIndex = 1;
             this.regionlist.UseCompatibleStateImageBehavior = false;
+            this.regionlist.View = System.Windows.Forms.View.Details;
+            this.regionlist.SelectedIndexChanged += new System.EventHandler(this.regionlist_SelectedIndexChanged);
+            // 
+            // columregioncode
+            // 
+            this.columregioncode.Text = "Region";
+            this.columregioncode.Width = 136;
             // 
             // gmap
             // 
@@ -1541,6 +1559,29 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // comboBoxWorkers
+            // 
+            this.comboBoxWorkers.FormattingEnabled = true;
+            this.comboBoxWorkers.Location = new System.Drawing.Point(18, 147);
+            this.comboBoxWorkers.Name = "comboBoxWorkers";
+            this.comboBoxWorkers.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxWorkers.TabIndex = 7;
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Location = new System.Drawing.Point(41, 183);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpdate.TabIndex = 8;
+            this.buttonUpdate.Text = "Aktualizuj";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
+            // 
+            // gbgb2137
+            // 
+            this.gbgb2137.Text = "Kurier";
+            this.gbgb2137.Width = 145;
             // 
             // CoordinatorHome
             // 
@@ -1717,8 +1758,12 @@
         private System.Windows.Forms.Button addregion;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox regioncode;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button regionsrefreshbutton;
         private System.Windows.Forms.CheckBox mousechoice;
+        private System.Windows.Forms.ColumnHeader columregioncode;
+        private System.Windows.Forms.ComboBox comboBoxWorkers;
+        private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.ColumnHeader gbgb2137;
     }
 }
 

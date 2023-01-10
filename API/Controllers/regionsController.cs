@@ -19,8 +19,47 @@ namespace API.Controllers
 		[HttpGet]
 		public async Task<ActionResult<IEnumerable<Region>>> GetRegions()
 		{
-			return await _context.regions.ToListAsync();
-		}
+		 var result = await (from r in _context.regions
+						  join u in _context.AppUsers on r.courierId equals u.id
+						  join l in _context.LoginCredentials on u.loginCredentialsId equals l.id
+						  select new Region
+						  {
+							  id = r.id,
+							  code = r.code,
+							  courierId = r.courierId == null? null:r.courierId,
+							  courier  = r.courierId == null ? null: new User
+							  {
+								  id = u.id,
+								  name = u.name,
+								  surname = u.surname,
+								  loginCredentialsId = u.loginCredentialsId,
+								  role = u.role,
+								  defaultAddressId = u.defaultAddressId,
+								  defaultAddress = u.defaultAddress,
+								  senderPackages = u.senderPackages,
+								  receiverPackages = u.receiverPackages,
+								  orders =	u.orders,
+								  phoneNumber = u.phoneNumber,
+								  loginCredentials = new loginCredentials
+								  {
+									  id = l.id,
+									  email = l.email,
+									  login = l.login,
+									  password = l.password
+								  }
+							  }
+							  
+						  }
+			).ToArrayAsync();
+
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            return result;
+
+        }
 		[HttpGet("GetRegionByID/{id}")]
 		public async Task<ActionResult<Region>> GetRegion(int id)
 		{
@@ -33,7 +72,19 @@ namespace API.Controllers
 
 			return region;
 		}
-		[HttpPost]
+        [HttpGet("GetRegionByCode/{code}")]
+        public async Task<ActionResult<Region>> GetRegionByCode(string code)
+        {
+            var region = await _context.regions.Where(x => x.code.Equals(code)).FirstOrDefaultAsync();
+
+            if (region == null)
+            {
+                return NotFound();
+            }
+
+            return region;
+        }
+        [HttpPost]
 		public async Task<ActionResult<Region>> PostRegion(object regionjson)
 		{
 			string json = JsonSerializer.Serialize(regionjson);
@@ -41,7 +92,7 @@ namespace API.Controllers
 			_context.regions.Add(region);
 			await _context.SaveChangesAsync();
 
-			return CreatedAtAction("GetRegion", new { id = region.Id }, region);
+			return CreatedAtAction("GetRegion", new { id = region.id }, region);
 		}
 	}
 }

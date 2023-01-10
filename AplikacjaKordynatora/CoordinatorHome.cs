@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Diagnostics.PerformanceData;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -20,6 +21,7 @@ using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
+using Region = AplikacjaKordynatora.Models.Region;
 
 namespace AplikacjaKordynatora
 {
@@ -43,6 +45,8 @@ namespace AplikacjaKordynatora
 
         private void CoordinatorHome_Load(object sender, EventArgs e)
         {
+            load_Regions();
+            buttonUpdate.Enabled = false;
             packageslist.GridLines = true;
             workerslist.GridLines = true;
             schemeworkerslist.GridLines = true;
@@ -53,9 +57,35 @@ namespace AplikacjaKordynatora
             gmap.MinZoom = 1;
             gmap.MaxZoom = 17;
             gmap.Zoom = 10;
+            LoadCouriers();
         }
 
+        private void LoadCouriers()
+        {
+            try
+            {
 
+                String requestWorkers = "http://localhost:5225/Users/GetAllWorkers/";
+                HttpWebRequest webRequestWorkers = (HttpWebRequest)WebRequest.Create(@requestWorkers);
+                HttpWebResponse webResponeWorkers = (HttpWebResponse)webRequestWorkers.GetResponse();
+                string workersContent = new StreamReader(webResponeWorkers.GetResponseStream()).ReadToEnd();
+                User[] user = JsonSerializer.Deserialize<User[]>(workersContent);
+                comboBoxWorkers.Items.Clear();
+                for (int i = 0; i < user.Length; i++)
+                {
+                    comboBoxWorkers.Items.Add(user[i].loginCredentials.login);
+
+
+                }
+                
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("BLAD!" + ex);
+            }
+        }
 
         private void Workersbuttonoption_Click(object sender, EventArgs e)
         {
@@ -429,15 +459,22 @@ namespace AplikacjaKordynatora
             string regionsContent = new StreamReader(regionsResponse.GetResponseStream()).ReadToEnd();
             List<Region> listregion = JsonSerializer.Deserialize<List<Region>>(regionsContent);
             Region checkRegion = listregion.Find(x => x.code == sregioncode);
+            bool isOkay = true;
             if(checkRegion != null)
             {
                 MessageBox.Show("Istnieje już region o podanym kodzie", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                isOkay = false;
             }
-            else
+            if(coordinates.Count < 3)
+            {
+                MessageBox.Show("Aby utworzyć region utwórz conajmniej 3 punkty na mapie!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                isOkay = false;
+            }
+            if(isOkay)
             {
                 Region region = new Region()
                 {
-                    Id = 0,
+                    id = 0,
                     code = sregioncode,
                     courier = null,
                     regionPins = null
@@ -452,8 +489,7 @@ namespace AplikacjaKordynatora
                     var response = await streamWriter.PostAsync(requestRegions2, new StringContent(jsonRegions, Encoding.UTF8, "application/json"));
                     var jString = response.Content.ReadAsStringAsync();
                     Region resultRegion = JsonSerializer.Deserialize<Region>(jString.Result);
-                    Console.WriteLine(resultRegion.Id);
-                    regionId = resultRegion.Id;
+                    regionId = resultRegion.id;
                 }
                 
 
@@ -479,9 +515,130 @@ namespace AplikacjaKordynatora
 
                 }
                 MessageBox.Show("Pomyślnie dodano Region");
-
+                coordinates.Clear();
+                gmap.Overlays.Clear();
+                gmap.Refresh();
+                load_Regions();
 
             }
+        }
+
+        private void regionsrefreshbutton_Click(object sender, EventArgs e)
+        {
+            gmap.Overlays.Clear();
+            buttonUpdate.Enabled = false;
+            gmap.Zoom -= 1;
+            gmap.Zoom += 1;
+            load_Regions();
+           
+        }
+
+        private void load_Regions()
+        {
+            try
+            {
+
+                String requestRegionsList = "http://localhost:5225/regions/";
+                HttpWebRequest webRequestRegionsList = (HttpWebRequest)WebRequest.Create(@requestRegionsList);
+                HttpWebResponse webResponseRegionsList = (HttpWebResponse)webRequestRegionsList.GetResponse();
+                string workersContent = new StreamReader(webResponseRegionsList.GetResponseStream()).ReadToEnd();
+                Region[] region = JsonSerializer.Deserialize<Region[]>(workersContent);
+                List<List<string>> list = new List<List<string>>();
+               
+                for (int i = 0; i < region.Length; i++)
+                {
+                    list.Add(new List<string> { region[i].code.ToString(), region[i].courier == null?" ":region[i].courier.loginCredentials.login });
+                    
+
+                }
+                regionlist.Items.Clear();
+                foreach (List<string> l in list)
+                {
+                    ListViewItem item = new ListViewItem(l[0]);
+                    item.SubItems.Add(l[1]);
+                    regionlist.Items.Add(item);
+                }
+                mousechoice.Checked = false;
+                regioncode.Text = null;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("BLAD!" + ex);
+            }
+        }
+
+        private void regionlist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(regionlist.SelectedIndices.Count <=0)
+            {
+                return;
+            }
+            int intselectedinex = regionlist.SelectedIndices[0];
+            if(intselectedinex >= 0)
+            {
+                buttonUpdate.Enabled = true;
+                gmap.Overlays.Clear();
+                String code = regionlist.Items[intselectedinex].Text;
+                String requestRegionsList = "http://localhost:5225/regions/GetRegionByCode/" + code;
+                HttpWebRequest webRequestRegionsList = (HttpWebRequest)WebRequest.Create(@requestRegionsList);
+                HttpWebResponse webResponseRegionsList = (HttpWebResponse)webRequestRegionsList.GetResponse();
+                string workersContent = new StreamReader(webResponseRegionsList.GetResponseStream()).ReadToEnd();
+                Region region = JsonSerializer.Deserialize<Region>(workersContent);
+
+
+
+                String requestRegionsPinsList = "http://localhost:5225/regionPins/GetRegionPinByRegionId/" + region.id;
+                HttpWebRequest webRequestRegionsPinsList = (HttpWebRequest)WebRequest.Create(@requestRegionsPinsList);
+                HttpWebResponse webResponseRegionsPinsList = (HttpWebResponse)webRequestRegionsPinsList.GetResponse();
+                string regionPinsContent = new StreamReader(webResponseRegionsPinsList.GetResponseStream()).ReadToEnd();
+                List<RegionPins> regionPins  = JsonSerializer.Deserialize<List<RegionPins>>(regionPinsContent);
+
+                List<PointLatLng> points = new List<PointLatLng>();
+                foreach(RegionPins pin in regionPins)
+                {
+                    PointLatLng pll = new PointLatLng()
+                    {
+                        Lat = pin.x,
+                        Lng = pin.y,
+                    };
+                    points.Add(pll);
+                }
+                double maxlatx = points.Max(x => x.Lat);
+                double minlatx = points.Min(x => x.Lat);
+                double maxlngx = points.Max(x => x.Lng);
+                double minlngx = points.Min(x => x.Lng);
+
+                PointLatLng maxpll = new PointLatLng()
+                {
+                    Lat = (maxlatx+minlatx)/2,
+                    Lng = (maxlngx + minlngx)/2
+                };
+
+                var polygon = new GMapPolygon(points, code)
+                {
+                    Stroke = new Pen(Color.Red, 3),
+                   Fill = new SolidBrush(Color.Transparent)
+                    
+                };
+                var polygons = new GMapOverlay("polygons");
+                polygons.Polygons.Add(polygon);
+                gmap.Overlays.Add(polygons);
+                gmap.Refresh();
+                gmap.Zoom -= 1;
+                gmap.Zoom += 1;
+                gmap.Position = maxpll;
+                
+            }
+            else
+            {
+                
+            }
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
     
