@@ -120,9 +120,9 @@
             this.sname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ssurname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.srole = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sIDAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mmMiasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sidCredentials = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sphoneNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sphoneNumberr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.submithours = new System.Windows.Forms.Button();
             this.workhours = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -151,11 +151,15 @@
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.surname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.role = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.defaultAdressId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.loginCredentialsId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.phoneNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Regions = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.phoneNumbers = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.emails = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.zipcodeee = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Regionssss = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AdminPanel.SuspendLayout();
             this.HomePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gblogo)).BeginInit();
@@ -183,6 +187,7 @@
             this.AdminPanel.Controls.Add(this.Register);
             this.AdminPanel.Controls.Add(this.Scheme);
             this.AdminPanel.Controls.Add(this.Workers);
+            this.AdminPanel.Controls.Add(this.Regions);
             this.AdminPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AdminPanel.HotTrack = true;
             this.AdminPanel.ImageList = this.imageList1;
@@ -206,11 +211,11 @@
             this.HomePage.Controls.Add(this.label30);
             this.HomePage.Controls.Add(this.webBrowser1);
             this.HomePage.ImageIndex = 0;
-            this.HomePage.Location = new System.Drawing.Point(4, 32);
+            this.HomePage.Location = new System.Drawing.Point(4, 63);
             this.HomePage.Name = "HomePage";
             this.HomePage.Padding = new System.Windows.Forms.Padding(1);
             this.HomePage.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.HomePage.Size = new System.Drawing.Size(1170, 525);
+            this.HomePage.Size = new System.Drawing.Size(1170, 494);
             this.HomePage.TabIndex = 1;
             this.HomePage.Text = "Strona Główna";
             // 
@@ -284,10 +289,10 @@
             this.Jobs.Controls.Add(this.courierslist);
             this.Jobs.Controls.Add(this.jobsview);
             this.Jobs.ImageIndex = 9;
-            this.Jobs.Location = new System.Drawing.Point(4, 32);
+            this.Jobs.Location = new System.Drawing.Point(4, 63);
             this.Jobs.Name = "Jobs";
             this.Jobs.Padding = new System.Windows.Forms.Padding(3);
-            this.Jobs.Size = new System.Drawing.Size(1170, 525);
+            this.Jobs.Size = new System.Drawing.Size(1170, 494);
             this.Jobs.TabIndex = 0;
             this.Jobs.Text = "Zlecenia";
             // 
@@ -351,9 +356,9 @@
             // 
             this.Statistics.BackColor = System.Drawing.Color.LightSlateGray;
             this.Statistics.ImageIndex = 1;
-            this.Statistics.Location = new System.Drawing.Point(4, 32);
+            this.Statistics.Location = new System.Drawing.Point(4, 63);
             this.Statistics.Name = "Statistics";
-            this.Statistics.Size = new System.Drawing.Size(1170, 525);
+            this.Statistics.Size = new System.Drawing.Size(1170, 494);
             this.Statistics.TabIndex = 2;
             this.Statistics.Text = "Statystyki";
             // 
@@ -361,9 +366,9 @@
             // 
             this.Reports.BackColor = System.Drawing.Color.LightSlateGray;
             this.Reports.ImageIndex = 2;
-            this.Reports.Location = new System.Drawing.Point(4, 32);
+            this.Reports.Location = new System.Drawing.Point(4, 63);
             this.Reports.Name = "Reports";
-            this.Reports.Size = new System.Drawing.Size(1170, 525);
+            this.Reports.Size = new System.Drawing.Size(1170, 494);
             this.Reports.TabIndex = 3;
             this.Reports.Text = "Raporty";
             // 
@@ -379,9 +384,9 @@
             this.Notify.Controls.Add(this.notifyoption);
             this.Notify.Controls.Add(this.listView2);
             this.Notify.ImageIndex = 8;
-            this.Notify.Location = new System.Drawing.Point(4, 32);
+            this.Notify.Location = new System.Drawing.Point(4, 63);
             this.Notify.Name = "Notify";
-            this.Notify.Size = new System.Drawing.Size(1170, 525);
+            this.Notify.Size = new System.Drawing.Size(1170, 494);
             this.Notify.TabIndex = 4;
             this.Notify.Text = "Zgłoszenia";
             // 
@@ -476,9 +481,9 @@
             this.Payoff.Controls.Add(this.label17);
             this.Payoff.Controls.Add(this.listView3);
             this.Payoff.ImageIndex = 4;
-            this.Payoff.Location = new System.Drawing.Point(4, 32);
+            this.Payoff.Location = new System.Drawing.Point(4, 63);
             this.Payoff.Name = "Payoff";
-            this.Payoff.Size = new System.Drawing.Size(1170, 525);
+            this.Payoff.Size = new System.Drawing.Size(1170, 494);
             this.Payoff.TabIndex = 5;
             this.Payoff.Text = "Rozliczenia";
             // 
@@ -594,9 +599,9 @@
             this.Packages.Controls.Add(this.packageslist);
             this.Packages.Controls.Add(this.listView1);
             this.Packages.ImageIndex = 3;
-            this.Packages.Location = new System.Drawing.Point(4, 32);
+            this.Packages.Location = new System.Drawing.Point(4, 63);
             this.Packages.Name = "Packages";
-            this.Packages.Size = new System.Drawing.Size(1170, 525);
+            this.Packages.Size = new System.Drawing.Size(1170, 494);
             this.Packages.TabIndex = 6;
             this.Packages.Text = "Paczki";
             // 
@@ -828,9 +833,9 @@
             // 
             this.Email.BackColor = System.Drawing.Color.LightSlateGray;
             this.Email.ImageIndex = 6;
-            this.Email.Location = new System.Drawing.Point(4, 32);
+            this.Email.Location = new System.Drawing.Point(4, 63);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(1170, 525);
+            this.Email.Size = new System.Drawing.Size(1170, 494);
             this.Email.TabIndex = 7;
             this.Email.Text = "Poczta";
             // 
@@ -853,11 +858,11 @@
             this.Register.Controls.Add(this.registernamebox);
             this.Register.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Register.ImageIndex = 5;
-            this.Register.Location = new System.Drawing.Point(4, 32);
+            this.Register.Location = new System.Drawing.Point(4, 63);
             this.Register.Name = "Register";
             this.Register.Padding = new System.Windows.Forms.Padding(1, 3, 1, 3);
             this.Register.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Register.Size = new System.Drawing.Size(1170, 525);
+            this.Register.Size = new System.Drawing.Size(1170, 494);
             this.Register.TabIndex = 8;
             this.Register.Text = "Rejestracja Praconików";
             // 
@@ -1016,9 +1021,9 @@
             this.Scheme.Controls.Add(this.label15);
             this.Scheme.Controls.Add(this.calendar);
             this.Scheme.ImageIndex = 7;
-            this.Scheme.Location = new System.Drawing.Point(4, 32);
+            this.Scheme.Location = new System.Drawing.Point(4, 63);
             this.Scheme.Name = "Scheme";
-            this.Scheme.Size = new System.Drawing.Size(1170, 525);
+            this.Scheme.Size = new System.Drawing.Size(1170, 494);
             this.Scheme.TabIndex = 9;
             this.Scheme.Text = "Harmongram Pracy";
             // 
@@ -1045,22 +1050,28 @@
             // 
             // schemeworkerslist
             // 
+            this.schemeworkerslist.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.schemeworkerslist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.sID,
             this.sname,
             this.ssurname,
             this.srole,
-            this.sIDAddress,
+            this.mmMiasto,
             this.sidCredentials,
-            this.sphoneNumber});
+            this.sphoneNumberr,
+            this.zipcodeee,
+            this.Regionssss});
             this.schemeworkerslist.HideSelection = false;
+            this.schemeworkerslist.HoverSelection = true;
             this.schemeworkerslist.Location = new System.Drawing.Point(575, 0);
             this.schemeworkerslist.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.schemeworkerslist.MultiSelect = false;
             this.schemeworkerslist.Name = "schemeworkerslist";
             this.schemeworkerslist.Size = new System.Drawing.Size(595, 522);
             this.schemeworkerslist.TabIndex = 10;
             this.schemeworkerslist.UseCompatibleStateImageBehavior = false;
             this.schemeworkerslist.View = System.Windows.Forms.View.Details;
+            this.schemeworkerslist.SelectedIndexChanged += new System.EventHandler(this.schemeworkerslist_SelectedIndexChanged);
             // 
             // sID
             // 
@@ -1069,6 +1080,7 @@
             // sname
             // 
             this.sname.Text = "Imię";
+            this.sname.Width = 45;
             // 
             // ssurname
             // 
@@ -1077,22 +1089,22 @@
             // srole
             // 
             this.srole.Text = "Stanowisko";
-            this.srole.Width = 72;
+            this.srole.Width = 68;
             // 
-            // sIDAddress
+            // mmMiasto
             // 
-            this.sIDAddress.Text = "ID Adresu Kuriera";
-            this.sIDAddress.Width = 101;
+            this.mmMiasto.Text = "Miasto";
+            this.mmMiasto.Width = 83;
             // 
             // sidCredentials
             // 
-            this.sidCredentials.Text = "ID Danych Logowania";
-            this.sidCredentials.Width = 125;
+            this.sidCredentials.Text = "Login";
+            this.sidCredentials.Width = 52;
             // 
-            // sphoneNumber
+            // sphoneNumberr
             // 
-            this.sphoneNumber.Text = "Numer Telefonu";
-            this.sphoneNumber.Width = 115;
+            this.sphoneNumberr.Text = "Numer Telefonu";
+            this.sphoneNumberr.Width = 92;
             // 
             // submithours
             // 
@@ -1189,9 +1201,9 @@
             this.Workers.Controls.Add(this.workerseditbutton);
             this.Workers.Controls.Add(this.workerslist);
             this.Workers.ImageIndex = 10;
-            this.Workers.Location = new System.Drawing.Point(4, 32);
+            this.Workers.Location = new System.Drawing.Point(4, 63);
             this.Workers.Name = "Workers";
-            this.Workers.Size = new System.Drawing.Size(1170, 525);
+            this.Workers.Size = new System.Drawing.Size(1170, 494);
             this.Workers.TabIndex = 10;
             this.Workers.Text = "Pracownicy";
             // 
@@ -1340,13 +1352,14 @@
             this.name,
             this.surname,
             this.role,
-            this.defaultAdressId,
             this.loginCredentialsId,
-            this.phoneNumber});
+            this.Password,
+            this.phoneNumbers,
+            this.emails});
             this.workerslist.HideSelection = false;
-            this.workerslist.Location = new System.Drawing.Point(124, 0);
+            this.workerslist.Location = new System.Drawing.Point(128, 0);
             this.workerslist.Name = "workerslist";
-            this.workerslist.Size = new System.Drawing.Size(1046, 525);
+            this.workerslist.Size = new System.Drawing.Size(1046, 494);
             this.workerslist.TabIndex = 0;
             this.workerslist.UseCompatibleStateImageBehavior = false;
             this.workerslist.View = System.Windows.Forms.View.Details;
@@ -1354,37 +1367,37 @@
             // ID
             // 
             this.ID.Text = "ID";
-            this.ID.Width = 124;
+            this.ID.Width = 106;
             // 
             // name
             // 
             this.name.Text = "Imię";
-            this.name.Width = 117;
+            this.name.Width = 107;
             // 
             // surname
             // 
             this.surname.Text = "Nazwisko";
-            this.surname.Width = 129;
+            this.surname.Width = 168;
             // 
             // role
             // 
             this.role.Text = "Stanowisko";
-            this.role.Width = 156;
-            // 
-            // defaultAdressId
-            // 
-            this.defaultAdressId.Text = "ID Adresu";
-            this.defaultAdressId.Width = 155;
+            this.role.Width = 151;
             // 
             // loginCredentialsId
             // 
-            this.loginCredentialsId.Text = "ID Danych Logowania";
-            this.loginCredentialsId.Width = 220;
+            this.loginCredentialsId.Text = "Login";
+            this.loginCredentialsId.Width = 123;
             // 
-            // phoneNumber
+            // Regions
             // 
-            this.phoneNumber.Text = "Numer Telefonu";
-            this.phoneNumber.Width = 140;
+            this.Regions.ImageIndex = 11;
+            this.Regions.Location = new System.Drawing.Point(4, 63);
+            this.Regions.Name = "Regions";
+            this.Regions.Size = new System.Drawing.Size(1170, 494);
+            this.Regions.TabIndex = 11;
+            this.Regions.Text = "Regiony";
+            this.Regions.UseVisualStyleBackColor = true;
             // 
             // imageList1
             // 
@@ -1401,11 +1414,36 @@
             this.imageList1.Images.SetKeyName(8, "error.png");
             this.imageList1.Images.SetKeyName(9, "jobs.png");
             this.imageList1.Images.SetKeyName(10, "workers.png");
+            this.imageList1.Images.SetKeyName(11, "regions.png");
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // Password
+            // 
+            this.Password.Text = "Hasło";
+            this.Password.Width = 130;
+            // 
+            // phoneNumbers
+            // 
+            this.phoneNumbers.Text = "Numer Telefonu";
+            this.phoneNumbers.Width = 166;
+            // 
+            // emails
+            // 
+            this.emails.Text = "E-mail";
+            this.emails.Width = 158;
+            // 
+            // zipcodeee
+            // 
+            this.zipcodeee.Text = "Kod Pocztowy";
+            this.zipcodeee.Width = 88;
+            // 
+            // Regionssss
+            // 
+            this.Regionssss.Text = "Region";
             // 
             // CoordinatorHome
             // 
@@ -1561,16 +1599,20 @@
         private System.Windows.Forms.ColumnHeader name;
         private System.Windows.Forms.ColumnHeader surname;
         private System.Windows.Forms.ColumnHeader role;
-        private System.Windows.Forms.ColumnHeader defaultAdressId;
         private System.Windows.Forms.ColumnHeader loginCredentialsId;
-        private System.Windows.Forms.ColumnHeader phoneNumber;
         private System.Windows.Forms.ColumnHeader sID;
         private System.Windows.Forms.ColumnHeader sname;
         private System.Windows.Forms.ColumnHeader ssurname;
         private System.Windows.Forms.ColumnHeader srole;
-        private System.Windows.Forms.ColumnHeader sIDAddress;
+        private System.Windows.Forms.ColumnHeader mmMiasto;
         private System.Windows.Forms.ColumnHeader sidCredentials;
-        private System.Windows.Forms.ColumnHeader sphoneNumber;
+        private System.Windows.Forms.ColumnHeader sphoneNumberr;
+        private System.Windows.Forms.TabPage Regions;
+        private System.Windows.Forms.ColumnHeader emails;
+        private System.Windows.Forms.ColumnHeader Password;
+        private System.Windows.Forms.ColumnHeader phoneNumbers;
+        private System.Windows.Forms.ColumnHeader zipcodeee;
+        private System.Windows.Forms.ColumnHeader Regionssss;
     }
 }
 

@@ -4,6 +4,7 @@ using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(CourierDbContext))]
-    partial class CourierDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221225121052_identity")]
+    partial class identity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -229,7 +231,8 @@ namespace API.Migrations
 
                     b.HasIndex("idPackage");
 
-                    b.HasIndex("idStatusName");
+                    b.HasIndex("idStatusName")
+                        .IsUnique();
 
                     b.ToTable("Statuses");
                 });
@@ -259,7 +262,7 @@ namespace API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
-                    b.Property<int?>("defaultAddressId")
+                    b.Property<int>("defaultAddressId")
                         .HasColumnType("int");
 
                     b.Property<int?>("loginCredentialsId")
@@ -283,8 +286,7 @@ namespace API.Migrations
                     b.HasKey("id");
 
                     b.HasIndex("defaultAddressId")
-                        .IsUnique()
-                        .HasFilter("[defaultAddressId] IS NOT NULL");
+                        .IsUnique();
 
                     b.HasIndex("loginCredentialsId")
                         .IsUnique()
@@ -372,8 +374,8 @@ namespace API.Migrations
                         .IsRequired();
 
                     b.HasOne("API.Models.statusNames", "StatusName")
-                        .WithMany("status")
-                        .HasForeignKey("idStatusName")
+                        .WithOne("status")
+                        .HasForeignKey("API.Models.Status", "idStatusName")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -386,7 +388,9 @@ namespace API.Migrations
                 {
                     b.HasOne("API.Models.Address", "defaultAddress")
                         .WithOne("user")
-                        .HasForeignKey("API.Models.User", "defaultAddressId");
+                        .HasForeignKey("API.Models.User", "defaultAddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("API.Models.loginCredentials", "loginCredentials")
                         .WithOne("user")
@@ -426,7 +430,8 @@ namespace API.Migrations
 
             modelBuilder.Entity("API.Models.statusNames", b =>
                 {
-                    b.Navigation("status");
+                    b.Navigation("status")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("API.Models.User", b =>

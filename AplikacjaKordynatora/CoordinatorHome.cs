@@ -32,11 +32,6 @@ namespace AplikacjaKordynatora
             datework.Text = calendar.TodayDate.ToShortDateString();
             
         }
-        public CoordinatorHome()
-        {
-            InitializeComponent();
-
-        }
 
         private void CoordinatorHome_Load(object sender, EventArgs e)
         {
@@ -287,8 +282,8 @@ namespace AplikacjaKordynatora
                 List<List<string>> list = new List<List<string>>();
                 for (int i = 0; i < user.Length; i++)
                 { 
-                    list.Add(new List<string> { user[i].id.ToString(), user[i].name, user[i].surname, user[i].role.ToString(), user[i].defaultAddressId.ToString(),
-                        user[i].loginCredentialsId.ToString(),user[i].phoneNumber});
+                    list.Add(new List<string> { user[i].id.ToString(), user[i].name, user[i].surname, user[i].role.ToString(),
+                        user[i].loginCredentials.login.ToString(),user[i].loginCredentials.password.ToString(),user[i].phoneNumber,user[i].loginCredentials.email.ToString()});
 
 
                 }
@@ -302,6 +297,7 @@ namespace AplikacjaKordynatora
                     item.SubItems.Add(l[4]);
                     item.SubItems.Add(l[5]);
                     item.SubItems.Add(l[6]);
+                    item.SubItems.Add(l[7]);
                     workerslist.Items.Add(item);
                 }
 
@@ -317,7 +313,7 @@ namespace AplikacjaKordynatora
 
         private void workersrefreshbutton_Click(object sender, EventArgs e)
         {
-            workerslist.Clear();
+            workerslist.Items.Clear();
         }
 
         private void schemerefreshbutton_Click(object sender, EventArgs e)
@@ -333,8 +329,8 @@ namespace AplikacjaKordynatora
                 List<List<string>> list = new List<List<string>>();
                 for (int i = 0; i < user.Length; i++)
                 {
-                    list.Add(new List<string> {user[i].id.ToString(), user[i].name, user[i].surname, user[i].role.ToString(), user[i].defaultAddressId.ToString(),
-                        user[i].loginCredentialsId.ToString(),user[i].phoneNumber});
+                    list.Add(new List<string> {user[i].id.ToString(), user[i].name, user[i].surname, user[i].role.ToString(), user[i].defaultAddress.city.ToString(),
+                        user[i].loginCredentials.login.ToString(),user[i].phoneNumber,user[i].defaultAddress.zipCode,"tutaj region"});
 
 
                 }
@@ -348,6 +344,8 @@ namespace AplikacjaKordynatora
                     item.SubItems.Add(l[4]);
                     item.SubItems.Add(l[5]);
                     item.SubItems.Add(l[6]);
+                    item.SubItems.Add(l[7]);
+                    item.SubItems.Add(l[8]);
                     schemeworkerslist.Items.Add(item);
                 }
 
@@ -361,6 +359,10 @@ namespace AplikacjaKordynatora
 
         }
 
+        private void schemeworkerslist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }
