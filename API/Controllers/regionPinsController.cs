@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API.Models;
+using System.Drawing;
+using System.Text.Json;
 
 namespace API.Controllers
 {
-	[Route("api/[controller]")]
+	[Route("[controller]")]
 	[ApiController]
 	public class regionPinsController : ControllerBase
 	{
@@ -39,6 +41,19 @@ namespace API.Controllers
 			await _context.SaveChangesAsync();
 
 			return CreatedAtAction("GetRegionPins", new { id = region.id }, region);
+		}
+		[HttpPost("PostList")]
+		public async Task<ActionResult<RegionPins>> PostRegionPinList(object regionsjson)
+		{
+			string json = JsonSerializer.Serialize(regionsjson);
+			List<RegionPins> regions = JsonSerializer.Deserialize<List<RegionPins>>(json);
+			foreach(RegionPins region in regions)
+			{
+				_context.RegionPins.Add(region);
+			}
+			await _context.SaveChangesAsync();
+
+			return CreatedAtAction("GetRegionPins", new { id = regions[0].id }, regions[0]);
 		}
 	}
 }
