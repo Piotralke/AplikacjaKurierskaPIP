@@ -38,12 +38,14 @@ namespace WindowsFormsApp1
         {
             
             String phoneNumber = textReceiverPhone.Text;
+            String phoneNumber2 = textBoxPhoneNum.Text;
             String requestUser = "http://localhost:5225/Users";
             HttpWebRequest userRequest = (HttpWebRequest)WebRequest.Create(@requestUser);
             HttpWebResponse userResponse = (HttpWebResponse)userRequest.GetResponse();
             string userContent = new StreamReader(userResponse.GetResponseStream()).ReadToEnd();
             List<User> user = JsonSerializer.Deserialize<List<User>>(userContent);
             User checkAccount = user.Find(x => x.phoneNumber == phoneNumber);
+            User checkAccount2 = user.Find(x => x.phoneNumber == phoneNumber2);
 
             String streetReceiver = textReceiverStreet.Text;
             String cityReceiver = textReceiverCity.Text;
@@ -64,9 +66,11 @@ namespace WindowsFormsApp1
             Address receiverAddress = addressList.Find(x => x.street == streetReceiver && x.city == cityReceiver && x.houseNumber == homeNumberReceiver && x.zipCode == zipReceiver);
 
             int receiverId;
+            int senderId;
             int receiverAddressId = 0;
             int senderAddressId = 0;
             User user1;
+            User user2;
             Address address1 = null;
             Address address2 = null;
             if (senderAddress == null)
@@ -118,13 +122,33 @@ namespace WindowsFormsApp1
                 user1 = newUser;
 
             }
-            else
-            {
-                receiverId = checkAccount.id;
-                user1 = null;
-            }
+			else
+			{
+				receiverId = checkAccount.id;
+				user1 = null;
+			}
+			if (checkAccount2 == null)
+			{
+				senderId = 0;
 
-            float weight = float.Parse(textBoxWeight.Text, CultureInfo.InvariantCulture.NumberFormat);
+				User newUser = new User()
+				{
+					id = 0,
+					name = textBoxName.Text,
+					surname = textBoxSurname.Text,
+					role = 2,
+					phoneNumber = textBoxPhoneNum.Text
+				};
+				user2 = newUser;
+
+			}
+			else
+			{
+				senderId = checkAccount2.id;
+				user2 = null;
+			}
+
+			float weight = float.Parse(textBoxWeight.Text, CultureInfo.InvariantCulture.NumberFormat);
             float width = float.Parse(textBoxWidth.Text, CultureInfo.InvariantCulture.NumberFormat);
             float depth = float.Parse(textBoxDepth.Text, CultureInfo.InvariantCulture.NumberFormat);
             float heigth = float.Parse(textBoxHeigth.Text, CultureInfo.InvariantCulture.NumberFormat);
@@ -138,7 +162,8 @@ namespace WindowsFormsApp1
                 Receiver = user1,
                 receiverAddressId = receiverAddressId,
                 receiverAddress=address2,
-                SenderId = loggedUser.id,
+                SenderId = senderId,
+                Sender = user2,
                 senderAddressId = senderAddressId,
                 senderAddress=address1,
                 weight = weight,
