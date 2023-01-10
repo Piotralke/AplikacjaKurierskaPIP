@@ -142,6 +142,8 @@
     <Compile Include="Models\loginCredentials.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Package.cs" />
+    <Compile Include="Models\Region.cs" />
+    <Compile Include="Models\RegionPins.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\statusNames.cs" />
     <Compile Include="Models\User.cs" />

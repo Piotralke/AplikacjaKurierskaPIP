@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Diagnostics.PerformanceData;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -235,7 +234,6 @@ namespace AplikacjaKordynatora
             packageslist.Items.Clear();
          
             
-            
         }
 
         private void packagesshowall_Click(object sender, EventArgs e)
@@ -397,6 +395,7 @@ namespace AplikacjaKordynatora
                     markers.Markers.Add(marker);
                     Coordinates coords = new Coordinates() { lat = lat, lng = lng};
                     coordinates.Add(coords);
+                   
                     gmap.Overlays.Add(markers);
 
                 }
@@ -421,9 +420,68 @@ namespace AplikacjaKordynatora
             }
         }
 
-        private void addregion_Click(object sender, EventArgs e)
+        private async void addregion_Click(object sender, EventArgs e)
         {
+            String sregioncode = regioncode.Text;
+            String requestRegions = "http://localhost:5225/regions";
+            HttpWebRequest regionsRequest = (HttpWebRequest)WebRequest.Create(@requestRegions);
+            HttpWebResponse regionsResponse = (HttpWebResponse)regionsRequest.GetResponse();
+            string regionsContent = new StreamReader(regionsResponse.GetResponseStream()).ReadToEnd();
+            List<Region> listregion = JsonSerializer.Deserialize<List<Region>>(regionsContent);
+            Region checkRegion = listregion.Find(x => x.code == sregioncode);
+            if(checkRegion != null)
+            {
+                MessageBox.Show("Istnieje już region o podanym kodzie", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Region region = new Region()
+                {
+                    Id = 0,
+                    code = sregioncode,
+                    courier = null,
+                    regionPins = null
 
+                };
+
+                int regionId;
+                String requestRegions2 = "http://localhost:5225/regions";
+                String jsonRegions = JsonSerializer.Serialize(region);
+                using (var streamWriter = new HttpClient())
+                {
+                    var response = await streamWriter.PostAsync(requestRegions2, new StringContent(jsonRegions, Encoding.UTF8, "application/json"));
+                    var jString = response.Content.ReadAsStringAsync();
+                    Region resultRegion = JsonSerializer.Deserialize<Region>(jString.Result);
+                    Console.WriteLine(resultRegion.Id);
+                    regionId = resultRegion.Id;
+                }
+                
+
+
+                List<RegionPins> listRegionPins = new List<RegionPins>();
+                foreach (Coordinates c in coordinates)
+                {
+                    RegionPins regionPins = new RegionPins()
+                    {
+                        id = 0,
+                        x = c.lat,
+                        y = c.lng,
+                        regionId = regionId
+
+                    };
+                    listRegionPins.Add(regionPins);
+                }
+                String request = "http://localhost:5225/regionPins/PostList";
+                String json = JsonSerializer.Serialize(listRegionPins);
+                using (var streamWriter = new HttpClient())
+                {
+                    var response = await streamWriter.PostAsync(request, new StringContent(json, Encoding.UTF8, "application/json"));
+
+                }
+                MessageBox.Show("Pomyślnie dodano Region");
+
+
+            }
         }
     }
     

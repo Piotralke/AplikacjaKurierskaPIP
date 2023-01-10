@@ -55,5 +55,6 @@ namespace API.Controllers
 
 			return CreatedAtAction("GetRegionPins", new { id = regions[0].id }, regions[0]);
 		}
+
 	}
 }

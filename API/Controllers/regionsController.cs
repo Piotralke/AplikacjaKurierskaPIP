@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API.Models;
+using System.Text.Json;
 
 namespace API.Controllers
 {
@@ -33,8 +34,10 @@ namespace API.Controllers
 			return region;
 		}
 		[HttpPost]
-		public async Task<ActionResult<Region>> PostRegion(Region region)
+		public async Task<ActionResult<Region>> PostRegion(object regionjson)
 		{
+			string json = JsonSerializer.Serialize(regionjson);
+			Region region = JsonSerializer.Deserialize<Region>(json);
 			_context.regions.Add(region);
 			await _context.SaveChangesAsync();
 
