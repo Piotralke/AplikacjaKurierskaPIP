@@ -74,13 +74,47 @@ namespace API.Controllers
         [HttpGet("GetAllWorkers")]
         public async Task<ActionResult<IEnumerable<User>>> GetAllWorkers()
         {
-            return  await _context.AppUsers.Where(u => u.role == 0 || u.role ==1).ToListAsync();
-             
+            return  await _context.AppUsers.Where(u => u.role == 0 || u.role == 1).
+                 Select(u => new User
+                 {
+                     id = u.id,
+                     name = u.name,
+                     surname = u.surname,
+                     loginCredentialsId = u.loginCredentialsId,
+                     loginCredentials = u.loginCredentials,
+                     role = u.role,
+                     defaultAddressId = u.defaultAddressId,
+                     defaultAddress = u.defaultAddress,
+                     senderPackages = u.senderPackages,
+                     receiverPackages = u.receiverPackages,
+                     orders = u.orders,
+                     phoneNumber = u.phoneNumber,
+                     region = u.region
+
+                 }).ToListAsync();
+
         }
         [HttpGet("GetAllCouriers")]
         public async Task<ActionResult<IEnumerable<User>>> GetAllCouriers()
         {
-            return await _context.AppUsers.Where(u => u.role == 1).ToListAsync();
+            return await _context.AppUsers.Where(u => u.role == 1).
+                Select(u => new User
+                {
+                    id = u.id,
+                    name = u.name,
+                    surname = u.surname,
+                    loginCredentialsId = u.loginCredentialsId,
+                    loginCredentials = u.loginCredentials,
+                    role = u.role,
+                    defaultAddressId = u.defaultAddressId,
+                    defaultAddress = u.defaultAddress,
+                    senderPackages = u.senderPackages,
+                    receiverPackages = u.receiverPackages,
+                    orders = u.orders,
+                    phoneNumber = u.phoneNumber,
+                    region = u.region
+
+                }).ToListAsync();
 
         }
         [HttpGet("GetUserByPhoneNumber/{phone}")]
