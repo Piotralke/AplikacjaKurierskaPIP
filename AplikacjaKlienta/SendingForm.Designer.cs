@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class ClientHomeForm
+    partial class SendingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,23 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientHomeForm));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panelTrack = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendingForm));
             this.panelSend = new System.Windows.Forms.Panel();
             this.labelCostOfService = new System.Windows.Forms.Label();
             this.textCost = new System.Windows.Forms.Label();
@@ -56,9 +40,7 @@
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.radioButtonCustom = new System.Windows.Forms.RadioButton();
             this.radioButtonStandard = new System.Windows.Forms.RadioButton();
-            this.label12 = new System.Windows.Forms.Label();
             this.buttonSubmit = new System.Windows.Forms.Button();
-            this.buttonAddData = new System.Windows.Forms.Button();
             this.textReceiverPhone = new System.Windows.Forms.TextBox();
             this.textBoxPhoneNum = new System.Windows.Forms.TextBox();
             this.textReceiverEmail = new System.Windows.Forms.TextBox();
@@ -108,228 +90,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panelTrack.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelSend.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 168);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Segoe Print", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 124);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(255, 44);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "NA";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(255, 124);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(12, 186);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(255, 499);
-            this.panel2.TabIndex = 1;
-            // 
-            // button4
-            // 
-            this.button4.AutoSize = true;
-            this.button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::WindowsFormsApp1.Properties.Resources.edytujProfil;
-            this.button4.Location = new System.Drawing.Point(0, 258);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(255, 86);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "EDYTUJ PROFIL";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.AutoSize = true;
-            this.button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::WindowsFormsApp1.Properties.Resources.zglosProblem;
-            this.button3.Location = new System.Drawing.Point(0, 172);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(255, 86);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "ZGŁOŚ PROBLEM";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.AutoSize = true;
-            this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::WindowsFormsApp1.Properties.Resources.wyslijPaczke;
-            this.button2.Location = new System.Drawing.Point(0, 86);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(255, 86);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "WYŚLIJ PACZKĘ";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::WindowsFormsApp1.Properties.Resources.sledzPaczke;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(255, 86);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "ŚLEDŹ PACZKĘ";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(637, 3);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(199, 112);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // panelTrack
-            // 
-            this.panelTrack.BackColor = System.Drawing.Color.Transparent;
-            this.panelTrack.Controls.Add(this.pictureBox3);
-            this.panelTrack.Controls.Add(this.listView1);
-            this.panelTrack.Controls.Add(this.textBox1);
-            this.panelTrack.Controls.Add(this.label3);
-            this.panelTrack.Controls.Add(this.label2);
-            this.panelTrack.Controls.Add(this.button5);
-            this.panelTrack.Location = new System.Drawing.Point(288, 0);
-            this.panelTrack.Name = "panelTrack";
-            this.panelTrack.Size = new System.Drawing.Size(853, 681);
-            this.panelTrack.TabIndex = 3;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(641, 2);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(199, 112);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(23, 175);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(816, 480);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.textBox1.Location = new System.Drawing.Point(23, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(326, 31);
-            this.textBox1.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.DimGray;
-            this.label3.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(25, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(220, 37);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Lub wybierz z listy:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.DimGray;
-            this.label2.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(25, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(236, 37);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Wpisz numer paczki:";
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.DarkCyan;
-            this.button5.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(365, 59);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 43);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Szukaj";
-            this.button5.UseVisualStyleBackColor = false;
             // 
             // panelSend
             // 
@@ -345,9 +109,7 @@
             this.panelSend.Controls.Add(this.textBoxDescription);
             this.panelSend.Controls.Add(this.radioButtonCustom);
             this.panelSend.Controls.Add(this.radioButtonStandard);
-            this.panelSend.Controls.Add(this.label12);
             this.panelSend.Controls.Add(this.buttonSubmit);
-            this.panelSend.Controls.Add(this.buttonAddData);
             this.panelSend.Controls.Add(this.textReceiverPhone);
             this.panelSend.Controls.Add(this.textBoxPhoneNum);
             this.panelSend.Controls.Add(this.textReceiverEmail);
@@ -398,9 +160,9 @@
             this.panelSend.Controls.Add(this.label5);
             this.panelSend.Controls.Add(this.label4);
             this.panelSend.Controls.Add(this.pictureBox2);
-            this.panelSend.Location = new System.Drawing.Point(285, 0);
+            this.panelSend.Location = new System.Drawing.Point(12, 1);
             this.panelSend.Name = "panelSend";
-            this.panelSend.Size = new System.Drawing.Size(853, 681);
+            this.panelSend.Size = new System.Drawing.Size(704, 505);
             this.panelSend.TabIndex = 4;
             // 
             // labelCostOfService
@@ -512,18 +274,6 @@
             this.radioButtonStandard.Text = "Standardowy";
             this.radioButtonStandard.UseVisualStyleBackColor = true;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(544, 175);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(261, 99);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Naciśnij przycisk \"Dodaj\" \r\naby wpisać dane \r\nprzypisane do konta";
-            // 
             // buttonSubmit
             // 
             this.buttonSubmit.BackColor = System.Drawing.Color.DarkCyan;
@@ -536,19 +286,6 @@
             this.buttonSubmit.Text = "Podsumowanie i płatność";
             this.buttonSubmit.UseVisualStyleBackColor = false;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
-            // 
-            // buttonAddData
-            // 
-            this.buttonAddData.BackColor = System.Drawing.Color.DarkCyan;
-            this.buttonAddData.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAddData.ForeColor = System.Drawing.Color.White;
-            this.buttonAddData.Location = new System.Drawing.Point(612, 284);
-            this.buttonAddData.Name = "buttonAddData";
-            this.buttonAddData.Size = new System.Drawing.Size(98, 40);
-            this.buttonAddData.TabIndex = 12;
-            this.buttonAddData.Text = "Dodaj";
-            this.buttonAddData.UseVisualStyleBackColor = false;
-            this.buttonAddData.Click += new System.EventHandler(this.buttonAddData_Click);
             // 
             // textReceiverPhone
             // 
@@ -1037,102 +774,76 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Imie";
             // 
-            // ClientHomeForm
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(476, 8);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(199, 112);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // SendingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(1141, 681);
+            this.ClientSize = new System.Drawing.Size(718, 507);
             this.Controls.Add(this.panelSend);
-            this.Controls.Add(this.panelTrack);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "ClientHomeForm";
+            this.Name = "SendingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClientHomeForm";
-            this.Load += new System.EventHandler(this.ClientHomeForm_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panelTrack.ResumeLayout(false);
-            this.panelTrack.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelSend.ResumeLayout(false);
             this.panelSend.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panelTrack;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panelSend;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxPhoneNum;
-        private System.Windows.Forms.TextBox textBoxEmail;
-        private System.Windows.Forms.TextBox textBoxCity;
-        private System.Windows.Forms.TextBox textBoxStreet;
-        private System.Windows.Forms.TextBox textBoxZip;
-        private System.Windows.Forms.TextBox textBoxNumber;
-        private System.Windows.Forms.TextBox textBoxSurname;
-        private System.Windows.Forms.Button buttonAddData;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textReceiverPhone;
-        private System.Windows.Forms.TextBox textReceiverEmail;
-        private System.Windows.Forms.TextBox textReceiverCity;
-        private System.Windows.Forms.TextBox textReceiverStreet;
-        private System.Windows.Forms.TextBox textReceiverZip;
-        private System.Windows.Forms.TextBox textReceiverHomeNumber;
-        private System.Windows.Forms.TextBox textReceiverSurname;
-        private System.Windows.Forms.TextBox textReceiverName;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label labelCostOfService;
+        private System.Windows.Forms.Label textCost;
+        private System.Windows.Forms.Label labelCost;
+        private System.Windows.Forms.Label labelNotVisible;
+        private System.Windows.Forms.Label labelCOD;
+        private System.Windows.Forms.TextBox textBoxCOD;
+        private System.Windows.Forms.CheckBox checkBoxCOD;
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.RadioButton radioButtonCustom;
         private System.Windows.Forms.RadioButton radioButtonStandard;
+        private System.Windows.Forms.Button buttonSubmit;
+        private System.Windows.Forms.TextBox textReceiverPhone;
+        private System.Windows.Forms.TextBox textBoxPhoneNum;
+        private System.Windows.Forms.TextBox textReceiverEmail;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.TextBox textReceiverCity;
+        private System.Windows.Forms.TextBox textBoxCity;
+        private System.Windows.Forms.TextBox textReceiverStreet;
+        private System.Windows.Forms.TextBox textBoxStreet;
         private System.Windows.Forms.TextBox textBoxHeigth;
         private System.Windows.Forms.TextBox textBoxWidth;
         private System.Windows.Forms.TextBox textBoxDepth;
         private System.Windows.Forms.TextBox textBoxWeight;
+        private System.Windows.Forms.TextBox textReceiverZip;
+        private System.Windows.Forms.TextBox textBoxZip;
+        private System.Windows.Forms.TextBox textReceiverHomeNumber;
+        private System.Windows.Forms.TextBox textBoxNumber;
+        private System.Windows.Forms.TextBox textReceiverSurname;
+        private System.Windows.Forms.TextBox textBoxSurname;
+        private System.Windows.Forms.TextBox textReceiverName;
+        private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label28;
@@ -1142,13 +853,22 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Button buttonSubmit;
-        private System.Windows.Forms.TextBox textBoxCOD;
-        private System.Windows.Forms.CheckBox checkBoxCOD;
-        private System.Windows.Forms.Label labelNotVisible;
-        private System.Windows.Forms.Label labelCOD;
-        private System.Windows.Forms.Label textCost;
-        private System.Windows.Forms.Label labelCost;
-        private System.Windows.Forms.Label labelCostOfService;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
