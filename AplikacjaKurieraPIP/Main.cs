@@ -71,5 +71,20 @@ namespace AplikacjaKurieraPIP
                 workTimeLabel.Text = "Dzisiaj przepracowałeś " +elapsedTime.Hours + " godzin i " + elapsedTime.Minutes + " minut";
             }
         }
-    }
+
+		private void label4_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label6_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button7_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

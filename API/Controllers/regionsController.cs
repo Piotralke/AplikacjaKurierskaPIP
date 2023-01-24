@@ -33,6 +33,18 @@ namespace API.Controllers
 
 			return region;
 		}
+		[HttpGet("GetRegionByCode/{code}")]
+		public async Task<ActionResult<Region>> GetRegionByCode(string code)
+		{
+			var region = await _context.regions.Where(x=>x.code.Equals(code)).FirstOrDefaultAsync();
+
+			if (region == null)
+			{
+				return NotFound();
+			}
+
+			return region;
+		}
 		[HttpPost]
 		public async Task<ActionResult<Region>> PostRegion(object regionjson)
 		{
