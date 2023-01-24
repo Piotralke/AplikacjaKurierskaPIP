@@ -34,19 +34,19 @@ namespace API.Controllers
 
 			return region;
 		}
-		[HttpGet("GetRegionPinByRegionId/{id}")]
-		public async Task<ActionResult<IEnumerable<RegionPins>>> GetRegionPinByRegionId(int id)
-		{
-			var region = await _context.RegionPins.Where(x=>x.regionId==id).ToListAsync();
+        [HttpGet("GetRegionPinByRegionId/{id}")]
+        public async Task<ActionResult<IEnumerable<RegionPins>>> GetRegionPinByRegionId(int id)
+        {
+            var region = await _context.RegionPins.Where(x => x.regionId == id).ToListAsync();
 
-			if (region == null)
-			{
-				return NotFound();
-			}
+            if (region == null)
+            {
+                return NotFound();
+            }
 
-			return region;
-		}
-		[HttpPost]
+            return region;
+        }
+        [HttpPost]
 		public async Task<ActionResult<RegionPins>> PostRegion(RegionPins region)
 		{
 			_context.RegionPins.Add(region);
