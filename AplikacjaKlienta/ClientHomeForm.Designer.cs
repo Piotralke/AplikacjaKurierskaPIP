@@ -39,6 +39,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelTrack = new System.Windows.Forms.Panel();
+            this.comboBoxSort = new System.Windows.Forms.ComboBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.listView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -47,6 +48,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
             this.panelSend = new System.Windows.Forms.Panel();
             this.labelCostOfService = new System.Windows.Forms.Label();
@@ -166,8 +168,7 @@
             this.label34 = new System.Windows.Forms.Label();
             this.comboBoxTopic = new System.Windows.Forms.ComboBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -321,14 +322,40 @@
             // panelTrack
             // 
             this.panelTrack.BackColor = System.Drawing.Color.Transparent;
-            this.panelTrack.Controls.Add(this.comboBox1);
+            this.panelTrack.Controls.Add(this.comboBoxSort);
             this.panelTrack.Controls.Add(this.pictureBox3);
             this.panelTrack.Controls.Add(this.listView);
+            this.panelTrack.Controls.Add(this.label2);
             this.panelTrack.Controls.Add(this.label3);
             this.panelTrack.Location = new System.Drawing.Point(288, 0);
             this.panelTrack.Name = "panelTrack";
             this.panelTrack.Size = new System.Drawing.Size(853, 681);
             this.panelTrack.TabIndex = 3;
+            // 
+            // comboBoxSort
+            // 
+            this.comboBoxSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSort.FormattingEnabled = true;
+            this.comboBoxSort.Items.AddRange(new object[] {
+            "Numer paczki - rosnąco",
+            "Numer paczki - malejąco",
+            "Nadawca - A->Z",
+            "Nadawca - Z->A",
+            "Odbiorca - A->Z",
+            "Odbiorca - Z->A",
+            "Adres - A->Z",
+            "Adres - Z->A",
+            "Kod pocztowy - rosnąco",
+            "Kod pocztowy - malejąco",
+            "Miasto - A->Z",
+            "Miasto - Z->A",
+            "Nadania",
+            "Odbiory"});
+            this.comboBoxSort.Location = new System.Drawing.Point(401, 89);
+            this.comboBoxSort.Name = "comboBoxSort";
+            this.comboBoxSort.Size = new System.Drawing.Size(168, 21);
+            this.comboBoxSort.TabIndex = 4;
+            this.comboBoxSort.SelectedIndexChanged += new System.EventHandler(this.comboBoxSort_SelectedIndexChanged);
             // 
             // pictureBox3
             // 
@@ -358,6 +385,7 @@
             this.listView.TabIndex = 3;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
+            this.listView.DoubleClick += new System.EventHandler(this.getPackage);
             // 
             // columnHeader1
             // 
@@ -388,6 +416,10 @@
             // 
             this.columnHeader6.Text = "Miasto adresata";
             this.columnHeader6.Width = 93;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Typ";
             // 
             // label3
             // 
@@ -1770,17 +1802,17 @@
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
             // 
-            // comboBox1
+            // label2
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(252, 88);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Typ";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(318, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 33);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "sortuj:";
             // 
             // ClientHomeForm
             // 
@@ -1963,7 +1995,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxSort;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.Label label2;
     }
 }

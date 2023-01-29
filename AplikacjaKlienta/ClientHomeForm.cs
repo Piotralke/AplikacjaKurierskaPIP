@@ -19,6 +19,9 @@ namespace WindowsFormsApp1
 {
     public partial class ClientHomeForm : Form
     {
+        List<List<string>> list = new List<List<string>>();
+        List<List<string>> allList = new List<List<string>>();
+        List<Package> tmpPackages = new List<Package>();
         public string generateNumber()
         {
             string dateTime = DateTime.Now.ToString("dd-MM-yyyy");
@@ -61,6 +64,7 @@ namespace WindowsFormsApp1
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            
             showPackages();
             panelList[0].BringToFront();
             button1.BackColor = Color.Teal;
@@ -72,13 +76,13 @@ namespace WindowsFormsApp1
         {
             try
             {
-
+                list.Clear();
                 String requestPackage = "http://localhost:5225/Packages/GetYoursPackages/"+loggedUser.id;
                 HttpWebRequest webRequestPackage = (HttpWebRequest)WebRequest.Create(@requestPackage);
                 HttpWebResponse webResponePackage = (HttpWebResponse)webRequestPackage.GetResponse();
                 string packageContent = new StreamReader(webResponePackage.GetResponseStream()).ReadToEnd();
                 List<Package> packages = JsonSerializer.Deserialize<List<Package>>(packageContent);
-                List<List<string>> list = new List<List<string>>();
+                tmpPackages = packages;
                 for (int i = 0; i < packages.Count; i++)
                 {
                     String tmp = "";
@@ -95,11 +99,9 @@ namespace WindowsFormsApp1
                    packages[i].receiver.name +" "+ packages[i].receiver.surname, 
                    packages[i].receiverAddress.street +" "+packages[i].receiverAddress.houseNumber,
                    packages[i].receiverAddress.zipCode,
-                   packages[i].receiverAddress.city},
-                   tmp);
-                    
+                   packages[i].receiverAddress.city, tmp, packages[i].id.ToString()});
 
-
+                  
                 }
                 listView.Items.Clear();
                 foreach (List<string> l in list)
@@ -110,6 +112,8 @@ namespace WindowsFormsApp1
                     item.SubItems.Add(l[3]);
                     item.SubItems.Add(l[4]);
                     item.SubItems.Add(l[5]);
+                    item.SubItems.Add(l[6]);
+                    item.SubItems.Add(l[7]);
                     listView.Items.Add(item);
                 }
 
@@ -388,6 +392,114 @@ namespace WindowsFormsApp1
             else if (comboBoxTopic.SelectedIndex == 2)
             {
                 panelList2[3].BringToFront();
+            }
+        }
+
+        private void comboBoxSort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<List<string>> tmpList = new List<List<string>>();
+            if (comboBoxSort.SelectedIndex == 0) //numer - rosnaco
+            {
+                tmpList = list.OrderBy(l => l[0]).ToList();
+            }
+            if (comboBoxSort.SelectedIndex == 1) //numer - malejaco
+            {
+                tmpList = list.OrderByDescending(l => l[0]).ToList();
+            }
+            else if (comboBoxSort.SelectedIndex == 2) //nadawca A->Z
+            {
+                tmpList = list.OrderBy(l => l[1]).ToList();
+            }
+            else if (comboBoxSort.SelectedIndex == 3) //nadawca Z->A
+            {
+                tmpList = list.OrderByDescending(l => l[1]).ToList();
+            }
+            else if (comboBoxSort.SelectedIndex == 4) //odbiorca A->Z
+            {
+                tmpList = list.OrderBy(l => l[2]).ToList();
+            }
+            else if (comboBoxSort.SelectedIndex == 5) //odbiorca Z->A
+            {
+                tmpList = list.OrderByDescending(l => l[2]).ToList();
+            }
+            else if (comboBoxSort.SelectedIndex == 6) //adres A->Z
+            {
+                tmpList = list.OrderBy(l => l[3]).ToList();
+            }
+            else if (comboBoxSort.SelectedIndex == 7) //adres Z->A
+            {
+                tmpList = list.OrderByDescending(l => l[3]).ToList();
+            }
+            else if (comboBoxSort.SelectedIndex == 8) //kod pocztowy - rosnaco
+            {
+                tmpList = list.OrderBy(l => l[4]).ToList();
+            }
+            else if (comboBoxSort.SelectedIndex == 9) //kod pocztowy - malejaco
+            {
+                tmpList = list.OrderByDescending(l => l[4]).ToList();
+            }
+            else if (comboBoxSort.SelectedIndex == 10) //miasto A->Z
+            {
+                tmpList = list.OrderBy(l => l[5]).ToList();
+            }
+            else if (comboBoxSort.SelectedIndex == 11) //miasto Z->A
+            {
+                tmpList = list.OrderByDescending(l => l[5]).ToList();
+            }
+            else if (comboBoxSort.SelectedIndex == 12) //nadania
+            {
+                tmpList = list.OrderBy(l => l[6]).ToList();
+            }
+            else if (comboBoxSort.SelectedIndex == 13) //odbiory
+            {
+                tmpList = list.OrderByDescending(l => l[6]).ToList();
+            }
+            listView.Items.Clear();
+            foreach (List<string> l in tmpList)
+            {
+                ListViewItem item = new ListViewItem(l[0]);
+                item.SubItems.Add(l[1]);
+                item.SubItems.Add(l[2]);
+                item.SubItems.Add(l[3]);
+                item.SubItems.Add(l[4]);
+                item.SubItems.Add(l[5]);
+                item.SubItems.Add(l[6]);
+                listView.Items.Add(item);
+            }
+
+        }
+
+        private void getPackage(object sender, EventArgs e)
+        {
+            
+            if (listView.SelectedItems.Count == 1)
+            {
+                String requestStatuses = "http://localhost:5225/statuses/";
+                HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(@requestStatuses);
+                HttpWebResponse webRespone = (HttpWebResponse)webRequest.GetResponse();
+                string statusesContent = new StreamReader(webRespone.GetResponseStream()).ReadToEnd();
+                List<Status> statuses = JsonSerializer.Deserialize<List<Status>>(statusesContent);
+
+                ListViewItem selectedItem = listView.SelectedItems[0];
+                int selectedIndex = listView.Items.IndexOf(selectedItem);
+                String trasa = "";
+                statuses = statuses.FindAll(s => s.idPackage.ToString().Equals(selectedItem.SubItems[7].Text));
+                Console.WriteLine(statuses.Count);
+                statuses = statuses.OrderBy(s => s.date).ToList();
+                statuses.ForEach(s =>
+                {
+                    trasa = trasa + s.StatusName.name + " " + s.date +"\n";
+                });
+                
+                MessageBox.Show("Szczegóły paczki:\nNumer: " + selectedItem.SubItems[0].Text +
+                    "\nNadawca: " + selectedItem.SubItems[1].Text +
+                    "\nOdbiorca: " + selectedItem.SubItems[2].Text +
+                    "\nAdres odbioru: " + selectedItem.SubItems[3].Text +
+                    "\nKod pocztowy: " + selectedItem.SubItems[4].Text +
+                    "\nMiasto: " + selectedItem.SubItems[5].Text +
+                    "\nRodzaj: " + selectedItem.SubItems[6].Text +
+                    "\nTrasa: \n" + trasa);
+                    
             }
         }
     }
