@@ -60,10 +60,51 @@ namespace WindowsFormsApp1
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            showPackages();
             panelList[0].BringToFront();
             button1.BackColor = Color.Teal;
             button2.BackColor = Color.DarkCyan;
             button3.BackColor = Color.DarkCyan;
+        }
+
+        private void showPackages()
+        {
+            try
+            {
+
+                String requestPackage = "http://localhost:5225/Packages/GetAllPackages/";
+                HttpWebRequest webRequestPackage = (HttpWebRequest)WebRequest.Create(@requestPackage);
+                HttpWebResponse webResponePackage = (HttpWebResponse)webRequestPackage.GetResponse();
+                string packageContent = new StreamReader(webResponePackage.GetResponseStream()).ReadToEnd();
+                Package[] packages = JsonSerializer.Deserialize<Package[]>(packageContent);
+                List<List<string>> list = new List<List<string>>();
+                for (int i = 0; i < packages.Length; i++)
+                {
+
+                    list.Add(new List<string> { packages[i].number, packages[i].Sender.name +" "+ packages[i].Sender.surname,
+                   packages[i].Receiver.name +" "+ packages[i].Receiver.surname, packages[i].receiverAddress.street +" "+packages[i].receiverAddress.houseNumber,
+                   packages[i].receiverAddress.zipCode, packages[i].receiverAddress.city});
+
+
+                }
+                listView.Items.Clear();
+                foreach (List<string> l in list)
+                {
+                    ListViewItem item = new ListViewItem(l[0]);
+                    item.SubItems.Add(l[1]);
+                    item.SubItems.Add(l[2]);
+                    item.SubItems.Add(l[3]);
+                    item.SubItems.Add(l[4]);
+                    item.SubItems.Add(l[5]);
+                    listView.Items.Add(item);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("BLAD!" + ex);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -322,7 +363,7 @@ namespace WindowsFormsApp1
 
         private void comboBoxTopic_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBoxTopic.SelectedIndex == 0)
+            if (comboBoxTopic.SelectedIndex == 0)
             {
                 panelList2[1].BringToFront();
             }

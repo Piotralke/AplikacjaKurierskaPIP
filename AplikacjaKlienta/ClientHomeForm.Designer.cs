@@ -40,11 +40,14 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelTrack = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.listView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
             this.panelSend = new System.Windows.Forms.Panel();
             this.labelCostOfService = new System.Windows.Forms.Label();
             this.textCost = new System.Windows.Forms.Label();
@@ -317,11 +320,8 @@
             // 
             this.panelTrack.BackColor = System.Drawing.Color.Transparent;
             this.panelTrack.Controls.Add(this.pictureBox3);
-            this.panelTrack.Controls.Add(this.listView1);
-            this.panelTrack.Controls.Add(this.textBox1);
+            this.panelTrack.Controls.Add(this.listView);
             this.panelTrack.Controls.Add(this.label3);
-            this.panelTrack.Controls.Add(this.label2);
-            this.panelTrack.Controls.Add(this.button5);
             this.panelTrack.Location = new System.Drawing.Point(288, 0);
             this.panelTrack.Name = "panelTrack";
             this.panelTrack.Size = new System.Drawing.Size(853, 681);
@@ -338,23 +338,52 @@
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             // 
-            // listView1
+            // listView
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(23, 175);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(816, 480);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.listView.HideSelection = false;
+            this.listView.Location = new System.Drawing.Point(23, 126);
+            this.listView.Name = "listView";
+            this.listView.Size = new System.Drawing.Size(816, 529);
+            this.listView.TabIndex = 3;
+            this.listView.UseCompatibleStateImageBehavior = false;
+            this.listView.View = System.Windows.Forms.View.Details;
             // 
-            // textBox1
+            // columnHeader1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.textBox1.Location = new System.Drawing.Point(23, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(326, 31);
-            this.textBox1.TabIndex = 2;
+            this.columnHeader1.Text = "Numer paczki";
+            this.columnHeader1.Width = 191;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Imie i nazwisko nadawcy";
+            this.columnHeader2.Width = 136;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Imie i nazwisko odbiorcy";
+            this.columnHeader3.Width = 132;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Ulica i numer adresata";
+            this.columnHeader4.Width = 125;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Kod pocztowy adresata";
+            this.columnHeader5.Width = 124;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Miasto adresata";
+            this.columnHeader6.Width = 93;
             // 
             // label3
             // 
@@ -362,35 +391,11 @@
             this.label3.BackColor = System.Drawing.Color.DimGray;
             this.label3.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(25, 125);
+            this.label3.Location = new System.Drawing.Point(18, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(220, 37);
             this.label3.TabIndex = 1;
             this.label3.Text = "Lub wybierz z listy:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.DimGray;
-            this.label2.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(25, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(236, 37);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Wpisz numer paczki:";
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.DarkCyan;
-            this.button5.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(365, 59);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 43);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Szukaj";
-            this.button5.UseVisualStyleBackColor = false;
             // 
             // panelSend
             // 
@@ -1769,11 +1774,11 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1141, 681);
-            this.Controls.Add(this.panelProblem);
-            this.Controls.Add(this.panelSend);
-            this.Controls.Add(this.panelTrack);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelTrack);
+            this.Controls.Add(this.panelProblem);
+            this.Controls.Add(this.panelSend);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ClientHomeForm";
@@ -1815,10 +1820,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panelTrack;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listView;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panelSend;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -1939,5 +1941,11 @@
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }
