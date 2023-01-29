@@ -11,6 +11,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mail;
+using System.Runtime.Remoting.Lifetime;
 using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -32,6 +33,8 @@ namespace AplikacjaKordynatora
     }
     public partial class CoordinatorHome : Form
     {
+        List<String> courierids = new List<String>();
+        List<String> regionids = new List<String>();
         List<Coordinates> coordinates = new List<Coordinates>();
         public CoordinatorHome(loginCredentials credentials)
         {
@@ -50,6 +53,8 @@ namespace AplikacjaKordynatora
             packageslist.GridLines = true;
             workerslist.GridLines = true;
             schemeworkerslist.GridLines = true;
+            buttonUpdate.Enabled = false;
+            deleteRegionButton.Enabled = false;
             regioncode.Enabled = false;
             addregion.Enabled = false;
             gmap.MapProvider = GMapProviders.OpenStreetMap;
@@ -58,6 +63,7 @@ namespace AplikacjaKordynatora
             gmap.MaxZoom = 17;
             gmap.Zoom = 10;
             LoadCouriers();
+            loadWorkers();
         }
 
         private void LoadCouriers()
@@ -65,7 +71,7 @@ namespace AplikacjaKordynatora
             try
             {
 
-                String requestWorkers = "http://localhost:5225/Users/GetAllWorkers/";
+                String requestWorkers = "http://localhost:5225/Users/GetAllCouriers/";
                 HttpWebRequest webRequestWorkers = (HttpWebRequest)WebRequest.Create(@requestWorkers);
                 HttpWebResponse webResponeWorkers = (HttpWebResponse)webRequestWorkers.GetResponse();
                 string workersContent = new StreamReader(webResponeWorkers.GetResponseStream()).ReadToEnd();
@@ -73,11 +79,11 @@ namespace AplikacjaKordynatora
                 comboBoxWorkers.Items.Clear();
                 for (int i = 0; i < user.Length; i++)
                 {
-                    comboBoxWorkers.Items.Add(user[i].loginCredentials.login);
-
+                    comboBoxWorkers.Items.Add(user[i].name + " "+ user[i].surname + " " + user[i].loginCredentials.login);
+                    courierids.Add(user[i].id.ToString());
 
                 }
-                
+                 
 
 
             }
@@ -87,29 +93,7 @@ namespace AplikacjaKordynatora
             }
         }
 
-        private void Workersbuttonoption_Click(object sender, EventArgs e)
-        {
-
-            if (workersoption.Text == "Loginie")
-            {
-                string workerlogin = workerssearchoption.Text;
-
-            }
-            if (workersoption.Text == "Imieniu")
-            {
-                string workername = workerssearchoption.Text;
-
-            }
-            if (workersoption.Text == "E-mailu")
-            {
-                string workermail = workerssearchoption.Text;
-
-            }
-            if (workersoption.Text == "Numerze Telefonu")
-            {
-                string workerphone = workerssearchoption.Text;
-            }
-        }
+        
 
      
 
@@ -261,7 +245,7 @@ namespace AplikacjaKordynatora
         private void packagesrefresh_Click(object sender, EventArgs e)
         {
 
-            packageslist.Items.Clear();
+            loadWorkers();
          
             
         }
@@ -313,11 +297,10 @@ namespace AplikacjaKordynatora
             }
         }
 
-        private void workersshowall_Click(object sender, EventArgs e)
+        private void loadWorkers()
         {
             try
             {
-
                 String requestWorkers = "http://localhost:5225/Users/GetAllWorkers/";
                 HttpWebRequest webRequestWorkers = (HttpWebRequest)WebRequest.Create(@requestWorkers);
                 HttpWebResponse webResponeWorkers = (HttpWebResponse)webRequestWorkers.GetResponse();
@@ -325,8 +308,8 @@ namespace AplikacjaKordynatora
                 User[] user = JsonSerializer.Deserialize<User[]>(workersContent);
                 List<List<string>> list = new List<List<string>>();
                 for (int i = 0; i < user.Length; i++)
-                { 
-                    list.Add(new List<string> { user[i].id.ToString(), user[i].name, user[i].surname, user[i].role.ToString(),
+                {
+                    list.Add(new List<string> { user[i].id.ToString(), user[i].name, user[i].surname, user[i].role.ToString() == "0" ? "Koordynator" : "Kurier",
                         user[i].loginCredentials.login.ToString(),user[i].loginCredentials.password.ToString(),user[i].phoneNumber,user[i].loginCredentials.email.ToString()});
 
 
@@ -351,13 +334,17 @@ namespace AplikacjaKordynatora
             {
                 Console.WriteLine("BLAD!" + ex);
             }
-
-
+        }
+        private void workersshowall_Click(object sender, EventArgs e)
+        {
+            loadWorkers();
+            workerssearchid.Clear();
+            workerssearchsurname.Clear();
         }
 
         private void workersrefreshbutton_Click(object sender, EventArgs e)
         {
-            workerslist.Items.Clear();
+            loadWorkers();
         }
 
         private void schemerefreshbutton_Click(object sender, EventArgs e)
@@ -373,7 +360,7 @@ namespace AplikacjaKordynatora
                 List<List<string>> list = new List<List<string>>();
                 for (int i = 0; i < user.Length; i++)
                 {
-                    list.Add(new List<string> {user[i].id.ToString(), user[i].name, user[i].surname, user[i].role.ToString(), user[i].defaultAddress.city.ToString(),
+                    list.Add(new List<string> {user[i].id.ToString(), user[i].name, user[i].surname, user[i].role.ToString() == "0" ? "Koordynator" : "Kurier", user[i].defaultAddress.city.ToString(),
                         user[i].loginCredentials.login.ToString(),user[i].phoneNumber,user[i].defaultAddress.zipCode,"tutaj region"});
 
 
@@ -537,18 +524,19 @@ namespace AplikacjaKordynatora
         {
             try
             {
-
+                regionids.Clear();
                 String requestRegionsList = "http://localhost:5225/regions/";
                 HttpWebRequest webRequestRegionsList = (HttpWebRequest)WebRequest.Create(@requestRegionsList);
                 HttpWebResponse webResponseRegionsList = (HttpWebResponse)webRequestRegionsList.GetResponse();
                 string workersContent = new StreamReader(webResponseRegionsList.GetResponseStream()).ReadToEnd();
                 Region[] region = JsonSerializer.Deserialize<Region[]>(workersContent);
+                Console.Write(workersContent);
                 List<List<string>> list = new List<List<string>>();
                
                 for (int i = 0; i < region.Length; i++)
                 {
                     list.Add(new List<string> { region[i].code.ToString(), region[i].courier == null ?" ":region[i].courier.loginCredentials.login });
-                    
+                    regionids.Add(region[i].id.ToString());
                 }
                 regionlist.Items.Clear();
                 foreach (List<string> l in list)
@@ -635,10 +623,380 @@ namespace AplikacjaKordynatora
             }
         }
 
-        private void buttonUpdate_Click(object sender, EventArgs e)
+        private void regionlist_Click(object sender, EventArgs e)
         {
+            
+                buttonUpdate.Enabled = true;
+                deleteRegionButton.Enabled = true;
+            
+        }
+
+
+        
+
+        private async void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            if(comboBoxWorkers.SelectedItem == null)
+            {
+                MessageBox.Show("Pusty Wybór!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                var selectedCourierId = comboBoxWorkers.SelectedIndex;
+                var selectedRegionId = regionlist.SelectedIndices[0];
+                var CourierId = Int16.Parse(courierids[selectedCourierId]);
+                var RegionId = Int16.Parse(regionids[selectedRegionId]);
+
+
+      
+                String requestRegionsUpdate = "http://localhost:5225/regions/UpdateRegionByCourier/" + RegionId.ToString();
+                using (var client = new HttpClient())
+                {
+                    var content = new StringContent(CourierId.ToString(), Encoding.UTF8, "application/json");
+                    var response = await client.PutAsync(requestRegionsUpdate, content);
+
+
+                }
+               
+
+            }
+        }
+
+        private async void deleteRegionButton_Click(object sender, EventArgs e)
+        {
+            var selectedRegionId = regionlist.SelectedIndices[0];
+            var RegionId = regionids[selectedRegionId];
+            String requestRegionsDelete = "http://localhost:5225/regions/DeleteRegionById/" + RegionId;
+            using (var client = new HttpClient())
+            {
+                var response = await client.DeleteAsync(requestRegionsDelete);
+            }
+            MessageBox.Show("Pomyślnie usunięto Region");
+            coordinates.Clear();
+            gmap.Overlays.Clear();
+            gmap.Refresh();
+            deleteRegionButton.Enabled = false;
+            load_Regions();
+        }
+
+        private void workersbuttonid_Click(object sender, EventArgs e)
+        {
+            String workerid = workerssearchid.Text;
+            if (workerssearchid.Text == "")
+            {
+                string message = "Jezeli chcesz wyszukac, podaj id pracownika!";
+
+                MessageBox.Show(message, "BLAD!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            try
+            {
+
+      
+
+
+                String requestWorkers = "http://localhost:5225/Users/GetAllWorkers/";
+                HttpWebRequest webRequestWorkers = (HttpWebRequest)WebRequest.Create(@requestWorkers);
+                HttpWebResponse webResponeWorkers = (HttpWebResponse)webRequestWorkers.GetResponse();
+                string workersContent = new StreamReader(webResponeWorkers.GetResponseStream()).ReadToEnd();
+                User[] user = JsonSerializer.Deserialize<User[]>(workersContent);
+                User[] filteredUserById = user.Where(u => u.id == Int16.Parse(workerid)).ToArray();
+                List<List<string>> list = new List<List<string>>();
+                for (int i = 0; i < filteredUserById.Length; i++)
+                {
+                    list.Add(new List<string> { filteredUserById[i].id.ToString(), filteredUserById[i].name, filteredUserById[i].surname, filteredUserById[i].role.ToString() == "0" ? "Koordynator" : "Kurier",
+                        filteredUserById[i].loginCredentials.login.ToString(),filteredUserById[i].loginCredentials.password.ToString(),filteredUserById[i].phoneNumber,filteredUserById[i].loginCredentials.email.ToString()});
+
+
+                }
+                workerslist.Items.Clear();
+                foreach (List<string> l in list)
+                {
+                    ListViewItem item = new ListViewItem(l[0]);
+                    item.SubItems.Add(l[1]);
+                    item.SubItems.Add(l[2]);
+                    item.SubItems.Add(l[3]);
+                    item.SubItems.Add(l[4]);
+                    item.SubItems.Add(l[5]);
+                    item.SubItems.Add(l[6]);
+                    item.SubItems.Add(l[7]);
+                    workerslist.Items.Add(item);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("BLAD!" + ex);
+            }
 
         }
+
+        private void workersbuttonsurname_Click(object sender, EventArgs e)
+        {
+            String workersurname = workerssearchsurname.Text;
+            if (workerssearchsurname.Text == "")
+            {
+                string message = "Jezeli chcesz wyszukac, podaj nazwisko pracownika!";
+
+                MessageBox.Show(message, "BLAD!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            try
+            {
+                String requestWorkers = "http://localhost:5225/Users/GetAllWorkers/";
+                HttpWebRequest webRequestWorkers = (HttpWebRequest)WebRequest.Create(@requestWorkers);
+                HttpWebResponse webResponeWorkers = (HttpWebResponse)webRequestWorkers.GetResponse();
+                string workersContent = new StreamReader(webResponeWorkers.GetResponseStream()).ReadToEnd();
+                User[] user = JsonSerializer.Deserialize<User[]>(workersContent);
+                User[] filteredUserBySurname = user.Where(u => u.surname == workersurname).ToArray();
+                List<List<string>> list = new List<List<string>>();
+                for (int i = 0; i < filteredUserBySurname.Length; i++)
+                {
+                    list.Add(new List<string> { filteredUserBySurname[i].id.ToString(), filteredUserBySurname[i].name, filteredUserBySurname[i].surname, filteredUserBySurname[i].role.ToString() == "0" ? "Koordynator" : "Kurier",
+                        filteredUserBySurname[i].loginCredentials.login.ToString(),filteredUserBySurname[i].loginCredentials.password.ToString(),filteredUserBySurname[i].phoneNumber,filteredUserBySurname[i].loginCredentials.email.ToString()});
+
+
+                }
+                workerslist.Items.Clear();
+                foreach (List<string> l in list)
+                {
+                    ListViewItem item = new ListViewItem(l[0]);
+                    item.SubItems.Add(l[1]);
+                    item.SubItems.Add(l[2]);
+                    item.SubItems.Add(l[3]);
+                    item.SubItems.Add(l[4]);
+                    item.SubItems.Add(l[5]);
+                    item.SubItems.Add(l[6]);
+                    item.SubItems.Add(l[7]);
+                    workerslist.Items.Add(item);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("BLAD!" + ex);
+            }
+        }
+        private void Workersbuttonoption_Click(object sender, EventArgs e)
+        {
+            if(workersoption.SelectedIndex == 0)
+            {
+                String workerlogin = workerssearchoption.Text;
+                if (workerssearchoption.Text == "")
+                {
+                    string message = "Pole nie moze byc puste!";
+
+                    MessageBox.Show(message, "BLAD!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    try
+                    {
+                        String requestWorkers = "http://localhost:5225/Users/GetAllWorkers/";
+                        HttpWebRequest webRequestWorkers = (HttpWebRequest)WebRequest.Create(@requestWorkers);
+                        HttpWebResponse webResponeWorkers = (HttpWebResponse)webRequestWorkers.GetResponse();
+                        string workersContent = new StreamReader(webResponeWorkers.GetResponseStream()).ReadToEnd();
+                        User[] user = JsonSerializer.Deserialize<User[]>(workersContent);
+                        User[] filteredUserByLogin = user.Where(u => u.loginCredentials.login == workerlogin).ToArray();
+                        List<List<string>> list = new List<List<string>>();
+                        for (int i = 0; i < filteredUserByLogin.Length; i++)
+                        {
+                            list.Add(new List<string> { filteredUserByLogin[i].id.ToString(), filteredUserByLogin[i].name, filteredUserByLogin[i].surname, filteredUserByLogin[i].role.ToString() == "0" ? "Koordynator" : "Kurier",
+                        filteredUserByLogin[i].loginCredentials.login.ToString(),filteredUserByLogin[i].loginCredentials.password.ToString(),filteredUserByLogin[i].phoneNumber,filteredUserByLogin[i].loginCredentials.email.ToString()});
+
+
+                        }
+                        workerslist.Items.Clear();
+                        foreach (List<string> l in list)
+                        {
+                            ListViewItem item = new ListViewItem(l[0]);
+                            item.SubItems.Add(l[1]);
+                            item.SubItems.Add(l[2]);
+                            item.SubItems.Add(l[3]);
+                            item.SubItems.Add(l[4]);
+                            item.SubItems.Add(l[5]);
+                            item.SubItems.Add(l[6]);
+                            item.SubItems.Add(l[7]);
+                            workerslist.Items.Add(item);
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("BLAD!" + ex);
+                    }
+                }
+
+            }
+            else if(workersoption.SelectedIndex == 1)
+            {
+                String workername = workerssearchoption.Text;
+                if (workerssearchoption.Text == "")
+                {
+                    string message = "Pole nie moze byc puste!";
+
+                    MessageBox.Show(message, "BLAD!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    try
+                    {
+                        String requestWorkers = "http://localhost:5225/Users/GetAllWorkers/";
+                        HttpWebRequest webRequestWorkers = (HttpWebRequest)WebRequest.Create(@requestWorkers);
+                        HttpWebResponse webResponeWorkers = (HttpWebResponse)webRequestWorkers.GetResponse();
+                        string workersContent = new StreamReader(webResponeWorkers.GetResponseStream()).ReadToEnd();
+                        User[] user = JsonSerializer.Deserialize<User[]>(workersContent);
+                        User[] filteredUserByName = user.Where(u => u.name == workername).ToArray();
+                        List<List<string>> list = new List<List<string>>();
+                        for (int i = 0; i < filteredUserByName.Length; i++)
+                        {
+                            list.Add(new List<string> { filteredUserByName[i].id.ToString(), filteredUserByName[i].name, filteredUserByName[i].surname, filteredUserByName[i].role.ToString() == "0" ? "Koordynator" : "Kurier",
+                        filteredUserByName[i].loginCredentials.login.ToString(),filteredUserByName[i].loginCredentials.password.ToString(),filteredUserByName[i].phoneNumber,filteredUserByName[i].loginCredentials.email.ToString()});
+
+
+                        }
+                        workerslist.Items.Clear();
+                        foreach (List<string> l in list)
+                        {
+                            ListViewItem item = new ListViewItem(l[0]);
+                            item.SubItems.Add(l[1]);
+                            item.SubItems.Add(l[2]);
+                            item.SubItems.Add(l[3]);
+                            item.SubItems.Add(l[4]);
+                            item.SubItems.Add(l[5]);
+                            item.SubItems.Add(l[6]);
+                            item.SubItems.Add(l[7]);
+                            workerslist.Items.Add(item);
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("BLAD!" + ex);
+                    }
+                }
+            }
+            else if (workersoption.SelectedIndex == 2)
+            {
+                String workermail = workerssearchoption.Text;
+                if (workerssearchoption.Text == "")
+                {
+                    string message = "Pole nie moze byc puste!";
+
+                    MessageBox.Show(message, "BLAD!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    try
+                    {
+                        String requestWorkers = "http://localhost:5225/Users/GetAllWorkers/";
+                        HttpWebRequest webRequestWorkers = (HttpWebRequest)WebRequest.Create(@requestWorkers);
+                        HttpWebResponse webResponeWorkers = (HttpWebResponse)webRequestWorkers.GetResponse();
+                        string workersContent = new StreamReader(webResponeWorkers.GetResponseStream()).ReadToEnd();
+                        User[] user = JsonSerializer.Deserialize<User[]>(workersContent);
+                        User[] filteredUserByEmail = user.Where(u => u.loginCredentials.email == workermail).ToArray();
+                        List<List<string>> list = new List<List<string>>();
+                        for (int i = 0; i < filteredUserByEmail.Length; i++)
+                        {
+                            list.Add(new List<string> { filteredUserByEmail[i].id.ToString(), filteredUserByEmail[i].name, filteredUserByEmail[i].surname, filteredUserByEmail[i].role.ToString() == "0" ? "Koordynator" : "Kurier",
+                        filteredUserByEmail[i].loginCredentials.login.ToString(),filteredUserByEmail[i].loginCredentials.password.ToString(),filteredUserByEmail[i].phoneNumber,filteredUserByEmail[i].loginCredentials.email.ToString()});
+
+
+                        }
+                        workerslist.Items.Clear();
+                        foreach (List<string> l in list)
+                        {
+                            ListViewItem item = new ListViewItem(l[0]);
+                            item.SubItems.Add(l[1]);
+                            item.SubItems.Add(l[2]);
+                            item.SubItems.Add(l[3]);
+                            item.SubItems.Add(l[4]);
+                            item.SubItems.Add(l[5]);
+                            item.SubItems.Add(l[6]);
+                            item.SubItems.Add(l[7]);
+                            workerslist.Items.Add(item);
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("BLAD!" + ex);
+                    }
+                }
+
+            }
+            else if (workersoption.SelectedIndex == 3)
+            {
+                String workerphone = workerssearchoption.Text;
+                if (workerssearchoption.Text == "")
+                {
+                    string message = "Pole nie moze byc puste!";
+
+                    MessageBox.Show(message, "BLAD!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    try
+                    {
+                        String requestWorkers = "http://localhost:5225/Users/GetAllWorkers/";
+                        HttpWebRequest webRequestWorkers = (HttpWebRequest)WebRequest.Create(@requestWorkers);
+                        HttpWebResponse webResponeWorkers = (HttpWebResponse)webRequestWorkers.GetResponse();
+                        string workersContent = new StreamReader(webResponeWorkers.GetResponseStream()).ReadToEnd();
+                        User[] user = JsonSerializer.Deserialize<User[]>(workersContent);
+                        User[] filteredUserByPhone = user.Where(u => u.phoneNumber == workerphone).ToArray();
+                        List<List<string>> list = new List<List<string>>();
+                        for (int i = 0; i < filteredUserByPhone.Length; i++)
+                        {
+                            list.Add(new List<string> { filteredUserByPhone[i].id.ToString(), filteredUserByPhone[i].name, filteredUserByPhone[i].surname, filteredUserByPhone[i].role.ToString() == "0" ? "Koordynator" : "Kurier",
+                        filteredUserByPhone[i].loginCredentials.login.ToString(),filteredUserByPhone[i].loginCredentials.password.ToString(),filteredUserByPhone[i].phoneNumber,filteredUserByPhone[i].loginCredentials.email.ToString()});
+
+
+                        }
+                        workerslist.Items.Clear();
+                        foreach (List<string> l in list)
+                        {
+                            ListViewItem item = new ListViewItem(l[0]);
+                            item.SubItems.Add(l[1]);
+                            item.SubItems.Add(l[2]);
+                            item.SubItems.Add(l[3]);
+                            item.SubItems.Add(l[4]);
+                            item.SubItems.Add(l[5]);
+                            item.SubItems.Add(l[6]);
+                            item.SubItems.Add(l[7]);
+                            workerslist.Items.Add(item);
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("BLAD!" + ex);
+                    }
+                }
+            }
+            else
+            {
+                string message = "Jezeli chcesz wyszukac, wybierz jakas opcje!!";
+
+                MessageBox.Show(message, "BLAD!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+
+        }
+
+        private void workersdelbutton_Click(object sender, EventArgs e)
+        {
+            String requestRegionsDelete = "http://localhost:5225/regions/DeleteRegionById/" + RegionId;
+            using (var client = new HttpClient())
+            {
+                var response = await client.DeleteAsync(requestRegionsDelete);
+            }
+        }
+
+      
     }
     
 }

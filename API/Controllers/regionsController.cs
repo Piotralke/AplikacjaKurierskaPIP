@@ -17,50 +17,50 @@ namespace API.Controllers
 			_context = context;
 		}
 		[HttpGet]
-		public async Task<ActionResult<IEnumerable<Region>>> GetRegions()
-		{
-		 var result = await (from r in _context.regions
-						  join u in _context.AppUsers on r.courierId equals u.id
-						  join l in _context.LoginCredentials on u.loginCredentialsId equals l.id
-						  select new Region
-						  {
-							  id = r.id,
-							  code = r.code,
-							  courierId = r.courierId == null? null:r.courierId,
-							  courier  = r.courierId == null ? null: new User
-							  {
-								  id = u.id,
-								  name = u.name,
-								  surname = u.surname,
-								  loginCredentialsId = u.loginCredentialsId,
-								  role = u.role,
-								  defaultAddressId = u.defaultAddressId,
-								  defaultAddress = u.defaultAddress,
-								  senderPackages = u.senderPackages,
-								  receiverPackages = u.receiverPackages,
-								  orders =	u.orders,
-								  phoneNumber = u.phoneNumber,
-								  loginCredentials = new loginCredentials
-								  {
-									  id = l.id,
-									  email = l.email,
-									  login = l.login,
-									  password = l.password
-								  }
-							  }
-							  
-						  }
-			).ToArrayAsync();
+        public async Task<ActionResult<IEnumerable<Region>>> GetRegions()
+        {
+            var regions = await _context.regions.ToListAsync();
+            var users = await _context.AppUsers.ToListAsync();
+            var loginCredentials = await _context.LoginCredentials.ToListAsync();
 
-            if (result == null)
+            var result = regions.Select(r =>
             {
-                return NotFound();
-            }
+                var user = users.FirstOrDefault(u => u.id == r.courierId);
+                var loginCredentials = user?.loginCredentialsId != null ? _context.LoginCredentials.FirstOrDefault(l => l.id == user.loginCredentialsId) : null;
+
+                return new Region
+                {
+                    id = r.id,
+                    code = r.code,
+                    courierId = r.courierId,
+                    courier = user == null ? null : new User
+                    {
+                        id = user.id,
+                        name = user.name,
+                        surname = user.surname,
+                        loginCredentialsId = user.loginCredentialsId,
+                        role = user.role,
+                        defaultAddressId = user.defaultAddressId,
+                        defaultAddress = user.defaultAddress,
+                        senderPackages = user.senderPackages,
+                        receiverPackages = user.receiverPackages,
+                        orders = user.orders,
+                        phoneNumber = user.phoneNumber,
+                        loginCredentials = loginCredentials == null ? null : new loginCredentials
+                        {
+                            id = loginCredentials.id,
+                            email = loginCredentials.email,
+                            login = loginCredentials.login,
+                            password = loginCredentials.password
+                        }
+                    }
+                };
+            }).ToArray();
 
             return result;
-
         }
-		[HttpGet("GetRegionByID/{id}")]
+
+        [HttpGet("GetRegionByID/{id}")]
 		public async Task<ActionResult<Region>> GetRegion(int id)
 		{
 			var region = await _context.regions.FindAsync(id);
@@ -94,5 +94,46 @@ namespace API.Controllers
 
 			return CreatedAtAction("GetRegion", new { id = region.id }, region);
 		}
-	}
+        [HttpPut("UpdateRegionByCourier/{courierId}")]
+        public async Task<ActionResult<Region>> UpdateRegion(int id,int courierId)
+        {
+            try
+            {
+                var region = await _context.regions.FindAsync(id);
+
+                if (region == null)
+                {
+                    return NotFound();
+                }
+
+                region.courierId = courierId;
+                _context.regions.Update(region);
+                await _context.SaveChangesAsync();
+
+                return Ok(region);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+        [HttpDelete("DeleteRegionById/{id}")]
+        public async Task<IActionResult> DeleteRegion(int id)
+        {
+            var region = await _context.regions.FindAsync(id);
+            if (region == null)
+            {
+                return NotFound();
+            }
+            var regionPins = _context.RegionPins.Where(rp => rp.regionId == id);
+            _context.RegionPins.RemoveRange(regionPins);
+
+
+            _context.regions.Remove(region);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+    }
 }
