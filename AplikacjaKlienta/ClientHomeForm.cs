@@ -291,7 +291,7 @@ namespace WindowsFormsApp1
 
             Status status = new Status()
             {
-                Id = 0,
+                id = 0,
                 idStatusName = 4,
                 idPackage = packageId,
                 date = DateTime.Now
