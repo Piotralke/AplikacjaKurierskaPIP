@@ -116,6 +116,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panelProblem = new System.Windows.Forms.Panel();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.comboBoxTopic = new System.Windows.Forms.ComboBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panelOther = new System.Windows.Forms.Panel();
+            this.buttonSendNormalRep = new System.Windows.Forms.Button();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.textBoxRep = new System.Windows.Forms.TextBox();
+            this.panelEmpty = new System.Windows.Forms.Panel();
             this.panelDamageDescription = new System.Windows.Forms.Panel();
             this.label47 = new System.Windows.Forms.Label();
             this.buttonSend = new System.Windows.Forms.Button();
@@ -129,23 +140,13 @@
             this.label43 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
+            this.comboBoxToD = new System.Windows.Forms.ComboBox();
             this.comboBoxPacket = new System.Windows.Forms.ComboBox();
             this.label38 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.textBoxDamageDescription = new System.Windows.Forms.TextBox();
             this.textBoxPackageInfo = new System.Windows.Forms.TextBox();
             this.textBoxPackage = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.comboBoxTopic = new System.Windows.Forms.ComboBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panelEmpty = new System.Windows.Forms.Panel();
-            this.panelOther = new System.Windows.Forms.Panel();
-            this.buttonSendNormalRep = new System.Windows.Forms.Button();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.textBoxRep = new System.Windows.Forms.TextBox();
             this.panelLost = new System.Windows.Forms.Panel();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.label37 = new System.Windows.Forms.Label();
@@ -159,7 +160,6 @@
             this.textBoxDesc = new System.Windows.Forms.TextBox();
             this.textBoxPkInfo = new System.Windows.Forms.TextBox();
             this.textBoxPkNum = new System.Windows.Forms.TextBox();
-            this.comboBoxToD = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -168,9 +168,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelSend.SuspendLayout();
             this.panelProblem.SuspendLayout();
-            this.panelDamageDescription.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelOther.SuspendLayout();
+            this.panelDamageDescription.SuspendLayout();
             this.panelLost.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1153,14 +1153,142 @@
             this.panelProblem.Controls.Add(this.label34);
             this.panelProblem.Controls.Add(this.comboBoxTopic);
             this.panelProblem.Controls.Add(this.pictureBox4);
-            this.panelProblem.Controls.Add(this.panelOther);
             this.panelProblem.Controls.Add(this.panelEmpty);
             this.panelProblem.Controls.Add(this.panelDamageDescription);
             this.panelProblem.Controls.Add(this.panelLost);
+            this.panelProblem.Controls.Add(this.panelOther);
             this.panelProblem.Location = new System.Drawing.Point(273, 0);
             this.panelProblem.Name = "panelProblem";
             this.panelProblem.Size = new System.Drawing.Size(868, 681);
             this.panelProblem.TabIndex = 5;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.DarkCyan;
+            this.label35.Font = new System.Drawing.Font("Segoe Print", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label35.ForeColor = System.Drawing.Color.White;
+            this.label35.Location = new System.Drawing.Point(60, 12);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(507, 85);
+            this.label35.TabIndex = 6;
+            this.label35.Text = "Zgłoś swój problem";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label34.ForeColor = System.Drawing.Color.White;
+            this.label34.Location = new System.Drawing.Point(50, 109);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(179, 37);
+            this.label34.TabIndex = 4;
+            this.label34.Text = "Wybierz temat:";
+            // 
+            // comboBoxTopic
+            // 
+            this.comboBoxTopic.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxTopic.FormattingEnabled = true;
+            this.comboBoxTopic.Items.AddRange(new object[] {
+            "Uszkodzona przesyłka",
+            "Zagubiona paczka",
+            "Inne"});
+            this.comboBoxTopic.Location = new System.Drawing.Point(57, 149);
+            this.comboBoxTopic.Name = "comboBoxTopic";
+            this.comboBoxTopic.Size = new System.Drawing.Size(221, 31);
+            this.comboBoxTopic.TabIndex = 3;
+            this.comboBoxTopic.SelectedIndexChanged += new System.EventHandler(this.comboBoxTopic_SelectedIndexChanged);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(656, 8);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(199, 112);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            // 
+            // panelOther
+            // 
+            this.panelOther.AutoScroll = true;
+            this.panelOther.BackColor = System.Drawing.Color.DarkCyan;
+            this.panelOther.Controls.Add(this.buttonSendNormalRep);
+            this.panelOther.Controls.Add(this.label53);
+            this.panelOther.Controls.Add(this.label54);
+            this.panelOther.Controls.Add(this.label55);
+            this.panelOther.Controls.Add(this.textBoxRep);
+            this.panelOther.Location = new System.Drawing.Point(47, 196);
+            this.panelOther.Name = "panelOther";
+            this.panelOther.Size = new System.Drawing.Size(780, 473);
+            this.panelOther.TabIndex = 13;
+            // 
+            // buttonSendNormalRep
+            // 
+            this.buttonSendNormalRep.BackColor = System.Drawing.Color.DarkCyan;
+            this.buttonSendNormalRep.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSendNormalRep.ForeColor = System.Drawing.Color.White;
+            this.buttonSendNormalRep.Location = new System.Drawing.Point(300, 300);
+            this.buttonSendNormalRep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSendNormalRep.Name = "buttonSendNormalRep";
+            this.buttonSendNormalRep.Size = new System.Drawing.Size(196, 57);
+            this.buttonSendNormalRep.TabIndex = 10;
+            this.buttonSendNormalRep.Text = "Wyślij";
+            this.buttonSendNormalRep.UseVisualStyleBackColor = false;
+            this.buttonSendNormalRep.Click += new System.EventHandler(this.buttonSendNormalRep_Click);
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.label53.Font = new System.Drawing.Font("Segoe Print", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label53.ForeColor = System.Drawing.Color.White;
+            this.label53.Location = new System.Drawing.Point(36, 21);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(305, 51);
+            this.label53.TabIndex = 6;
+            this.label53.Text = "Opisz swój problem";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label54.ForeColor = System.Drawing.Color.White;
+            this.label54.Location = new System.Drawing.Point(42, 374);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(694, 63);
+            this.label54.TabIndex = 1;
+            this.label54.Text = resources.GetString("label54.Text");
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label55.ForeColor = System.Drawing.Color.White;
+            this.label55.Location = new System.Drawing.Point(27, 92);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(342, 37);
+            this.label55.TabIndex = 1;
+            this.label55.Text = "Opis problemu / Uwagi klienta";
+            // 
+            // textBoxRep
+            // 
+            this.textBoxRep.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxRep.ForeColor = System.Drawing.Color.Black;
+            this.textBoxRep.Location = new System.Drawing.Point(36, 132);
+            this.textBoxRep.Multiline = true;
+            this.textBoxRep.Name = "textBoxRep";
+            this.textBoxRep.Size = new System.Drawing.Size(688, 130);
+            this.textBoxRep.TabIndex = 0;
+            // 
+            // panelEmpty
+            // 
+            this.panelEmpty.BackColor = System.Drawing.Color.Teal;
+            this.panelEmpty.Location = new System.Drawing.Point(38, 196);
+            this.panelEmpty.Name = "panelEmpty";
+            this.panelEmpty.Size = new System.Drawing.Size(807, 481);
+            this.panelEmpty.TabIndex = 9;
             // 
             // panelDamageDescription
             // 
@@ -1328,6 +1456,27 @@
             this.label40.TabIndex = 1;
             this.label40.Text = "Opakowanie zewnętrzne";
             // 
+            // comboBoxToD
+            // 
+            this.comboBoxToD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxToD.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxToD.FormattingEnabled = true;
+            this.comboBoxToD.Items.AddRange(new object[] {
+            "Połamanie",
+            "Porysowanie",
+            "Stłuczenie",
+            "Przedziurawienie",
+            "Zamoczenie",
+            "Zabrudzenie",
+            "Rozdarcie",
+            "Wgniecenie",
+            "Braki w przesyłce"});
+            this.comboBoxToD.Location = new System.Drawing.Point(36, 586);
+            this.comboBoxToD.Name = "comboBoxToD";
+            this.comboBoxToD.Size = new System.Drawing.Size(194, 31);
+            this.comboBoxToD.TabIndex = 3;
+            this.comboBoxToD.SelectedIndexChanged += new System.EventHandler(this.comboBoxToD_SelectedIndexChanged);
+            // 
             // comboBoxPacket
             // 
             this.comboBoxPacket.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1400,134 +1549,6 @@
             this.textBoxPackage.Name = "textBoxPackage";
             this.textBoxPackage.Size = new System.Drawing.Size(688, 30);
             this.textBoxPackage.TabIndex = 0;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.BackColor = System.Drawing.Color.DarkCyan;
-            this.label35.Font = new System.Drawing.Font("Segoe Print", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label35.ForeColor = System.Drawing.Color.White;
-            this.label35.Location = new System.Drawing.Point(60, 12);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(507, 85);
-            this.label35.TabIndex = 6;
-            this.label35.Text = "Zgłoś swój problem";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label34.ForeColor = System.Drawing.Color.White;
-            this.label34.Location = new System.Drawing.Point(50, 109);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(179, 37);
-            this.label34.TabIndex = 4;
-            this.label34.Text = "Wybierz temat:";
-            // 
-            // comboBoxTopic
-            // 
-            this.comboBoxTopic.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBoxTopic.FormattingEnabled = true;
-            this.comboBoxTopic.Items.AddRange(new object[] {
-            "Uszkodzona przesyłka",
-            "Zagubiona paczka",
-            "Inne"});
-            this.comboBoxTopic.Location = new System.Drawing.Point(57, 149);
-            this.comboBoxTopic.Name = "comboBoxTopic";
-            this.comboBoxTopic.Size = new System.Drawing.Size(221, 31);
-            this.comboBoxTopic.TabIndex = 3;
-            this.comboBoxTopic.SelectedIndexChanged += new System.EventHandler(this.comboBoxTopic_SelectedIndexChanged);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(656, 8);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(199, 112);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            // 
-            // panelEmpty
-            // 
-            this.panelEmpty.BackColor = System.Drawing.Color.Teal;
-            this.panelEmpty.Location = new System.Drawing.Point(38, 196);
-            this.panelEmpty.Name = "panelEmpty";
-            this.panelEmpty.Size = new System.Drawing.Size(807, 481);
-            this.panelEmpty.TabIndex = 9;
-            // 
-            // panelOther
-            // 
-            this.panelOther.AutoScroll = true;
-            this.panelOther.BackColor = System.Drawing.Color.DarkCyan;
-            this.panelOther.Controls.Add(this.buttonSendNormalRep);
-            this.panelOther.Controls.Add(this.label53);
-            this.panelOther.Controls.Add(this.label54);
-            this.panelOther.Controls.Add(this.label55);
-            this.panelOther.Controls.Add(this.textBoxRep);
-            this.panelOther.Location = new System.Drawing.Point(47, 196);
-            this.panelOther.Name = "panelOther";
-            this.panelOther.Size = new System.Drawing.Size(780, 473);
-            this.panelOther.TabIndex = 13;
-            // 
-            // buttonSendNormalRep
-            // 
-            this.buttonSendNormalRep.BackColor = System.Drawing.Color.DarkCyan;
-            this.buttonSendNormalRep.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSendNormalRep.ForeColor = System.Drawing.Color.White;
-            this.buttonSendNormalRep.Location = new System.Drawing.Point(300, 300);
-            this.buttonSendNormalRep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonSendNormalRep.Name = "buttonSendNormalRep";
-            this.buttonSendNormalRep.Size = new System.Drawing.Size(196, 57);
-            this.buttonSendNormalRep.TabIndex = 10;
-            this.buttonSendNormalRep.Text = "Wyślij";
-            this.buttonSendNormalRep.UseVisualStyleBackColor = false;
-            this.buttonSendNormalRep.Click += new System.EventHandler(this.buttonSendNormalRep_Click);
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.label53.Font = new System.Drawing.Font("Segoe Print", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label53.ForeColor = System.Drawing.Color.White;
-            this.label53.Location = new System.Drawing.Point(36, 21);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(305, 51);
-            this.label53.TabIndex = 6;
-            this.label53.Text = "Opisz swój problem";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label54.ForeColor = System.Drawing.Color.White;
-            this.label54.Location = new System.Drawing.Point(42, 374);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(694, 63);
-            this.label54.TabIndex = 1;
-            this.label54.Text = resources.GetString("label54.Text");
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label55.ForeColor = System.Drawing.Color.White;
-            this.label55.Location = new System.Drawing.Point(27, 92);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(342, 37);
-            this.label55.TabIndex = 1;
-            this.label55.Text = "Opis problemu / Uwagi klienta";
-            // 
-            // textBoxRep
-            // 
-            this.textBoxRep.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxRep.ForeColor = System.Drawing.Color.Black;
-            this.textBoxRep.Location = new System.Drawing.Point(36, 132);
-            this.textBoxRep.Multiline = true;
-            this.textBoxRep.Name = "textBoxRep";
-            this.textBoxRep.Size = new System.Drawing.Size(688, 130);
-            this.textBoxRep.TabIndex = 0;
             // 
             // panelLost
             // 
@@ -1682,27 +1703,6 @@
             this.textBoxPkNum.Size = new System.Drawing.Size(688, 30);
             this.textBoxPkNum.TabIndex = 0;
             // 
-            // comboBoxToD
-            // 
-            this.comboBoxToD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxToD.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBoxToD.FormattingEnabled = true;
-            this.comboBoxToD.Items.AddRange(new object[] {
-            "Połamanie",
-            "Porysowanie",
-            "Stłuczenie",
-            "Przedziurawienie",
-            "Zamoczenie",
-            "Zabrudzenie",
-            "Rozdarcie",
-            "Wgniecenie",
-            "Braki w przesyłce"});
-            this.comboBoxToD.Location = new System.Drawing.Point(36, 586);
-            this.comboBoxToD.Name = "comboBoxToD";
-            this.comboBoxToD.Size = new System.Drawing.Size(194, 31);
-            this.comboBoxToD.TabIndex = 3;
-            this.comboBoxToD.SelectedIndexChanged += new System.EventHandler(this.comboBoxToD_SelectedIndexChanged);
-            // 
             // ClientHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1734,11 +1734,11 @@
             this.panelSend.PerformLayout();
             this.panelProblem.ResumeLayout(false);
             this.panelProblem.PerformLayout();
-            this.panelDamageDescription.ResumeLayout(false);
-            this.panelDamageDescription.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panelOther.ResumeLayout(false);
             this.panelOther.PerformLayout();
+            this.panelDamageDescription.ResumeLayout(false);
+            this.panelDamageDescription.PerformLayout();
             this.panelLost.ResumeLayout(false);
             this.panelLost.PerformLayout();
             this.ResumeLayout(false);
