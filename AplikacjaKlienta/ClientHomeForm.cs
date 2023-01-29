@@ -72,7 +72,7 @@ namespace WindowsFormsApp1
             try
             {
 
-                String requestPackage = "http://localhost:5225/Packages/GetYoursPackages/";
+                String requestPackage = "http://localhost:5225/Packages/GetYoursPackages/"+loggedUser.id;
                 HttpWebRequest webRequestPackage = (HttpWebRequest)WebRequest.Create(@requestPackage);
                 HttpWebResponse webResponePackage = (HttpWebResponse)webRequestPackage.GetResponse();
                 string packageContent = new StreamReader(webResponePackage.GetResponseStream()).ReadToEnd();
@@ -81,9 +81,12 @@ namespace WindowsFormsApp1
                 for (int i = 0; i < packages.Length; i++)
                 {
 
-                    list.Add(new List<string> { packages[i].number, packages[i].Sender.name +" "+ packages[i].Sender.surname,
-                   packages[i].Receiver.name +" "+ packages[i].Receiver.surname, packages[i].receiverAddress.street +" "+packages[i].receiverAddress.houseNumber,
-                   packages[i].receiverAddress.zipCode, packages[i].receiverAddress.city});
+                    list.Add(new List<string> { packages[i].number, 
+                   packages[i].Sender.name +" "+ packages[i].Sender.surname,
+                   packages[i].Receiver.name +" "+ packages[i].Receiver.surname, 
+                   packages[i].receiverAddress.street +" "+packages[i].receiverAddress.houseNumber,
+                   packages[i].receiverAddress.zipCode,
+                   packages[i].receiverAddress.city});
 
 
                 }
