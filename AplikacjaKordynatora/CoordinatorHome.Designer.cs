@@ -39,18 +39,16 @@
             this.label30 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.Jobs = new System.Windows.Forms.TabPage();
-            this.jobsdelete = new System.Windows.Forms.Button();
             this.jobsrefresh = new System.Windows.Forms.Button();
-            this.jobssubmit = new System.Windows.Forms.Button();
-            this.label26 = new System.Windows.Forms.Label();
-            this.courierslist = new System.Windows.Forms.ComboBox();
             this.jobsview = new System.Windows.Forms.ListView();
-            this.Statistics = new System.Windows.Forms.TabPage();
-            this.Reports = new System.Windows.Forms.TabPage();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Notify = new System.Windows.Forms.TabPage();
             this.notifyoptionsearch = new System.Windows.Forms.TextBox();
             this.notifydelete = new System.Windows.Forms.Button();
-            this.notifyanswer = new System.Windows.Forms.Button();
             this.notifyopen = new System.Windows.Forms.Button();
             this.notifybuttonsearch = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
@@ -59,8 +57,6 @@
             this.Packages = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.packagesshowall = new System.Windows.Forms.Button();
-            this.packagesrefreshbutton = new System.Windows.Forms.Button();
-            this.packagesedit = new System.Windows.Forms.Button();
             this.packagesrefresh = new System.Windows.Forms.Button();
             this.packageschoice = new System.Windows.Forms.ComboBox();
             this.packageschoicesearch = new System.Windows.Forms.Button();
@@ -73,8 +69,10 @@
             this.klistID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.klistnumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.klistReceiverId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.klistreceiverAddressId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.klistSenderId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.klistsenderAddressId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.klistweight = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.klistwidth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -84,7 +82,6 @@
             this.klistisStandardShape = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.klistCODcost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView1 = new System.Windows.Forms.ListView();
-            this.Email = new System.Windows.Forms.TabPage();
             this.Register = new System.Windows.Forms.TabPage();
             this.registerphone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -99,26 +96,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.registersurnamebox = new System.Windows.Forms.TextBox();
             this.registernamebox = new System.Windows.Forms.TextBox();
-            this.Scheme = new System.Windows.Forms.TabPage();
-            this.schemeworkername = new System.Windows.Forms.Label();
-            this.schemerefreshbutton = new System.Windows.Forms.Button();
-            this.schemeworkerslist = new System.Windows.Forms.ListView();
-            this.sID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ssurname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.srole = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.mmMiasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sidCredentials = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sphoneNumberr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.zipcodeee = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Regionssss = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.submithours = new System.Windows.Forms.Button();
-            this.workhours = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.datework = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.calendar = new System.Windows.Forms.MonthCalendar();
             this.Workers = new System.Windows.Forms.TabPage();
             this.workersshowall = new System.Windows.Forms.Button();
             this.workerssearchoption = new System.Windows.Forms.TextBox();
@@ -133,8 +110,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.workerssearchid = new System.Windows.Forms.TextBox();
-            this.workersdelbutton = new System.Windows.Forms.Button();
-            this.workerseditbutton = new System.Windows.Forms.Button();
             this.workerslist = new System.Windows.Forms.ListView();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -150,6 +125,7 @@
             this.addregion = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.regioncode = new System.Windows.Forms.TextBox();
+            this.deleteRegionButton = new System.Windows.Forms.Button();
             this.regionsrefreshbutton = new System.Windows.Forms.Button();
             this.mousechoice = new System.Windows.Forms.CheckBox();
             this.regionlist = new System.Windows.Forms.ListView();
@@ -158,7 +134,6 @@
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.deleteRegionButton = new System.Windows.Forms.Button();
             this.AdminPanel.SuspendLayout();
             this.HomePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gblogo)).BeginInit();
@@ -167,7 +142,6 @@
             this.Packages.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Register.SuspendLayout();
-            this.Scheme.SuspendLayout();
             this.Workers.SuspendLayout();
             this.Regions.SuspendLayout();
             this.SuspendLayout();
@@ -177,13 +151,9 @@
             this.AdminPanel.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.AdminPanel.Controls.Add(this.HomePage);
             this.AdminPanel.Controls.Add(this.Jobs);
-            this.AdminPanel.Controls.Add(this.Statistics);
-            this.AdminPanel.Controls.Add(this.Reports);
             this.AdminPanel.Controls.Add(this.Notify);
             this.AdminPanel.Controls.Add(this.Packages);
-            this.AdminPanel.Controls.Add(this.Email);
             this.AdminPanel.Controls.Add(this.Register);
-            this.AdminPanel.Controls.Add(this.Scheme);
             this.AdminPanel.Controls.Add(this.Workers);
             this.AdminPanel.Controls.Add(this.Regions);
             this.AdminPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -280,11 +250,7 @@
             // Jobs
             // 
             this.Jobs.BackColor = System.Drawing.Color.LightSlateGray;
-            this.Jobs.Controls.Add(this.jobsdelete);
             this.Jobs.Controls.Add(this.jobsrefresh);
-            this.Jobs.Controls.Add(this.jobssubmit);
-            this.Jobs.Controls.Add(this.label26);
-            this.Jobs.Controls.Add(this.courierslist);
             this.Jobs.Controls.Add(this.jobsview);
             this.Jobs.ImageIndex = 9;
             this.Jobs.Location = new System.Drawing.Point(4, 32);
@@ -294,88 +260,63 @@
             this.Jobs.TabIndex = 0;
             this.Jobs.Text = "Zlecenia";
             // 
-            // jobsdelete
-            // 
-            this.jobsdelete.Location = new System.Drawing.Point(36, 200);
-            this.jobsdelete.Name = "jobsdelete";
-            this.jobsdelete.Size = new System.Drawing.Size(110, 38);
-            this.jobsdelete.TabIndex = 5;
-            this.jobsdelete.Text = "Usuń";
-            this.jobsdelete.UseVisualStyleBackColor = true;
-            // 
             // jobsrefresh
             // 
-            this.jobsrefresh.Location = new System.Drawing.Point(36, 145);
+            this.jobsrefresh.Location = new System.Drawing.Point(58, 21);
             this.jobsrefresh.Name = "jobsrefresh";
             this.jobsrefresh.Size = new System.Drawing.Size(110, 38);
             this.jobsrefresh.TabIndex = 4;
             this.jobsrefresh.Text = "Odśwież";
             this.jobsrefresh.UseVisualStyleBackColor = true;
-            // 
-            // jobssubmit
-            // 
-            this.jobssubmit.Location = new System.Drawing.Point(36, 96);
-            this.jobssubmit.Name = "jobssubmit";
-            this.jobssubmit.Size = new System.Drawing.Size(99, 23);
-            this.jobssubmit.TabIndex = 3;
-            this.jobssubmit.Text = "Zatwierdź";
-            this.jobssubmit.UseVisualStyleBackColor = true;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label26.Location = new System.Drawing.Point(24, 15);
-            this.label26.MaximumSize = new System.Drawing.Size(150, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(145, 39);
-            this.label26.TabIndex = 2;
-            this.label26.Text = "Wybierz pracownika któremu chcesz przypisać nowe zlecenie";
-            // 
-            // courierslist
-            // 
-            this.courierslist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.courierslist.FormattingEnabled = true;
-            this.courierslist.Location = new System.Drawing.Point(8, 69);
-            this.courierslist.Name = "courierslist";
-            this.courierslist.Size = new System.Drawing.Size(161, 21);
-            this.courierslist.TabIndex = 1;
+            this.jobsrefresh.Click += new System.EventHandler(this.jobsrefresh_Click);
             // 
             // jobsview
             // 
+            this.jobsview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.jobsview.GridLines = true;
             this.jobsview.HideSelection = false;
-            this.jobsview.Location = new System.Drawing.Point(177, 0);
+            this.jobsview.Location = new System.Drawing.Point(243, 0);
             this.jobsview.Name = "jobsview";
-            this.jobsview.Size = new System.Drawing.Size(993, 525);
+            this.jobsview.Size = new System.Drawing.Size(931, 525);
             this.jobsview.TabIndex = 0;
             this.jobsview.UseCompatibleStateImageBehavior = false;
+            this.jobsview.View = System.Windows.Forms.View.Details;
             // 
-            // Statistics
+            // columnHeader3
             // 
-            this.Statistics.BackColor = System.Drawing.Color.LightSlateGray;
-            this.Statistics.ImageIndex = 1;
-            this.Statistics.Location = new System.Drawing.Point(4, 32);
-            this.Statistics.Name = "Statistics";
-            this.Statistics.Size = new System.Drawing.Size(1170, 525);
-            this.Statistics.TabIndex = 2;
-            this.Statistics.Text = "Statystyki";
+            this.columnHeader3.Text = "Numer Zlecenia";
+            this.columnHeader3.Width = 183;
             // 
-            // Reports
+            // columnHeader4
             // 
-            this.Reports.BackColor = System.Drawing.Color.LightSlateGray;
-            this.Reports.ImageIndex = 2;
-            this.Reports.Location = new System.Drawing.Point(4, 32);
-            this.Reports.Name = "Reports";
-            this.Reports.Size = new System.Drawing.Size(1170, 525);
-            this.Reports.TabIndex = 3;
-            this.Reports.Text = "Raporty";
+            this.columnHeader4.Text = "Numer Paczki";
+            this.columnHeader4.Width = 196;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Cena";
+            this.columnHeader5.Width = 136;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Imie i Nazwisko Kuriera";
+            this.columnHeader6.Width = 181;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Login Kuriera";
+            this.columnHeader7.Width = 528;
             // 
             // Notify
             // 
             this.Notify.BackColor = System.Drawing.Color.LightSlateGray;
             this.Notify.Controls.Add(this.notifyoptionsearch);
             this.Notify.Controls.Add(this.notifydelete);
-            this.Notify.Controls.Add(this.notifyanswer);
             this.Notify.Controls.Add(this.notifyopen);
             this.Notify.Controls.Add(this.notifybuttonsearch);
             this.Notify.Controls.Add(this.label24);
@@ -397,25 +338,16 @@
             // 
             // notifydelete
             // 
-            this.notifydelete.Location = new System.Drawing.Point(20, 255);
+            this.notifydelete.Location = new System.Drawing.Point(20, 203);
             this.notifydelete.Name = "notifydelete";
             this.notifydelete.Size = new System.Drawing.Size(121, 38);
             this.notifydelete.TabIndex = 16;
             this.notifydelete.Text = "Usuń";
             this.notifydelete.UseVisualStyleBackColor = true;
             // 
-            // notifyanswer
-            // 
-            this.notifyanswer.Location = new System.Drawing.Point(20, 196);
-            this.notifyanswer.Name = "notifyanswer";
-            this.notifyanswer.Size = new System.Drawing.Size(121, 38);
-            this.notifyanswer.TabIndex = 15;
-            this.notifyanswer.Text = "Odpowiedz";
-            this.notifyanswer.UseVisualStyleBackColor = true;
-            // 
             // notifyopen
             // 
-            this.notifyopen.Location = new System.Drawing.Point(20, 137);
+            this.notifyopen.Location = new System.Drawing.Point(20, 147);
             this.notifyopen.Name = "notifyopen";
             this.notifyopen.Size = new System.Drawing.Size(121, 38);
             this.notifyopen.TabIndex = 14;
@@ -480,8 +412,6 @@
             // 
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel2.Controls.Add(this.packagesshowall);
-            this.panel2.Controls.Add(this.packagesrefreshbutton);
-            this.panel2.Controls.Add(this.packagesedit);
             this.panel2.Controls.Add(this.packagesrefresh);
             this.panel2.Controls.Add(this.packageschoice);
             this.panel2.Controls.Add(this.packageschoicesearch);
@@ -505,27 +435,9 @@
             this.packagesshowall.UseVisualStyleBackColor = true;
             this.packagesshowall.Click += new System.EventHandler(this.packagesshowall_Click);
             // 
-            // packagesrefreshbutton
-            // 
-            this.packagesrefreshbutton.Location = new System.Drawing.Point(25, 351);
-            this.packagesrefreshbutton.Name = "packagesrefreshbutton";
-            this.packagesrefreshbutton.Size = new System.Drawing.Size(110, 38);
-            this.packagesrefreshbutton.TabIndex = 14;
-            this.packagesrefreshbutton.Text = "Usuń";
-            this.packagesrefreshbutton.UseVisualStyleBackColor = true;
-            // 
-            // packagesedit
-            // 
-            this.packagesedit.Location = new System.Drawing.Point(25, 290);
-            this.packagesedit.Name = "packagesedit";
-            this.packagesedit.Size = new System.Drawing.Size(110, 38);
-            this.packagesedit.TabIndex = 13;
-            this.packagesedit.Text = "Edytuj";
-            this.packagesedit.UseVisualStyleBackColor = true;
-            // 
             // packagesrefresh
             // 
-            this.packagesrefresh.Location = new System.Drawing.Point(25, 413);
+            this.packagesrefresh.Location = new System.Drawing.Point(25, 284);
             this.packagesrefresh.Name = "packagesrefresh";
             this.packagesrefresh.Size = new System.Drawing.Size(110, 38);
             this.packagesrefresh.TabIndex = 12;
@@ -538,10 +450,7 @@
             this.packageschoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.packageschoice.FormattingEnabled = true;
             this.packageschoice.Items.AddRange(new object[] {
-            "Po numerze zlecenia",
-            "Po imieniu nadawcy",
             "Po nazwisku nadawcy",
-            "Po imieniu odbiorcy",
             "Po nazwisku odbiorcy",
             "Po numerze telefonu nadawcy",
             "Po numerze telefonu odbiorcy"});
@@ -558,6 +467,7 @@
             this.packageschoicesearch.TabIndex = 10;
             this.packageschoicesearch.Text = "Szukaj";
             this.packageschoicesearch.UseVisualStyleBackColor = true;
+            this.packageschoicesearch.Click += new System.EventHandler(this.packageschoicesearch_Click);
             // 
             // packageschoicetext
             // 
@@ -592,7 +502,6 @@
             this.packagesidtext.Name = "packagesidtext";
             this.packagesidtext.Size = new System.Drawing.Size(160, 20);
             this.packagesidtext.TabIndex = 4;
-           
             // 
             // packagesnumbersearch
             // 
@@ -610,8 +519,10 @@
             this.klistID,
             this.klistnumber,
             this.klistReceiverId,
+            this.columnHeader1,
             this.klistreceiverAddressId,
             this.klistSenderId,
+            this.columnHeader2,
             this.klistsenderAddressId,
             this.klistweight,
             this.klistwidth,
@@ -621,7 +532,7 @@
             this.klistisStandardShape,
             this.klistCODcost});
             this.packageslist.HideSelection = false;
-            this.packageslist.Location = new System.Drawing.Point(169, 0);
+            this.packageslist.Location = new System.Drawing.Point(162, 0);
             this.packageslist.MultiSelect = false;
             this.packageslist.Name = "packageslist";
             this.packageslist.Size = new System.Drawing.Size(1005, 529);
@@ -641,22 +552,32 @@
             // 
             // klistReceiverId
             // 
-            this.klistReceiverId.Text = "ID Odbiorcy";
-            this.klistReceiverId.Width = 70;
+            this.klistReceiverId.Text = "Imie i Nazwisko Nadawcy";
+            this.klistReceiverId.Width = 142;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Nr.Telefonu Nadawcy";
+            this.columnHeader1.Width = 120;
             // 
             // klistreceiverAddressId
             // 
-            this.klistreceiverAddressId.Text = "ID Adresu Odbiorcy";
+            this.klistreceiverAddressId.Text = "Adres Nadawcy";
             this.klistreceiverAddressId.Width = 108;
             // 
             // klistSenderId
             // 
-            this.klistSenderId.Text = "ID Nadawcy";
-            this.klistSenderId.Width = 73;
+            this.klistSenderId.Text = "Imie i Nazwisko Odbiorcy";
+            this.klistSenderId.Width = 147;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Nr.Telefonu Odbiorcy";
+            this.columnHeader2.Width = 123;
             // 
             // klistsenderAddressId
             // 
-            this.klistsenderAddressId.Text = "ID Adresu Nadawcy";
+            this.klistsenderAddressId.Text = "Adres Odbiorcy";
             this.klistsenderAddressId.Width = 111;
             // 
             // klistweight
@@ -700,16 +621,6 @@
             this.listView1.Size = new System.Drawing.Size(1174, 525);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // Email
-            // 
-            this.Email.BackColor = System.Drawing.Color.LightSlateGray;
-            this.Email.ImageIndex = 6;
-            this.Email.Location = new System.Drawing.Point(4, 32);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(1170, 525);
-            this.Email.TabIndex = 7;
-            this.Email.Text = "Poczta";
             // 
             // Register
             // 
@@ -879,189 +790,6 @@
             this.registernamebox.Size = new System.Drawing.Size(230, 25);
             this.registernamebox.TabIndex = 0;
             // 
-            // Scheme
-            // 
-            this.Scheme.BackColor = System.Drawing.Color.LightSlateGray;
-            this.Scheme.Controls.Add(this.schemeworkername);
-            this.Scheme.Controls.Add(this.schemerefreshbutton);
-            this.Scheme.Controls.Add(this.schemeworkerslist);
-            this.Scheme.Controls.Add(this.submithours);
-            this.Scheme.Controls.Add(this.workhours);
-            this.Scheme.Controls.Add(this.label19);
-            this.Scheme.Controls.Add(this.label18);
-            this.Scheme.Controls.Add(this.datework);
-            this.Scheme.Controls.Add(this.label15);
-            this.Scheme.Controls.Add(this.calendar);
-            this.Scheme.ImageIndex = 7;
-            this.Scheme.Location = new System.Drawing.Point(4, 32);
-            this.Scheme.Name = "Scheme";
-            this.Scheme.Size = new System.Drawing.Size(1170, 525);
-            this.Scheme.TabIndex = 9;
-            this.Scheme.Text = "Harmongram Pracy";
-            // 
-            // schemeworkername
-            // 
-            this.schemeworkername.AutoSize = true;
-            this.schemeworkername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.schemeworkername.Location = new System.Drawing.Point(336, 149);
-            this.schemeworkername.Name = "schemeworkername";
-            this.schemeworkername.Size = new System.Drawing.Size(91, 18);
-            this.schemeworkername.TabIndex = 12;
-            this.schemeworkername.Text = "workername";
-            // 
-            // schemerefreshbutton
-            // 
-            this.schemerefreshbutton.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.schemerefreshbutton.Location = new System.Drawing.Point(361, 344);
-            this.schemerefreshbutton.Name = "schemerefreshbutton";
-            this.schemerefreshbutton.Size = new System.Drawing.Size(136, 27);
-            this.schemerefreshbutton.TabIndex = 11;
-            this.schemerefreshbutton.Text = "Odśwież";
-            this.schemerefreshbutton.UseVisualStyleBackColor = true;
-            this.schemerefreshbutton.Click += new System.EventHandler(this.schemerefreshbutton_Click);
-            // 
-            // schemeworkerslist
-            // 
-            this.schemeworkerslist.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            this.schemeworkerslist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.sID,
-            this.sname,
-            this.ssurname,
-            this.srole,
-            this.mmMiasto,
-            this.sidCredentials,
-            this.sphoneNumberr,
-            this.zipcodeee,
-            this.Regionssss});
-            this.schemeworkerslist.HideSelection = false;
-            this.schemeworkerslist.HoverSelection = true;
-            this.schemeworkerslist.Location = new System.Drawing.Point(575, 0);
-            this.schemeworkerslist.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.schemeworkerslist.MultiSelect = false;
-            this.schemeworkerslist.Name = "schemeworkerslist";
-            this.schemeworkerslist.Size = new System.Drawing.Size(595, 522);
-            this.schemeworkerslist.TabIndex = 10;
-            this.schemeworkerslist.UseCompatibleStateImageBehavior = false;
-            this.schemeworkerslist.View = System.Windows.Forms.View.Details;
-            this.schemeworkerslist.SelectedIndexChanged += new System.EventHandler(this.schemeworkerslist_SelectedIndexChanged);
-            // 
-            // sID
-            // 
-            this.sID.Text = "ID Kuriera";
-            // 
-            // sname
-            // 
-            this.sname.Text = "Imię";
-            this.sname.Width = 45;
-            // 
-            // ssurname
-            // 
-            this.ssurname.Text = "Nazwisko";
-            // 
-            // srole
-            // 
-            this.srole.Text = "Stanowisko";
-            this.srole.Width = 68;
-            // 
-            // mmMiasto
-            // 
-            this.mmMiasto.Text = "Miasto";
-            this.mmMiasto.Width = 83;
-            // 
-            // sidCredentials
-            // 
-            this.sidCredentials.Text = "Login";
-            this.sidCredentials.Width = 52;
-            // 
-            // sphoneNumberr
-            // 
-            this.sphoneNumberr.Text = "Numer Telefonu";
-            this.sphoneNumberr.Width = 92;
-            // 
-            // zipcodeee
-            // 
-            this.zipcodeee.Text = "Kod Pocztowy";
-            this.zipcodeee.Width = 88;
-            // 
-            // Regionssss
-            // 
-            this.Regionssss.Text = "Region";
-            // 
-            // submithours
-            // 
-            this.submithours.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.submithours.Location = new System.Drawing.Point(361, 287);
-            this.submithours.Name = "submithours";
-            this.submithours.Size = new System.Drawing.Size(136, 27);
-            this.submithours.TabIndex = 9;
-            this.submithours.Text = "Zatwierdź";
-            this.submithours.UseVisualStyleBackColor = true;
-            // 
-            // workhours
-            // 
-            this.workhours.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.workhours.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.workhours.Items.AddRange(new object[] {
-            "6:00-14:00",
-            "7:00-15:00",
-            "8:00-16:00",
-            "9:00-17:00",
-            "10:00-18:00",
-            "11:00-19:00",
-            "12:00-20:00"});
-            this.workhours.Location = new System.Drawing.Point(339, 221);
-            this.workhours.Name = "workhours";
-            this.workhours.Size = new System.Drawing.Size(183, 24);
-            this.workhours.TabIndex = 8;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label19.Location = new System.Drawing.Point(336, 201);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(110, 17);
-            this.label19.TabIndex = 6;
-            this.label19.Text = "Godziny Pracy";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label18.Location = new System.Drawing.Point(336, 123);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(52, 17);
-            this.label18.TabIndex = 5;
-            this.label18.Text = "Kurier";
-            // 
-            // datework
-            // 
-            this.datework.AutoSize = true;
-            this.datework.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.datework.Location = new System.Drawing.Point(451, 73);
-            this.datework.Name = "datework";
-            this.datework.Size = new System.Drawing.Size(32, 19);
-            this.datework.TabIndex = 2;
-            this.datework.Text = "NA";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.Location = new System.Drawing.Point(336, 73);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(118, 18);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Wybrales dzień:";
-            // 
-            // calendar
-            // 
-            this.calendar.CalendarDimensions = new System.Drawing.Size(1, 3);
-            this.calendar.Location = new System.Drawing.Point(14, 18);
-            this.calendar.Name = "calendar";
-            this.calendar.TabIndex = 0;
-            this.calendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.calendar_DateSelected);
-            // 
             // Workers
             // 
             this.Workers.BackColor = System.Drawing.Color.LightSlateGray;
@@ -1078,8 +806,6 @@
             this.Workers.Controls.Add(this.label20);
             this.Workers.Controls.Add(this.label16);
             this.Workers.Controls.Add(this.workerssearchid);
-            this.Workers.Controls.Add(this.workersdelbutton);
-            this.Workers.Controls.Add(this.workerseditbutton);
             this.Workers.Controls.Add(this.workerslist);
             this.Workers.ImageIndex = 10;
             this.Workers.Location = new System.Drawing.Point(4, 32);
@@ -1107,7 +833,7 @@
             // 
             // workersrefreshbutton
             // 
-            this.workersrefreshbutton.Location = new System.Drawing.Point(8, 450);
+            this.workersrefreshbutton.Location = new System.Drawing.Point(8, 334);
             this.workersrefreshbutton.Name = "workersrefreshbutton";
             this.workersrefreshbutton.Size = new System.Drawing.Size(110, 38);
             this.workersrefreshbutton.TabIndex = 12;
@@ -1209,25 +935,6 @@
             this.workerssearchid.Name = "workerssearchid";
             this.workerssearchid.Size = new System.Drawing.Size(100, 20);
             this.workerssearchid.TabIndex = 3;
-            // 
-            // workersdelbutton
-            // 
-            this.workersdelbutton.Location = new System.Drawing.Point(8, 393);
-            this.workersdelbutton.Name = "workersdelbutton";
-            this.workersdelbutton.Size = new System.Drawing.Size(110, 38);
-            this.workersdelbutton.TabIndex = 2;
-            this.workersdelbutton.Text = "Usuń";
-            this.workersdelbutton.UseVisualStyleBackColor = true;
-
-            // 
-            // workerseditbutton
-            // 
-            this.workerseditbutton.Location = new System.Drawing.Point(8, 339);
-            this.workerseditbutton.Name = "workerseditbutton";
-            this.workerseditbutton.Size = new System.Drawing.Size(110, 38);
-            this.workerseditbutton.TabIndex = 1;
-            this.workerseditbutton.Text = "Edytuj";
-            this.workerseditbutton.UseVisualStyleBackColor = true;
             // 
             // workerslist
             // 
@@ -1353,6 +1060,16 @@
             this.regioncode.Size = new System.Drawing.Size(124, 20);
             this.regioncode.TabIndex = 4;
             // 
+            // deleteRegionButton
+            // 
+            this.deleteRegionButton.Location = new System.Drawing.Point(41, 291);
+            this.deleteRegionButton.Name = "deleteRegionButton";
+            this.deleteRegionButton.Size = new System.Drawing.Size(124, 23);
+            this.deleteRegionButton.TabIndex = 3;
+            this.deleteRegionButton.Text = "Usuń Region";
+            this.deleteRegionButton.UseVisualStyleBackColor = true;
+            this.deleteRegionButton.Click += new System.EventHandler(this.deleteRegionButton_Click);
+            // 
             // regionsrefreshbutton
             // 
             this.regionsrefreshbutton.Location = new System.Drawing.Point(41, 250);
@@ -1383,7 +1100,7 @@
             this.regionlist.HideSelection = false;
             this.regionlist.Location = new System.Drawing.Point(201, 0);
             this.regionlist.Name = "regionlist";
-            this.regionlist.Size = new System.Drawing.Size(271, 494);
+            this.regionlist.Size = new System.Drawing.Size(271, 525);
             this.regionlist.TabIndex = 1;
             this.regionlist.UseCompatibleStateImageBehavior = false;
             this.regionlist.View = System.Windows.Forms.View.Details;
@@ -1422,7 +1139,7 @@
             this.gmap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gmap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gmap.ShowTileGridLines = false;
-            this.gmap.Size = new System.Drawing.Size(704, 498);
+            this.gmap.Size = new System.Drawing.Size(704, 525);
             this.gmap.TabIndex = 0;
             this.gmap.Zoom = 0D;
             this.gmap.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gmap_MouseClick);
@@ -1449,16 +1166,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // deleteRegionButton
-            // 
-            this.deleteRegionButton.Location = new System.Drawing.Point(41, 291);
-            this.deleteRegionButton.Name = "deleteRegionButton";
-            this.deleteRegionButton.Size = new System.Drawing.Size(124, 23);
-            this.deleteRegionButton.TabIndex = 3;
-            this.deleteRegionButton.Text = "Usuń Region";
-            this.deleteRegionButton.UseVisualStyleBackColor = true;
-            this.deleteRegionButton.Click += new System.EventHandler(this.deleteRegionButton_Click);
-            // 
             // CoordinatorHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1477,7 +1184,6 @@
             this.HomePage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gblogo)).EndInit();
             this.Jobs.ResumeLayout(false);
-            this.Jobs.PerformLayout();
             this.Notify.ResumeLayout(false);
             this.Notify.PerformLayout();
             this.Packages.ResumeLayout(false);
@@ -1485,8 +1191,6 @@
             this.panel2.PerformLayout();
             this.Register.ResumeLayout(false);
             this.Register.PerformLayout();
-            this.Scheme.ResumeLayout(false);
-            this.Scheme.PerformLayout();
             this.Workers.ResumeLayout(false);
             this.Workers.PerformLayout();
             this.Regions.ResumeLayout(false);
@@ -1500,15 +1204,10 @@
         private System.Windows.Forms.TabControl AdminPanel;
         private System.Windows.Forms.TabPage Jobs;
         private System.Windows.Forms.TabPage HomePage;
-        private System.Windows.Forms.TabPage Statistics;
-        private System.Windows.Forms.TabPage Reports;
         private System.Windows.Forms.TabPage Notify;
         private System.Windows.Forms.TabPage Packages;
-        private System.Windows.Forms.TabPage Email;
         private System.Windows.Forms.TabPage Register;
-        private System.Windows.Forms.TabPage Scheme;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.MonthCalendar calendar;
         private System.Windows.Forms.TextBox registersurnamebox;
         private System.Windows.Forms.TextBox registernamebox;
         private System.Windows.Forms.Label label2;
@@ -1516,20 +1215,12 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox registerseat;
         private System.Windows.Forms.Button registerbutton;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TabPage Workers;
-        private System.Windows.Forms.Label datework;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox workhours;
-        private System.Windows.Forms.Button submithours;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button packagesnumbersearch;
         private System.Windows.Forms.ListView packageslist;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox workerssearchid;
-        private System.Windows.Forms.Button workersdelbutton;
-        private System.Windows.Forms.Button workerseditbutton;
         private System.Windows.Forms.ListView workerslist;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label22;
@@ -1546,20 +1237,11 @@
         private System.Windows.Forms.ComboBox packageschoice;
         private System.Windows.Forms.Button packageschoicesearch;
         private System.Windows.Forms.TextBox packageschoicetext;
-        private System.Windows.Forms.Button packagesrefreshbutton;
-        private System.Windows.Forms.Button packagesedit;
         private System.Windows.Forms.Button packagesrefresh;
-        private System.Windows.Forms.Button schemerefreshbutton;
-        private System.Windows.Forms.ListView schemeworkerslist;
         private System.Windows.Forms.Button workersrefreshbutton;
-        private System.Windows.Forms.Button jobssubmit;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ComboBox courierslist;
         private System.Windows.Forms.ListView jobsview;
         private System.Windows.Forms.Button jobsrefresh;
-        private System.Windows.Forms.Button jobsdelete;
         private System.Windows.Forms.Button notifydelete;
-        private System.Windows.Forms.Button notifyanswer;
         private System.Windows.Forms.Button notifyopen;
         private System.Windows.Forms.Button notifybuttonsearch;
         private System.Windows.Forms.Label label24;
@@ -1578,7 +1260,6 @@
         private System.Windows.Forms.TextBox registerloginbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Label schemeworkername;
         private System.Windows.Forms.TextBox registerphone;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ColumnHeader klistID;
@@ -1601,19 +1282,10 @@
         private System.Windows.Forms.ColumnHeader surname;
         private System.Windows.Forms.ColumnHeader role;
         private System.Windows.Forms.ColumnHeader loginCredentialsId;
-        private System.Windows.Forms.ColumnHeader sID;
-        private System.Windows.Forms.ColumnHeader sname;
-        private System.Windows.Forms.ColumnHeader ssurname;
-        private System.Windows.Forms.ColumnHeader srole;
-        private System.Windows.Forms.ColumnHeader mmMiasto;
-        private System.Windows.Forms.ColumnHeader sidCredentials;
-        private System.Windows.Forms.ColumnHeader sphoneNumberr;
         private System.Windows.Forms.TabPage Regions;
         private System.Windows.Forms.ColumnHeader emails;
         private System.Windows.Forms.ColumnHeader Password;
         private System.Windows.Forms.ColumnHeader phoneNumbers;
-        private System.Windows.Forms.ColumnHeader zipcodeee;
-        private System.Windows.Forms.ColumnHeader Regionssss;
         private System.Windows.Forms.ListView regionlist;
         private GMap.NET.WindowsForms.GMapControl gmap;
         private System.Windows.Forms.Button addregion;
@@ -1626,6 +1298,13 @@
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.ColumnHeader gbgb2137;
         private System.Windows.Forms.Button deleteRegionButton;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }
 

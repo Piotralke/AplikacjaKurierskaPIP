@@ -322,7 +322,7 @@ namespace WindowsFormsApp1
                 var jString = response.Content.ReadAsStringAsync();
                 Order resultOrder = JsonSerializer.Deserialize<Order>(jString.Result);
                 Console.WriteLine(resultOrder.packageId);
-                packageId=resultOrder.packageId;
+                packageId= (int)resultOrder.packageId;
             }
 
             Status status = new Status()
