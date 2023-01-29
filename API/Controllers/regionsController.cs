@@ -94,23 +94,23 @@ namespace API.Controllers
 
 			return CreatedAtAction("GetRegion", new { id = region.id }, region);
 		}
-        [HttpPut("UpdateRegionByCourier/{courierId}")]
-        public async Task<ActionResult<Region>> UpdateRegion(int id,int courierId)
+        [HttpPut("UpdateRegionByCourier/{id}")]
+        public async Task<ActionResult<Region>> UpdateRegion(int id, [FromBody] Region region)
         {
             try
             {
-                var region = await _context.regions.FindAsync(id);
+                var regionDB = await _context.regions.FindAsync(id);
 
-                if (region == null)
+                if (regionDB == null)
                 {
                     return NotFound();
                 }
 
-                region.courierId = courierId;
-                _context.regions.Update(region);
+                regionDB.courierId = region.courierId;
+                _context.regions.Update(regionDB);
                 await _context.SaveChangesAsync();
 
-                return Ok(region);
+                return Ok(regionDB);
             }
             catch (Exception)
             {

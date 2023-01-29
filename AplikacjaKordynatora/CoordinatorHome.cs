@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Net.Mail;
 using System.Runtime.Remoting.Lifetime;
 using System.Text;
@@ -35,6 +36,7 @@ namespace AplikacjaKordynatora
     {
         List<String> courierids = new List<String>();
         List<String> regionids = new List<String>();
+        List<String> missionids = new List<String>();
         List<Coordinates> coordinates = new List<Coordinates>();
         public CoordinatorHome(loginCredentials credentials)
         {
@@ -42,7 +44,7 @@ namespace AplikacjaKordynatora
             loggedlabel.Text = credentials.login;
             datetimenow.Text = DateTime.Now.ToShortDateString();
             registerseat.Text = "Kurier";
-            datework.Text = calendar.TodayDate.ToShortDateString();
+           
 
         }
 
@@ -52,7 +54,7 @@ namespace AplikacjaKordynatora
             buttonUpdate.Enabled = false;
             packageslist.GridLines = true;
             workerslist.GridLines = true;
-            schemeworkerslist.GridLines = true;
+            
             buttonUpdate.Enabled = false;
             deleteRegionButton.Enabled = false;
             regioncode.Enabled = false;
@@ -64,22 +66,25 @@ namespace AplikacjaKordynatora
             gmap.Zoom = 10;
             LoadCouriers();
             loadWorkers();
+            loadMissions();
         }
 
         private void LoadCouriers()
         {
+            courierids.Clear();
             try
             {
-
                 String requestWorkers = "http://localhost:5225/Users/GetAllCouriers/";
                 HttpWebRequest webRequestWorkers = (HttpWebRequest)WebRequest.Create(@requestWorkers);
                 HttpWebResponse webResponeWorkers = (HttpWebResponse)webRequestWorkers.GetResponse();
                 string workersContent = new StreamReader(webResponeWorkers.GetResponseStream()).ReadToEnd();
                 User[] user = JsonSerializer.Deserialize<User[]>(workersContent);
                 comboBoxWorkers.Items.Clear();
+              
                 for (int i = 0; i < user.Length; i++)
                 {
                     comboBoxWorkers.Items.Add(user[i].name + " "+ user[i].surname + " " + user[i].loginCredentials.login);
+     
                     courierids.Add(user[i].id.ToString());
 
                 }
@@ -186,11 +191,7 @@ namespace AplikacjaKordynatora
             }
         }
 
-        private void calendar_DateSelected(object sender, DateRangeEventArgs e)
-        {
-            calendar.MaxSelectionCount = 1;
-            datework.Text = calendar.SelectionRange.Start.ToShortDateString();
-        }
+       
 
         private void packagesnumbersearch_Click(object sender, EventArgs e)
         {
@@ -264,9 +265,9 @@ namespace AplikacjaKordynatora
                 for (int i=0;i<packages.Length;i++)
                 {
                     
-                    list.Add(new List<string> { packages[i].id.ToString(), packages[i].number,packages[i].receiverId.ToString(),packages[i].receiverAddressId.ToString(),
-                     packages[i].senderId.ToString(),packages[i].senderAddressId.ToString(),packages[i].weight.ToString(), packages[i].width.ToString(), packages[i].depth.ToString(),packages[i].heigth.ToString(),
-                     packages[i].description,packages[i].isStandardShape.ToString(), packages[i].cODcost.ToString()});
+                    list.Add(new List<string> { packages[i].id.ToString(), packages[i].number,packages[i].sender.name.ToString() + " " + packages[i].sender.surname,packages[i].sender.phoneNumber,packages[i].senderAddress.zipCode.ToString() + " " + packages[i].senderAddress.city.ToString() + " " + packages[i].senderAddress.street.ToString(),
+                     packages[i].receiver.name.ToString() + " " + packages[i].receiver.surname,packages[i].receiver.phoneNumber,packages[i].receiverAddress.zipCode.ToString() + " " + packages[i].receiverAddress.city.ToString() + " " + packages[i].receiverAddress.street.ToString(),packages[i].weight.ToString(), packages[i].width.ToString(), packages[i].depth.ToString(),packages[i].heigth.ToString(),
+                     packages[i].description,packages[i].isStandardShape.ToString() == "True" ? "Tak":"Nie", packages[i].cODcost.ToString()});
 
                  
                 }
@@ -286,6 +287,8 @@ namespace AplikacjaKordynatora
                     item.SubItems.Add(l[10]);
                     item.SubItems.Add(l[11]);
                     item.SubItems.Add(l[12]);
+                    item.SubItems.Add(l[13]);
+                    item.SubItems.Add(l[14]);
                     packageslist.Items.Add(item);
                 }
 
@@ -347,53 +350,7 @@ namespace AplikacjaKordynatora
             loadWorkers();
         }
 
-        private void schemerefreshbutton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                String requestCouriers = "http://localhost:5225/Users/GetAllCouriers/";
-                HttpWebRequest webRequestCouriers = (HttpWebRequest)WebRequest.Create(@requestCouriers);
-                HttpWebResponse webResponeCouriers = (HttpWebResponse)webRequestCouriers.GetResponse();
-                string couriersContent = new StreamReader(webResponeCouriers.GetResponseStream()).ReadToEnd();
-                User[] user = JsonSerializer.Deserialize<User[]>(couriersContent);
-                List<List<string>> list = new List<List<string>>();
-                for (int i = 0; i < user.Length; i++)
-                {
-                    list.Add(new List<string> {user[i].id.ToString(), user[i].name, user[i].surname, user[i].role.ToString() == "0" ? "Koordynator" : "Kurier", user[i].defaultAddress.city.ToString(),
-                        user[i].loginCredentials.login.ToString(),user[i].phoneNumber,user[i].defaultAddress.zipCode,"tutaj region"});
-
-
-                }
-                schemeworkerslist.Items.Clear();
-                foreach (List<string> l in list)
-                {
-                    ListViewItem item = new ListViewItem(l[0]);
-                    item.SubItems.Add(l[1]);
-                    item.SubItems.Add(l[2]);
-                    item.SubItems.Add(l[3]);
-                    item.SubItems.Add(l[4]);
-                    item.SubItems.Add(l[5]);
-                    item.SubItems.Add(l[6]);
-                    item.SubItems.Add(l[7]);
-                    item.SubItems.Add(l[8]);
-                    schemeworkerslist.Items.Add(item);
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("BLAD!" + ex);
-            }
-
-
-        }
-
-        private void schemeworkerslist_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void gmap_MouseClick(object sender, MouseEventArgs e)
         {
@@ -649,15 +606,15 @@ namespace AplikacjaKordynatora
 
 
       
-                String requestRegionsUpdate = "http://localhost:5225/regions/UpdateRegionByCourier/" + RegionId.ToString();
+                String requestRegionsUpdate = "http://localhost:5225/regions/UpdateRegionByCourier/" + RegionId;
                 using (var client = new HttpClient())
                 {
-                    var content = new StringContent(CourierId.ToString(), Encoding.UTF8, "application/json");
-                    var response = await client.PutAsync(requestRegionsUpdate, content);
+                    var response = await client.PutAsJsonAsync(requestRegionsUpdate, new { courierId = CourierId });
 
 
                 }
-               
+                load_Regions();
+                buttonUpdate.Enabled = false;
 
             }
         }
@@ -987,16 +944,299 @@ namespace AplikacjaKordynatora
 
         }
 
-        private void workersdelbutton_Click(object sender, EventArgs e)
+        private void packageschoicesearch_Click(object sender, EventArgs e)
         {
-            String requestRegionsDelete = "http://localhost:5225/regions/DeleteRegionById/" + RegionId;
-            using (var client = new HttpClient())
+            if (packageschoice.SelectedIndex == 0)
             {
-                var response = await client.DeleteAsync(requestRegionsDelete);
+                String packagesendersurname = packageschoicetext.Text;
+                if (packageschoicetext.Text == "")
+                {
+                    string message = "Pole nie moze byc puste!";
+
+                    MessageBox.Show(message, "BLAD!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    try
+                    {
+
+                        String requestPackage = "http://localhost:5225/Packages/GetAllPackages/";
+                        HttpWebRequest webRequestPackage = (HttpWebRequest)WebRequest.Create(@requestPackage);
+                        HttpWebResponse webResponePackage = (HttpWebResponse)webRequestPackage.GetResponse();
+                        string packageContent = new StreamReader(webResponePackage.GetResponseStream()).ReadToEnd();
+                        Package[] packages = JsonSerializer.Deserialize<Package[]>(packageContent);
+                        Package[] filteredPackageBySenderSurname = packages.Where(p => p.sender.surname == packagesendersurname).ToArray();
+                        List<List<string>> list = new List<List<string>>();
+                        for (int i = 0; i < filteredPackageBySenderSurname.Length; i++)
+                        {
+
+                            list.Add(new List<string> { filteredPackageBySenderSurname[i].id.ToString(), filteredPackageBySenderSurname[i].number,filteredPackageBySenderSurname[i].sender.name.ToString() + " " + filteredPackageBySenderSurname[i].sender.surname,filteredPackageBySenderSurname[i].sender.phoneNumber,filteredPackageBySenderSurname[i].senderAddress.zipCode.ToString() + " " + filteredPackageBySenderSurname[i].senderAddress.city.ToString() + " " + filteredPackageBySenderSurname[i].senderAddress.street.ToString(),
+                        filteredPackageBySenderSurname[i].receiver.name.ToString() + " " + filteredPackageBySenderSurname[i].receiver.surname,filteredPackageBySenderSurname[i].receiver.phoneNumber,filteredPackageBySenderSurname[i].receiverAddress.zipCode.ToString() + " " + filteredPackageBySenderSurname[i].receiverAddress.city.ToString() + " " + filteredPackageBySenderSurname[i].receiverAddress.street.ToString(),filteredPackageBySenderSurname[i].weight.ToString(), filteredPackageBySenderSurname[i].width.ToString(), filteredPackageBySenderSurname[i].depth.ToString(),filteredPackageBySenderSurname[i].heigth.ToString(),
+                         filteredPackageBySenderSurname[i].description,filteredPackageBySenderSurname[i].isStandardShape.ToString() == "True" ? "Tak":"Nie", filteredPackageBySenderSurname[i].cODcost.ToString()});
+
+
+                        }
+                        packageslist.Items.Clear();
+                        foreach (List<string> l in list)
+                        {
+                            ListViewItem item = new ListViewItem(l[0]);
+                            item.SubItems.Add(l[1]);
+                            item.SubItems.Add(l[2]);
+                            item.SubItems.Add(l[3]);
+                            item.SubItems.Add(l[4]);
+                            item.SubItems.Add(l[5]);
+                            item.SubItems.Add(l[6]);
+                            item.SubItems.Add(l[7]);
+                            item.SubItems.Add(l[8]);
+                            item.SubItems.Add(l[9]);
+                            item.SubItems.Add(l[10]);
+                            item.SubItems.Add(l[11]);
+                            item.SubItems.Add(l[12]);
+                            item.SubItems.Add(l[13]);
+                            item.SubItems.Add(l[14]);
+                            packageslist.Items.Add(item);
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("BLAD!" + ex);
+                    }
+                }
+
+            }
+            else if (packageschoice.SelectedIndex == 1)
+            {
+                String packagereceiversurname = packageschoicetext.Text;
+                if (packageschoicetext.Text == "")
+                {
+                    string message = "Pole nie moze byc puste!";
+
+                    MessageBox.Show(message, "BLAD!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    try
+                    {
+
+                        String requestPackage = "http://localhost:5225/Packages/GetAllPackages/";
+                        HttpWebRequest webRequestPackage = (HttpWebRequest)WebRequest.Create(@requestPackage);
+                        HttpWebResponse webResponePackage = (HttpWebResponse)webRequestPackage.GetResponse();
+                        string packageContent = new StreamReader(webResponePackage.GetResponseStream()).ReadToEnd();
+                        Package[] packages = JsonSerializer.Deserialize<Package[]>(packageContent);
+                        Package[] filteredPackageBySenderSurname = packages.Where(p => p.receiver.surname == packagereceiversurname).ToArray();
+                        List<List<string>> list = new List<List<string>>();
+                        for (int i = 0; i < filteredPackageBySenderSurname.Length; i++)
+                        {
+
+                            list.Add(new List<string> { filteredPackageBySenderSurname[i].id.ToString(), filteredPackageBySenderSurname[i].number,filteredPackageBySenderSurname[i].sender.name.ToString() + " " + filteredPackageBySenderSurname[i].sender.surname,filteredPackageBySenderSurname[i].sender.phoneNumber,filteredPackageBySenderSurname[i].senderAddress.zipCode.ToString() + " " + filteredPackageBySenderSurname[i].senderAddress.city.ToString() + " " + filteredPackageBySenderSurname[i].senderAddress.street.ToString(),
+                        filteredPackageBySenderSurname[i].receiver.name.ToString() + " " + filteredPackageBySenderSurname[i].receiver.surname,filteredPackageBySenderSurname[i].receiver.phoneNumber,filteredPackageBySenderSurname[i].receiverAddress.zipCode.ToString() + " " + filteredPackageBySenderSurname[i].receiverAddress.city.ToString() + " " + filteredPackageBySenderSurname[i].receiverAddress.street.ToString(),filteredPackageBySenderSurname[i].weight.ToString(), filteredPackageBySenderSurname[i].width.ToString(), filteredPackageBySenderSurname[i].depth.ToString(),filteredPackageBySenderSurname[i].heigth.ToString(),
+                         filteredPackageBySenderSurname[i].description,filteredPackageBySenderSurname[i].isStandardShape.ToString() == "True" ? "Tak":"Nie", filteredPackageBySenderSurname[i].cODcost.ToString()});
+
+
+                        }
+                        packageslist.Items.Clear();
+                        foreach (List<string> l in list)
+                        {
+                            ListViewItem item = new ListViewItem(l[0]);
+                            item.SubItems.Add(l[1]);
+                            item.SubItems.Add(l[2]);
+                            item.SubItems.Add(l[3]);
+                            item.SubItems.Add(l[4]);
+                            item.SubItems.Add(l[5]);
+                            item.SubItems.Add(l[6]);
+                            item.SubItems.Add(l[7]);
+                            item.SubItems.Add(l[8]);
+                            item.SubItems.Add(l[9]);
+                            item.SubItems.Add(l[10]);
+                            item.SubItems.Add(l[11]);
+                            item.SubItems.Add(l[12]);
+                            item.SubItems.Add(l[13]);
+                            item.SubItems.Add(l[14]);
+                            packageslist.Items.Add(item);
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("BLAD!" + ex);
+                    }
+                }
+            }
+            else if (packageschoice.SelectedIndex == 2)
+            {
+                String packageSenderPhone = packageschoicetext.Text;
+                if (packageschoicetext.Text == "")
+                {
+                    string message = "Pole nie moze byc puste!";
+
+                    MessageBox.Show(message, "BLAD!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    try
+                    {
+
+                        String requestPackage = "http://localhost:5225/Packages/GetAllPackages/";
+                        HttpWebRequest webRequestPackage = (HttpWebRequest)WebRequest.Create(@requestPackage);
+                        HttpWebResponse webResponePackage = (HttpWebResponse)webRequestPackage.GetResponse();
+                        string packageContent = new StreamReader(webResponePackage.GetResponseStream()).ReadToEnd();
+                        Package[] packages = JsonSerializer.Deserialize<Package[]>(packageContent);
+                        Package[] filteredPackageBySenderSurname = packages.Where(p => p.sender.phoneNumber == packageSenderPhone).ToArray();
+                        List<List<string>> list = new List<List<string>>();
+                        for (int i = 0; i < filteredPackageBySenderSurname.Length; i++)
+                        {
+
+                            list.Add(new List<string> { filteredPackageBySenderSurname[i].id.ToString(), filteredPackageBySenderSurname[i].number,filteredPackageBySenderSurname[i].sender.name.ToString() + " " + filteredPackageBySenderSurname[i].sender.surname,filteredPackageBySenderSurname[i].sender.phoneNumber,filteredPackageBySenderSurname[i].senderAddress.zipCode.ToString() + " " + filteredPackageBySenderSurname[i].senderAddress.city.ToString() + " " + filteredPackageBySenderSurname[i].senderAddress.street.ToString(),
+                        filteredPackageBySenderSurname[i].receiver.name.ToString() + " " + filteredPackageBySenderSurname[i].receiver.surname,filteredPackageBySenderSurname[i].receiver.phoneNumber,filteredPackageBySenderSurname[i].receiverAddress.zipCode.ToString() + " " + filteredPackageBySenderSurname[i].receiverAddress.city.ToString() + " " + filteredPackageBySenderSurname[i].receiverAddress.street.ToString(),filteredPackageBySenderSurname[i].weight.ToString(), filteredPackageBySenderSurname[i].width.ToString(), filteredPackageBySenderSurname[i].depth.ToString(),filteredPackageBySenderSurname[i].heigth.ToString(),
+                         filteredPackageBySenderSurname[i].description,filteredPackageBySenderSurname[i].isStandardShape.ToString() == "True" ? "Tak":"Nie", filteredPackageBySenderSurname[i].cODcost.ToString()});
+
+
+                        }
+                        packageslist.Items.Clear();
+                        foreach (List<string> l in list)
+                        {
+                            ListViewItem item = new ListViewItem(l[0]);
+                            item.SubItems.Add(l[1]);
+                            item.SubItems.Add(l[2]);
+                            item.SubItems.Add(l[3]);
+                            item.SubItems.Add(l[4]);
+                            item.SubItems.Add(l[5]);
+                            item.SubItems.Add(l[6]);
+                            item.SubItems.Add(l[7]);
+                            item.SubItems.Add(l[8]);
+                            item.SubItems.Add(l[9]);
+                            item.SubItems.Add(l[10]);
+                            item.SubItems.Add(l[11]);
+                            item.SubItems.Add(l[12]);
+                            item.SubItems.Add(l[13]);
+                            item.SubItems.Add(l[14]);
+                            packageslist.Items.Add(item);
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("BLAD!" + ex);
+                    }
+                }
+
+            }
+            else if (packageschoice.SelectedIndex == 3)
+            {
+                String packageReceiverPhone = packageschoicetext.Text;
+                if (packageschoicetext.Text == "")
+                {
+                    string message = "Pole nie moze byc puste!";
+
+                    MessageBox.Show(message, "BLAD!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    try
+                    {
+
+                        String requestPackage = "http://localhost:5225/Packages/GetAllPackages/";
+                        HttpWebRequest webRequestPackage = (HttpWebRequest)WebRequest.Create(@requestPackage);
+                        HttpWebResponse webResponePackage = (HttpWebResponse)webRequestPackage.GetResponse();
+                        string packageContent = new StreamReader(webResponePackage.GetResponseStream()).ReadToEnd();
+                        Package[] packages = JsonSerializer.Deserialize<Package[]>(packageContent);
+                        Package[] filteredPackageBySenderSurname = packages.Where(p => p.receiver.phoneNumber == packageReceiverPhone).ToArray();
+                        List<List<string>> list = new List<List<string>>();
+                        for (int i = 0; i < filteredPackageBySenderSurname.Length; i++)
+                        {
+
+                            list.Add(new List<string> { filteredPackageBySenderSurname[i].id.ToString(), filteredPackageBySenderSurname[i].number,filteredPackageBySenderSurname[i].sender.name.ToString() + " " + filteredPackageBySenderSurname[i].sender.surname,filteredPackageBySenderSurname[i].sender.phoneNumber,filteredPackageBySenderSurname[i].senderAddress.zipCode.ToString() + " " + filteredPackageBySenderSurname[i].senderAddress.city.ToString() + " " + filteredPackageBySenderSurname[i].senderAddress.street.ToString(),
+                        filteredPackageBySenderSurname[i].receiver.name.ToString() + " " + filteredPackageBySenderSurname[i].receiver.surname,filteredPackageBySenderSurname[i].receiver.phoneNumber,filteredPackageBySenderSurname[i].receiverAddress.zipCode.ToString() + " " + filteredPackageBySenderSurname[i].receiverAddress.city.ToString() + " " + filteredPackageBySenderSurname[i].receiverAddress.street.ToString(),filteredPackageBySenderSurname[i].weight.ToString(), filteredPackageBySenderSurname[i].width.ToString(), filteredPackageBySenderSurname[i].depth.ToString(),filteredPackageBySenderSurname[i].heigth.ToString(),
+                         filteredPackageBySenderSurname[i].description,filteredPackageBySenderSurname[i].isStandardShape.ToString() == "True" ? "Tak":"Nie", filteredPackageBySenderSurname[i].cODcost.ToString()});
+
+
+                        }
+                        packageslist.Items.Clear();
+                        foreach (List<string> l in list)
+                        {
+                            ListViewItem item = new ListViewItem(l[0]);
+                            item.SubItems.Add(l[1]);
+                            item.SubItems.Add(l[2]);
+                            item.SubItems.Add(l[3]);
+                            item.SubItems.Add(l[4]);
+                            item.SubItems.Add(l[5]);
+                            item.SubItems.Add(l[6]);
+                            item.SubItems.Add(l[7]);
+                            item.SubItems.Add(l[8]);
+                            item.SubItems.Add(l[9]);
+                            item.SubItems.Add(l[10]);
+                            item.SubItems.Add(l[11]);
+                            item.SubItems.Add(l[12]);
+                            item.SubItems.Add(l[13]);
+                            item.SubItems.Add(l[14]);
+                            packageslist.Items.Add(item);
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("BLAD!" + ex);
+                    }
+                }
+            }
+            else
+            {
+                string message = "Jezeli chcesz wyszukac, wybierz jakas opcje!!";
+
+                MessageBox.Show(message, "BLAD!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+        public void loadMissions()
+        {
+            missionids.Clear();
+            try
+            {
+
+                String requestOrder = "http://localhost:5225/orders/GetAllOrders/";
+                HttpWebRequest webRequestOrder = (HttpWebRequest)WebRequest.Create(@requestOrder);
+                HttpWebResponse webResponeOrder = (HttpWebResponse)webRequestOrder.GetResponse();
+                string packageContent = new StreamReader(webResponeOrder.GetResponseStream()).ReadToEnd();
+                Order[] orders = JsonSerializer.Deserialize<Order[]>(packageContent);
+                List<List<string>> list = new List<List<string>>();
+                for (int i = 0; i < orders.Length; i++)
+                {
+
+                    list.Add(new List<string> { orders[i].id.ToString(), orders[i].package.number, orders[i].price.ToString(), orders[i].courier == null ? " " : orders[i].courier.name + " " + orders[i].courier.surname, orders[i].courier == null ? " " : orders[i].courier.loginCredentials.login });
+                    missionids.Add(orders[i].id.ToString());
+
+                }
+                jobsview.Items.Clear();
+                foreach (List<string> l in list)
+                {
+                    ListViewItem item = new ListViewItem(l[0]);
+                    item.SubItems.Add(l[1]);
+                    item.SubItems.Add(l[2]);
+                    item.SubItems.Add(l[3]);
+                    item.SubItems.Add(l[4]);
+                    jobsview.Items.Add(item);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("BLAD!" + ex);
             }
         }
+        
 
-      
+        private void jobsrefresh_Click(object sender, EventArgs e)
+        {
+            loadMissions();
+        }
+
+        
     }
     
 }
