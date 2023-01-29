@@ -53,7 +53,7 @@ namespace API.Controllers
 			return package;
 		}
 
-		[HttpGet("GetYoursPackages")]
+		[HttpGet("GetYoursPackages/{id}")]
 		public async Task<ActionResult<IEnumerable<Package>>> GetYoursPackages(int id)
 		{
 			var package = await _context.Packages.Where(u=>u.ReceiverId==id || u.SenderId == id).
