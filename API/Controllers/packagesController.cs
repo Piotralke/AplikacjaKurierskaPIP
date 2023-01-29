@@ -53,6 +53,40 @@ namespace API.Controllers
 			return package;
 		}
 
+		[HttpGet("GetYoursPackages")]
+		public async Task<ActionResult<IEnumerable<Package>>> GetYoursPackages(int id)
+		{
+			var package = await _context.Packages.Where(u=>u.ReceiverId==id || u.SenderId == id).
+				Select(u => new Package
+				{
+					id = u.id,
+					number = u.number,
+					ReceiverId = u.ReceiverId,
+					Receiver = u.Receiver,
+					receiverAddressId = u.receiverAddressId,
+					receiverAddress = u.receiverAddress,
+					SenderId = u.SenderId,
+					Sender = u.Sender,
+					senderAddressId = u.senderAddressId,
+					senderAddress = u.senderAddress,
+					weight = u.weight,
+					width = u.width,
+					depth = u.depth,
+					heigth = u.heigth,
+					description = u.description,
+					isStandardShape = u.isStandardShape,
+					CODcost = u.CODcost,
+					order = u.order,
+					statuses = u.statuses
+				}).ToListAsync();
+			if (package == null)
+			{
+				return NotFound();
+			}
+
+			return package;
+		}
+
 		[HttpGet("GetPackageByID/{id}")]
 		public async Task<ActionResult<Package>> GetUser(int id)
 		{
