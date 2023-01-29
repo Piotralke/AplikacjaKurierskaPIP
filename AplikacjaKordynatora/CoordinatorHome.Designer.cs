@@ -56,19 +56,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.notifyoption = new System.Windows.Forms.ComboBox();
             this.listView2 = new System.Windows.Forms.ListView();
-            this.Payoff = new System.Windows.Forms.TabPage();
-            this.payoffpackagesdelivery = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.payoffcalendar = new System.Windows.Forms.MonthCalendar();
-            this.payoffrefresh = new System.Windows.Forms.Button();
-            this.label29 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.settlebutton = new System.Windows.Forms.Button();
-            this.payoffworkhours = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.payoffnameandsurname = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.listView3 = new System.Windows.Forms.ListView();
             this.Packages = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.packagesshowall = new System.Windows.Forms.Button();
@@ -158,6 +145,8 @@
             this.phoneNumbers = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.emails = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Regions = new System.Windows.Forms.TabPage();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.comboBoxWorkers = new System.Windows.Forms.ComboBox();
             this.addregion = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.regioncode = new System.Windows.Forms.TextBox();
@@ -165,18 +154,16 @@
             this.mousechoice = new System.Windows.Forms.CheckBox();
             this.regionlist = new System.Windows.Forms.ListView();
             this.columregioncode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.gbgb2137 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.comboBoxWorkers = new System.Windows.Forms.ComboBox();
-            this.buttonUpdate = new System.Windows.Forms.Button();
-            this.gbgb2137 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.deleteRegionButton = new System.Windows.Forms.Button();
             this.AdminPanel.SuspendLayout();
             this.HomePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gblogo)).BeginInit();
             this.Jobs.SuspendLayout();
             this.Notify.SuspendLayout();
-            this.Payoff.SuspendLayout();
             this.Packages.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Register.SuspendLayout();
@@ -193,7 +180,6 @@
             this.AdminPanel.Controls.Add(this.Statistics);
             this.AdminPanel.Controls.Add(this.Reports);
             this.AdminPanel.Controls.Add(this.Notify);
-            this.AdminPanel.Controls.Add(this.Payoff);
             this.AdminPanel.Controls.Add(this.Packages);
             this.AdminPanel.Controls.Add(this.Email);
             this.AdminPanel.Controls.Add(this.Register);
@@ -223,11 +209,11 @@
             this.HomePage.Controls.Add(this.label30);
             this.HomePage.Controls.Add(this.webBrowser1);
             this.HomePage.ImageIndex = 0;
-            this.HomePage.Location = new System.Drawing.Point(4, 63);
+            this.HomePage.Location = new System.Drawing.Point(4, 32);
             this.HomePage.Name = "HomePage";
             this.HomePage.Padding = new System.Windows.Forms.Padding(1);
             this.HomePage.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.HomePage.Size = new System.Drawing.Size(1170, 494);
+            this.HomePage.Size = new System.Drawing.Size(1170, 525);
             this.HomePage.TabIndex = 1;
             this.HomePage.Text = "Strona Główna";
             // 
@@ -301,10 +287,10 @@
             this.Jobs.Controls.Add(this.courierslist);
             this.Jobs.Controls.Add(this.jobsview);
             this.Jobs.ImageIndex = 9;
-            this.Jobs.Location = new System.Drawing.Point(4, 63);
+            this.Jobs.Location = new System.Drawing.Point(4, 32);
             this.Jobs.Name = "Jobs";
             this.Jobs.Padding = new System.Windows.Forms.Padding(3);
-            this.Jobs.Size = new System.Drawing.Size(1170, 494);
+            this.Jobs.Size = new System.Drawing.Size(1170, 525);
             this.Jobs.TabIndex = 0;
             this.Jobs.Text = "Zlecenia";
             // 
@@ -368,9 +354,9 @@
             // 
             this.Statistics.BackColor = System.Drawing.Color.LightSlateGray;
             this.Statistics.ImageIndex = 1;
-            this.Statistics.Location = new System.Drawing.Point(4, 63);
+            this.Statistics.Location = new System.Drawing.Point(4, 32);
             this.Statistics.Name = "Statistics";
-            this.Statistics.Size = new System.Drawing.Size(1170, 494);
+            this.Statistics.Size = new System.Drawing.Size(1170, 525);
             this.Statistics.TabIndex = 2;
             this.Statistics.Text = "Statystyki";
             // 
@@ -378,9 +364,9 @@
             // 
             this.Reports.BackColor = System.Drawing.Color.LightSlateGray;
             this.Reports.ImageIndex = 2;
-            this.Reports.Location = new System.Drawing.Point(4, 63);
+            this.Reports.Location = new System.Drawing.Point(4, 32);
             this.Reports.Name = "Reports";
-            this.Reports.Size = new System.Drawing.Size(1170, 494);
+            this.Reports.Size = new System.Drawing.Size(1170, 525);
             this.Reports.TabIndex = 3;
             this.Reports.Text = "Raporty";
             // 
@@ -396,9 +382,9 @@
             this.Notify.Controls.Add(this.notifyoption);
             this.Notify.Controls.Add(this.listView2);
             this.Notify.ImageIndex = 8;
-            this.Notify.Location = new System.Drawing.Point(4, 63);
+            this.Notify.Location = new System.Drawing.Point(4, 32);
             this.Notify.Name = "Notify";
-            this.Notify.Size = new System.Drawing.Size(1170, 494);
+            this.Notify.Size = new System.Drawing.Size(1170, 525);
             this.Notify.TabIndex = 4;
             this.Notify.Text = "Zgłoszenia";
             // 
@@ -477,133 +463,6 @@
             this.listView2.TabIndex = 0;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
-            // Payoff
-            // 
-            this.Payoff.BackColor = System.Drawing.Color.LightSlateGray;
-            this.Payoff.Controls.Add(this.payoffpackagesdelivery);
-            this.Payoff.Controls.Add(this.label28);
-            this.Payoff.Controls.Add(this.payoffcalendar);
-            this.Payoff.Controls.Add(this.payoffrefresh);
-            this.Payoff.Controls.Add(this.label29);
-            this.Payoff.Controls.Add(this.textBox3);
-            this.Payoff.Controls.Add(this.settlebutton);
-            this.Payoff.Controls.Add(this.payoffworkhours);
-            this.Payoff.Controls.Add(this.label27);
-            this.Payoff.Controls.Add(this.payoffnameandsurname);
-            this.Payoff.Controls.Add(this.label17);
-            this.Payoff.Controls.Add(this.listView3);
-            this.Payoff.ImageIndex = 4;
-            this.Payoff.Location = new System.Drawing.Point(4, 63);
-            this.Payoff.Name = "Payoff";
-            this.Payoff.Size = new System.Drawing.Size(1170, 494);
-            this.Payoff.TabIndex = 5;
-            this.Payoff.Text = "Rozliczenia";
-            // 
-            // payoffpackagesdelivery
-            // 
-            this.payoffpackagesdelivery.AutoSize = true;
-            this.payoffpackagesdelivery.Location = new System.Drawing.Point(165, 243);
-            this.payoffpackagesdelivery.Name = "payoffpackagesdelivery";
-            this.payoffpackagesdelivery.Size = new System.Drawing.Size(13, 13);
-            this.payoffpackagesdelivery.TabIndex = 13;
-            this.payoffpackagesdelivery.Text = "9";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(32, 243);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(134, 13);
-            this.label28.TabIndex = 12;
-            this.label28.Text = "Ilośc doręczonych paczek:";
-            // 
-            // payoffcalendar
-            // 
-            this.payoffcalendar.Location = new System.Drawing.Point(14, 9);
-            this.payoffcalendar.Name = "payoffcalendar";
-            this.payoffcalendar.TabIndex = 11;
-            // 
-            // payoffrefresh
-            // 
-            this.payoffrefresh.Location = new System.Drawing.Point(77, 383);
-            this.payoffrefresh.Name = "payoffrefresh";
-            this.payoffrefresh.Size = new System.Drawing.Size(102, 42);
-            this.payoffrefresh.TabIndex = 10;
-            this.payoffrefresh.Text = "Odśwież";
-            this.payoffrefresh.UseVisualStyleBackColor = true;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(32, 272);
-            this.label29.Margin = new System.Windows.Forms.Padding(0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(42, 13);
-            this.label29.TabIndex = 9;
-            this.label29.Text = "Premia:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(77, 269);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(77, 20);
-            this.textBox3.TabIndex = 8;
-            this.textBox3.Text = "0";
-            // 
-            // settlebutton
-            // 
-            this.settlebutton.Location = new System.Drawing.Point(77, 318);
-            this.settlebutton.Name = "settlebutton";
-            this.settlebutton.Size = new System.Drawing.Size(102, 42);
-            this.settlebutton.TabIndex = 7;
-            this.settlebutton.Text = "Rozlicz";
-            this.settlebutton.UseVisualStyleBackColor = true;
-            // 
-            // payoffworkhours
-            // 
-            this.payoffworkhours.AutoSize = true;
-            this.payoffworkhours.Location = new System.Drawing.Point(200, 216);
-            this.payoffworkhours.Name = "payoffworkhours";
-            this.payoffworkhours.Size = new System.Drawing.Size(13, 13);
-            this.payoffworkhours.TabIndex = 4;
-            this.payoffworkhours.Text = "9";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(32, 216);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(162, 13);
-            this.label27.TabIndex = 3;
-            this.label27.Text = "Liczba przepracowanych godzin:";
-            // 
-            // payoffnameandsurname
-            // 
-            this.payoffnameandsurname.AutoSize = true;
-            this.payoffnameandsurname.Location = new System.Drawing.Point(98, 191);
-            this.payoffnameandsurname.Name = "payoffnameandsurname";
-            this.payoffnameandsurname.Size = new System.Drawing.Size(139, 13);
-            this.payoffnameandsurname.TabIndex = 2;
-            this.payoffnameandsurname.Text = "Imie i Nazwisko Pracownika";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(32, 191);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(60, 13);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "Pracownik:";
-            // 
-            // listView3
-            // 
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(295, 0);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(879, 525);
-            this.listView3.TabIndex = 0;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            // 
             // Packages
             // 
             this.Packages.BackColor = System.Drawing.Color.LightSlateGray;
@@ -611,9 +470,9 @@
             this.Packages.Controls.Add(this.packageslist);
             this.Packages.Controls.Add(this.listView1);
             this.Packages.ImageIndex = 3;
-            this.Packages.Location = new System.Drawing.Point(4, 63);
+            this.Packages.Location = new System.Drawing.Point(4, 32);
             this.Packages.Name = "Packages";
-            this.Packages.Size = new System.Drawing.Size(1170, 494);
+            this.Packages.Size = new System.Drawing.Size(1170, 525);
             this.Packages.TabIndex = 6;
             this.Packages.Text = "Paczki";
             // 
@@ -733,6 +592,7 @@
             this.packagesidtext.Name = "packagesidtext";
             this.packagesidtext.Size = new System.Drawing.Size(160, 20);
             this.packagesidtext.TabIndex = 4;
+           
             // 
             // packagesnumbersearch
             // 
@@ -845,9 +705,9 @@
             // 
             this.Email.BackColor = System.Drawing.Color.LightSlateGray;
             this.Email.ImageIndex = 6;
-            this.Email.Location = new System.Drawing.Point(4, 63);
+            this.Email.Location = new System.Drawing.Point(4, 32);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(1170, 494);
+            this.Email.Size = new System.Drawing.Size(1170, 525);
             this.Email.TabIndex = 7;
             this.Email.Text = "Poczta";
             // 
@@ -870,11 +730,11 @@
             this.Register.Controls.Add(this.registernamebox);
             this.Register.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Register.ImageIndex = 5;
-            this.Register.Location = new System.Drawing.Point(4, 63);
+            this.Register.Location = new System.Drawing.Point(4, 32);
             this.Register.Name = "Register";
             this.Register.Padding = new System.Windows.Forms.Padding(1, 3, 1, 3);
             this.Register.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Register.Size = new System.Drawing.Size(1170, 494);
+            this.Register.Size = new System.Drawing.Size(1170, 525);
             this.Register.TabIndex = 8;
             this.Register.Text = "Rejestracja Praconików";
             // 
@@ -1033,9 +893,9 @@
             this.Scheme.Controls.Add(this.label15);
             this.Scheme.Controls.Add(this.calendar);
             this.Scheme.ImageIndex = 7;
-            this.Scheme.Location = new System.Drawing.Point(4, 63);
+            this.Scheme.Location = new System.Drawing.Point(4, 32);
             this.Scheme.Name = "Scheme";
-            this.Scheme.Size = new System.Drawing.Size(1170, 494);
+            this.Scheme.Size = new System.Drawing.Size(1170, 525);
             this.Scheme.TabIndex = 9;
             this.Scheme.Text = "Harmongram Pracy";
             // 
@@ -1222,9 +1082,9 @@
             this.Workers.Controls.Add(this.workerseditbutton);
             this.Workers.Controls.Add(this.workerslist);
             this.Workers.ImageIndex = 10;
-            this.Workers.Location = new System.Drawing.Point(4, 63);
+            this.Workers.Location = new System.Drawing.Point(4, 32);
             this.Workers.Name = "Workers";
-            this.Workers.Size = new System.Drawing.Size(1170, 494);
+            this.Workers.Size = new System.Drawing.Size(1170, 525);
             this.Workers.TabIndex = 10;
             this.Workers.Text = "Pracownicy";
             // 
@@ -1273,6 +1133,7 @@
             this.workersbuttonsurname.TabIndex = 10;
             this.workersbuttonsurname.Text = "Szukaj";
             this.workersbuttonsurname.UseVisualStyleBackColor = true;
+            this.workersbuttonsurname.Click += new System.EventHandler(this.workersbuttonsurname_Click);
             // 
             // workersbuttonid
             // 
@@ -1282,6 +1143,7 @@
             this.workersbuttonid.TabIndex = 9;
             this.workersbuttonid.Text = "Szukaj";
             this.workersbuttonid.UseVisualStyleBackColor = true;
+            this.workersbuttonid.Click += new System.EventHandler(this.workersbuttonid_Click);
             // 
             // workersoption
             // 
@@ -1356,6 +1218,7 @@
             this.workersdelbutton.TabIndex = 2;
             this.workersdelbutton.Text = "Usuń";
             this.workersdelbutton.UseVisualStyleBackColor = true;
+            this.workersdelbutton.Click += new System.EventHandler(this.workersdelbutton_Click);
             // 
             // workerseditbutton
             // 
@@ -1380,7 +1243,7 @@
             this.workerslist.HideSelection = false;
             this.workerslist.Location = new System.Drawing.Point(128, 0);
             this.workerslist.Name = "workerslist";
-            this.workerslist.Size = new System.Drawing.Size(1046, 494);
+            this.workerslist.Size = new System.Drawing.Size(1046, 525);
             this.workerslist.TabIndex = 0;
             this.workerslist.UseCompatibleStateImageBehavior = false;
             this.workerslist.View = System.Windows.Forms.View.Details;
@@ -1432,21 +1295,41 @@
             this.Regions.Controls.Add(this.addregion);
             this.Regions.Controls.Add(this.label6);
             this.Regions.Controls.Add(this.regioncode);
+            this.Regions.Controls.Add(this.deleteRegionButton);
             this.Regions.Controls.Add(this.regionsrefreshbutton);
             this.Regions.Controls.Add(this.mousechoice);
             this.Regions.Controls.Add(this.regionlist);
             this.Regions.Controls.Add(this.gmap);
             this.Regions.ImageIndex = 11;
-            this.Regions.Location = new System.Drawing.Point(4, 63);
+            this.Regions.Location = new System.Drawing.Point(4, 32);
             this.Regions.Name = "Regions";
-            this.Regions.Size = new System.Drawing.Size(1170, 494);
+            this.Regions.Size = new System.Drawing.Size(1170, 525);
             this.Regions.TabIndex = 11;
             this.Regions.Text = "Regiony";
             this.Regions.UseVisualStyleBackColor = true;
             // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Location = new System.Drawing.Point(41, 185);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(124, 23);
+            this.buttonUpdate.TabIndex = 8;
+            this.buttonUpdate.Text = "Przypisz Kuriera";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
+            // 
+            // comboBoxWorkers
+            // 
+            this.comboBoxWorkers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxWorkers.FormattingEnabled = true;
+            this.comboBoxWorkers.Location = new System.Drawing.Point(8, 148);
+            this.comboBoxWorkers.Name = "comboBoxWorkers";
+            this.comboBoxWorkers.Size = new System.Drawing.Size(186, 21);
+            this.comboBoxWorkers.TabIndex = 7;
+            // 
             // addregion
             // 
-            this.addregion.Location = new System.Drawing.Point(18, 94);
+            this.addregion.Location = new System.Drawing.Point(49, 104);
             this.addregion.Name = "addregion";
             this.addregion.Size = new System.Drawing.Size(123, 23);
             this.addregion.TabIndex = 6;
@@ -1457,7 +1340,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(47, 45);
+            this.label6.Location = new System.Drawing.Point(70, 49);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 5;
@@ -1465,16 +1348,16 @@
             // 
             // regioncode
             // 
-            this.regioncode.Location = new System.Drawing.Point(18, 63);
+            this.regioncode.Location = new System.Drawing.Point(47, 67);
             this.regioncode.Name = "regioncode";
             this.regioncode.Size = new System.Drawing.Size(124, 20);
             this.regioncode.TabIndex = 4;
             // 
             // regionsrefreshbutton
             // 
-            this.regionsrefreshbutton.Location = new System.Drawing.Point(41, 439);
+            this.regionsrefreshbutton.Location = new System.Drawing.Point(41, 250);
             this.regionsrefreshbutton.Name = "regionsrefreshbutton";
-            this.regionsrefreshbutton.Size = new System.Drawing.Size(75, 23);
+            this.regionsrefreshbutton.Size = new System.Drawing.Size(124, 23);
             this.regionsrefreshbutton.TabIndex = 3;
             this.regionsrefreshbutton.Text = "Odśwież";
             this.regionsrefreshbutton.UseVisualStyleBackColor = true;
@@ -1483,7 +1366,7 @@
             // mousechoice
             // 
             this.mousechoice.AutoSize = true;
-            this.mousechoice.Location = new System.Drawing.Point(18, 15);
+            this.mousechoice.Location = new System.Drawing.Point(44, 15);
             this.mousechoice.Name = "mousechoice";
             this.mousechoice.Size = new System.Drawing.Size(124, 17);
             this.mousechoice.TabIndex = 2;
@@ -1498,18 +1381,24 @@
             this.gbgb2137});
             this.regionlist.GridLines = true;
             this.regionlist.HideSelection = false;
-            this.regionlist.Location = new System.Drawing.Point(157, 0);
+            this.regionlist.Location = new System.Drawing.Point(201, 0);
             this.regionlist.Name = "regionlist";
             this.regionlist.Size = new System.Drawing.Size(271, 494);
             this.regionlist.TabIndex = 1;
             this.regionlist.UseCompatibleStateImageBehavior = false;
             this.regionlist.View = System.Windows.Forms.View.Details;
             this.regionlist.SelectedIndexChanged += new System.EventHandler(this.regionlist_SelectedIndexChanged);
+            this.regionlist.Click += new System.EventHandler(this.regionlist_Click);
             // 
             // columregioncode
             // 
             this.columregioncode.Text = "Region";
             this.columregioncode.Width = 136;
+            // 
+            // gbgb2137
+            // 
+            this.gbgb2137.Text = "Kurier";
+            this.gbgb2137.Width = 145;
             // 
             // gmap
             // 
@@ -1519,7 +1408,7 @@
             this.gmap.GrayScaleMode = false;
             this.gmap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gmap.LevelsKeepInMemory = 5;
-            this.gmap.Location = new System.Drawing.Point(425, 0);
+            this.gmap.Location = new System.Drawing.Point(470, 0);
             this.gmap.MarkersEnabled = true;
             this.gmap.MaxZoom = 2;
             this.gmap.MinZoom = 2;
@@ -1533,7 +1422,7 @@
             this.gmap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gmap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gmap.ShowTileGridLines = false;
-            this.gmap.Size = new System.Drawing.Size(749, 498);
+            this.gmap.Size = new System.Drawing.Size(704, 498);
             this.gmap.TabIndex = 0;
             this.gmap.Zoom = 0D;
             this.gmap.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gmap_MouseClick);
@@ -1560,28 +1449,15 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // comboBoxWorkers
+            // deleteRegionButton
             // 
-            this.comboBoxWorkers.FormattingEnabled = true;
-            this.comboBoxWorkers.Location = new System.Drawing.Point(18, 147);
-            this.comboBoxWorkers.Name = "comboBoxWorkers";
-            this.comboBoxWorkers.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxWorkers.TabIndex = 7;
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.Location = new System.Drawing.Point(41, 183);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(75, 23);
-            this.buttonUpdate.TabIndex = 8;
-            this.buttonUpdate.Text = "Aktualizuj";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
-            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
-            // 
-            // gbgb2137
-            // 
-            this.gbgb2137.Text = "Kurier";
-            this.gbgb2137.Width = 145;
+            this.deleteRegionButton.Location = new System.Drawing.Point(41, 291);
+            this.deleteRegionButton.Name = "deleteRegionButton";
+            this.deleteRegionButton.Size = new System.Drawing.Size(124, 23);
+            this.deleteRegionButton.TabIndex = 3;
+            this.deleteRegionButton.Text = "Usuń Region";
+            this.deleteRegionButton.UseVisualStyleBackColor = true;
+            this.deleteRegionButton.Click += new System.EventHandler(this.deleteRegionButton_Click);
             // 
             // CoordinatorHome
             // 
@@ -1604,8 +1480,6 @@
             this.Jobs.PerformLayout();
             this.Notify.ResumeLayout(false);
             this.Notify.PerformLayout();
-            this.Payoff.ResumeLayout(false);
-            this.Payoff.PerformLayout();
             this.Packages.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -1629,7 +1503,6 @@
         private System.Windows.Forms.TabPage Statistics;
         private System.Windows.Forms.TabPage Reports;
         private System.Windows.Forms.TabPage Notify;
-        private System.Windows.Forms.TabPage Payoff;
         private System.Windows.Forms.TabPage Packages;
         private System.Windows.Forms.TabPage Email;
         private System.Windows.Forms.TabPage Register;
@@ -1693,18 +1566,6 @@
         private System.Windows.Forms.ComboBox notifyoption;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.Label payoffpackagesdelivery;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.MonthCalendar payoffcalendar;
-        private System.Windows.Forms.Button payoffrefresh;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button settlebutton;
-        private System.Windows.Forms.Label payoffworkhours;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label payoffnameandsurname;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ListView listView3;
         private System.Windows.Forms.PictureBox gblogo;
         private System.Windows.Forms.Label datetimenow;
         private System.Windows.Forms.Label label31;
@@ -1764,6 +1625,7 @@
         private System.Windows.Forms.ComboBox comboBoxWorkers;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.ColumnHeader gbgb2137;
+        private System.Windows.Forms.Button deleteRegionButton;
     }
 }
 
