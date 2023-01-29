@@ -226,9 +226,9 @@ namespace AplikacjaKordynatora
                 Package packages = JsonSerializer.Deserialize<Package>(packageContent);
                 List<List<string>> list = new List<List<string>>();
                 Console.WriteLine(packages.description);
-                list.Add(new List<string> { packages.id.ToString(), packages.number,packages.ReceiverId.ToString(),packages.receiverAddressId.ToString(),
-                packages.SenderId.ToString(),packages.senderAddressId.ToString(),packages.weight.ToString(), packages.width.ToString(), packages.depth.ToString(),packages.heigth.ToString(),
-                packages.description,packages.isStandardShape.ToString(), packages.CODcost.ToString()});
+                list.Add(new List<string> { packages.id.ToString(), packages.number,packages.receiverId.ToString(),packages.receiverAddressId.ToString(),
+                packages.senderId.ToString(),packages.senderAddressId.ToString(),packages.weight.ToString(), packages.width.ToString(), packages.depth.ToString(),packages.heigth.ToString(),
+                packages.description,packages.isStandardShape.ToString(), packages.cODcost.ToString()});
 
                 packageslist.Items.Clear();
                 foreach (List<string> l in list)
@@ -280,9 +280,9 @@ namespace AplikacjaKordynatora
                 for (int i=0;i<packages.Length;i++)
                 {
                     
-                    list.Add(new List<string> { packages[i].id.ToString(), packages[i].number,packages[i].ReceiverId.ToString(),packages[i].receiverAddressId.ToString(),
-                     packages[i].SenderId.ToString(),packages[i].senderAddressId.ToString(),packages[i].weight.ToString(), packages[i].width.ToString(), packages[i].depth.ToString(),packages[i].heigth.ToString(),
-                     packages[i].description,packages[i].isStandardShape.ToString(), packages[i].CODcost.ToString()});
+                    list.Add(new List<string> { packages[i].id.ToString(), packages[i].number,packages[i].receiverId.ToString(),packages[i].receiverAddressId.ToString(),
+                     packages[i].senderId.ToString(),packages[i].senderAddressId.ToString(),packages[i].weight.ToString(), packages[i].width.ToString(), packages[i].depth.ToString(),packages[i].heigth.ToString(),
+                     packages[i].description,packages[i].isStandardShape.ToString(), packages[i].cODcost.ToString()});
 
                  
                 }

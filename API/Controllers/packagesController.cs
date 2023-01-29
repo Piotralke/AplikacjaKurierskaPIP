@@ -27,12 +27,12 @@ namespace API.Controllers
 				{
 					id = u.id,
 					number = u.number,
-					ReceiverId = u.ReceiverId,
-					Receiver = u.Receiver,
+					receiverId = u.receiverId,
+					receiver = u.receiver,
 					receiverAddressId = u.receiverAddressId,
 					receiverAddress = u.receiverAddress,
-					SenderId = u.SenderId,
-					Sender = u.Sender,
+					senderId = u.senderId,
+					sender = u.sender,
 					senderAddressId = u.senderAddressId,
 					senderAddress = u.senderAddress,
 					weight = u.weight,
@@ -41,7 +41,7 @@ namespace API.Controllers
 					heigth = u.heigth,
 					description = u.description,
 					isStandardShape = u.isStandardShape,
-					CODcost = u.CODcost,
+					cODcost = u.cODcost,
 					order = u.order,
 					statuses = u.statuses
 				}).ToListAsync();
@@ -56,19 +56,19 @@ namespace API.Controllers
 		[HttpGet("GetYoursPackages/{id}")]
 		public async Task<ActionResult<IEnumerable<Package>>> GetYoursPackages(int id)
 		{
-			var package = await _context.Packages.Where(u=>u.ReceiverId==id || u.SenderId == id)
-				.Include(u=>u.Sender)
-				.Include(u=>u.Receiver)
+			var package = await _context.Packages.Where(u=>u.receiverId==id || u.senderId == id)
+				.Include(u=>u.sender)
+				.Include(u=>u.receiver)
 				.Select(u => new Package
 				{
 					id = u.id,
 					number = u.number,
-					ReceiverId = u.ReceiverId,
-					Receiver = u.Receiver,
+					receiverId = u.receiverId,
+					receiver = u.receiver,
 					receiverAddressId = u.receiverAddressId,
 					receiverAddress = u.receiverAddress,
-					SenderId = u.SenderId,
-					Sender = u.Sender,
+					senderId = u.senderId,
+					sender = u.sender,
 					senderAddressId = u.senderAddressId,
 					senderAddress = u.senderAddress,
 					weight = u.weight,
@@ -77,7 +77,7 @@ namespace API.Controllers
 					heigth = u.heigth,
 					description = u.description,
 					isStandardShape = u.isStandardShape,
-					CODcost = u.CODcost,
+					cODcost = u.cODcost,
 					order = u.order,
 					statuses = u.statuses
 				}).ToListAsync();
@@ -109,12 +109,12 @@ namespace API.Controllers
 				{
 					id = u.id,
 					number=u.number,
-					ReceiverId=u.ReceiverId,
-					Receiver=u.Receiver,
+					receiverId=u.receiverId,
+					receiver=u.receiver,
 					receiverAddressId= u.receiverAddressId,
 					receiverAddress=u.receiverAddress,
-					SenderId=u.SenderId,
-					Sender=u.Sender,
+					senderId=u.senderId,
+					sender=u.sender,
 					senderAddressId=u.senderAddressId,
 					senderAddress=u.senderAddress,
 					weight=u.weight,
@@ -123,7 +123,7 @@ namespace API.Controllers
 					heigth=u.heigth,
 					description=u.description,
 					isStandardShape=u.isStandardShape,
-					CODcost=u.CODcost,
+					cODcost=u.cODcost,
 					order=u.order,
 					statuses=u.statuses
 				}).FirstOrDefaultAsync();
