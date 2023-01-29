@@ -20,8 +20,7 @@ namespace WindowsFormsApp1
     public partial class ClientHomeForm : Form
     {
         List<List<string>> list = new List<List<string>>();
-        List<List<string>> allList = new List<List<string>>();
-        List<Package> tmpPackages = new List<Package>();
+
         public string generateNumber()
         {
             string dateTime = DateTime.Now.ToString("dd-MM-yyyy");
@@ -82,7 +81,7 @@ namespace WindowsFormsApp1
                 HttpWebResponse webResponePackage = (HttpWebResponse)webRequestPackage.GetResponse();
                 string packageContent = new StreamReader(webResponePackage.GetResponseStream()).ReadToEnd();
                 List<Package> packages = JsonSerializer.Deserialize<List<Package>>(packageContent);
-                tmpPackages = packages;
+
                 for (int i = 0; i < packages.Count; i++)
                 {
                     String tmp = "";
@@ -94,12 +93,25 @@ namespace WindowsFormsApp1
                     {
                         tmp = "Odbior";
                     }
-                    list.Add(new List<string> { packages[i].number, 
-                   packages[i].sender.name +" "+ packages[i].sender.surname,
-                   packages[i].receiver.name +" "+ packages[i].receiver.surname, 
-                   packages[i].receiverAddress.street +" "+packages[i].receiverAddress.houseNumber,
-                   packages[i].receiverAddress.zipCode,
-                   packages[i].receiverAddress.city, tmp, packages[i].id.ToString()});
+                    list.Add(new List<string> { 
+                       packages[i].number,
+                       packages[i].sender.name +" "+ packages[i].sender.surname,
+                       packages[i].receiver.name +" "+ packages[i].receiver.surname,
+                       packages[i].receiverAddress.street +" "+packages[i].receiverAddress.houseNumber,
+                       packages[i].receiverAddress.zipCode,
+                       packages[i].receiverAddress.city,
+                       tmp,
+                       packages[i].id.ToString(),
+                       packages[i].cODcost.ToString(),
+                       packages[i].weight.ToString(),
+                       packages[i].width.ToString(),
+                       packages[i].heigth.ToString(),
+                       packages[i].depth.ToString(),
+                       packages[i].description,
+                       packages[i].senderAddress.street +" "+packages[i].senderAddress.houseNumber,
+                       packages[i].senderAddress.zipCode,
+                       packages[i].senderAddress.city,
+                   });
 
                   
                 }
@@ -114,6 +126,15 @@ namespace WindowsFormsApp1
                     item.SubItems.Add(l[5]);
                     item.SubItems.Add(l[6]);
                     item.SubItems.Add(l[7]);
+                    item.SubItems.Add(l[8]);
+                    item.SubItems.Add(l[9]);
+                    item.SubItems.Add(l[10]);
+                    item.SubItems.Add(l[11]);
+                    item.SubItems.Add(l[12]);
+                    item.SubItems.Add(l[13]);
+                    item.SubItems.Add(l[14]);
+                    item.SubItems.Add(l[15]);
+                    item.SubItems.Add(l[16]);
                     listView.Items.Add(item);
                 }
 
@@ -464,6 +485,16 @@ namespace WindowsFormsApp1
                 item.SubItems.Add(l[4]);
                 item.SubItems.Add(l[5]);
                 item.SubItems.Add(l[6]);
+                item.SubItems.Add(l[7]);
+                item.SubItems.Add(l[8]);
+                item.SubItems.Add(l[9]);
+                item.SubItems.Add(l[10]);
+                item.SubItems.Add(l[11]);
+                item.SubItems.Add(l[12]);
+                item.SubItems.Add(l[13]);
+                item.SubItems.Add(l[14]);
+                item.SubItems.Add(l[15]);
+                item.SubItems.Add(l[16]);
                 listView.Items.Add(item);
             }
 
@@ -484,23 +515,232 @@ namespace WindowsFormsApp1
                 int selectedIndex = listView.Items.IndexOf(selectedItem);
                 String trasa = "";
                 statuses = statuses.FindAll(s => s.idPackage.ToString().Equals(selectedItem.SubItems[7].Text));
-                Console.WriteLine(statuses.Count);
                 statuses = statuses.OrderBy(s => s.date).ToList();
                 statuses.ForEach(s =>
                 {
                     trasa = trasa + s.statusName.name + " " + s.date +"\n";
                 });
                 
-                MessageBox.Show("Szczegóły paczki:\nNumer: " + selectedItem.SubItems[0].Text +
-                    "\nNadawca: " + selectedItem.SubItems[1].Text +
-                    "\nOdbiorca: " + selectedItem.SubItems[2].Text +
-                    "\nAdres odbioru: " + selectedItem.SubItems[3].Text +
-                    "\nKod pocztowy: " + selectedItem.SubItems[4].Text +
-                    "\nMiasto: " + selectedItem.SubItems[5].Text +
-                    "\nRodzaj: " + selectedItem.SubItems[6].Text +
+                MessageBox.Show("Szczegóły paczki:\nNumer paczki:   " + selectedItem.SubItems[0].Text +
+                    "\n-----------------------------------------------------------------------" +
+                    "\nNadawca:   " + selectedItem.SubItems[1].Text +
+                    "\n-----------------------------------------------------------------------" +
+                    "\nAdres nadania:\n   " + selectedItem.SubItems[14].Text +
+                    "\n   " + selectedItem.SubItems[15].Text +
+                    "\n   " + selectedItem.SubItems[16].Text +
+                    "\n-----------------------------------------------------------------------" +
+                    "\nOdbiorca:   " + selectedItem.SubItems[2].Text +
+                    "\n-----------------------------------------------------------------------" +
+                    "\nAdres odbioru:\n   " + selectedItem.SubItems[3].Text +
+                    "\n   " + selectedItem.SubItems[4].Text +
+                    "\n   " + selectedItem.SubItems[5].Text +
+                    "\n-----------------------------------------------------------------------" +
+                    "\nTyp:   " + selectedItem.SubItems[6].Text +
+                    "\n-----------------------------------------------------------------------" +
+                    "\nCena pobrania:   " + selectedItem.SubItems[8].Text + "zł" +
+                    "\n-----------------------------------------------------------------------" +
+                    "\nWaga:   " + selectedItem.SubItems[9].Text +"kg" +
+                    "\nSzerokość:   " + selectedItem.SubItems[10].Text +"cm" +
+                    "\nWysokość:   " + selectedItem.SubItems[11].Text +"cm" +
+                    "\nGłębokość:   " + selectedItem.SubItems[12].Text +"cm" +
+                    "\n-----------------------------------------------------------------------" +
+                    "\nOpis zawartości:\n   " + selectedItem.SubItems[13].Text +
+                    "\n-----------------------------------------------------------------------" +
                     "\nTrasa: \n" + trasa);
                     
             }
+        }
+
+        private String info;
+        private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxType.SelectedIndex == 0) 
+            {
+                info = comboBoxType.Text;
+            }
+            else if(comboBoxType.SelectedIndex == 1)
+            {
+                info = comboBoxType.Text;
+            }
+
+        }
+
+        private void buttonSend1_Click(object sender, EventArgs e)
+        {
+            //Report report = new Report()
+            //{
+            //    id = 0,
+            //    numPackage = textBoxPkNum.Text,
+            //    date = DateTime.Now,
+            //    topic = comboBoxTopic.Text,
+            //    desc = "Rodzaj: " + info + "\nZawartość: " + textBoxPkInfo.Text + "\nUwagi: " + textBoxDesc.Text
+            //};
+
+            //WYSLANIE ZGLOSZENIA DO BAZY - zrobic
+
+            //String addStatus = "http://localhost:5225/statuses";
+            //String json2 = JsonSerializer.Serialize(status);
+            //using (var streamWriter = new HttpClient())
+            //{
+            //    var response = await streamWriter.PostAsync(addStatus, new StringContent(json2, Encoding.UTF8, "application/json"));
+
+            //}
+        }
+        private String ToD;
+        private String packet;
+        private String outerDmg;
+        private String innerDmg;
+
+        private void comboBoxPacket_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxPacket.SelectedIndex == 0)//koperta
+            {
+                packet = comboBoxPacket.Text;
+            }
+            else if (comboBoxPacket.SelectedIndex == 1)//folia babelkowa
+            {
+                packet = comboBoxPacket.Text;
+            }
+            else if (comboBoxPacket.SelectedIndex == 2)//folia stretch
+            {
+                packet = comboBoxPacket.Text;
+            }
+            else if (comboBoxPacket.SelectedIndex == 3)//karton
+            {
+                packet = comboBoxPacket.Text;
+            }
+            else if (comboBoxPacket.SelectedIndex == 4)//pojemnik
+            {
+                packet = comboBoxPacket.Text;
+            }
+            else if (comboBoxPacket.SelectedIndex == 5)//foliopak
+            {
+                packet = comboBoxPacket.Text;
+            }
+            else if (comboBoxPacket.SelectedIndex == 6)//skrzynia
+            {
+                packet = comboBoxPacket.Text;
+            }
+            else if (comboBoxPacket.SelectedIndex == 7)//tasma
+            {
+                packet = comboBoxPacket.Text;
+            }
+            else if (comboBoxPacket.SelectedIndex == 8)//beczka
+            {
+                packet = comboBoxPacket.Text;
+            }
+            else if (comboBoxPacket.SelectedIndex == 9)//inne
+            {
+                packet = comboBoxPacket.Text;
+            }
+        }
+
+        private void comboBoxToD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxToD.SelectedIndex == 0)//polamanie
+            {
+                ToD = comboBoxToD.Text;
+            }
+            else if (comboBoxToD.SelectedIndex == 1)//porysowanie
+            {
+                ToD = comboBoxToD.Text;
+            }
+            else if (comboBoxToD.SelectedIndex == 2)//stluczenie
+            {
+                ToD = comboBoxToD.Text;
+            }
+            else if (comboBoxToD.SelectedIndex == 3)//przedziurawienie
+            {
+                ToD = comboBoxToD.Text;
+            }
+            else if (comboBoxToD.SelectedIndex == 4)//zamoczenie
+            {
+                ToD = comboBoxToD.Text;
+            }
+            else if (comboBoxToD.SelectedIndex == 5)//zabrudzenie
+            {
+                ToD = comboBoxToD.Text;
+            }
+            else if (comboBoxToD.SelectedIndex == 6)//rozdarcie
+            {
+                ToD = comboBoxToD.Text;
+            }
+            else if (comboBoxToD.SelectedIndex == 7)//wgniecenie
+            {
+                ToD = comboBoxToD.Text;
+            }
+            else if (comboBoxToD.SelectedIndex == 8)//braki w  przesylce
+            {
+                ToD = comboBoxToD.Text;
+            }
+        }
+
+        private void checkBoxOuterDamage_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBoxOuterDamage.Checked == true)
+            {
+                outerDmg = "TAK";
+            }
+            else
+            {
+                outerDmg = "NIE";
+            }
+        }
+
+        private void checkBoxInnerDamage_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxInnerDamage.Checked == true)
+            {
+                innerDmg = "TAK";
+            }
+            else
+            {
+                innerDmg = "NIE";
+            }
+        }
+
+        private void buttonSend_Click(object sender, EventArgs e)
+        {
+            //Report report = new Report()
+            //{
+            //    id = 0,
+            //    numPackage = textBoxPkNum.Text,
+            //    date = DateTime.Now,
+            //    desc = "Rodzaj opakowania: " + packet + "\nZawartość: " + textBoxPackageInfo.Text +
+            //    "\nRodzaj szkody: " + ToD + "\nUszkodzenie opakowania zewnętrznego: " + outerDmg +
+            //    "\nUszkodzenie zabezpieczenia wewnętrznego: " + innerDmg + "\nDodatkowe uwagi: " + textBoxDamageDescription.Text
+            //};
+
+            //WYSLANIE ZGLOSZENIA DO BAZY - zrobic
+
+            //String addStatus = "http://localhost:5225/statuses";
+            //String json2 = JsonSerializer.Serialize(status);
+            //using (var streamWriter = new HttpClient())
+            //{
+            //    var response = await streamWriter.PostAsync(addStatus, new StringContent(json2, Encoding.UTF8, "application/json"));
+
+            //}
+        }
+
+        private void buttonSendNormalRep_Click(object sender, EventArgs e)
+        {
+            //Report report = new Report()
+            //{
+            //    id = 0,
+            //    numPackage = 0,
+            //    date = DateTime.Now,
+            //    desc = "Opis problemu: " + textBoxRep.Text
+            //};
+
+            //WYSLANIE ZGLOSZENIA DO BAZY - zrobic
+
+            //String addStatus = "http://localhost:5225/statuses";
+            //String json2 = JsonSerializer.Serialize(status);
+            //using (var streamWriter = new HttpClient())
+            //{
+            //    var response = await streamWriter.PostAsync(addStatus, new StringContent(json2, Encoding.UTF8, "application/json"));
+
+            //}
         }
     }
 }

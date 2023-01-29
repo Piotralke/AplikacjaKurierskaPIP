@@ -88,6 +88,7 @@ namespace API.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<Region> regions { get; set; }
         public DbSet<RegionPins> RegionPins { get; set; }
+        public DbSet<Report> Reports { get; set; }
 
     }
 }

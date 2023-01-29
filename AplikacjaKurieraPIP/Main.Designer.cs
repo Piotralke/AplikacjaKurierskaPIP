@@ -50,23 +50,25 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.ordersTakenList = new System.Windows.Forms.ListView();
+			this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.dbOrdersList = new System.Windows.Forms.ListView();
+			this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.takenPackagesList = new System.Windows.Forms.ListView();
+			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.dbPackagesList = new System.Windows.Forms.ListView();
+			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.packagesToDeliver = new System.Windows.Forms.Panel();
-			this.label10 = new System.Windows.Forms.Label();
-			this.label9 = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
-			this.button10 = new System.Windows.Forms.Button();
-			this.button9 = new System.Windows.Forms.Button();
-			this.button8 = new System.Windows.Forms.Button();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.listView1 = new System.Windows.Forms.ListView();
+			this.personData = new System.Windows.Forms.Label();
+			this.address = new System.Windows.Forms.Label();
+			this.packageNumber = new System.Windows.Forms.Label();
+			this.packageToDeliver = new System.Windows.Forms.ListView();
 			this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
 			this.packageDetail = new System.Windows.Forms.Panel();
 			this.panel4 = new System.Windows.Forms.Panel();
-			this.comboBox4 = new System.Windows.Forms.ComboBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.comboBox3 = new System.Windows.Forms.ComboBox();
 			this.label18 = new System.Windows.Forms.Label();
 			this.label16 = new System.Windows.Forms.Label();
@@ -74,23 +76,17 @@
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.label17 = new System.Windows.Forms.Label();
-			this.label15 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.button12 = new System.Windows.Forms.Button();
-			this.label14 = new System.Windows.Forms.Label();
-			this.label13 = new System.Windows.Forms.Label();
-			this.label12 = new System.Windows.Forms.Label();
-			this.label11 = new System.Windows.Forms.Label();
+			this.CODLabel = new System.Windows.Forms.Label();
+			this.dataLabel = new System.Windows.Forms.Label();
+			this.addressLabel = new System.Windows.Forms.Label();
+			this.numberLabel = new System.Windows.Forms.Label();
 			this.button11 = new System.Windows.Forms.Button();
 			this.workTimeLabel = new System.Windows.Forms.Label();
-			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.service = new System.Windows.Forms.Label();
+			this.descriptionLabel = new System.Windows.Forms.Label();
 			this.defaultPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.takePackages.SuspendLayout();
@@ -185,6 +181,7 @@
 			this.statisticsButton.Size = new System.Drawing.Size(208, 106);
 			this.statisticsButton.TabIndex = 3;
 			this.statisticsButton.UseVisualStyleBackColor = true;
+			this.statisticsButton.Click += new System.EventHandler(this.statisticsButton_Click);
 			// 
 			// handPackagesButton
 			// 
@@ -198,6 +195,7 @@
 			this.handPackagesButton.Size = new System.Drawing.Size(208, 106);
 			this.handPackagesButton.TabIndex = 3;
 			this.handPackagesButton.UseVisualStyleBackColor = true;
+			this.handPackagesButton.Click += new System.EventHandler(this.handPackagesButton_Click);
 			// 
 			// takePackagesButton
 			// 
@@ -269,6 +267,7 @@
 			this.button6.TabIndex = 11;
 			this.button6.Text = "Przerzuć wszystko ->";
 			this.button6.UseVisualStyleBackColor = true;
+			this.button6.Click += new System.EventHandler(this.button6_Click_1);
 			// 
 			// button5
 			// 
@@ -278,6 +277,7 @@
 			this.button5.TabIndex = 10;
 			this.button5.Text = "<- Przerzuć wszystko ";
 			this.button5.UseVisualStyleBackColor = true;
+			this.button5.Click += new System.EventHandler(this.button5_Click_1);
 			// 
 			// button4
 			// 
@@ -287,6 +287,7 @@
 			this.button4.TabIndex = 9;
 			this.button4.Text = "<- Przerzuć wszystko ";
 			this.button4.UseVisualStyleBackColor = true;
+			this.button4.Click += new System.EventHandler(this.button4_Click);
 			// 
 			// button3
 			// 
@@ -296,6 +297,7 @@
 			this.button3.TabIndex = 8;
 			this.button3.Text = "Przerzuć wszystko ->";
 			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.button3_Click_1);
 			// 
 			// label7
 			// 
@@ -355,6 +357,17 @@
 			this.ordersTakenList.TabIndex = 3;
 			this.ordersTakenList.UseCompatibleStateImageBehavior = false;
 			this.ordersTakenList.View = System.Windows.Forms.View.Details;
+			this.ordersTakenList.DoubleClick += new System.EventHandler(this.ordersTakenList_DoubleClick);
+			// 
+			// columnHeader7
+			// 
+			this.columnHeader7.Text = "Numer Paczki";
+			this.columnHeader7.Width = 159;
+			// 
+			// columnHeader8
+			// 
+			this.columnHeader8.Text = "Adres";
+			this.columnHeader8.Width = 172;
 			// 
 			// dbOrdersList
 			// 
@@ -368,6 +381,17 @@
 			this.dbOrdersList.TabIndex = 2;
 			this.dbOrdersList.UseCompatibleStateImageBehavior = false;
 			this.dbOrdersList.View = System.Windows.Forms.View.Details;
+			this.dbOrdersList.DoubleClick += new System.EventHandler(this.dbOrdersList_DoubleClick);
+			// 
+			// columnHeader5
+			// 
+			this.columnHeader5.Text = "Numer Paczki";
+			this.columnHeader5.Width = 154;
+			// 
+			// columnHeader6
+			// 
+			this.columnHeader6.Text = "Adres";
+			this.columnHeader6.Width = 171;
 			// 
 			// takenPackagesList
 			// 
@@ -381,6 +405,17 @@
 			this.takenPackagesList.TabIndex = 1;
 			this.takenPackagesList.UseCompatibleStateImageBehavior = false;
 			this.takenPackagesList.View = System.Windows.Forms.View.Details;
+			this.takenPackagesList.DoubleClick += new System.EventHandler(this.takenPackagesList_DoubleClick);
+			// 
+			// columnHeader3
+			// 
+			this.columnHeader3.Text = "Numer Paczki";
+			this.columnHeader3.Width = 148;
+			// 
+			// columnHeader4
+			// 
+			this.columnHeader4.Text = "Adres";
+			this.columnHeader4.Width = 187;
 			// 
 			// dbPackagesList
 			// 
@@ -394,18 +429,26 @@
 			this.dbPackagesList.TabIndex = 0;
 			this.dbPackagesList.UseCompatibleStateImageBehavior = false;
 			this.dbPackagesList.View = System.Windows.Forms.View.Details;
+			this.dbPackagesList.DoubleClick += new System.EventHandler(this.dbPackagesList_DoubleClick);
+			// 
+			// columnHeader1
+			// 
+			this.columnHeader1.Text = "Numer Paczki";
+			this.columnHeader1.Width = 149;
+			// 
+			// columnHeader2
+			// 
+			this.columnHeader2.Text = "Adres";
+			this.columnHeader2.Width = 179;
 			// 
 			// packagesToDeliver
 			// 
 			this.packagesToDeliver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(70)))), ((int)(((byte)(83)))));
-			this.packagesToDeliver.Controls.Add(this.label10);
-			this.packagesToDeliver.Controls.Add(this.label9);
-			this.packagesToDeliver.Controls.Add(this.label8);
-			this.packagesToDeliver.Controls.Add(this.button10);
-			this.packagesToDeliver.Controls.Add(this.button9);
-			this.packagesToDeliver.Controls.Add(this.button8);
-			this.packagesToDeliver.Controls.Add(this.comboBox1);
-			this.packagesToDeliver.Controls.Add(this.listView1);
+			this.packagesToDeliver.Controls.Add(this.service);
+			this.packagesToDeliver.Controls.Add(this.personData);
+			this.packagesToDeliver.Controls.Add(this.address);
+			this.packagesToDeliver.Controls.Add(this.packageNumber);
+			this.packagesToDeliver.Controls.Add(this.packageToDeliver);
 			this.packagesToDeliver.Controls.Add(this.gMapControl1);
 			this.packagesToDeliver.ForeColor = System.Drawing.Color.Black;
 			this.packagesToDeliver.Location = new System.Drawing.Point(287, 59);
@@ -415,82 +458,53 @@
 			this.packagesToDeliver.Size = new System.Drawing.Size(958, 659);
 			this.packagesToDeliver.TabIndex = 4;
 			// 
-			// label10
+			// personData
 			// 
-			this.label10.AutoSize = true;
-			this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-			this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
-			this.label10.Location = new System.Drawing.Point(441, 474);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(222, 25);
-			this.label10.TabIndex = 8;
-			this.label10.Text = "Dane nadawcy/odbiorcy";
+			this.personData.AutoSize = true;
+			this.personData.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+			this.personData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+			this.personData.Location = new System.Drawing.Point(441, 474);
+			this.personData.Name = "personData";
+			this.personData.Size = new System.Drawing.Size(222, 25);
+			this.personData.TabIndex = 8;
+			this.personData.Text = "Dane nadawcy/odbiorcy";
 			// 
-			// label9
+			// address
 			// 
-			this.label9.AutoSize = true;
-			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-			this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
-			this.label9.Location = new System.Drawing.Point(453, 427);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(70, 25);
-			this.label9.TabIndex = 7;
-			this.label9.Text = "Adres:";
+			this.address.AutoSize = true;
+			this.address.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+			this.address.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+			this.address.Location = new System.Drawing.Point(441, 427);
+			this.address.Name = "address";
+			this.address.Size = new System.Drawing.Size(70, 25);
+			this.address.TabIndex = 7;
+			this.address.Text = "Adres:";
 			// 
-			// label8
+			// packageNumber
 			// 
-			this.label8.AutoSize = true;
-			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-			this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
-			this.label8.Location = new System.Drawing.Point(441, 399);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(99, 25);
-			this.label8.TabIndex = 6;
-			this.label8.Text = "Nr paczki:";
+			this.packageNumber.AutoSize = true;
+			this.packageNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+			this.packageNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+			this.packageNumber.Location = new System.Drawing.Point(441, 399);
+			this.packageNumber.Name = "packageNumber";
+			this.packageNumber.Size = new System.Drawing.Size(99, 25);
+			this.packageNumber.TabIndex = 6;
+			this.packageNumber.Text = "Nr paczki:";
 			// 
-			// button10
+			// packageToDeliver
 			// 
-			this.button10.Location = new System.Drawing.Point(304, 209);
-			this.button10.Name = "button10";
-			this.button10.Size = new System.Drawing.Size(111, 23);
-			this.button10.TabIndex = 5;
-			this.button10.Text = "Śledź do punktu";
-			this.button10.UseVisualStyleBackColor = true;
-			// 
-			// button9
-			// 
-			this.button9.Location = new System.Drawing.Point(313, 123);
-			this.button9.Name = "button9";
-			this.button9.Size = new System.Drawing.Size(102, 25);
-			this.button9.TabIndex = 4;
-			this.button9.Text = "Wyszukaj trasę";
-			this.button9.UseVisualStyleBackColor = true;
-			// 
-			// button8
-			// 
-			this.button8.Location = new System.Drawing.Point(322, 61);
-			this.button8.Name = "button8";
-			this.button8.Size = new System.Drawing.Size(75, 23);
-			this.button8.TabIndex = 3;
-			this.button8.Text = "Sortuj";
-			this.button8.UseVisualStyleBackColor = true;
-			// 
-			// comboBox1
-			// 
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(303, 27);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(121, 21);
-			this.comboBox1.TabIndex = 2;
-			// 
-			// listView1
-			// 
-			this.listView1.HideSelection = false;
-			this.listView1.Location = new System.Drawing.Point(36, 27);
-			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(243, 472);
-			this.listView1.TabIndex = 1;
-			this.listView1.UseCompatibleStateImageBehavior = false;
+			this.packageToDeliver.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader9,
+            this.columnHeader10});
+			this.packageToDeliver.HideSelection = false;
+			this.packageToDeliver.Location = new System.Drawing.Point(36, 27);
+			this.packageToDeliver.Name = "packageToDeliver";
+			this.packageToDeliver.Size = new System.Drawing.Size(243, 472);
+			this.packageToDeliver.TabIndex = 1;
+			this.packageToDeliver.UseCompatibleStateImageBehavior = false;
+			this.packageToDeliver.View = System.Windows.Forms.View.Details;
+			this.packageToDeliver.Click += new System.EventHandler(this.packageToDeliver_Click);
+			this.packageToDeliver.DoubleClick += new System.EventHandler(this.packageToDeliver_DoubleClick);
 			// 
 			// gMapControl1
 			// 
@@ -522,14 +536,15 @@
 			// packageDetail
 			// 
 			this.packageDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(70)))), ((int)(((byte)(83)))));
-			this.packageDetail.Controls.Add(this.panel4);
+			this.packageDetail.Controls.Add(this.descriptionLabel);
 			this.packageDetail.Controls.Add(this.comboBox2);
-			this.packageDetail.Controls.Add(this.panel3);
-			this.packageDetail.Controls.Add(this.label14);
-			this.packageDetail.Controls.Add(this.label13);
-			this.packageDetail.Controls.Add(this.label12);
-			this.packageDetail.Controls.Add(this.label11);
+			this.packageDetail.Controls.Add(this.CODLabel);
+			this.packageDetail.Controls.Add(this.dataLabel);
+			this.packageDetail.Controls.Add(this.addressLabel);
+			this.packageDetail.Controls.Add(this.numberLabel);
 			this.packageDetail.Controls.Add(this.button11);
+			this.packageDetail.Controls.Add(this.panel3);
+			this.packageDetail.Controls.Add(this.panel4);
 			this.packageDetail.Location = new System.Drawing.Point(287, 59);
 			this.packageDetail.Margin = new System.Windows.Forms.Padding(50);
 			this.packageDetail.Name = "packageDetail";
@@ -539,8 +554,6 @@
 			// 
 			// panel4
 			// 
-			this.panel4.Controls.Add(this.comboBox4);
-			this.panel4.Controls.Add(this.textBox2);
 			this.panel4.Controls.Add(this.comboBox3);
 			this.panel4.Controls.Add(this.label18);
 			this.panel4.Controls.Add(this.label16);
@@ -550,25 +563,12 @@
 			this.panel4.Size = new System.Drawing.Size(450, 318);
 			this.panel4.TabIndex = 9;
 			// 
-			// comboBox4
-			// 
-			this.comboBox4.FormattingEnabled = true;
-			this.comboBox4.Location = new System.Drawing.Point(21, 107);
-			this.comboBox4.Name = "comboBox4";
-			this.comboBox4.Size = new System.Drawing.Size(121, 21);
-			this.comboBox4.TabIndex = 12;
-			// 
-			// textBox2
-			// 
-			this.textBox2.Location = new System.Drawing.Point(21, 142);
-			this.textBox2.Multiline = true;
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(217, 150);
-			this.textBox2.TabIndex = 11;
-			// 
 			// comboBox3
 			// 
 			this.comboBox3.FormattingEnabled = true;
+			this.comboBox3.Items.AddRange(new object[] {
+            "Odmowa przyjęcia",
+            "Nieobecność klienta"});
 			this.comboBox3.Location = new System.Drawing.Point(21, 72);
 			this.comboBox3.Name = "comboBox3";
 			this.comboBox3.Size = new System.Drawing.Size(121, 21);
@@ -604,20 +604,23 @@
 			this.button13.TabIndex = 4;
 			this.button13.Text = "Zatwierdź";
 			this.button13.UseVisualStyleBackColor = true;
+			this.button13.Click += new System.EventHandler(this.button13_Click);
 			// 
 			// comboBox2
 			// 
 			this.comboBox2.FormattingEnabled = true;
+			this.comboBox2.Items.AddRange(new object[] {
+            "Pomyślne",
+            "Niepomyślne"});
 			this.comboBox2.Location = new System.Drawing.Point(481, 226);
 			this.comboBox2.Name = "comboBox2";
 			this.comboBox2.Size = new System.Drawing.Size(121, 21);
 			this.comboBox2.TabIndex = 6;
+			this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
 			// 
 			// panel3
 			// 
 			this.panel3.Controls.Add(this.label17);
-			this.panel3.Controls.Add(this.label15);
-			this.panel3.Controls.Add(this.textBox1);
 			this.panel3.Controls.Add(this.button12);
 			this.panel3.Location = new System.Drawing.Point(481, 263);
 			this.panel3.Name = "panel3";
@@ -635,76 +638,59 @@
 			this.label17.TabIndex = 9;
 			this.label17.Text = "Pomyślne doręczenie";
 			// 
-			// label15
-			// 
-			this.label15.AutoSize = true;
-			this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-			this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
-			this.label15.Location = new System.Drawing.Point(14, 27);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(153, 25);
-			this.label15.TabIndex = 8;
-			this.label15.Text = "Wpisz nazwisko";
-			// 
-			// textBox1
-			// 
-			this.textBox1.Location = new System.Drawing.Point(21, 68);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(146, 20);
-			this.textBox1.TabIndex = 5;
-			// 
 			// button12
 			// 
-			this.button12.Location = new System.Drawing.Point(21, 110);
+			this.button12.Location = new System.Drawing.Point(138, 81);
 			this.button12.Name = "button12";
 			this.button12.Size = new System.Drawing.Size(75, 23);
 			this.button12.TabIndex = 4;
 			this.button12.Text = "Doręcz";
 			this.button12.UseVisualStyleBackColor = true;
+			this.button12.Click += new System.EventHandler(this.button12_Click);
 			// 
-			// label14
+			// CODLabel
 			// 
-			this.label14.AutoSize = true;
-			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-			this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
-			this.label14.Location = new System.Drawing.Point(493, 61);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(101, 25);
-			this.label14.TabIndex = 5;
-			this.label14.Text = "Porbanie?";
+			this.CODLabel.AutoSize = true;
+			this.CODLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+			this.CODLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+			this.CODLabel.Location = new System.Drawing.Point(493, 61);
+			this.CODLabel.Name = "CODLabel";
+			this.CODLabel.Size = new System.Drawing.Size(101, 25);
+			this.CODLabel.TabIndex = 5;
+			this.CODLabel.Text = "Porbanie?";
 			// 
-			// label13
+			// dataLabel
 			// 
-			this.label13.AutoSize = true;
-			this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-			this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
-			this.label13.Location = new System.Drawing.Point(31, 220);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(59, 25);
-			this.label13.TabIndex = 3;
-			this.label13.Text = "Dane";
+			this.dataLabel.AutoSize = true;
+			this.dataLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+			this.dataLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+			this.dataLabel.Location = new System.Drawing.Point(31, 220);
+			this.dataLabel.Name = "dataLabel";
+			this.dataLabel.Size = new System.Drawing.Size(59, 25);
+			this.dataLabel.TabIndex = 3;
+			this.dataLabel.Text = "Dane";
 			// 
-			// label12
+			// addressLabel
 			// 
-			this.label12.AutoSize = true;
-			this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-			this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
-			this.label12.Location = new System.Drawing.Point(31, 138);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(64, 25);
-			this.label12.TabIndex = 2;
-			this.label12.Text = "Adres";
+			this.addressLabel.AutoSize = true;
+			this.addressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+			this.addressLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+			this.addressLabel.Location = new System.Drawing.Point(31, 138);
+			this.addressLabel.Name = "addressLabel";
+			this.addressLabel.Size = new System.Drawing.Size(64, 25);
+			this.addressLabel.TabIndex = 2;
+			this.addressLabel.Text = "Adres";
 			// 
-			// label11
+			// numberLabel
 			// 
-			this.label11.AutoSize = true;
-			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-			this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
-			this.label11.Location = new System.Drawing.Point(33, 71);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(93, 25);
-			this.label11.TabIndex = 1;
-			this.label11.Text = "Nr paczki";
+			this.numberLabel.AutoSize = true;
+			this.numberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+			this.numberLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+			this.numberLabel.Location = new System.Drawing.Point(33, 71);
+			this.numberLabel.Name = "numberLabel";
+			this.numberLabel.Size = new System.Drawing.Size(93, 25);
+			this.numberLabel.TabIndex = 1;
+			this.numberLabel.Text = "Nr paczki";
 			// 
 			// button11
 			// 
@@ -714,6 +700,7 @@
 			this.button11.TabIndex = 0;
 			this.button11.Text = "Wróc";
 			this.button11.UseVisualStyleBackColor = true;
+			this.button11.Click += new System.EventHandler(this.button11_Click);
 			// 
 			// workTimeLabel
 			// 
@@ -725,45 +712,37 @@
 			this.workTimeLabel.Size = new System.Drawing.Size(0, 39);
 			this.workTimeLabel.TabIndex = 3;
 			// 
-			// columnHeader1
+			// columnHeader9
 			// 
-			this.columnHeader1.Text = "Numer Paczki";
-			this.columnHeader1.Width = 149;
+			this.columnHeader9.Text = "Numer Paczki";
+			this.columnHeader9.Width = 101;
 			// 
-			// columnHeader2
+			// columnHeader10
 			// 
-			this.columnHeader2.Text = "Adres";
-			this.columnHeader2.Width = 179;
+			this.columnHeader10.Text = "Adres";
+			this.columnHeader10.Width = 137;
 			// 
-			// columnHeader3
+			// service
 			// 
-			this.columnHeader3.Text = "Numer Paczki";
-			this.columnHeader3.Width = 148;
+			this.service.AutoSize = true;
+			this.service.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+			this.service.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+			this.service.Location = new System.Drawing.Point(441, 449);
+			this.service.Name = "service";
+			this.service.Size = new System.Drawing.Size(79, 25);
+			this.service.TabIndex = 9;
+			this.service.Text = "Usługa:\r\n";
 			// 
-			// columnHeader4
+			// descriptionLabel
 			// 
-			this.columnHeader4.Text = "Adres";
-			this.columnHeader4.Width = 187;
-			// 
-			// columnHeader5
-			// 
-			this.columnHeader5.Text = "Numer Paczki";
-			this.columnHeader5.Width = 154;
-			// 
-			// columnHeader6
-			// 
-			this.columnHeader6.Text = "Adres";
-			this.columnHeader6.Width = 154;
-			// 
-			// columnHeader7
-			// 
-			this.columnHeader7.Text = "Numer Paczki";
-			this.columnHeader7.Width = 159;
-			// 
-			// columnHeader8
-			// 
-			this.columnHeader8.Text = "Adres";
-			this.columnHeader8.Width = 172;
+			this.descriptionLabel.AutoSize = true;
+			this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+			this.descriptionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+			this.descriptionLabel.Location = new System.Drawing.Point(33, 379);
+			this.descriptionLabel.Name = "descriptionLabel";
+			this.descriptionLabel.Size = new System.Drawing.Size(59, 25);
+			this.descriptionLabel.TabIndex = 10;
+			this.descriptionLabel.Text = "Dane";
 			// 
 			// Main
 			// 
@@ -836,18 +815,12 @@
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Button button10;
-		private System.Windows.Forms.Button button9;
-		private System.Windows.Forms.Button button8;
-		private System.Windows.Forms.ComboBox comboBox1;
-		private System.Windows.Forms.ListView listView1;
+		private System.Windows.Forms.Label personData;
+		private System.Windows.Forms.Label address;
+		private System.Windows.Forms.Label packageNumber;
+		private System.Windows.Forms.ListView packageToDeliver;
 		private GMap.NET.WindowsForms.GMapControl gMapControl1;
 		private System.Windows.Forms.Panel panel4;
-		private System.Windows.Forms.ComboBox comboBox4;
-		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.ComboBox comboBox3;
 		private System.Windows.Forms.Label label18;
 		private System.Windows.Forms.Label label16;
@@ -855,13 +828,11 @@
 		private System.Windows.Forms.ComboBox comboBox2;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Label label17;
-		private System.Windows.Forms.Label label15;
-		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Button button12;
-		private System.Windows.Forms.Label label14;
-		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.Label label12;
-		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.Label CODLabel;
+		private System.Windows.Forms.Label dataLabel;
+		private System.Windows.Forms.Label addressLabel;
+		private System.Windows.Forms.Label numberLabel;
 		private System.Windows.Forms.Button button11;
 		private System.Windows.Forms.ColumnHeader columnHeader1;
 		private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -871,5 +842,9 @@
 		private System.Windows.Forms.ColumnHeader columnHeader6;
 		private System.Windows.Forms.ColumnHeader columnHeader3;
 		private System.Windows.Forms.ColumnHeader columnHeader4;
+		private System.Windows.Forms.ColumnHeader columnHeader9;
+		private System.Windows.Forms.ColumnHeader columnHeader10;
+		private System.Windows.Forms.Label service;
+		private System.Windows.Forms.Label descriptionLabel;
 	}
 }
