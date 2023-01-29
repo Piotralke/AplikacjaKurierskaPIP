@@ -5,10 +5,10 @@ namespace API.Models
     public class Status
     {
         [Key]
-        public int Id { get; set; }
+        public int id { get; set; }
         [Required]
         public int idStatusName { get; set; }
-        public statusNames StatusName { get; set; }
+        public statusNames statusName { get; set; }
         [Required]
         public int idPackage { get; set; }
         public Package package { get; set; }

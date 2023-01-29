@@ -47,7 +47,7 @@ namespace API.Data
                 .HasForeignKey(o => o.courierId);
 
             modelBuilder.Entity<Status>()
-                .HasOne(s => s.StatusName)
+                .HasOne(s => s.statusName)
                 .WithMany(r => r.status)
                 .HasForeignKey(s => s.idStatusName);
             modelBuilder.Entity<Status>()
