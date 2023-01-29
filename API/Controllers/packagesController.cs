@@ -22,7 +22,35 @@ namespace API.Controllers
 		[HttpGet("GetAllPackages")]
 		public async Task<ActionResult<IEnumerable<Package>>> GetAllPackages()
 		{
-			return await _context.Packages.ToListAsync();
+			var package = await _context.Packages.
+				Select(u => new Package
+				{
+					id = u.id,
+					number = u.number,
+					ReceiverId = u.ReceiverId,
+					Receiver = u.Receiver,
+					receiverAddressId = u.receiverAddressId,
+					receiverAddress = u.receiverAddress,
+					SenderId = u.SenderId,
+					Sender = u.Sender,
+					senderAddressId = u.senderAddressId,
+					senderAddress = u.senderAddress,
+					weight = u.weight,
+					width = u.width,
+					depth = u.depth,
+					heigth = u.heigth,
+					description = u.description,
+					isStandardShape = u.isStandardShape,
+					CODcost = u.CODcost,
+					order = u.order,
+					statuses = u.statuses
+				}).FirstOrDefaultAsync();
+			if (package == null)
+			{
+				return NotFound();
+			}
+
+			return package;
 		}
 
 		[HttpGet("GetPackageByID/{id}")]
