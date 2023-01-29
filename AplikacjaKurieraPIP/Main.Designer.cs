@@ -211,6 +211,7 @@
 			this.takePackagesButton.Size = new System.Drawing.Size(208, 106);
 			this.takePackagesButton.TabIndex = 2;
 			this.takePackagesButton.UseVisualStyleBackColor = true;
+			this.takePackagesButton.Click += new System.EventHandler(this.takePackagesButton_Click);
 			// 
 			// startWorkButton
 			// 
@@ -516,6 +517,7 @@
 			this.gMapControl1.Size = new System.Drawing.Size(485, 352);
 			this.gMapControl1.TabIndex = 0;
 			this.gMapControl1.Zoom = 0D;
+			this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
 			// 
 			// packageDetail
 			// 
@@ -768,16 +770,16 @@
 			this.BackColor = System.Drawing.Color.Teal;
 			this.ClientSize = new System.Drawing.Size(1280, 777);
 			this.Controls.Add(this.workTimeLabel);
-			this.Controls.Add(this.takePackages);
 			this.Controls.Add(this.endWorkButton);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.takePackagesButton);
 			this.Controls.Add(this.startWorkButton);
 			this.Controls.Add(this.statisticsButton);
 			this.Controls.Add(this.handPackagesButton);
+			this.Controls.Add(this.packagesToDeliver);
+			this.Controls.Add(this.takePackages);
 			this.Controls.Add(this.defaultPanel);
 			this.Controls.Add(this.packageDetail);
-			this.Controls.Add(this.packagesToDeliver);
 			this.Name = "Main";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Load += new System.EventHandler(this.Main_Load);

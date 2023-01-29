@@ -22,8 +22,19 @@ namespace API.Controllers
 		[HttpGet]
 		public async Task<ActionResult<IEnumerable<Status>>> GetStatuses()
 		{
-			return await _context.Statuses.ToListAsync();
+			return await _context.Statuses
+				.Select(s=>new Status
+				{
+					id=s.id,
+					idStatusName=s.idStatusName,
+					statusName=s.statusName,
+					idPackage=s.idPackage,
+					package=s.package,
+					date=s.date
+				}).ToListAsync();
 		}
+
+
 
 		[HttpPost]
 		public async Task<ActionResult<Status>> PostStatus(object statusJson)
@@ -44,7 +55,7 @@ namespace API.Controllers
 		//	_context.Statuses.Add(newStatus);
 			await _context.SaveChangesAsync();
 
-			return CreatedAtAction("GetStatuses", new { id = status.Id }, status);
+			return CreatedAtAction("GetStatuses", new { id = status.id }, status);
 		}
 
 	}
