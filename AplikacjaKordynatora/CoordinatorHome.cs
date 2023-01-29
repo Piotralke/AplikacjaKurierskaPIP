@@ -547,9 +547,8 @@ namespace AplikacjaKordynatora
                
                 for (int i = 0; i < region.Length; i++)
                 {
-                    list.Add(new List<string> { region[i].code.ToString(), region[i].courier == null?" ":region[i].courier.loginCredentials.login });
+                    list.Add(new List<string> { region[i].code.ToString(), region[i].courier == null ?" ":region[i].courier.loginCredentials.login });
                     
-
                 }
                 regionlist.Items.Clear();
                 foreach (List<string> l in list)
