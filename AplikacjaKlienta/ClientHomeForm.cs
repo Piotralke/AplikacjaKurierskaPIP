@@ -72,7 +72,7 @@ namespace WindowsFormsApp1
             try
             {
 
-                String requestPackage = "http://localhost:5225/Packages/GetAllPackages/";
+                String requestPackage = "http://localhost:5225/Packages/GetYoursPackages/";
                 HttpWebRequest webRequestPackage = (HttpWebRequest)WebRequest.Create(@requestPackage);
                 HttpWebResponse webResponePackage = (HttpWebResponse)webRequestPackage.GetResponse();
                 string packageContent = new StreamReader(webResponePackage.GetResponseStream()).ReadToEnd();
