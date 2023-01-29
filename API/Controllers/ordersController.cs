@@ -21,7 +21,16 @@ namespace API.Controllers
 		[HttpGet]
 		public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
 		{
-			return await _context.Orders.ToListAsync();
+			return await _context.Orders.Select
+				(o=> new Order
+				{
+					id=o.id,
+					packageId=o.packageId,
+					package=o.package,
+					price=o.price,
+					courierId=o.courierId,
+					courier=o.courier
+				}).ToListAsync();
 		}
 
 		[HttpPost]

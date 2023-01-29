@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AplikacjaKordynatora", "AplikacjaKordynatora\AplikacjaKordynatora.csproj", "{D5842974-D43C-4E75-837A-A023E44EF8BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestKurier", "TestKurier\TestKurier.csproj", "{A59F3514-0FED-4E57-A62B-0A9F0852946B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D5842974-D43C-4E75-837A-A023E44EF8BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5842974-D43C-4E75-837A-A023E44EF8BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5842974-D43C-4E75-837A-A023E44EF8BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A59F3514-0FED-4E57-A62B-0A9F0852946B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A59F3514-0FED-4E57-A62B-0A9F0852946B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A59F3514-0FED-4E57-A62B-0A9F0852946B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A59F3514-0FED-4E57-A62B-0A9F0852946B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
