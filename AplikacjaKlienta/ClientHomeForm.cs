@@ -488,7 +488,7 @@ namespace WindowsFormsApp1
                 statuses = statuses.OrderBy(s => s.date).ToList();
                 statuses.ForEach(s =>
                 {
-                    trasa = trasa + s.StatusName.name + " " + s.date +"\n";
+                    trasa = trasa + s.statusName.name + " " + s.date +"\n";
                 });
                 
                 MessageBox.Show("Szczegóły paczki:\nNumer: " + selectedItem.SubItems[0].Text +
