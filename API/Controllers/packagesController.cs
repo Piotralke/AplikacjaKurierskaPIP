@@ -44,7 +44,7 @@ namespace API.Controllers
 					CODcost = u.CODcost,
 					order = u.order,
 					statuses = u.statuses
-				}).FirstOrDefaultAsync();
+				}).ToListAsync();
 			if (package == null)
 			{
 				return NotFound();
