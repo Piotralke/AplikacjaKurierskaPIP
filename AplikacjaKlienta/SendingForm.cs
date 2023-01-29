@@ -166,12 +166,12 @@ namespace WindowsFormsApp1
             {
                 id = 0,
                 number = generateNumber(),
-                ReceiverId = receiverId,
-                Receiver = user1,
+                receiverId = receiverId,
+                receiver = user1,
                 receiverAddressId = receiverAddressId,
                 receiverAddress=address2,
-                SenderId = senderId,
-                Sender = user2,
+                senderId = senderId,
+                sender = user2,
                 senderAddressId = senderAddressId,
                 senderAddress=address1,
                 weight = weight,
@@ -180,7 +180,7 @@ namespace WindowsFormsApp1
                 heigth = heigth,
                 description = textBoxDescription.Text,
                 isStandardShape = radioButtonStandard.Checked ? true : false,
-                CODcost = CODcost
+                cODcost = CODcost
 
             };
             //String AddPackage = "http://localhost:5225/packages";

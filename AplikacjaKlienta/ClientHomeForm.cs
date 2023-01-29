@@ -72,18 +72,21 @@ namespace WindowsFormsApp1
             try
             {
 
-                String requestPackage = "http://localhost:5225/Packages/GetYoursPackages/";
+                String requestPackage = "http://localhost:5225/Packages/GetYoursPackages/"+loggedUser.id;
                 HttpWebRequest webRequestPackage = (HttpWebRequest)WebRequest.Create(@requestPackage);
                 HttpWebResponse webResponePackage = (HttpWebResponse)webRequestPackage.GetResponse();
                 string packageContent = new StreamReader(webResponePackage.GetResponseStream()).ReadToEnd();
-                Package[] packages = JsonSerializer.Deserialize<Package[]>(packageContent);
+                List<Package> packages = JsonSerializer.Deserialize<List<Package>>(packageContent);
                 List<List<string>> list = new List<List<string>>();
-                for (int i = 0; i < packages.Length; i++)
+                for (int i = 0; i < packages.Count; i++)
                 {
 
-                    list.Add(new List<string> { packages[i].number, packages[i].Sender.name +" "+ packages[i].Sender.surname,
-                   packages[i].Receiver.name +" "+ packages[i].Receiver.surname, packages[i].receiverAddress.street +" "+packages[i].receiverAddress.houseNumber,
-                   packages[i].receiverAddress.zipCode, packages[i].receiverAddress.city});
+                    list.Add(new List<string> { packages[i].number, 
+                   packages[i].sender.name +" "+ packages[i].sender.surname,
+                   packages[i].receiver.name +" "+ packages[i].receiver.surname, 
+                   packages[i].receiverAddress.street +" "+packages[i].receiverAddress.houseNumber,
+                   packages[i].receiverAddress.zipCode,
+                   packages[i].receiverAddress.city});
 
 
                 }
@@ -236,11 +239,11 @@ namespace WindowsFormsApp1
             {
                 id = 0,
                 number = generateNumber(),
-                ReceiverId = receiverId,
-                Receiver = user1,
+                receiverId = receiverId,
+                receiver = user1,
                 receiverAddressId = receiverAddressId,
                 receiverAddress=address2,
-                SenderId = loggedUser.id,
+                senderId = loggedUser.id,
                 senderAddressId = senderAddressId,
                 senderAddress=address1,
                 weight = weight,
@@ -249,7 +252,7 @@ namespace WindowsFormsApp1
                 heigth = heigth,
                 description = textBoxDescription.Text,
                 isStandardShape = radioButtonStandard.Checked ? true : false,
-                CODcost = CODcost
+                cODcost = CODcost
 
             };
             //String AddPackage = "http://localhost:5225/packages";

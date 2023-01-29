@@ -10,14 +10,14 @@ namespace API.Models
         [Required]
         public string number { get; set; }
         [Required]
-        public int ReceiverId { get; set; }
-        public User Receiver { get; set; }
+        public int receiverId { get; set; }
+        public User receiver { get; set; }
         [Required]
         public int receiverAddressId { get; set; }
         public Address receiverAddress { get; set; }
         [Required]
-        public int SenderId { get; set; }
-        public User Sender { get; set; }
+        public int senderId { get; set; }
+        public User sender { get; set; }
         [Required]
         public int senderAddressId { get; set; }
         public Address senderAddress { get; set; }
@@ -32,7 +32,7 @@ namespace API.Models
         public string? description { get; set; }
         [Required]
         public bool isStandardShape { get; set; }
-        public float? CODcost { get; set; }
+        public float? cODcost { get; set; }
         public Order? order { get; set; }
         public ICollection<Status> statuses { get; set; }
 

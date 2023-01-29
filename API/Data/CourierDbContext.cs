@@ -16,14 +16,14 @@ namespace API.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Package>()
-                .HasOne(p => p.Sender)
+                .HasOne(p => p.sender)
                 .WithMany(u => u.senderPackages)
-                .HasForeignKey(p => p.SenderId)
+                .HasForeignKey(p => p.senderId)
                 .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<Package>()
-                .HasOne(p => p.Receiver)
+                .HasOne(p => p.receiver)
                 .WithMany(u => u.receiverPackages)
-                .HasForeignKey(p => p.ReceiverId)
+                .HasForeignKey(p => p.receiverId)
                 .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<Package>()
                 .HasOne(p => p.receiverAddress)
