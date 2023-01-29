@@ -67,6 +67,7 @@ namespace AplikacjaKordynatora
             LoadCouriers();
             loadWorkers();
             loadMissions();
+            loadReports();
         }
 
         private void LoadCouriers()
@@ -1235,7 +1236,41 @@ namespace AplikacjaKordynatora
         {
             loadMissions();
         }
+        private void loadReports()
+        {
+            try
+            {
 
+                String requestPackage = "http://localhost:5225/reports";
+                HttpWebRequest webRequestPackage = (HttpWebRequest)WebRequest.Create(@requestPackage);
+                HttpWebResponse webResponePackage = (HttpWebResponse)webRequestPackage.GetResponse();
+                string packageContent = new StreamReader(webResponePackage.GetResponseStream()).ReadToEnd();
+                Report[] reports = JsonSerializer.Deserialize<Report[]>(packageContent);
+                List<List<string>> list = new List<List<string>>();
+                for (int i = 0; i < reports.Length; i++)
+                {
+
+                    list.Add(new List<string> { reports[i].id.ToString(), reports[i].numPackage, reports[i].date.ToString(), reports[i].desc });
+
+
+                }
+                packageslist.Items.Clear();
+                foreach (List<string> l in list)
+                {
+                    ListViewItem item = new ListViewItem(l[0]);
+                    item.SubItems.Add(l[1]);
+                    item.SubItems.Add(l[2]);
+                    item.SubItems.Add(l[3]);
+                    packageslist.Items.Add(item);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("BLAD!" + ex);
+            }
+        }
         
     }
     

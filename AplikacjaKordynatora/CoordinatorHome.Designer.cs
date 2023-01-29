@@ -53,7 +53,7 @@
             this.notifybuttonsearch = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.notifyoption = new System.Windows.Forms.ComboBox();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.reportList = new System.Windows.Forms.ListView();
             this.Packages = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.packagesshowall = new System.Windows.Forms.Button();
@@ -134,6 +134,10 @@
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AdminPanel.SuspendLayout();
             this.HomePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gblogo)).BeginInit();
@@ -321,7 +325,7 @@
             this.Notify.Controls.Add(this.notifybuttonsearch);
             this.Notify.Controls.Add(this.label24);
             this.Notify.Controls.Add(this.notifyoption);
-            this.Notify.Controls.Add(this.listView2);
+            this.Notify.Controls.Add(this.reportList);
             this.Notify.ImageIndex = 8;
             this.Notify.Location = new System.Drawing.Point(4, 32);
             this.Notify.Name = "Notify";
@@ -351,7 +355,7 @@
             this.notifyopen.Name = "notifyopen";
             this.notifyopen.Size = new System.Drawing.Size(121, 38);
             this.notifyopen.TabIndex = 14;
-            this.notifyopen.Text = "Otwórz";
+            this.notifyopen.Text = "Odśwież";
             this.notifyopen.UseVisualStyleBackColor = true;
             // 
             // notifybuttonsearch
@@ -377,23 +381,28 @@
             this.notifyoption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.notifyoption.FormattingEnabled = true;
             this.notifyoption.Items.AddRange(new object[] {
-            "Po numerze zgłoszenia",
-            "Po imieniu",
-            "Po nazwisku",
-            "Po adresie e-mail"});
+            "Po ID zgłoszenia",
+            "Po numerze paczki"});
             this.notifyoption.Location = new System.Drawing.Point(20, 36);
             this.notifyoption.Name = "notifyoption";
             this.notifyoption.Size = new System.Drawing.Size(121, 21);
             this.notifyoption.TabIndex = 1;
             // 
-            // listView2
+            // reportList
             // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(162, 0);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(1012, 529);
-            this.listView2.TabIndex = 0;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.reportList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11});
+            this.reportList.GridLines = true;
+            this.reportList.HideSelection = false;
+            this.reportList.Location = new System.Drawing.Point(162, 0);
+            this.reportList.Name = "reportList";
+            this.reportList.Size = new System.Drawing.Size(1012, 529);
+            this.reportList.TabIndex = 0;
+            this.reportList.UseCompatibleStateImageBehavior = false;
+            this.reportList.View = System.Windows.Forms.View.Details;
             // 
             // Packages
             // 
@@ -1166,6 +1175,26 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "ID Zgłoszenia";
+            this.columnHeader8.Width = 99;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Numer Paczki";
+            this.columnHeader9.Width = 98;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Data";
+            this.columnHeader10.Width = 125;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Opis";
+            this.columnHeader11.Width = 683;
+            // 
             // CoordinatorHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1246,7 +1275,7 @@
         private System.Windows.Forms.Button notifybuttonsearch;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.ComboBox notifyoption;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView reportList;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.PictureBox gblogo;
         private System.Windows.Forms.Label datetimenow;
@@ -1305,6 +1334,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
     }
 }
 
