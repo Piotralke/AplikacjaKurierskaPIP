@@ -1254,14 +1254,14 @@ namespace AplikacjaKordynatora
 
 
                 }
-                packageslist.Items.Clear();
+                reportList.Items.Clear();
                 foreach (List<string> l in list)
                 {
                     ListViewItem item = new ListViewItem(l[0]);
                     item.SubItems.Add(l[1]);
                     item.SubItems.Add(l[2]);
                     item.SubItems.Add(l[3]);
-                    packageslist.Items.Add(item);
+                    reportList.Items.Add(item);
                 }
 
 
