@@ -1218,7 +1218,7 @@
             this.workersdelbutton.TabIndex = 2;
             this.workersdelbutton.Text = "Usuń";
             this.workersdelbutton.UseVisualStyleBackColor = true;
-            this.workersdelbutton.Click += new System.EventHandler(this.workersdelbutton_Click);
+
             // 
             // workerseditbutton
             // 

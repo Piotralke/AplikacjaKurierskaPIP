@@ -565,31 +565,28 @@ namespace WindowsFormsApp1
 
         }
 
-        private void buttonSend1_Click(object sender, EventArgs e)
+        private async void buttonSend1_Click(object sender, EventArgs e)
         {
-            //Report report = new Report()
-            //{
-            //    id = 0,
-            //    numPackage = textBoxPkNum.Text,
-            //    date = DateTime.Now,
-            //    topic = comboBoxTopic.Text,
-            //    desc = "Rodzaj: " + info + "\nZawartość: " + textBoxPkInfo.Text + "\nUwagi: " + textBoxDesc.Text
-            //};
+            Report report = new Report()
+            {
+                id = 0,
+                numPackage = textBoxPkNum.Text,
+                date = DateTime.Now,
+                desc = "Rodzaj: " + info + "\nZawartość: " + textBoxPkInfo.Text + "\nUwagi: " + textBoxDesc.Text
+            };
 
-            //WYSLANIE ZGLOSZENIA DO BAZY - zrobic
+            String addReport = "http://localhost:5225/reports";
+            String json2 = JsonSerializer.Serialize(report);
+            using (var streamWriter = new HttpClient())
+            {
+                var response = await streamWriter.PostAsync(addReport, new StringContent(json2, Encoding.UTF8, "application/json"));
 
-            //String addStatus = "http://localhost:5225/statuses";
-            //String json2 = JsonSerializer.Serialize(status);
-            //using (var streamWriter = new HttpClient())
-            //{
-            //    var response = await streamWriter.PostAsync(addStatus, new StringContent(json2, Encoding.UTF8, "application/json"));
-
-            //}
+            }
         }
         private String ToD;
         private String packet;
-        private String outerDmg;
-        private String innerDmg;
+        private String outerDmg = "NIE";
+        private String innerDmg = "NIE";
 
         private void comboBoxPacket_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -699,48 +696,45 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void buttonSend_Click(object sender, EventArgs e)
+        private async void buttonSend_Click(object sender, EventArgs e)
         {
-            //Report report = new Report()
-            //{
-            //    id = 0,
-            //    numPackage = textBoxPkNum.Text,
-            //    date = DateTime.Now,
-            //    desc = "Rodzaj opakowania: " + packet + "\nZawartość: " + textBoxPackageInfo.Text +
-            //    "\nRodzaj szkody: " + ToD + "\nUszkodzenie opakowania zewnętrznego: " + outerDmg +
-            //    "\nUszkodzenie zabezpieczenia wewnętrznego: " + innerDmg + "\nDodatkowe uwagi: " + textBoxDamageDescription.Text
-            //};
+            Report report = new Report()
+            {
+                id = 0,
+                numPackage = textBoxPackage.Text,
+                date = DateTime.Now,
+                desc = "Rodzaj opakowania: " + packet + "\nZawartość: " + textBoxPackageInfo.Text +
+                "\nRodzaj szkody: " + ToD + "\nUszkodzenie opakowania zewnętrznego: " + outerDmg +
+                "\nUszkodzenie zabezpieczenia wewnętrznego: " + innerDmg + "\nDodatkowe uwagi: " + textBoxDamageDescription.Text
+            };
 
-            //WYSLANIE ZGLOSZENIA DO BAZY - zrobic
+            String addReport = "http://localhost:5225/reports";
+            String json2 = JsonSerializer.Serialize(report);
+            using (var streamWriter = new HttpClient())
+            {
+                var response = await streamWriter.PostAsync(addReport, new StringContent(json2, Encoding.UTF8, "application/json"));
 
-            //String addStatus = "http://localhost:5225/statuses";
-            //String json2 = JsonSerializer.Serialize(status);
-            //using (var streamWriter = new HttpClient())
-            //{
-            //    var response = await streamWriter.PostAsync(addStatus, new StringContent(json2, Encoding.UTF8, "application/json"));
-
-            //}
+            }
         }
 
-        private void buttonSendNormalRep_Click(object sender, EventArgs e)
+        private async void buttonSendNormalRep_Click(object sender, EventArgs e)
         {
-            //Report report = new Report()
-            //{
-            //    id = 0,
-            //    numPackage = 0,
-            //    date = DateTime.Now,
-            //    desc = "Opis problemu: " + textBoxRep.Text
-            //};
+            Report report = new Report()
+            {
+                id = 0,
+                numPackage = "NA",
+                date = DateTime.Now,
+                desc = "Opis problemu: " + textBoxRep.Text
+            };
 
-            //WYSLANIE ZGLOSZENIA DO BAZY - zrobic
 
-            //String addStatus = "http://localhost:5225/statuses";
-            //String json2 = JsonSerializer.Serialize(status);
-            //using (var streamWriter = new HttpClient())
-            //{
-            //    var response = await streamWriter.PostAsync(addStatus, new StringContent(json2, Encoding.UTF8, "application/json"));
+            String addReport = "http://localhost:5225/reports";
+            String json2 = JsonSerializer.Serialize(report);
+            using (var streamWriter = new HttpClient())
+            {
+                var response = await streamWriter.PostAsync(addReport, new StringContent(json2, Encoding.UTF8, "application/json"));
 
-            //}
+            }
         }
     }
 }

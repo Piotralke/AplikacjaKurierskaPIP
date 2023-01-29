@@ -987,14 +987,7 @@ namespace AplikacjaKordynatora
 
         }
 
-        private void workersdelbutton_Click(object sender, EventArgs e)
-        {
-            String requestRegionsDelete = "http://localhost:5225/regions/DeleteRegionById/" + RegionId;
-            using (var client = new HttpClient())
-            {
-                var response = await client.DeleteAsync(requestRegionsDelete);
-            }
-        }
+        
 
       
     }
