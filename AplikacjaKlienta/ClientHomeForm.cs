@@ -43,6 +43,7 @@ namespace WindowsFormsApp1
             label1.Text = user.loginCredentials.login;
             labelCostOfService.Text = "10.99";
             textBoxCOD.Text = "0.00";
+            showPackages();
         }
 
         private void ClientHomeForm_Load(object sender, EventArgs e)
@@ -80,13 +81,23 @@ namespace WindowsFormsApp1
                 List<List<string>> list = new List<List<string>>();
                 for (int i = 0; i < packages.Count; i++)
                 {
-
+                    String tmp = "";
+                    if (packages[i].senderId == loggedUser.id)
+                    {
+                        tmp = "Nadanie";
+                    }
+                    else
+                    {
+                        tmp = "Odbior";
+                    }
                     list.Add(new List<string> { packages[i].number, 
                    packages[i].sender.name +" "+ packages[i].sender.surname,
                    packages[i].receiver.name +" "+ packages[i].receiver.surname, 
                    packages[i].receiverAddress.street +" "+packages[i].receiverAddress.houseNumber,
                    packages[i].receiverAddress.zipCode,
-                   packages[i].receiverAddress.city});
+                   packages[i].receiverAddress.city},
+                   tmp);
+                    
 
 
                 }

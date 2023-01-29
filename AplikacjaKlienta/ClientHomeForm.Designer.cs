@@ -166,6 +166,8 @@
             this.label34 = new System.Windows.Forms.Label();
             this.comboBoxTopic = new System.Windows.Forms.ComboBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -319,6 +321,7 @@
             // panelTrack
             // 
             this.panelTrack.BackColor = System.Drawing.Color.Transparent;
+            this.panelTrack.Controls.Add(this.comboBox1);
             this.panelTrack.Controls.Add(this.pictureBox3);
             this.panelTrack.Controls.Add(this.listView);
             this.panelTrack.Controls.Add(this.label3);
@@ -346,7 +349,8 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader7});
             this.listView.HideSelection = false;
             this.listView.Location = new System.Drawing.Point(23, 126);
             this.listView.Name = "listView";
@@ -358,7 +362,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Numer paczki";
-            this.columnHeader1.Width = 191;
+            this.columnHeader1.Width = 143;
             // 
             // columnHeader2
             // 
@@ -1766,6 +1770,18 @@
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(252, 88);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 4;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Typ";
+            // 
             // ClientHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1947,5 +1963,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }
