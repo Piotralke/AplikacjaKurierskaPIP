@@ -570,7 +570,7 @@ namespace WindowsFormsApp1
             //Report report = new Report()
             //{
             //    id = 0,
-            //    idPackage = textBoxPkNum.Text,
+            //    numPackage = textBoxPkNum.Text,
             //    date = DateTime.Now,
             //    topic = comboBoxTopic.Text,
             //    desc = "Rodzaj: " + info + "\nZawartość: " + textBoxPkInfo.Text + "\nUwagi: " + textBoxDesc.Text
@@ -704,7 +704,7 @@ namespace WindowsFormsApp1
             //Report report = new Report()
             //{
             //    id = 0,
-            //    idPackage = textBoxPkNum.Text,
+            //    numPackage = textBoxPkNum.Text,
             //    date = DateTime.Now,
             //    desc = "Rodzaj opakowania: " + packet + "\nZawartość: " + textBoxPackageInfo.Text +
             //    "\nRodzaj szkody: " + ToD + "\nUszkodzenie opakowania zewnętrznego: " + outerDmg +
@@ -727,7 +727,7 @@ namespace WindowsFormsApp1
             //Report report = new Report()
             //{
             //    id = 0,
-            //    idPackage = 0,
+            //    numPackage = 0,
             //    date = DateTime.Now,
             //    desc = "Opis problemu: " + textBoxRep.Text
             //};
