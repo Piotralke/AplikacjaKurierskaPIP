@@ -22,7 +22,16 @@ namespace API.Controllers
 		[HttpGet]
 		public async Task<ActionResult<IEnumerable<Status>>> GetStatuses()
 		{
-			return await _context.Statuses.Include(s=>s.statusName).ToListAsync();
+			return await _context.Statuses
+				.Select(s=>new Status
+				{
+					id=s.id,
+					idStatusName=s.idStatusName,
+					statusName=s.statusName,
+					idPackage=s.idPackage,
+					package=s.package,
+					date=s.date
+				}).ToListAsync();
 		}
 
 
